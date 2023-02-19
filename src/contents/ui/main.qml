@@ -33,21 +33,11 @@ Kirigami.ApplicationWindow {
         interval: 1000
         onTriggered: App.saveWindowGeometry(root)
     }
-
-    property int counter: 0
-
     globalDrawer: Kirigami.GlobalDrawer {
         title: i18n("kretro")
         titleIcon: "applications-graphics"
         isMenu: !root.isMobile
         actions: [
-            Kirigami.Action {
-                text: i18n("Plus One")
-                icon.name: "list-add"
-                onTriggered: {
-                    counter += 1
-                }
-            },
             Kirigami.Action {
                 text: i18n("About kretro")
                 icon.name: "help-about"
@@ -74,14 +64,37 @@ Kirigami.ApplicationWindow {
 
         title: i18n("Main Page")
 
-        actions.main: Kirigami.Action {
-            text: i18n("Plus One")
-            icon.name: "list-add"
-            tooltip: i18n("Add one to the counter")
-            onTriggered: {
-                counter += 1
+        function handleKeyPress(event, pressed) {
+            switch(event.key) {
+                case Qt.Key_Z:
+                    App.setButtonState("A", pressed)
+                    break;
+                case Qt.Key_X:
+                    App.setButtonState("B", pressed)
+                    break;
+                case Qt.Key_Up:
+                    App.setButtonState("UP", pressed)
+                    break;
+                case Qt.Key_Down:
+                    App.setButtonState("DOWN", pressed)
+                    break;
+                case Qt.Key_Left:
+                    App.setButtonState("LEFT", pressed)
+                    break;
+                case Qt.Key_Right:
+                    App.setButtonState("RIGHT", pressed)
+                    break;
+                case Qt.Key_A:
+                    App.setButtonState("START", pressed)
+                    break;
+                case Qt.Key_S:
+                    App.setButtonState("SELECT", pressed)
+                    break;
+
             }
         }
+        Keys.onPressed: handleKeyPress(event, true)
+        Keys.onReleased: handleKeyPress(event, false)
 
         ColumnLayout {
             width: page.width
@@ -96,7 +109,7 @@ Kirigami.ApplicationWindow {
                     anchors.fill: parent
                 }
                 RetroFrame {
-                    anchors.fill: parent
+                            anchors.fill: parent
                 }
             }
             RowLayout {

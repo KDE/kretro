@@ -58,7 +58,6 @@ void retrolog(enum retro_log_level level, const char *fmt, ...) {
             break;
         }
     va_end(ap);
-    qDebug() << "LOG!" << level << fmt;
 }
 
 bool core_environment(unsigned cmd, void *data) {
@@ -75,13 +74,16 @@ bool core_environment(unsigned cmd, void *data) {
         }
         case RETRO_ENVIRONMENT_SET_PIXEL_FORMAT: {
             const enum retro_pixel_format *fmt = (enum retro_pixel_format *)data;
+            qDebug() << "Requested pixel format" << *fmt;
 
             if (*fmt > RETRO_PIXEL_FORMAT_RGB565)
                 return false;
-
             switch (*fmt) {
                 case RETRO_PIXEL_FORMAT_XRGB8888:
                     App::self()->setImageFormat(QImage::Format_RGBX8888);
+                    return true;
+                case RETRO_PIXEL_FORMAT_RGB565:
+                    App::self()->setImageFormat(QImage::Format_RGB16);
                     return true;
                 default:
                     return false;
@@ -149,7 +151,7 @@ void App::videoRefresh(const void *data, unsigned width, unsigned height, size_t
 void App::startRetroCore()
 {
     // Load core dynamic library
-    void* lrcore = dlopen("/home/devin/Downloads/beetle-gba-libretro/mednafen_gba_libretro.so", RTLD_LAZY);
+    void* lrcore = dlopen("/home/seshpenguin/tmp/beetle-gba-libretro/mednafen_gba_libretro.so", RTLD_LAZY);
 
     qDebug() << ("Opened core!");
 
@@ -181,9 +183,9 @@ void App::startRetroCore()
     //retro_reset();
     retro_system_av_info avinfo;
     retro_system_info system = {0};
-    retro_game_info info{"/home/devin/Downloads/mario.gba", 0};
+    retro_game_info info{"/home/seshpenguin/Downloads/mariogba/mariogba.gba", 0};
 
-    FILE *file = fopen("/home/devin/Downloads/mario.gba", "rb");
+    FILE *file = fopen("/home/seshpenguin/Downloads/mariogba/mariogba.gba", "rb");
     if (!file) {
         qDebug() << "NO FILE!!!";
         return;
