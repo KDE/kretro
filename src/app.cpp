@@ -64,25 +64,60 @@ void retrolog(enum retro_log_level level, const char *fmt, ...) {
 bool core_environment(unsigned cmd, void *data) {
     qDebug() << cmd;
     switch(cmd) {
-        case RETRO_ENVIRONMENT_GET_LOG_INTERFACE:
+        case RETRO_ENVIRONMENT_GET_LOG_INTERFACE: {
             auto logstruct = reinterpret_cast<retro_log_callback*>(data);
             logstruct->log = retrolog;
+            break;
+        }
+        case RETRO_ENVIRONMENT_GET_CAN_DUPE: {
+            bool *bval = (bool*)data;
+            *bval = true;
+            break;
+        }
+        case RETRO_ENVIRONMENT_SET_PIXEL_FORMAT: {
+            const enum retro_pixel_format *fmt = (enum retro_pixel_format *)data;
+
+            if (*fmt > RETRO_PIXEL_FORMAT_RGB565)
+                return false;
+
+            switch (*fmt) {
+                case RETRO_PIXEL_FORMAT_XRGB8888:
+                    App::self()->setImageFormat(QImage::Format_RGBX8888);
+                    return true;
+                default:
+                    return false;
+            }
+            return false;
+        }
+        case RETRO_ENVIRONMENT_GET_SYSTEM_DIRECTORY:
+        case RETRO_ENVIRONMENT_GET_SAVE_DIRECTORY:
+            *(const char **)data = ".";
+            return true;
+
+        default:
+            qDebug() << RETRO_LOG_DEBUG <<  "Unhandled env #" << cmd;
+            return false;
     }
     return true;
 }
+
 void video_refresh(const void *data, unsigned width, unsigned height, size_t pitch) {
     App::self()->videoRefresh(data, width, height, pitch);
 }
+
 void audio_sample(int16_t left, int16_t right) {
 
 }
+
 size_t audio_sample_batch(const int16_t *data,size_t frames) {
     qDebug() << "f";
- return 0;
+    return 0;
 }
+
 void input_poll() {
 
 }
+
 int16_t input_state(unsigned port, unsigned device, unsigned index, unsigned id) {
     if(port || index || device != RETRO_DEVICE_JOYPAD)
         return 0;
@@ -109,13 +144,13 @@ int16_t input_state(unsigned port, unsigned device, unsigned index, unsigned id)
 }
 
 void App::videoRefresh(const void *data, unsigned width, unsigned height, size_t pitch) {
-    m_retroFrame->setImage({reinterpret_cast<const uchar*>(data), static_cast<int>(width), static_cast<int>(height), QImage::Format_RGBX8888});
+    m_retroFrame->setImage({reinterpret_cast<const uchar*>(data), static_cast<int>(width), static_cast<int>(height), m_imageFormat});
 }
 
 void App::startRetroCore()
 {
     // Load core dynamic library
-    void* lrcore = dlopen("/home/seshpenguin/tmp/libretro-2048/2048_libretro.so", RTLD_LAZY | RTLD_LOCAL);
+    void* lrcore = dlopen("/home/devin/Downloads/libretro-2048/2048_libretro.so", RTLD_LAZY | RTLD_LOCAL);
     qDebug() << ("Opened core!");
     auto retro_api_version = reinterpret_cast<unsigned(*)(void)>(dlsym(lrcore, "retro_api_version"));
     auto retro_set_environment = reinterpret_cast<void(*)(retro_environment_t)>(dlsym(lrcore, "retro_set_environment"));
@@ -126,8 +161,10 @@ void App::startRetroCore()
     auto retro_set_input_state = reinterpret_cast<void(*)(retro_input_state_t)>(dlsym(lrcore, "retro_set_input_state"));
     auto retro_init = reinterpret_cast<void(*)(void)>(dlsym(lrcore, "retro_init"));
     auto retro_reset = reinterpret_cast<void(*)(void)>(dlsym(lrcore, "retro_reset"));
-    auto retro_load_game = reinterpret_cast<void(*)(const struct retro_game_info *game)>(dlsym(lrcore, "retro_load_game"));
+    auto retro_load_game = reinterpret_cast<bool(*)(const struct retro_game_info *game)>(dlsym(lrcore, "retro_load_game"));
     auto retro_run = reinterpret_cast<void(*)(void)>(dlsym(lrcore, "retro_run"));
+    auto retro_get_system_info = reinterpret_cast<void(*)(void)>(dlsym(lrcore, "retro_get_system_info"));
+    auto retro_get_system_av_info = reinterpret_cast<void(*)(void)>(dlsym(lrcore, "retro_get_system_av_info"));
 
     qDebug() << "Core API version " << retro_api_version();
 
@@ -138,12 +175,16 @@ void App::startRetroCore()
     retro_set_input_poll(&input_poll);
     retro_set_input_state(&input_state);
     retro_init();
-    retro_reset();
+
+    // retro_reset();
+
     retro_game_info info = {.path = NULL, .data = NULL, .size = 0, .meta = NULL};
-    retro_load_game(&info);
+    if (!retro_load_game(&info)) {
+        qDebug() << "The game failed to load!";
+    }
 
     connect(m_frameTimer, &QTimer::timeout, this, [retro_run]() { retro_run(); });
-    m_frameTimer->start(33);
+    m_frameTimer->start(16);
 }
 App* App::self()
 {
@@ -161,7 +202,13 @@ void App::setButtonState(QString button, bool state)
     m_inputStates[button] = state;
     qDebug() << state;
 }
+
 bool App::getButtonState(QString button)
 {
     return m_inputStates.contains(button) && m_inputStates[button];
+}
+
+void App::setImageFormat(QImage::Format format)
+{
+    m_imageFormat = format;
 }

@@ -5,6 +5,7 @@
 
 #include <QObject>
 #include <QTimer>
+
 #include "RetroFrame.h"
 
 class QQuickWindow;
@@ -30,7 +31,11 @@ public:
     Q_INVOKABLE void setButtonState(QString button, bool state);
     bool getButtonState(QString button);
 
+    void setImageFormat(QImage::Format format);
+
 private:
+    QImage::Format m_imageFormat;
+
     RetroFrame *m_retroFrame;
     QTimer *m_frameTimer;
     bool m_isRunning;
