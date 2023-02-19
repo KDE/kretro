@@ -89,8 +89,8 @@ Kirigami.ApplicationWindow {
             anchors.centerIn: parent
             RetroFrame {
                 Layout.alignment: Qt.AlignHCenter
-                Layout.preferredHeight: 376
-                Layout.preferredWidth: 464
+                Layout.preferredHeight: 464
+                Layout.preferredWidth: 376
             }
             RowLayout {
                 Layout.alignment: Qt.AlignHCenter

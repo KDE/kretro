@@ -110,7 +110,7 @@ void audio_sample(int16_t left, int16_t right) {
 }
 
 size_t audio_sample_batch(const int16_t *data,size_t frames) {
-    qDebug() << "f";
+
     return 0;
 }
 
@@ -121,7 +121,7 @@ void input_poll() {
 int16_t input_state(unsigned port, unsigned device, unsigned index, unsigned id) {
     if(port || index || device != RETRO_DEVICE_JOYPAD)
         return 0;
-    qDebug() << "ID: " <<id;
+    //qDebug() << "ID: " <<id;
     switch(id) {
         case RETRO_DEVICE_ID_JOYPAD_A:
             return App::self()->getButtonState("A");
@@ -150,7 +150,7 @@ void App::videoRefresh(const void *data, unsigned width, unsigned height, size_t
 void App::startRetroCore()
 {
     // Load core dynamic library
-    void* lrcore = dlopen("/home/devin/Downloads/libretro-2048/2048_libretro.so", RTLD_LAZY | RTLD_LOCAL);
+    void* lrcore = dlopen("/home/seshpenguin/tmp/mgba/mgba_libretro.so", RTLD_LAZY | RTLD_LOCAL);
     qDebug() << ("Opened core!");
     auto retro_api_version = reinterpret_cast<unsigned(*)(void)>(dlsym(lrcore, "retro_api_version"));
     auto retro_set_environment = reinterpret_cast<void(*)(retro_environment_t)>(dlsym(lrcore, "retro_set_environment"));
@@ -164,7 +164,7 @@ void App::startRetroCore()
     auto retro_load_game = reinterpret_cast<bool(*)(const struct retro_game_info *game)>(dlsym(lrcore, "retro_load_game"));
     auto retro_run = reinterpret_cast<void(*)(void)>(dlsym(lrcore, "retro_run"));
     auto retro_get_system_info = reinterpret_cast<void(*)(void)>(dlsym(lrcore, "retro_get_system_info"));
-    auto retro_get_system_av_info = reinterpret_cast<void(*)(void)>(dlsym(lrcore, "retro_get_system_av_info"));
+    auto retro_get_system_av_info = reinterpret_cast<void(*)(struct retro_system_av_info *info)>(dlsym(lrcore, "retro_get_system_av_info"));
 
     qDebug() << "Core API version " << retro_api_version();
 
@@ -176,15 +176,28 @@ void App::startRetroCore()
     retro_set_input_state(&input_state);
     retro_init();
 
-    // retro_reset();
+    //retro_reset();
+    retro_game_info info;
+    info.path = NULL;
+    FILE *file = fopen("/home/seshpenguin/Downloads/mariogba/mariogba.gba", "rb");
+    fseek(file, 0, SEEK_END);
+	info.size = ftell(file);
+	rewind(file);
 
-    retro_game_info info = {.path = NULL, .data = NULL, .size = 0, .meta = NULL};
+    info.data = malloc(info.size);
+    fread((void*)info.data, info.size, 1, file);
+
     if (!retro_load_game(&info)) {
         qDebug() << "The game failed to load!";
     }
 
+    struct retro_system_av_info avinfo;
+    retro_get_system_av_info(&avinfo);
+    qDebug() << avinfo.geometry.base_height << "x" << avinfo.geometry.base_width;
+    qDebug() << avinfo.timing.fps;
+
     connect(m_frameTimer, &QTimer::timeout, this, [retro_run]() { retro_run(); });
-    m_frameTimer->start(16);
+    m_frameTimer->start(1000 / avinfo.timing.fps);
 }
 App* App::self()
 {
@@ -200,7 +213,6 @@ void App::setRetroFrame(RetroFrame *rf)
 void App::setButtonState(QString button, bool state)
 {
     m_inputStates[button] = state;
-    qDebug() << state;
 }
 
 bool App::getButtonState(QString button)
