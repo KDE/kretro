@@ -65,7 +65,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
         return -1;
     }
 
-    App::self()->startRetroCore();
+    //App::self()->startRetroCore();
 
     return app.exec();
 }

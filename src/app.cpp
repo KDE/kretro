@@ -5,9 +5,10 @@
 #include <KSharedConfig>
 #include <KWindowConfig>
 #include <QQuickWindow>
-#include "libretro.h"
 #include <dlfcn.h>
 #include <cstdarg>
+#include <QtMultimedia/QAudioFormat>
+#include <QtMultimedia/QAudioOutput>
 
 App::App(QObject* parent)
     : QObject(parent)
@@ -96,7 +97,7 @@ bool core_environment(unsigned cmd, void *data) {
             return true;
 
         default:
-            // qDebug() << RETRO_LOG_DEBUG <<  "Unhandled env #" << cmd;
+            qDebug() << RETRO_LOG_DEBUG <<  "Unhandled env #" << cmd;
             return false;
     }
     return true;
@@ -107,11 +108,10 @@ void video_refresh(const void *data, unsigned width, unsigned height, size_t pit
 }
 
 void audio_sample(int16_t left, int16_t right) {
-
 }
 
 size_t audio_sample_batch(const int16_t *data,size_t frames) {
-
+    App::self()->audioRefresh(data, frames);
     return 0;
 }
 
@@ -147,11 +147,14 @@ int16_t input_state(unsigned port, unsigned device, unsigned index, unsigned id)
 void App::videoRefresh(const void *data, unsigned width, unsigned height, size_t pitch) {
     m_retroFrame->setImage({reinterpret_cast<const uchar*>(data), static_cast<int>(width), static_cast<int>(height), m_imageFormat});
 }
+void App::audioRefresh(const int16_t *data, size_t frames) {
+    //m_audioBuffer.write(reinterpret_cast<const char*>(data), frames);
+}
 
 void App::startRetroCore()
 {
     // Load core dynamic library
-    void* lrcore = dlopen("/home/seshpenguin/tmp/beetle-gba-libretro/mednafen_gba_libretro.so", RTLD_LAZY);
+    void* lrcore = dlopen("/home/seshpenguin/Documents/beetle-gba-libretro/mednafen_gba_libretro.so", RTLD_LAZY);
 
     qDebug() << ("Opened core!");
 
@@ -178,14 +181,16 @@ void App::startRetroCore()
     retro_set_input_poll(&input_poll);
     retro_set_input_state(&input_state);
 
+    m_audioBuffer.open(QBuffer::ReadWrite);
+
     retro_init();
 
     //retro_reset();
     retro_system_av_info avinfo;
     retro_system_info system = {0};
-    retro_game_info info{"/home/seshpenguin/Downloads/mariogba/mariogba.gba", 0};
+    retro_game_info info{"/home/seshpenguin/Downloads/mario.gba", 0};
 
-    FILE *file = fopen("/home/seshpenguin/Downloads/mariogba/mariogba.gba", "rb");
+    FILE *file = fopen("/home/seshpenguin/Downloads/mario.gba", "rb");
     if (!file) {
         qDebug() << "NO FILE!!!";
         return;
@@ -209,14 +214,15 @@ void App::startRetroCore()
     if (!retro_load_game(&info)) {
         qDebug() << "The game failed to load!";
     }
-
     retro_get_system_av_info(&avinfo);
+    m_avInfo = avinfo;
 
     qDebug() << avinfo.geometry.base_height << "x" << avinfo.geometry.base_width;
     qDebug() << avinfo.timing.fps;
 
     connect(m_frameTimer, &QTimer::timeout, this, [retro_run]() { retro_run(); });
     m_frameTimer->start(1000 / avinfo.timing.fps);
+
 }
 App* App::self()
 {

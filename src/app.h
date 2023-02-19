@@ -7,6 +7,8 @@
 #include <QTimer>
 
 #include "RetroFrame.h"
+#include "libretro.h"
+#include <qbuffer.h>
 
 class QQuickWindow;
 
@@ -20,9 +22,10 @@ public:
     // Save current window geometry
     Q_INVOKABLE void saveWindowGeometry(QQuickWindow *window, const QString &group = QStringLiteral("main")) const;
 
-    void startRetroCore();
+    Q_INVOKABLE void startRetroCore();
 
     void videoRefresh(const void *data, unsigned width, unsigned height, size_t pitch);
+    void audioRefresh(const int16_t *data,size_t frames);
 
     static App *self();
 
@@ -33,6 +36,8 @@ public:
 
     void setImageFormat(QImage::Format format);
 
+    retro_system_av_info m_avInfo;
+
 private:
     QImage::Format m_imageFormat;
 
@@ -40,4 +45,6 @@ private:
     QTimer *m_frameTimer;
     bool m_isRunning;
     QHash<QString, bool> m_inputStates;
+
+    QBuffer m_audioBuffer;
 };

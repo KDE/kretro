@@ -44,6 +44,11 @@ Kirigami.ApplicationWindow {
                 onTriggered: pageStack.layers.push('qrc:About.qml')
             },
             Kirigami.Action {
+                text: i18n("[Debug] Mobile Player UI")
+                icon.name: "help-about"
+                onTriggered: pageStack.layers.push('qrc:MobilePlayer.qml')
+            },
+            Kirigami.Action {
                 text: i18n("Quit")
                 icon.name: "application-exit"
                 onTriggered: Qt.quit()
@@ -63,108 +68,5 @@ Kirigami.ApplicationWindow {
         Layout.fillWidth: true
 
         title: i18n("Main Page")
-
-        function handleKeyPress(event, pressed) {
-            switch(event.key) {
-                case Qt.Key_Z:
-                    App.setButtonState("A", pressed)
-                    break;
-                case Qt.Key_X:
-                    App.setButtonState("B", pressed)
-                    break;
-                case Qt.Key_Up:
-                    App.setButtonState("UP", pressed)
-                    break;
-                case Qt.Key_Down:
-                    App.setButtonState("DOWN", pressed)
-                    break;
-                case Qt.Key_Left:
-                    App.setButtonState("LEFT", pressed)
-                    break;
-                case Qt.Key_Right:
-                    App.setButtonState("RIGHT", pressed)
-                    break;
-                case Qt.Key_A:
-                    App.setButtonState("START", pressed)
-                    break;
-                case Qt.Key_S:
-                    App.setButtonState("SELECT", pressed)
-                    break;
-
-            }
-        }
-        Keys.onPressed: handleKeyPress(event, true)
-        Keys.onReleased: handleKeyPress(event, false)
-
-        ColumnLayout {
-            width: page.width
-
-            anchors.centerIn: parent
-            Item {
-                Layout.alignment: Qt.AlignHCenter
-                Layout.preferredWidth: 240 * 2
-                Layout.preferredHeight: 160 * 2
-                Rectangle {
-                    color: "black"
-                    anchors.fill: parent
-                }
-                RetroFrame {
-                            anchors.fill: parent
-                }
-            }
-            RowLayout {
-                Layout.alignment: Qt.AlignHCenter
-                Controls.Button {
-                    text: "A"
-                    onPressedChanged: {
-                        App.setButtonState("A", pressed)
-                    }
-                }
-                Controls.Button {
-                    text: "B"
-                    onPressedChanged: {
-                        App.setButtonState("B", pressed)
-                    }
-                }
-                Controls.Button {
-                    text: "UP"
-                    onPressedChanged: {
-                        App.setButtonState("UP", pressed)
-                    }
-                }
-                Controls.Button {
-                    text: "DOWN"
-                    onPressedChanged: {
-                        App.setButtonState("DOWN", pressed)
-                    }
-                }
-                Controls.Button {
-                    text: "LEFT"
-                    onPressedChanged: {
-                        App.setButtonState("LEFT", pressed)
-                    }
-                }
-                Controls.Button {
-                    text: "RIGHT"
-                    onPressedChanged: {
-                        App.setButtonState("RIGHT", pressed)
-                    }
-                }
-                Controls.Button {
-                    text: "START"
-                    onPressedChanged: {
-                        App.setButtonState("START", pressed)
-                    }
-                }
-                Controls.Button {
-                    text: "SELECT"
-                    onPressedChanged: {
-                        App.setButtonState("SELECT", pressed)
-                    }
-                }
-
-            }
-
-        }
     }
 }
