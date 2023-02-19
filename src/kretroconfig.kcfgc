@@ -1,0 +1,10 @@
+# SPDX-FileCopyrightText: 2023 Seshan Ravikumar <seshan.r@sineware.ca>
+# SPDX-License-Identifier: LGPL-2.0-or-later
+
+File=kretroconfig.kcfg
+ClassName=kretroConfig
+Mutators=true
+DefaultValueGetters=true
+GenerateProperties=true
+ParentInConstructor=true
+Singleton=true
