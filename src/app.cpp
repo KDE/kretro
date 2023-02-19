@@ -62,7 +62,6 @@ void retrolog(enum retro_log_level level, const char *fmt, ...) {
 }
 
 bool core_environment(unsigned cmd, void *data) {
-    qDebug() << cmd;
     switch(cmd) {
         case RETRO_ENVIRONMENT_GET_LOG_INTERFACE: {
             auto logstruct = reinterpret_cast<retro_log_callback*>(data);
@@ -95,7 +94,7 @@ bool core_environment(unsigned cmd, void *data) {
             return true;
 
         default:
-            qDebug() << RETRO_LOG_DEBUG <<  "Unhandled env #" << cmd;
+            // qDebug() << RETRO_LOG_DEBUG <<  "Unhandled env #" << cmd;
             return false;
     }
     return true;
@@ -150,8 +149,10 @@ void App::videoRefresh(const void *data, unsigned width, unsigned height, size_t
 void App::startRetroCore()
 {
     // Load core dynamic library
-    void* lrcore = dlopen("/home/seshpenguin/tmp/mgba/mgba_libretro.so", RTLD_LAZY | RTLD_LOCAL);
+    void* lrcore = dlopen("/home/devin/Downloads/beetle-gba-libretro/mednafen_gba_libretro.so", RTLD_LAZY);
+
     qDebug() << ("Opened core!");
+
     auto retro_api_version = reinterpret_cast<unsigned(*)(void)>(dlsym(lrcore, "retro_api_version"));
     auto retro_set_environment = reinterpret_cast<void(*)(retro_environment_t)>(dlsym(lrcore, "retro_set_environment"));
     auto retro_set_video_refresh = reinterpret_cast<void(*)(retro_video_refresh_t)>(dlsym(lrcore, "retro_set_video_refresh"));
@@ -163,7 +164,7 @@ void App::startRetroCore()
     auto retro_reset = reinterpret_cast<void(*)(void)>(dlsym(lrcore, "retro_reset"));
     auto retro_load_game = reinterpret_cast<bool(*)(const struct retro_game_info *game)>(dlsym(lrcore, "retro_load_game"));
     auto retro_run = reinterpret_cast<void(*)(void)>(dlsym(lrcore, "retro_run"));
-    auto retro_get_system_info = reinterpret_cast<void(*)(void)>(dlsym(lrcore, "retro_get_system_info"));
+    auto retro_get_system_info = reinterpret_cast<void(*)(retro_system_info *)>(dlsym(lrcore, "retro_get_system_info"));
     auto retro_get_system_av_info = reinterpret_cast<void(*)(struct retro_system_av_info *info)>(dlsym(lrcore, "retro_get_system_av_info"));
 
     qDebug() << "Core API version " << retro_api_version();
@@ -174,25 +175,41 @@ void App::startRetroCore()
     retro_set_audio_sample_batch(&audio_sample_batch);
     retro_set_input_poll(&input_poll);
     retro_set_input_state(&input_state);
+
     retro_init();
 
     //retro_reset();
-    retro_game_info info;
-    info.path = NULL;
-    FILE *file = fopen("/home/seshpenguin/Downloads/mariogba/mariogba.gba", "rb");
+    retro_system_av_info avinfo;
+    retro_system_info system = {0};
+    retro_game_info info{"/home/devin/Downloads/mario.gba", 0};
+
+    FILE *file = fopen("/home/devin/Downloads/mario.gba", "rb");
+    if (!file) {
+        qDebug() << "NO FILE!!!";
+        return;
+    }
+
     fseek(file, 0, SEEK_END);
 	info.size = ftell(file);
 	rewind(file);
 
-    info.data = malloc(info.size);
-    fread((void*)info.data, info.size, 1, file);
+    retro_get_system_info(&system);
+
+    if (!system.need_fullpath) {
+		info.data = malloc(info.size);
+
+		if (!info.data || !fread((void*)info.data, info.size, 1, file)) {
+            qDebug() << "LIBC error for some reason !?";
+			return;
+        }
+	}
 
     if (!retro_load_game(&info)) {
         qDebug() << "The game failed to load!";
     }
 
-    struct retro_system_av_info avinfo;
     retro_get_system_av_info(&avinfo);
+
     qDebug() << avinfo.geometry.base_height << "x" << avinfo.geometry.base_width;
     qDebug() << avinfo.timing.fps;
 
