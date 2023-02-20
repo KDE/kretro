@@ -7,8 +7,6 @@
 #include <QQuickWindow>
 #include <dlfcn.h>
 #include <cstdarg>
-#include <QtMultimedia/QAudioFormat>
-#include <QtMultimedia/QAudioOutput>
 
 App::App(QObject* parent)
     : QObject(parent)
