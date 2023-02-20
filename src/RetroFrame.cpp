@@ -11,7 +11,7 @@ RetroFrame::RetroFrame(QQuickItem *parent)
 void RetroFrame::paint(QPainter *painter)
 {
     QRectF bounding_rect = boundingRect();
-    QImage scaled = m_currentImage.scaledToHeight(bounding_rect.height());
+    QImage scaled = m_currentImage.scaled(bounding_rect.height(), bounding_rect.width(), Qt::KeepAspectRatio).rgbSwapped();
     QPointF center = bounding_rect.center() - scaled.rect().center();
 
     if(center.x() < 0)

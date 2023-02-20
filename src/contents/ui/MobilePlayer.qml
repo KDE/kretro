@@ -55,11 +55,12 @@ Kirigami.Page {
 
     ColumnLayout {
         width: page.width
+        height: page.height
         anchors.centerIn: parent
         Item {
             Layout.alignment: Qt.AlignHCenter
-            Layout.preferredWidth: 240 * 2
-            Layout.preferredHeight: 160 * 2
+            Layout.preferredHeight: parent.height / 2
+            Layout.preferredWidth: parent.width
             Rectangle {
                 color: "black"
                 anchors.fill: parent
