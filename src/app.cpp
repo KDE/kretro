@@ -97,7 +97,7 @@ bool core_environment(unsigned cmd, void *data) {
             return true;
 
         default:
-            qDebug() << RETRO_LOG_DEBUG <<  "Unhandled env #" << cmd;
+            //qDebug() << RETRO_LOG_DEBUG <<  "Unhandled env #" << cmd;
             return false;
     }
     return true;
@@ -154,7 +154,8 @@ void App::audioRefresh(const int16_t *data, size_t frames) {
 void App::startRetroCore()
 {
     // Load core dynamic library
-    void* lrcore = dlopen("/home/seshpenguin/Documents/beetle-gba-libretro/mednafen_gba_libretro.so", RTLD_LAZY);
+    void* lrcore = dlopen("/home/seshpenguin/tmp/beetle-gba-libretro/mednafen_gba_libretro.so", RTLD_LAZY);
+    m_lrCore = lrcore;
 
     qDebug() << ("Opened core!");
 
@@ -188,9 +189,9 @@ void App::startRetroCore()
     //retro_reset();
     retro_system_av_info avinfo;
     retro_system_info system = {0};
-    retro_game_info info{"/home/seshpenguin/Downloads/mario.gba", 0};
+    retro_game_info info{m_romFilePath.toStdString().c_str(), 0};
 
-    FILE *file = fopen("/home/seshpenguin/Downloads/mario.gba", "rb");
+    FILE *file = fopen(m_romFilePath.toStdString().c_str(), "rb");
     if (!file) {
         qDebug() << "NO FILE!!!";
         return;
@@ -224,6 +225,15 @@ void App::startRetroCore()
     m_frameTimer->start(1000 / avinfo.timing.fps);
 
 }
+void App::stopRetroCore()
+{
+    auto retro_unload_game = reinterpret_cast<unsigned(*)(void)>(dlsym(m_lrCore, "retro_unload_game"));
+    auto retro_deinit = reinterpret_cast<unsigned(*)(void)>(dlsym(m_lrCore, "retro_deinit"));
+    m_frameTimer->stop();
+    retro_unload_game();
+    retro_deinit();
+}
+
 App* App::self()
 {
     static App* a = new App();
@@ -248,4 +258,14 @@ bool App::getButtonState(QString button)
 void App::setImageFormat(QImage::Format format)
 {
     m_imageFormat = format;
+}
+
+QString App::getEnv(QString key)
+{
+    return qgetenv(qPrintable(key));
+}
+
+void App::setRomFilePath(QString path)
+{
+    m_romFilePath = path;
 }

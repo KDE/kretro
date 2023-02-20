@@ -23,6 +23,7 @@ public:
     Q_INVOKABLE void saveWindowGeometry(QQuickWindow *window, const QString &group = QStringLiteral("main")) const;
 
     Q_INVOKABLE void startRetroCore();
+    Q_INVOKABLE void stopRetroCore();
 
     void videoRefresh(const void *data, unsigned width, unsigned height, size_t pitch);
     void audioRefresh(const int16_t *data,size_t frames);
@@ -38,6 +39,10 @@ public:
 
     retro_system_av_info m_avInfo;
 
+    Q_INVOKABLE QString getEnv(QString key);
+    
+    Q_INVOKABLE void setRomFilePath(QString path);
+
 private:
     QImage::Format m_imageFormat;
 
@@ -47,4 +52,8 @@ private:
     QHash<QString, bool> m_inputStates;
 
     QBuffer m_audioBuffer;
+
+    QString m_romFilePath;
+
+    void* m_lrCore;
 };

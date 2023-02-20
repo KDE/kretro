@@ -14,6 +14,13 @@ Kirigami.Page {
 
     title: i18n("Mobile Player Layout")
 
+    Component.onCompleted:  {
+        App.startRetroCore()
+    }
+    Component.onDestruction: {
+        App.stopRetroCore()
+    }
+
     function handleKeyPress(event, pressed) {
         switch(event.key) {
             case Qt.Key_Z:
@@ -49,13 +56,6 @@ Kirigami.Page {
     ColumnLayout {
         width: page.width
         anchors.centerIn: parent
-        Controls.Button {
-                    text: "Start Emulation"
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    onPressed: {
-                        App.startRetroCore()
-                    }
-                }
         Item {
             Layout.alignment: Qt.AlignHCenter
             Layout.preferredWidth: 240 * 2
@@ -71,10 +71,10 @@ Kirigami.Page {
         RowLayout {
             Layout.alignment: Qt.AlignHCenter
             Item {
-                width: 200
-                height: 100
+                width: 190
+                height: 110
                 Controls.Button {
-                    text: "UP"
+                    text: "↑"
                     anchors.top: parent.top
                     anchors.horizontalCenter: parent.horizontalCenter
                     onPressedChanged: {
@@ -82,7 +82,7 @@ Kirigami.Page {
                     }
                 }
                 Controls.Button {
-                    text: "DOWN"
+                    text: "↓"
                     anchors.bottom: parent.bottom
                     anchors.horizontalCenter: parent.horizontalCenter
                     onPressedChanged: {
@@ -90,7 +90,7 @@ Kirigami.Page {
                     }
                 }
                 Controls.Button {
-                    text: "LEFT"
+                    text: "←"
                     anchors.left: parent.left
                     anchors.verticalCenter: parent.verticalCenter
                     onPressedChanged: {
@@ -98,7 +98,7 @@ Kirigami.Page {
                     }
                 }
                 Controls.Button {
-                    text: "RIGHT"
+                    text: "→"
                     anchors.right: parent.right
                     anchors.verticalCenter: parent.verticalCenter
                     onPressedChanged: {
@@ -111,20 +111,6 @@ Kirigami.Page {
                 columns: 1
                 RowLayout {
                     Controls.Button {
-                        text: "A"
-                        onPressedChanged: {
-                            App.setButtonState("A", pressed)
-                        }
-                    }
-                    Controls.Button {
-                        text: "B"
-                        onPressedChanged: {
-                            App.setButtonState("B", pressed)
-                        }
-                    }
-                }
-                RowLayout {
-                    Controls.Button {
                         text: "START"
                         onPressedChanged: {
                             App.setButtonState("START", pressed)
@@ -134,6 +120,20 @@ Kirigami.Page {
                         text: "SELECT"
                         onPressedChanged: {
                             App.setButtonState("SELECT", pressed)
+                        }
+                    }
+                }
+                RowLayout {
+                    Controls.Button {
+                        text: "A"
+                        onPressedChanged: {
+                            App.setButtonState("A", pressed)
+                        }
+                    }
+                    Controls.Button {
+                        text: "B"
+                        onPressedChanged: {
+                            App.setButtonState("B", pressed)
                         }
                     }
                 }
