@@ -221,7 +221,6 @@ void App::startRetroCore()
 
     connect(m_frameTimer, &QTimer::timeout, this, [retro_run]() { retro_run(); });
     m_frameTimer->start(1000 / avinfo.timing.fps);
-
 }
 void App::stopRetroCore()
 {

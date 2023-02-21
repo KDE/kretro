@@ -6,6 +6,7 @@ RetroFrame::RetroFrame(QQuickItem *parent)
   , m_currentImage{":/images/no_image.png"}
 {
     App::self()->setRetroFrame(this);
+    setRenderTarget(QQuickPaintedItem::FramebufferObject);
 }
 
 void RetroFrame::paint(QPainter *painter)

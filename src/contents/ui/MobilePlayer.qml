@@ -12,7 +12,7 @@ Kirigami.Page {
 
     Layout.fillWidth: true
 
-    title: i18n("Mobile Player Layout")
+    title: i18n("KRetro Mobile Player")
 
     Component.onCompleted:  {
         App.startRetroCore()
@@ -72,12 +72,14 @@ Kirigami.Page {
         RowLayout {
             Layout.alignment: Qt.AlignHCenter
             Item {
-                width: 190
+                width: 150
                 height: 110
                 Controls.Button {
                     text: "↑"
                     anchors.top: parent.top
                     anchors.horizontalCenter: parent.horizontalCenter
+                    width: 50
+                    height: 50
                     onPressedChanged: {
                         App.setButtonState("UP", pressed)
                     }
@@ -86,6 +88,8 @@ Kirigami.Page {
                     text: "↓"
                     anchors.bottom: parent.bottom
                     anchors.horizontalCenter: parent.horizontalCenter
+                    width: 50
+                    height: 50
                     onPressedChanged: {
                         App.setButtonState("DOWN", pressed)
                     }
@@ -94,6 +98,8 @@ Kirigami.Page {
                     text: "←"
                     anchors.left: parent.left
                     anchors.verticalCenter: parent.verticalCenter
+                    width: 50
+                    height: 50
                     onPressedChanged: {
                         App.setButtonState("LEFT", pressed)
                     }
@@ -102,10 +108,15 @@ Kirigami.Page {
                     text: "→"
                     anchors.right: parent.right
                     anchors.verticalCenter: parent.verticalCenter
+                    width: 50
+                    height: 50
                     onPressedChanged: {
                         App.setButtonState("RIGHT", pressed)
                     }
                 }
+            }
+            Item {
+                width: 50
             }
             GridLayout {
                 rows: 2
@@ -127,12 +138,15 @@ Kirigami.Page {
                 RowLayout {
                     Controls.Button {
                         text: "A"
+                        Layout.fillWidth: true
                         onPressedChanged: {
                             App.setButtonState("A", pressed)
                         }
                     }
                     Controls.Button {
                         text: "B"
+                        Layout.fillWidth: true
+                        
                         onPressedChanged: {
                             App.setButtonState("B", pressed)
                         }
