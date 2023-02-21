@@ -33,7 +33,8 @@ void App::saveWindowGeometry(QQuickWindow *window, const QString &group) const
     dataResource.sync();
 }
 
-void retrolog(enum retro_log_level level, const char *fmt, ...) {
+void retrolog(enum retro_log_level level, const char *fmt, ...)
+{
     va_list ap;
     int d;
     char c, *s;
@@ -59,7 +60,8 @@ void retrolog(enum retro_log_level level, const char *fmt, ...) {
     va_end(ap);
 }
 
-bool core_environment(unsigned cmd, void *data) {
+bool core_environment(unsigned cmd, void *data)
+{
     switch(cmd) {
         case RETRO_ENVIRONMENT_GET_LOG_INTERFACE: {
             auto logstruct = reinterpret_cast<retro_log_callback*>(data);
@@ -101,14 +103,17 @@ bool core_environment(unsigned cmd, void *data) {
     return true;
 }
 
-void video_refresh(const void *data, unsigned width, unsigned height, size_t pitch) {
+void video_refresh(const void *data, unsigned width, unsigned height, size_t pitch)
+{
     App::self()->videoRefresh(data, width, height, pitch);
 }
 
-void audio_sample(int16_t left, int16_t right) {
+void audio_sample(int16_t left, int16_t right)
+{
 }
 
-size_t audio_sample_batch(const int16_t *data,size_t frames) {
+size_t audio_sample_batch(const int16_t *data,size_t frames)
+{
     App::self()->audioRefresh(data, frames);
     return 0;
 }
@@ -153,6 +158,11 @@ void App::startRetroCore()
 {
     // Load core dynamic library
     void* lrcore = dlopen("/usr/lib/libretro/mednafen_gba_libretro.so", RTLD_LAZY);
+    if (!lrcore) {
+        qDebug() << "Failed to load core!";
+        setError("Failed to load core!");
+        return;
+    }
     m_lrCore = lrcore;
 
     qDebug() << ("Opened core!");
@@ -221,14 +231,20 @@ void App::startRetroCore()
 
     connect(m_frameTimer, &QTimer::timeout, this, [retro_run]() { retro_run(); });
     m_frameTimer->start(1000 / avinfo.timing.fps);
+
+    m_isRunning = true;
 }
 void App::stopRetroCore()
 {
+    if(!m_isRunning) {
+        return;
+    }
     auto retro_unload_game = reinterpret_cast<unsigned(*)(void)>(dlsym(m_lrCore, "retro_unload_game"));
     auto retro_deinit = reinterpret_cast<unsigned(*)(void)>(dlsym(m_lrCore, "retro_deinit"));
     m_frameTimer->stop();
     retro_unload_game();
     retro_deinit();
+    m_isRunning = false;
 }
 
 App* App::self()
@@ -265,4 +281,16 @@ QString App::getEnv(QString key)
 void App::setRomFilePath(QString path)
 {
     m_romFilePath = path;
+}
+void App::setError(const QString &error)
+{
+    if (m_error == error) {
+        return;
+    }
+    m_error = error;
+    Q_EMIT errorChanged();
+}
+QString App::error() const
+{
+    return m_error;
 }

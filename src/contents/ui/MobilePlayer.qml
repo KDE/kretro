@@ -11,6 +11,11 @@ Kirigami.Page {
     id: page
 
     Layout.fillWidth: true
+    Layout.fillHeight: true
+    topPadding: 0
+    bottomPadding: 0
+    leftPadding: 0
+    rightPadding: 0
 
     title: i18n("KRetro Mobile Player")
 
@@ -19,6 +24,7 @@ Kirigami.Page {
     }
     Component.onDestruction: {
         App.stopRetroCore()
+        App.error = ""
     }
 
     function handleKeyPress(event, pressed) {
@@ -53,109 +59,41 @@ Kirigami.Page {
     Keys.onPressed: handleKeyPress(event, true)
     Keys.onReleased: handleKeyPress(event, false)
 
+    Kirigami.InlineMessage {
+            id: errorMessage
+            type: Kirigami.MessageType.Error
+            anchors.top: parent.top
+            anchors.left: parent.left
+            anchors.right: parent.right
+            z: 1
+
+            visible: App.error !== ""
+            text: App.error
+    }
+
     ColumnLayout {
-        width: page.width
-        height: page.height
-        anchors.centerIn: parent
+        anchors.fill: parent
         Item {
             Layout.alignment: Qt.AlignHCenter
             Layout.preferredHeight: parent.height / 2
             Layout.preferredWidth: parent.width
             Rectangle {
-                color: "black"
+                id: rect
                 anchors.fill: parent
+                color: "black"
+                border.color: "white"
+                border.width: 1
             }
             RetroFrame {
+                id: frame
                 anchors.fill: parent
             }
         }
-        RowLayout {
-            Layout.alignment: Qt.AlignHCenter
-            Item {
-                width: 150
-                height: 110
-                Controls.Button {
-                    text: "↑"
-                    anchors.top: parent.top
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    width: 50
-                    height: 50
-                    onPressedChanged: {
-                        App.setButtonState("UP", pressed)
-                    }
-                }
-                Controls.Button {
-                    text: "↓"
-                    anchors.bottom: parent.bottom
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    width: 50
-                    height: 50
-                    onPressedChanged: {
-                        App.setButtonState("DOWN", pressed)
-                    }
-                }
-                Controls.Button {
-                    text: "←"
-                    anchors.left: parent.left
-                    anchors.verticalCenter: parent.verticalCenter
-                    width: 50
-                    height: 50
-                    onPressedChanged: {
-                        App.setButtonState("LEFT", pressed)
-                    }
-                }
-                Controls.Button {
-                    text: "→"
-                    anchors.right: parent.right
-                    anchors.verticalCenter: parent.verticalCenter
-                    width: 50
-                    height: 50
-                    onPressedChanged: {
-                        App.setButtonState("RIGHT", pressed)
-                    }
-                }
-            }
-            Item {
-                width: 50
-            }
-            GridLayout {
-                rows: 2
-                columns: 1
-                RowLayout {
-                    Controls.Button {
-                        text: "START"
-                        onPressedChanged: {
-                            App.setButtonState("START", pressed)
-                        }
-                    }
-                    Controls.Button {
-                        text: "SELECT"
-                        onPressedChanged: {
-                            App.setButtonState("SELECT", pressed)
-                        }
-                    }
-                }
-                RowLayout {
-                    Controls.Button {
-                        text: "A"
-                        Layout.fillWidth: true
-                        onPressedChanged: {
-                            App.setButtonState("A", pressed)
-                        }
-                    }
-                    Controls.Button {
-                        text: "B"
-                        Layout.fillWidth: true
-                        
-                        onPressedChanged: {
-                            App.setButtonState("B", pressed)
-                        }
-                    }
-                }
-            }
-
-
+        Item {
+            Layout.fillHeight: true
         }
-
+        MobileController {
+            Layout.fillWidth: true
+        }
     }
 }

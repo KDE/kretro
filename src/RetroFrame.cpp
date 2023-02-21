@@ -7,6 +7,7 @@ RetroFrame::RetroFrame(QQuickItem *parent)
 {
     App::self()->setRetroFrame(this);
     setRenderTarget(QQuickPaintedItem::FramebufferObject);
+    setFillColor(Qt::black);
 }
 
 void RetroFrame::paint(QPainter *painter)

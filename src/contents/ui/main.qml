@@ -10,6 +10,8 @@ import Qt.labs.folderlistmodel 2.15
 
 Kirigami.ApplicationWindow {
     id: root
+    pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar;
+    pageStack.globalToolBar.showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton;
 
     title: i18n("kretro")
 
@@ -42,12 +44,7 @@ Kirigami.ApplicationWindow {
             Kirigami.Action {
                 text: i18n("About kretro")
                 icon.name: "help-about"
-                onTriggered: pageStack.layers.push('qrc:About.qml')
-            },
-            Kirigami.Action {
-                text: i18n("[Debug] Mobile Player UI")
-                icon.name: "help-about"
-                onTriggered: pageStack.layers.push('qrc:MobilePlayer.qml')
+                onTriggered: pageStack.layers.push('qrc:/About.qml')
             },
             Kirigami.Action {
                 text: i18n("Quit")
@@ -57,6 +54,7 @@ Kirigami.ApplicationWindow {
         ]
     }
 
+
     contextDrawer: Kirigami.ContextDrawer {
         id: contextDrawer
     }
@@ -65,32 +63,55 @@ Kirigami.ApplicationWindow {
 
     Kirigami.Page {
         id: page
-
+        actions.main: Kirigami.Action {
+            icon.name: "settings-configure"
+            onTriggered: {
+                // do stuff
+            }
+        }
         Layout.fillWidth: true
 
         title: i18n("KRetro")
 
+        Kirigami.InlineMessage {
+            id: errorMessage
+            type: Kirigami.MessageType.Error
+            anchors.top: parent.top
+            anchors.left: parent.left
+            anchors.right: parent.right
+            z: 1
+
+            visible: App.error !== ""
+            text: App.error
+        }
+
+
         ListView {
-            width: 200; height: 400
+            anchors.top: errorMessage.bottom
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            anchors.topMargin: Kirigami.Units.gridUnit
 
             FolderListModel {
                 id: folderModel
                 folder: "file://" + App.getEnv("HOME") + "/Documents/Games"
                 nameFilters: ["*.gba"]
             }
-
             Component {
                 id: fileDelegate
                 Kirigami.Card {
                     // Banner
                     banner.source: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Super_Mario_Advance_4_cover.jpg/220px-Super_Mario_Advance_4_cover.jpg"
                     banner.title: model.fileName
+                    height: Kirigami.Units.gridUnit * 10
+                    width: Kirigami.Units.gridUnit * 10
+
                     onPressed: {
                         App.setRomFilePath(model.filePath)
-                        pageStack.layers.push('qrc:MobilePlayer.qml')
+                        pageStack.layers.push('qrc:/MobilePlayer.qml')
                     }
                 }
-
             }
 
             model: folderModel

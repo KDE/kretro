@@ -34,15 +34,19 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
                          // The program version string.
                          QStringLiteral(KRETRO_VERSION_STRING),
                          // Short description of what the app does.
-                         i18n("Application Description"),
+                         i18n("Libretro frontend for Plasma"),
                          // The license this code is released under.
                          KAboutLicense::GPL,
                          // Copyright Statement.
-                         i18n("(c) 2023"));
+                         i18n("(c) 2023 KDE Community"));
     aboutData.addAuthor(i18nc("@info:credit", "Seshan Ravikumar"),
-                        i18nc("@info:credit", "Author Role"),
+                        i18nc("@info:credit", "Developer"),
                         QStringLiteral("seshan.r@sineware.ca"),
-                        QStringLiteral("https://yourwebsite.com"));
+                        QStringLiteral("https://seshan.xyz"));
+    aboutData.addAuthor(i18nc("@info:credit", "Devin Lin"),
+                        i18nc("@info:credit", "Developer"),
+                        QStringLiteral("devin@kde.org"),
+                        QStringLiteral("https://espi.dev"));
     KAboutData::setApplicationData(aboutData);
 
     QQmlApplicationEngine engine;

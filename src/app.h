@@ -15,6 +15,7 @@ class QQuickWindow;
 class App : public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(QString error READ error WRITE setError NOTIFY errorChanged)
 public:
     App(QObject* parent = nullptr);
     // Restore current window geometry
@@ -43,6 +44,10 @@ public:
     
     Q_INVOKABLE void setRomFilePath(QString path);
 
+    void setError(const QString &author);
+    QString error() const;
+Q_SIGNALS:
+    void errorChanged();
 private:
     QImage::Format m_imageFormat;
 
@@ -54,6 +59,8 @@ private:
     QBuffer m_audioBuffer;
 
     QString m_romFilePath;
+
+    QString m_error;
 
     void* m_lrCore;
 };
