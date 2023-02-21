@@ -152,7 +152,7 @@ void App::audioRefresh(const int16_t *data, size_t frames) {
 void App::startRetroCore()
 {
     // Load core dynamic library
-    void* lrcore = dlopen("/home/seshpenguin/tmp/beetle-gba-libretro/mednafen_gba_libretro.so", RTLD_LAZY);
+    void* lrcore = dlopen("/usr/lib/libretro/mednafen_gba_libretro.so", RTLD_LAZY);
     m_lrCore = lrcore;
 
     qDebug() << ("Opened core!");
