@@ -5,6 +5,9 @@ import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kretro 1.0
 
 RowLayout {
+    HapticsEffectLoader {
+        id: haptics
+    }
     Item {
         height: 150
         width: 150
@@ -16,6 +19,7 @@ RowLayout {
             height: 50
             onPressedChanged: {
                 App.setButtonState("UP", pressed)
+                haptics.buttonVibrate()
             }
         }
         Controls.Button {
@@ -26,6 +30,7 @@ RowLayout {
             height: 50
             onPressedChanged: {
                 App.setButtonState("DOWN", pressed)
+                haptics.buttonVibrate()
             }
         }
         Controls.Button {
@@ -36,6 +41,7 @@ RowLayout {
             height: 50
             onPressedChanged: {
                 App.setButtonState("LEFT", pressed)
+                haptics.buttonVibrate()
             }
         }
         Controls.Button {
@@ -46,6 +52,7 @@ RowLayout {
             height: 50
             onPressedChanged: {
                 App.setButtonState("RIGHT", pressed)
+                haptics.buttonVibrate()
             }
         }
     }
@@ -60,12 +67,14 @@ RowLayout {
                 text: "START"
                 onPressedChanged: {
                     App.setButtonState("START", pressed)
+                    haptics.buttonVibrate()
                 }
             }
             Controls.Button {
                 text: "SELECT"
                 onPressedChanged: {
                     App.setButtonState("SELECT", pressed)
+                    haptics.buttonVibrate()
                 }
             }
         }
@@ -76,6 +85,7 @@ RowLayout {
                 implicitHeight: 50
                 onPressedChanged: {
                     App.setButtonState("A", pressed)
+                    haptics.buttonVibrate()
                 }
             }
             Controls.Button {
@@ -84,6 +94,7 @@ RowLayout {
                 implicitHeight: 50
                 onPressedChanged: {
                     App.setButtonState("B", pressed)
+                    haptics.buttonVibrate()
                 }
             }
         }

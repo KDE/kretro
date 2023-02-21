@@ -9,4 +9,9 @@ import org.kde.kretro 1.0
 
 Kirigami.AboutPage {
     aboutData: AboutType.aboutData
+    Image {
+        Layout.preferredWidth: parent.width
+        fillMode: Image.PreserveAspectFit
+        source: "SinewareLabs.001.png"
+    }
 }

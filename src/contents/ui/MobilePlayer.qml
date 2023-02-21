@@ -94,6 +94,9 @@ Kirigami.Page {
         }
         MobileController {
             Layout.fillWidth: true
+            Layout.bottomMargin: Kirigami.Units.gridUnit * 2
+            Layout.leftMargin: Kirigami.Units.gridUnit
+            Layout.rightMargin: Kirigami.Units.gridUnit
         }
     }
 }
