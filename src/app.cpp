@@ -5,6 +5,7 @@
 #include <KSharedConfig>
 #include <KWindowConfig>
 #include <QQuickWindow>
+#include <QTemporaryFile>
 #include <dlfcn.h>
 #include <cstdarg>
 
@@ -157,7 +158,9 @@ void App::audioRefresh(const int16_t *data, size_t frames) {
 void App::startRetroCore()
 {
     // Load core dynamic library
-    void* lrcore = dlopen("/usr/lib/libretro/mednafen_gba_libretro.so", RTLD_LAZY);
+    auto core_full_path = QTemporaryFile::createNativeFile(":/cores/" + QSysInfo::buildCpuArchitecture() + "/mednafen_gba_libretro.so")->fileName();
+    qDebug() << "Loading core from" << core_full_path;
+    void* lrcore = dlopen(core_full_path.toLocal8Bit().data(), RTLD_LAZY);
     if (!lrcore) {
         qDebug() << "Failed to load core!";
         setError("Failed to load core!");

@@ -12,4 +12,10 @@
         <file alias="HapticsEffectWrapper.qml">contents/ui/haptics/HapticsEffectWrapper.qml</file>
         <file alias="SinewareLabs.001.png">contents/img/SinewareLabs.001.png</file>
     </qresource>
+    <qresource prefix="/cores/x86_64">
+        <file alias="mednafen_gba_libretro.so">contents/cores/x86_64/mednafen_gba_libretro.so</file>
+    </qresource>
+    <qresource prefix="/cores/aarch64">
+        <file alias="mednafen_gba_libretro.so">contents/cores/arm64/mednafen_gba_libretro.so</file>
+    </qresource>
 </RCC>
