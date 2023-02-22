@@ -7,7 +7,7 @@ Loader {
     function buttonVibrate() {
         if (valid) {
             item.intensity = 1;
-            item.duration = 10;
+            item.duration = 100;
             item.start();
         }
     }
