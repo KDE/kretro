@@ -1,6 +1,5 @@
-// RetroFrame.h
-#ifndef RETROFRAME_H
-#define RETROFRAME_H
+#pragma once
+
 #include <QQuickPaintedItem>
 #include <QQuickItem>
 #include <QPainter>
@@ -20,4 +19,4 @@ signals:
 private:
     QImage m_currentImage;
 };
-#endif // RETROFRAME_H
+

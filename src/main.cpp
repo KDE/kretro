@@ -16,7 +16,8 @@
 #include <KLocalizedString>
 
 #include "kretroconfig.h"
-#include "RetroFrame.h"
+#include "retroframe.h"
+#include "retrogamemodel.h"
 
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
@@ -61,6 +62,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     qmlRegisterSingletonInstance("org.kde.kretro", 1, 0, "App", App::self());
 
     qmlRegisterType<RetroFrame>("org.kde.kretro", 1, 0, "RetroFrame");
+    qmlRegisterType<RetroGameModel>("org.kde.kretro", 1, 0, "RetroGameModel");
 
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
     engine.load(QUrl(QStringLiteral("qrc:///main.qml")));

@@ -158,7 +158,13 @@ void App::audioRefresh(const int16_t *data, size_t frames) {
 void App::startRetroCore()
 {
     // Load core dynamic library
-    auto core_full_path = QTemporaryFile::createNativeFile(":/cores/" + QSysInfo::buildCpuArchitecture() + "/mednafen_gba_libretro.so")->fileName();
+    QString coreName = "";
+    if(m_romConsole == "TWENTY_FORTY_EIGHT") {
+        coreName = "2048_libretro.so";
+    } else if (m_romConsole == "GBA") {
+        coreName = "mednafen_gba_libretro.so";
+    }
+    auto core_full_path = QTemporaryFile::createNativeFile(":/cores/" + QSysInfo::buildCpuArchitecture() + "/" + coreName)->fileName();
     qDebug() << "Loading core from" << core_full_path;
     void* lrcore = dlopen(core_full_path.toLocal8Bit().data(), RTLD_LAZY);
     if (!lrcore) {
@@ -200,32 +206,38 @@ void App::startRetroCore()
     //retro_reset();
     retro_system_av_info avinfo;
     retro_system_info system = {0};
-    retro_game_info info{m_romFilePath.toStdString().c_str(), 0};
 
-    FILE *file = fopen(m_romFilePath.toStdString().c_str(), "rb");
-    if (!file) {
-        qDebug() << "NO FILE!!!";
-        return;
-    }
-
-    fseek(file, 0, SEEK_END);
-	info.size = ftell(file);
-	rewind(file);
-
-    retro_get_system_info(&system);
-
-    if (!system.need_fullpath) {
-		info.data = malloc(info.size);
-
-		if (!info.data || !fread((void*)info.data, info.size, 1, file)) {
-            qDebug() << "LIBC error for some reason !?";
-			return;
+    if(m_romFilePath != "") {
+        retro_game_info info{m_romFilePath.toStdString().c_str(), 0};
+        FILE *file = fopen(m_romFilePath.toStdString().c_str(), "rb");
+        if (!file) {
+                qDebug() << "NO FILE!!!";
+                return;
         }
-	}
 
-    if (!retro_load_game(&info)) {
-        qDebug() << "The game failed to load!";
+        fseek(file, 0, SEEK_END);
+        info.size = ftell(file);
+        rewind(file);
+        if (!system.need_fullpath) {
+            info.data = malloc(info.size);
+
+            if (!info.data || !fread((void*)info.data, info.size, 1, file)) {
+                qDebug() << "LIBC error for some reason !?";
+                return;
+            }
+        }
+
+        if (!retro_load_game(&info)) {
+            qDebug() << "The game failed to load!";
+        }
+    } else {
+        retro_game_info info = {.path = NULL, .data = NULL, .size = 0, .meta = NULL};
+        if (!retro_load_game(&info)) {
+            qDebug() << "The game failed to load!";
+        }
     }
+    
+    retro_get_system_info(&system);
     retro_get_system_av_info(&avinfo);
     m_avInfo = avinfo;
 
@@ -248,6 +260,7 @@ void App::stopRetroCore()
     retro_unload_game();
     retro_deinit();
     m_isRunning = false;
+    qDebug() << "Stopped core!";
 }
 
 App* App::self()
@@ -284,6 +297,10 @@ QString App::getEnv(QString key)
 void App::setRomFilePath(QString path)
 {
     m_romFilePath = path;
+}
+void App::setRomConsole(QString console)
+{
+    m_romConsole = console;
 }
 void App::setError(const QString &error)
 {

@@ -4,6 +4,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15 as Controls
 import QtQuick.Layouts 1.15
+import QtGraphicalEffects 1.0
 import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kretro 1.0
 
@@ -75,7 +76,7 @@ Kirigami.Page {
         anchors.fill: parent
         Item {
             Layout.alignment: Qt.AlignHCenter
-            Layout.preferredHeight: parent.height / 2
+            Layout.fillHeight: true
             Layout.preferredWidth: parent.width
             Rectangle {
                 id: rect
@@ -90,7 +91,32 @@ Kirigami.Page {
             }
         }
         Item {
-            Layout.fillHeight: true
+            Layout.preferredHeight: Kirigami.Units.gridUnit * 2
+            Layout.fillWidth: true
+            Text {
+                id: text
+                text: i18n("||||||| KRetro Player |||||||")
+                anchors.centerIn: parent
+                font.pixelSize: Kirigami.Units.gridUnit
+                visible: false
+            }
+            LinearGradient {
+                id: mask
+                anchors.fill: text
+                start: Qt.point(0, 0)
+                end: Qt.point(text.width, 0)
+                gradient: Gradient {
+                    GradientStop { position: 0.01; color: "transparent" }
+                    GradientStop { position: 0.5; color: "white" }
+                    GradientStop { position: 0.99; color: "transparent" }
+                }
+                visible: false
+            }
+            OpacityMask {
+                anchors.fill: text
+                source: text
+                maskSource: mask
+            }
         }
         MobileController {
             Layout.fillWidth: true

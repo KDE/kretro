@@ -5,7 +5,9 @@ add_executable(kretro
     main.cpp
     about.cpp
     app.cpp
-    RetroFrame.cpp
+    retroframe.cpp
+    retrogamemodel.cpp
+    objects/retrogame.cpp
     resources.qrc)
 
 target_link_libraries(kretro

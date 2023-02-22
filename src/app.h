@@ -6,9 +6,11 @@
 #include <QObject>
 #include <QTimer>
 
-#include "RetroFrame.h"
+#include "retroframe.h"
 #include "libretro.h"
 #include <qbuffer.h>
+#include "objects/retrogame.h"
+
 
 class QQuickWindow;
 
@@ -43,9 +45,12 @@ public:
     Q_INVOKABLE QString getEnv(QString key);
     
     Q_INVOKABLE void setRomFilePath(QString path);
+    Q_INVOKABLE void setRomConsole(QString console);
 
     void setError(const QString &author);
     QString error() const;
+
+
 Q_SIGNALS:
     void errorChanged();
 private:
@@ -59,6 +64,7 @@ private:
     QBuffer m_audioBuffer;
 
     QString m_romFilePath;
+    QString m_romConsole;
 
     QString m_error;
 

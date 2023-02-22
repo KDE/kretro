@@ -14,6 +14,7 @@
     </qresource>
     <qresource prefix="/cores/x86_64">
         <file alias="mednafen_gba_libretro.so">contents/cores/x86_64/mednafen_gba_libretro.so</file>
+        <file alias="2048_libretro.so">contents/cores/x86_64/2048_libretro.so</file>
     </qresource>
     <qresource prefix="/cores/arm64">
         <file alias="mednafen_gba_libretro.so">contents/cores/arm64/mednafen_gba_libretro.so</file>

@@ -6,7 +6,6 @@ import QtQuick.Controls 2.15 as Controls
 import QtQuick.Layouts 1.15
 import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kretro 1.0
-import Qt.labs.folderlistmodel 2.15
 
 Kirigami.ApplicationWindow {
     id: root
@@ -85,36 +84,42 @@ Kirigami.ApplicationWindow {
             text: App.error
         }
 
-
-        ListView {
+        // Heading
+        Kirigami.Heading {
+            id: heading
             anchors.top: errorMessage.bottom
+            text: i18n("Game Library")
+        }
+
+        GridView {
+            anchors.top: heading.bottom
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.bottom: parent.bottom
             anchors.topMargin: Kirigami.Units.gridUnit
 
-            FolderListModel {
-                id: folderModel
-                folder: "file://" + App.getEnv("HOME") + "/Documents/Games"
-                nameFilters: ["*.gba"]
+            cellWidth: Kirigami.Units.gridUnit * 9
+            cellHeight: Kirigami.Units.gridUnit * 9
+
+            RetroGameModel {
+                id: retroGameModel
             }
             Component {
                 id: fileDelegate
                 Kirigami.Card {
-                    // Banner
                     banner.source: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Super_Mario_Advance_4_cover.jpg/220px-Super_Mario_Advance_4_cover.jpg"
-                    banner.title: model.fileName
-                    height: Kirigami.Units.gridUnit * 10
-                    width: Kirigami.Units.gridUnit * 10
-
+                    banner.title: model.rom.name
+                    implicitHeight: Kirigami.Units.gridUnit * 8
+                    implicitWidth: Kirigami.Units.gridUnit * 8
                     onPressed: {
-                        App.setRomFilePath(model.filePath)
+                        App.setRomFilePath(model.rom.path)
+                        App.setRomConsole(model.rom.console)
                         pageStack.layers.push('qrc:/MobilePlayer.qml')
                     }
                 }
             }
 
-            model: folderModel
+            model: retroGameModel
             delegate: fileDelegate
         }
     }
