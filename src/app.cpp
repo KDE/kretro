@@ -244,6 +244,7 @@ void App::startRetroCore()
     qDebug() << avinfo.geometry.base_height << "x" << avinfo.geometry.base_width;
     qDebug() << avinfo.timing.fps;
 
+    m_frameTimer = new QTimer{this};
     connect(m_frameTimer, &QTimer::timeout, this, [retro_run]() { retro_run(); });
     m_frameTimer->start(1000 / avinfo.timing.fps);
 
@@ -259,6 +260,8 @@ void App::stopRetroCore()
     m_frameTimer->stop();
     retro_unload_game();
     retro_deinit();
+    free(m_lrCore);
+    delete m_frameTimer;
     m_isRunning = false;
     qDebug() << "Stopped core!";
 }
