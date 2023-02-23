@@ -7,8 +7,9 @@ class RetroGame : public QObject
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
     Q_PROPERTY(QString path READ path WRITE setPath NOTIFY pathChanged)
     Q_PROPERTY(QString console READ console WRITE setConsole NOTIFY consoleChanged)
+    Q_PROPERTY(QString icon READ icon WRITE setIcon NOTIFY iconChanged)
 public:
-    RetroGame(QString name, QString path, QString console, QObject *parent = nullptr);
+    RetroGame(QString name, QString path, QString console, QString icon, QObject *parent = nullptr);
 
     void setName(const QString name);
     QString name() const;
@@ -18,12 +19,17 @@ public:
 
     void setConsole(QString console);
     QString console() const;
+
+    void setIcon(QString icon);
+    QString icon() const;
 signals:
     void nameChanged();
     void pathChanged();
     void consoleChanged();
+    void iconChanged();
 private:
     QString m_name;
     QString m_path;
     QString m_console;
+    QString m_icon;
 };

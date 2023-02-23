@@ -1,10 +1,11 @@
 #include "retrogame.h"
-RetroGame::RetroGame(QString name, QString path, QString console, QObject *parent)
+RetroGame::RetroGame(QString name, QString path, QString console, QString icon, QObject *parent)
     : QObject(parent)
 {
     setName(name);
     setPath(path);
     setConsole(console);
+    setIcon(icon);
 }
 
 void RetroGame::setName(const QString name)
@@ -41,4 +42,16 @@ void RetroGame::setConsole(QString console)
 QString RetroGame::console() const
 {
     return m_console;
+}
+
+void RetroGame::setIcon(QString icon)
+{
+    if (m_icon == icon)
+        return;
+    m_icon = icon;
+    emit iconChanged();
+}
+QString RetroGame::icon() const
+{
+    return m_icon;
 }

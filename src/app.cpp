@@ -132,6 +132,14 @@ int16_t input_state(unsigned port, unsigned device, unsigned index, unsigned id)
             return App::self()->getButtonState("A");
         case RETRO_DEVICE_ID_JOYPAD_B:
             return App::self()->getButtonState("B");
+        case RETRO_DEVICE_ID_JOYPAD_X:
+            return App::self()->getButtonState("X");
+        case RETRO_DEVICE_ID_JOYPAD_Y:
+            return App::self()->getButtonState("Y");
+        case RETRO_DEVICE_ID_JOYPAD_L:
+            return App::self()->getButtonState("L1");
+        case RETRO_DEVICE_ID_JOYPAD_R:
+            return App::self()->getButtonState("R1");
         case RETRO_DEVICE_ID_JOYPAD_UP:
             return App::self()->getButtonState("UP");
         case RETRO_DEVICE_ID_JOYPAD_DOWN:

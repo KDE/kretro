@@ -7,7 +7,7 @@ RetroGameModel::RetroGameModel(QObject *parent)
     : QAbstractListModel(parent)
     , m_count(0)
 {
-    append(new RetroGame{"2048", "", "TWENTY_FORTY_EIGHT", this});
+    append(new RetroGame{"2048", "", "TWENTY_FORTY_EIGHT", "qrc:/2048_icon.png", this});
 
     // Game Boy Advance
     QString homeDir = QDir::homePath();
@@ -15,7 +15,7 @@ RetroGameModel::RetroGameModel(QObject *parent)
     QStringList roms = romDir.entryList(QStringList() << "*.gba", QDir::Files);
     for (QString rom : roms) {
         QString path = romDir.absoluteFilePath(rom);
-        append(new RetroGame{rom, path, "GBA", this});
+        append(new RetroGame{rom, path, "GBA", "qrc:/gba_default_icon.png", this});
     }
 }
 

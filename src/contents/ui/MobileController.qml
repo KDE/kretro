@@ -60,7 +60,7 @@ RowLayout {
         width: Kirigami.Units.gridUnit * 2
     }
     GridLayout {
-        rows: 2
+        rows: 3
         columns: 1
         RowLayout {
             Controls.Button {
@@ -74,6 +74,20 @@ RowLayout {
                 text: "SELECT"
                 onPressedChanged: {
                     App.setButtonState("SELECT", pressed)
+                    haptics.buttonVibrate()
+                }
+            }
+            Controls.Button {
+                text: "L1"
+                onPressedChanged: {
+                    App.setButtonState("L1", pressed)
+                    haptics.buttonVibrate()
+                }
+            }
+            Controls.Button {
+                text: "R1"
+                onPressedChanged: {
+                    App.setButtonState("R1", pressed)
                     haptics.buttonVibrate()
                 }
             }
@@ -94,6 +108,26 @@ RowLayout {
                 implicitHeight: 50
                 onPressedChanged: {
                     App.setButtonState("B", pressed)
+                    haptics.buttonVibrate()
+                }
+            }
+        }
+        RowLayout {
+            Controls.Button {
+                text: "X"
+                Layout.fillWidth: true
+                implicitHeight: 35
+                onPressedChanged: {
+                    App.setButtonState("X", pressed)
+                    haptics.buttonVibrate()
+                }
+            }
+            Controls.Button {
+                text: "Y"
+                Layout.fillWidth: true
+                implicitHeight: 35
+                onPressedChanged: {
+                    App.setButtonState("Y", pressed)
                     haptics.buttonVibrate()
                 }
             }

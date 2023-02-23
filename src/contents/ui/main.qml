@@ -107,7 +107,7 @@ Kirigami.ApplicationWindow {
             Component {
                 id: fileDelegate
                 Kirigami.Card {
-                    banner.source: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Super_Mario_Advance_4_cover.jpg/220px-Super_Mario_Advance_4_cover.jpg"
+                    banner.source: model.rom.icon
                     banner.title: model.rom.name
                     implicitHeight: Kirigami.Units.gridUnit * 8
                     implicitWidth: Kirigami.Units.gridUnit * 8
