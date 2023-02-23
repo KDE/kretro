@@ -17,6 +17,18 @@ RetroGameModel::RetroGameModel(QObject *parent)
         QString path = romDir.absoluteFilePath(rom);
         append(new RetroGame{rom, path, "GBA", "qrc:/gba_default_icon.png", this});
     }
+
+    QStringList snes_roms = romDir.entryList(QStringList() << "*.smc", QDir::Files);
+    for (QString rom : snes_roms) {
+        QString path = romDir.absoluteFilePath(rom);
+        append(new RetroGame{rom, path, "SNES", "qrc:/snes_default_icon.png", this});
+    }
+
+    QStringList nes_roms = romDir.entryList(QStringList() << "*.nes", QDir::Files);
+    for (QString rom : nes_roms) {
+        QString path = romDir.absoluteFilePath(rom);
+        append(new RetroGame{rom, path, "NES", "qrc:/nes_default_icon.png", this});
+    }
 }
 
 int RetroGameModel::count() const

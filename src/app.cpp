@@ -16,7 +16,6 @@ App::App(QObject* parent)
 {
 }
 
-
 void App::restoreWindowGeometry(QQuickWindow *window, const QString &group) const
 {
     KConfig dataResource(QStringLiteral("data"), KConfig::SimpleConfig, QStandardPaths::AppDataLocation);
@@ -157,7 +156,10 @@ int16_t input_state(unsigned port, unsigned device, unsigned index, unsigned id)
 }
 
 void App::videoRefresh(const void *data, unsigned width, unsigned height, size_t pitch) {
-    m_retroFrame->setImage({reinterpret_cast<const uchar*>(data), static_cast<int>(width), static_cast<int>(height), m_imageFormat});
+    QImage i = QImage{reinterpret_cast<const uchar*>(data), static_cast<int>(width), static_cast<int>(height), pitch, m_imageFormat};
+    if(m_imageFormat == QImage::Format_RGBX8888)
+        i = i.rgbSwapped();
+    m_retroFrame->setImage(i);
 }
 void App::audioRefresh(const int16_t *data, size_t frames) {
     //m_audioBuffer.write(reinterpret_cast<const char*>(data), frames);
@@ -171,6 +173,10 @@ void App::startRetroCore()
         coreName = "2048_libretro.so";
     } else if (m_romConsole == "GBA") {
         coreName = "mednafen_gba_libretro.so";
+    } else if (m_romConsole == "SNES") {
+        coreName = "snes9x_libretro.so";
+    } else if (m_romConsole == "NES") {
+        coreName = "quicknes_libretro.so";
     }
     auto core_full_path = QTemporaryFile::createNativeFile(":/cores/" + QSysInfo::buildCpuArchitecture() + "/" + coreName)->fileName();
     qDebug() << "Loading core from" << core_full_path;
@@ -268,7 +274,6 @@ void App::stopRetroCore()
     m_frameTimer->stop();
     retro_unload_game();
     retro_deinit();
-    free(m_lrCore);
     delete m_frameTimer;
     m_isRunning = false;
     qDebug() << "Stopped core!";
