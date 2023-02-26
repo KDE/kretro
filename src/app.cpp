@@ -6,6 +6,7 @@
 #include <KWindowConfig>
 #include <QQuickWindow>
 #include <QTemporaryFile>
+#include <QDir>
 #include <dlfcn.h>
 #include <cstdarg>
 
@@ -93,9 +94,18 @@ bool core_environment(unsigned cmd, void *data)
         }
         case RETRO_ENVIRONMENT_GET_SYSTEM_DIRECTORY:
         case RETRO_ENVIRONMENT_GET_SAVE_DIRECTORY:
-            *(const char **)data = ".";
+            *(const char **)data = (App::self()->getEnv("HOME") + "/.local/share/kretro").toLocal8Bit().data();
+            qDebug () << "System directory" << *(const char **)data;
             return true;
-
+        case RETRO_ENVIRONMENT_SET_VARIABLES: {
+            const struct retro_variable *vars = (const struct retro_variable *)data;
+            while (vars->key) {
+                // todo
+                qDebug() << "Variable" << vars->key << vars->value;
+                vars++;
+            }
+            break;
+        }
         default:
             //qDebug() << RETRO_LOG_DEBUG <<  "Unhandled env #" << cmd;
             return false;
@@ -167,6 +177,8 @@ void App::audioRefresh(const int16_t *data, size_t frames) {
 
 void App::startRetroCore()
 {
+    QDir().mkdir(getEnv("HOME") + "/.local/share/kretro");
+
     // Load core dynamic library
     QString coreName = "";
     if(m_romConsole == "TWENTY_FORTY_EIGHT") {
@@ -258,6 +270,17 @@ void App::startRetroCore()
     qDebug() << avinfo.geometry.base_height << "x" << avinfo.geometry.base_width;
     qDebug() << avinfo.timing.fps;
 
+    // Load save state if it exists
+    auto retro_unserialize = reinterpret_cast<bool(*)(const void *data, size_t size)>(dlsym(m_lrCore, "retro_unserialize"));
+    // load state from ~/.local/share
+    QFile stateFile{getEnv("HOME") + "/.local/share/kretro/" + m_romFilePath.split("/").last() + "/0.state"};
+    if(stateFile.exists()) {
+        stateFile.open(QIODevice::ReadOnly);
+        QByteArray stateData = stateFile.readAll();
+        retro_unserialize(stateData.data(), stateData.size());
+        qDebug() << "Loaded state!";
+    }
+
     m_frameTimer = new QTimer{this};
     connect(m_frameTimer, &QTimer::timeout, this, [retro_run]() { retro_run(); });
     m_frameTimer->start(1000 / avinfo.timing.fps);
@@ -272,6 +295,21 @@ void App::stopRetroCore()
     auto retro_unload_game = reinterpret_cast<unsigned(*)(void)>(dlsym(m_lrCore, "retro_unload_game"));
     auto retro_deinit = reinterpret_cast<unsigned(*)(void)>(dlsym(m_lrCore, "retro_deinit"));
     m_frameTimer->stop();
+
+    // serialize state and save it to ~/.local/share
+    auto retro_serialize_size = reinterpret_cast<size_t(*)(void)>(dlsym(m_lrCore, "retro_serialize_size"));
+    auto retro_serialize = reinterpret_cast<bool(*)(void*, size_t)>(dlsym(m_lrCore, "retro_serialize"));
+    auto size = retro_serialize_size();
+    void* data = malloc(size);
+    if(retro_serialize(data, size)) {
+        QDir().mkdir(getEnv("HOME") + "/.local/share/kretro/" + m_romFilePath.split("/").last());
+        QFile file{getEnv("HOME") + "/.local/share/kretro/" + m_romFilePath.split("/").last() + "/0.state"};
+        file.open(QIODevice::WriteOnly);
+        file.write((char*)data, size);
+        file.close();
+        qDebug() << "Saved state!";
+    }
+
     retro_unload_game();
     retro_deinit();
     delete m_frameTimer;

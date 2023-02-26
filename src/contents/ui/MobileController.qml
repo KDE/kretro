@@ -62,34 +62,42 @@ RowLayout {
     GridLayout {
         rows: 3
         columns: 1
-        RowLayout {
-            Controls.Button {
-                text: "START"
-                onPressedChanged: {
-                    App.setButtonState("START", pressed)
-                    haptics.buttonVibrate()
+        ColumnLayout {
+            RowLayout {
+                Controls.Button {
+                    text: "START"
+                    Layout.fillWidth: true
+                    onPressedChanged: {
+                        App.setButtonState("START", pressed)
+                        haptics.buttonVibrate()
+                    }
+                }
+                Controls.Button {
+                    text: "SELECT"
+                    Layout.fillWidth: true
+                    onPressedChanged: {
+                        App.setButtonState("SELECT", pressed)
+                        haptics.buttonVibrate()
+                    }
                 }
             }
-            Controls.Button {
-                text: "SELECT"
-                onPressedChanged: {
-                    App.setButtonState("SELECT", pressed)
-                    haptics.buttonVibrate()
+            RowLayout {
+                Controls.Button {
+                    text: "L1"
+                    Layout.fillWidth: true
+                    onPressedChanged: {
+                        App.setButtonState("L1", pressed)
+                        haptics.buttonVibrate()
+                    }
                 }
+                Controls.Button {
+                    text: "R1"
+                    Layout.fillWidth: true
+                    onPressedChanged: {
+                        App.setButtonState("R1", pressed)
+                        haptics.buttonVibrate()
+                    }
             }
-            Controls.Button {
-                text: "L1"
-                onPressedChanged: {
-                    App.setButtonState("L1", pressed)
-                    haptics.buttonVibrate()
-                }
-            }
-            Controls.Button {
-                text: "R1"
-                onPressedChanged: {
-                    App.setButtonState("R1", pressed)
-                    haptics.buttonVibrate()
-                }
             }
         }
         RowLayout {
