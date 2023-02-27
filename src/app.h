@@ -5,11 +5,12 @@
 
 #include <QObject>
 #include <QTimer>
-
+#include <QAudioOutput>
 #include "retroframe.h"
 #include "libretro.h"
 #include <qbuffer.h>
 #include "objects/retrogame.h"
+#include <alsa/asoundlib.h>
 
 
 class QQuickWindow;
@@ -50,6 +51,8 @@ public:
     void setError(const QString &author);
     QString error() const;
 
+    void handleStateChanged(QAudio::State newState);
+
 
 Q_SIGNALS:
     void errorChanged();
@@ -61,12 +64,15 @@ private:
     bool m_isRunning;
     QHash<QString, bool> m_inputStates;
 
-    QBuffer m_audioBuffer;
+    QBuffer *m_audioBuffer;
+    QAudioOutput *m_audioOutput;
 
     QString m_romFilePath;
     QString m_romConsole;
 
     QString m_error;
 
-    void* m_lrCore;
+    void *m_lrCore;
+
+    snd_pcm_t *m_pcm;
 };

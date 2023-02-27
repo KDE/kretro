@@ -7,8 +7,11 @@
 #include <QQuickWindow>
 #include <QTemporaryFile>
 #include <QDir>
+#include <QAudioFormat>
+#include <QAudioOutput>
 #include <dlfcn.h>
 #include <cstdarg>
+#include <alsa/asoundlib.h>
 
 App::App(QObject* parent)
     : QObject(parent)
@@ -172,7 +175,21 @@ void App::videoRefresh(const void *data, unsigned width, unsigned height, size_t
     m_retroFrame->setImage(i);
 }
 void App::audioRefresh(const int16_t *data, size_t frames) {
-    //m_audioBuffer.write(reinterpret_cast<const char*>(data), frames);
+    // write to m_audioBuffer
+    //qDebug() << "Audio refresh" << frames;
+
+    //auto size = m_audioBuffer->write(reinterpret_cast<const char*>(data), frames);
+    //m_audioBuffer->seek(0);
+
+    int written = snd_pcm_writei(m_pcm, data, frames);
+
+	if (written < 0) {
+		printf("Alsa warning/error #%i: ", -written);
+        qDebug() << "Alsa warning/error #" << -written;
+		snd_pcm_recover(m_pcm, written, 0);
+	}
+
+    
 }
 
 void App::startRetroCore()
@@ -225,7 +242,8 @@ void App::startRetroCore()
     retro_set_input_poll(&input_poll);
     retro_set_input_state(&input_state);
 
-    m_audioBuffer.open(QBuffer::ReadWrite);
+    m_audioBuffer = new QBuffer();
+    m_audioBuffer->open(QBuffer::ReadWrite);
 
     retro_init();
 
@@ -269,6 +287,7 @@ void App::startRetroCore()
 
     qDebug() << avinfo.geometry.base_height << "x" << avinfo.geometry.base_width;
     qDebug() << avinfo.timing.fps;
+    qDebug() << avinfo.timing.sample_rate;
 
     // Load save state if it exists
     auto retro_unserialize = reinterpret_cast<bool(*)(const void *data, size_t size)>(dlsym(m_lrCore, "retro_unserialize"));
@@ -281,10 +300,33 @@ void App::startRetroCore()
         qDebug() << "Loaded state!";
     }
 
+    /*QAudioFormat format;
+    format.setSampleRate(44100);
+    format.setChannelCount(2);
+    format.setSampleSize(16);
+    format.setCodec("audio/pcm");
+    format.setByteOrder(QAudioFormat::LittleEndian);
+    format.setSampleType(QAudioFormat::SignedInt);
+
+    m_audioOutput = new QAudioOutput(format, this);
+    connect(m_audioOutput, SIGNAL(stateChanged(QAudio::State)), this, SLOT(handleStateChanged(QAudio::State)));
+    m_audioOutput->start(m_audioBuffer);*/
+
+    int err;
+
+	if ((err = snd_pcm_open(&m_pcm, "default", SND_PCM_STREAM_PLAYBACK, 0)) < 0)
+        qDebug() << "Opened playback device" << snd_strerror(err); 
+
+	err = snd_pcm_set_params(m_pcm, SND_PCM_FORMAT_S16, SND_PCM_ACCESS_RW_INTERLEAVED, 2, avinfo.timing.sample_rate, 1, 64 * 1000);
+
+	if (err < 0) {
+        qDebug() << "Playback open error: " << snd_strerror(err);
+    }
+
+
     m_frameTimer = new QTimer{this};
     connect(m_frameTimer, &QTimer::timeout, this, [retro_run]() { retro_run(); });
     m_frameTimer->start(1000 / avinfo.timing.fps);
-
     m_isRunning = true;
 }
 void App::stopRetroCore()
@@ -312,9 +354,15 @@ void App::stopRetroCore()
 
     retro_unload_game();
     retro_deinit();
+    snd_pcm_close(m_pcm);
     delete m_frameTimer;
     m_isRunning = false;
     qDebug() << "Stopped core!";
+}
+
+void App::handleStateChanged(QAudio::State newState)
+{
+    qDebug() << newState;
 }
 
 App* App::self()

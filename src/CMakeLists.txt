@@ -17,10 +17,14 @@ target_link_libraries(kretro
     Qt5::Quick
     Qt5::QuickControls2
     Qt5::Svg
+    Qt5::Multimedia
     KF5::I18n
     KF5::CoreAddons
     KF5::ConfigCore
     KF5::ConfigGui)
+include_directories(${ALSA_INCLUDE_DIRS})                  
+target_link_libraries (kretro ${ALSA_LIBRARIES})      
+
 
 if (ANDROID)
     kirigami_package_breeze_icons(ICONS
