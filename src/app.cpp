@@ -7,8 +7,6 @@
 #include <QQuickWindow>
 #include <QTemporaryFile>
 #include <QDir>
-#include <QAudioFormat>
-#include <QAudioOutput>
 #include <dlfcn.h>
 #include <cstdarg>
 #include <alsa/asoundlib.h>
@@ -360,10 +358,6 @@ void App::stopRetroCore()
     qDebug() << "Stopped core!";
 }
 
-void App::handleStateChanged(QAudio::State newState)
-{
-    qDebug() << newState;
-}
 
 App* App::self()
 {

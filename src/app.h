@@ -2,10 +2,8 @@
 // SPDX-FileCopyrightText: 2023 Seshan Ravikumar <seshan.r@sineware.ca>
 
 #pragma once
-
 #include <QObject>
 #include <QTimer>
-#include <QAudioOutput>
 #include "retroframe.h"
 #include "libretro.h"
 #include <qbuffer.h>
@@ -51,7 +49,6 @@ public:
     void setError(const QString &author);
     QString error() const;
 
-    void handleStateChanged(QAudio::State newState);
 
     QString getRomFilePath();
 
@@ -72,7 +69,6 @@ private:
     QHash<QString, bool> m_inputStates;
 
     QBuffer *m_audioBuffer;
-    QAudioOutput *m_audioOutput;
 
     QString m_romFilePath;
     QString m_romConsole;
