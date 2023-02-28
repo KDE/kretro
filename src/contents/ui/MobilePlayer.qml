@@ -43,6 +43,18 @@ Kirigami.Page {
             case Qt.Key_X:
                 App.setButtonState("B", pressed)
                 break;
+            case Qt.Key_C:
+                App.setButtonState("X", pressed)
+                break;
+            case Qt.Key_V:
+                App.setButtonState("Y", pressed)
+                break;
+            case Qt.Key_Q:
+                App.setButtonState("L1", pressed)
+                break;
+            case Qt.Key_W:
+                App.setButtonState("R1", pressed)
+                break;
             case Qt.Key_Up:
                 App.setButtonState("UP", pressed)
                 break;
