@@ -416,3 +416,57 @@ QString App::error() const
 {
     return m_error;
 }
+
+QString App::getRomFilePath()
+{
+    return m_romFilePath;
+}
+
+void App::loadSaveSlot(QString path)
+{
+    auto retro_unserialize = reinterpret_cast<bool(*)(const void *data, size_t size)>(dlsym(m_lrCore, "retro_unserialize"));
+    QFile stateFile{path};
+    if(stateFile.exists()) {
+        stateFile.open(QIODevice::ReadOnly);
+        QByteArray stateData = stateFile.readAll();
+        retro_unserialize(stateData.data(), stateData.size());
+        qDebug() << "Loaded state!";
+    }
+}
+
+void App::saveSaveSlot(QString path)
+{
+    auto retro_serialize_size = reinterpret_cast<size_t(*)(void)>(dlsym(m_lrCore, "retro_serialize_size"));
+    auto retro_serialize = reinterpret_cast<bool(*)(void*, size_t)>(dlsym(m_lrCore, "retro_serialize"));
+    auto size = retro_serialize_size();
+    void* data = malloc(size);
+    if(retro_serialize(data, size)) {
+        QFile file{path};
+        file.open(QIODevice::WriteOnly);
+        file.write((char*)data, size);
+        file.close();
+        qDebug() << "Saved state!";
+    }
+}
+
+void App::saveNewSaveSlot()
+{
+    auto retro_serialize_size = reinterpret_cast<size_t(*)(void)>(dlsym(m_lrCore, "retro_serialize_size"));
+    auto retro_serialize = reinterpret_cast<bool(*)(void*, size_t)>(dlsym(m_lrCore, "retro_serialize"));
+    auto size = retro_serialize_size();
+    void* data = malloc(size);
+    if(retro_serialize(data, size)) {
+        QDir().mkdir(getEnv("HOME") + "/.local/share/kretro/" + m_romFilePath.split("/").last());
+        QFile file{getEnv("HOME") + "/.local/share/kretro/" + m_romFilePath.split("/").last() + "/" + QString::number(QDir(getEnv("HOME") + "/.local/share/kretro/" + m_romFilePath.split("/").last()).entryList().count()) + ".state"};
+        file.open(QIODevice::WriteOnly);
+        file.write((char*)data, size);
+        file.close();
+        qDebug() << "Saved state!";
+    }
+}
+
+void App::removeSaveSlot(QString path)
+{
+    QFile file{path};
+    file.remove();
+}

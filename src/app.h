@@ -53,6 +53,13 @@ public:
 
     void handleStateChanged(QAudio::State newState);
 
+    QString getRomFilePath();
+
+    Q_INVOKABLE void loadSaveSlot(QString slot);
+    Q_INVOKABLE void saveSaveSlot(QString slot);
+    Q_INVOKABLE void saveNewSaveSlot();
+    Q_INVOKABLE void removeSaveSlot(QString slot);
+
 
 Q_SIGNALS:
     void errorChanged();

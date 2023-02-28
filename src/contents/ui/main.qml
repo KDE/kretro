@@ -62,12 +62,6 @@ Kirigami.ApplicationWindow {
 
     Kirigami.Page {
         id: page
-        actions.main: Kirigami.Action {
-            icon.name: "settings-configure"
-            onTriggered: {
-                // do stuff
-            }
-        }
         Layout.fillWidth: true
 
         title: i18n("KRetro")

@@ -11,6 +11,13 @@ import org.kde.kretro 1.0
 Kirigami.Page {
     id: page
 
+    actions.main: Kirigami.Action {
+        icon.name: "document-save-all"
+        onTriggered: {
+            pageStack.layers.push('qrc:/SaveManager.qml')
+        }
+    }
+
     Layout.fillWidth: true
     Layout.fillHeight: true
     topPadding: 0
