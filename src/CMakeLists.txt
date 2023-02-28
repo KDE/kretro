@@ -19,7 +19,6 @@ target_link_libraries(kretro
     Qt5::Quick
     Qt5::QuickControls2
     Qt5::Svg
-    Qt5::Multimedia
     KF5::I18n
     KF5::CoreAddons
     KF5::ConfigCore
