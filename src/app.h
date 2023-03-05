@@ -27,7 +27,7 @@ public:
     Q_INVOKABLE void startRetroCore();
     Q_INVOKABLE void stopRetroCore();
 
-    void videoRefresh(const void *data, unsigned width, unsigned height, size_t pitch);
+    void videoRefresh(const void *data, unsigned width, unsigned height, int pitch);
     void audioRefresh(const int16_t *data,size_t frames);
 
     static App *self();
