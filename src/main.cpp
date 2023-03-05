@@ -8,7 +8,6 @@
 #include <QUrl>
 #include <QtQml>
 
-#include "about.h"
 #include "app.h"
 #include "version-kretro.h"
 #include <KAboutData>
@@ -57,8 +56,9 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
     qmlRegisterSingletonInstance("org.kde.kretro", 1, 0, "Config", config);
 
-    AboutType about;
-    qmlRegisterSingletonInstance("org.kde.kretro", 1, 0, "AboutType", &about);
+    qmlRegisterSingletonType("org.kde.kretro", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
+        return engine->toScriptValue(KAboutData::applicationData());
+    });
 
     qmlRegisterSingletonInstance("org.kde.kretro", 1, 0, "App", App::self());
 

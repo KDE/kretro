@@ -3,7 +3,6 @@
 
 add_executable(kretro
     main.cpp
-    about.cpp
     app.cpp
     retroframe.cpp
     retrogamemodel.cpp
