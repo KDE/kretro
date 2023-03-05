@@ -8,7 +8,7 @@ import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kretro 1.0
 
 Kirigami.AboutPage {
-    aboutData: AboutType.aboutData
+    aboutData: About
     Image {
         Layout.preferredWidth: parent.width
         fillMode: Image.PreserveAspectFit
