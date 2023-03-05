@@ -9,7 +9,6 @@ add_executable(kretro
     retrogamemodel.cpp
     retrogamesavemodel.cpp
     objects/retrogame.cpp
-    objects/retrogamesave.cpp
     resources.qrc)
 
 target_link_libraries(kretro

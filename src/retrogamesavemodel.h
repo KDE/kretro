@@ -3,25 +3,34 @@
 #include <QObject>
 #include <QHash>
 
+struct RetroGameSave
+{
+    QString slot;
+    QString path;
+};
+
+using RetroGameSaveList = std::vector<RetroGameSave>;
+
 class RetroGameSaveModel : public QAbstractListModel
 {
     Q_OBJECT
-    Q_PROPERTY(int count READ count NOTIFY countChanged)
+
 public:
     explicit RetroGameSaveModel(QObject *parent = nullptr);
-    Q_INVOKABLE void append(QObject* o);
-    Q_INVOKABLE void insert(QObject* o, int i);
+
+    enum ExtraRoles {
+        SlotRole = Qt::UserRole + 1,
+        PathRole,
+    };
+
+    Q_INVOKABLE void append(const QString &path);
+    Q_INVOKABLE void insert(int row, const QString &path);
+    Q_INVOKABLE void removeSaveSlot(int row);
 
     int rowCount(const QModelIndex &p) const override;
     QVariant data(const QModelIndex &index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;
 
-    int count() const;
-signals:
-    void countChanged(int count);
-public slots:
-    void setCount(int count);
 private:
-    int m_count;
-    QList<QObject*> m_data;
+    RetroGameSaveList m_saves;
 };
