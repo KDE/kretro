@@ -1,72 +1,86 @@
 #include "retrogamesavemodel.h"
 #include "app.h"
-#include "objects/retrogamesave.h"
 #include <QDir>
+#include <QStandardPaths>
+
+namespace {
+QString pathToSlot(const QString &path)
+{
+    return path.split(QLatin1Char('/'))
+        .last()
+        .split(QLatin1Char('.'))
+        .first();
+}
+}
 
 RetroGameSaveModel::RetroGameSaveModel(QObject *parent)
     : QAbstractListModel(parent)
-    , m_count(0)
 {
     // Game Boy Advance
-    QString homeDir = QDir::homePath();
-    QDir romDir{QDir::homePath() + "/.local/share/kretro/" + App::self()->getRomFilePath().split("/").last() + "/"};
-    QStringList roms = romDir.entryList(QStringList() << "*.state", QDir::Files);
-    for (QString rom : roms) {
-        QString path = romDir.absoluteFilePath(rom);
+    const QDir romDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)
+        + App::self()->getRomFilePath().split(QLatin1Char('/')).last() + QLatin1Char('/'));
+
+    qDebug() << romDir;
+
+    const QStringList roms = romDir.entryList(QStringList() << "*.state", QDir::Files);
+    for (const QString &rom : roms) {
+        const QString path = romDir.absoluteFilePath(rom);
         qDebug() << "Found save file: " << path;
-        append(new RetroGameSave{path.split("/").last().split(".").first(), path, this});
+        append(path);
     }
-}
-
-int RetroGameSaveModel::count() const
-{
-    return m_count;
-}
-
-void RetroGameSaveModel::setCount(int count)
-{
-    if (m_count == count)
-        return;
-
-    m_count = count;
-    emit countChanged(m_count);
 }
 
 int RetroGameSaveModel::rowCount(const QModelIndex &p) const
 {
     Q_UNUSED(p);
-    return m_data.size();
+    return m_saves.size();
 }
 
 QVariant RetroGameSaveModel::data(const QModelIndex &index, int role) const
 {
-    Q_UNUSED(role);
-    return QVariant::fromValue(m_data.at(index.row()));
+    Q_ASSERT(checkIndex(index, CheckIndexOption::IndexIsValid | CheckIndexOption::DoNotUseParent));
+
+    const auto &save = m_saves[index.row()];
+
+    switch (role) {
+    case SlotRole:
+        return save.slot;
+    case PathRole:
+        return save.path;
+    default:
+        return {};
+    }
 }
 
 QHash<int, QByteArray> RetroGameSaveModel::roleNames() const
 {
-    return {{Qt::UserRole, "save"}};
+    return {
+        {SlotRole, "slot"},
+        {PathRole, "path"},
+    };
 }
 
-void RetroGameSaveModel::append(QObject *o) {
-    int i = m_data.size();
-    beginInsertRows(QModelIndex(), i, i);
-    m_data.append(o);
-    
-    // Emit changed signals
-    emit countChanged(count());
-    
+void RetroGameSaveModel::append(const QString &path) {
+    int row = m_saves.size();
+
+    beginInsertRows({}, row, row);
+    m_saves.push_back(RetroGameSave { pathToSlot(path), path });
     endInsertRows();
 }
 
-void RetroGameSaveModel::insert(QObject *o, int i)
+void RetroGameSaveModel::insert(int row, const QString &path)
 {
-    beginInsertRows(QModelIndex(), i, i);
-    m_data.insert(i, o);
-
-    // Emit changed signals
-    emit countChanged(count());
-
+    beginInsertRows({}, row, row);
+    m_saves.insert(std::next(m_saves.cbegin(), row), RetroGameSave { pathToSlot(path), path });
     endInsertRows();
+}
+
+void RetroGameSaveModel::removeSaveSlot(int row)
+{
+    beginRemoveRows({}, row, row);
+    const auto path = m_saves[row].path;
+    QFile file{path};
+    file.remove();
+    m_saves.erase(std::next(m_saves.cbegin(), row));
+    endRemoveRows();
 }

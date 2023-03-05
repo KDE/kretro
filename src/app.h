@@ -27,7 +27,7 @@ public:
     Q_INVOKABLE void startRetroCore();
     Q_INVOKABLE void stopRetroCore();
 
-    void videoRefresh(const void *data, unsigned width, unsigned height, size_t pitch);
+    void videoRefresh(const void *data, unsigned width, unsigned height, int pitch);
     void audioRefresh(const int16_t *data,size_t frames);
 
     static App *self();
@@ -50,16 +50,17 @@ public:
     QString error() const;
 
 
-    QString getRomFilePath();
+    QString getRomFilePath() const;
 
-    Q_INVOKABLE void loadSaveSlot(QString slot);
-    Q_INVOKABLE void saveSaveSlot(QString slot);
-    Q_INVOKABLE void saveNewSaveSlot();
-    Q_INVOKABLE void removeSaveSlot(QString slot);
+    Q_INVOKABLE void loadSaveSlot(const QString &slot);
+    Q_INVOKABLE void saveSaveSlot(const QString &slot);
+    Q_INVOKABLE QString saveNewSaveSlot();
 
+    QString appdataDir() const;
 
 Q_SIGNALS:
     void errorChanged();
+
 private:
     QImage::Format m_imageFormat;
 
@@ -78,4 +79,6 @@ private:
     void *m_lrCore;
 
     snd_pcm_t *m_pcm;
+
+    QString m_appdataDir;
 };

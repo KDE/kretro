@@ -10,11 +10,13 @@
 #include <dlfcn.h>
 #include <cstdarg>
 #include <alsa/asoundlib.h>
+#include <QStandardPaths>
 
 App::App(QObject* parent)
     : QObject(parent)
     , m_retroFrame{nullptr}
     , m_frameTimer{new QTimer{this}}
+    , m_appdataDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation))
 {
 }
 
@@ -95,7 +97,7 @@ bool core_environment(unsigned cmd, void *data)
         }
         case RETRO_ENVIRONMENT_GET_SYSTEM_DIRECTORY:
         case RETRO_ENVIRONMENT_GET_SAVE_DIRECTORY:
-            *(const char **)data = (App::self()->getEnv("HOME") + "/.local/share/kretro").toLocal8Bit().data();
+            *(const char **)data = App::self()->appdataDir().toLocal8Bit().data();
             qDebug () << "System directory" << *(const char **)data;
             return true;
         case RETRO_ENVIRONMENT_SET_VARIABLES: {
@@ -166,7 +168,7 @@ int16_t input_state(unsigned port, unsigned device, unsigned index, unsigned id)
     return 0;
 }
 
-void App::videoRefresh(const void *data, unsigned width, unsigned height, size_t pitch) {
+void App::videoRefresh(const void *data, unsigned width, unsigned height, int pitch) {
     QImage i = QImage{reinterpret_cast<const uchar*>(data), static_cast<int>(width), static_cast<int>(height), pitch, m_imageFormat};
     if(m_imageFormat == QImage::Format_RGBX8888)
         i = i.rgbSwapped();
@@ -192,7 +194,7 @@ void App::audioRefresh(const int16_t *data, size_t frames) {
 
 void App::startRetroCore()
 {
-    QDir().mkdir(getEnv("HOME") + "/.local/share/kretro");
+    QDir().mkdir(m_appdataDir);
 
     // Load core dynamic library
     QString coreName = "";
@@ -290,7 +292,7 @@ void App::startRetroCore()
     // Load save state if it exists
     auto retro_unserialize = reinterpret_cast<bool(*)(const void *data, size_t size)>(dlsym(m_lrCore, "retro_unserialize"));
     // load state from ~/.local/share
-    QFile stateFile{getEnv("HOME") + "/.local/share/kretro/" + m_romFilePath.split("/").last() + "/0.state"};
+    QFile stateFile{m_appdataDir + m_romFilePath.split("/").last() + "/0.state"};
     if(stateFile.exists()) {
         stateFile.open(QIODevice::ReadOnly);
         QByteArray stateData = stateFile.readAll();
@@ -342,8 +344,8 @@ void App::stopRetroCore()
     auto size = retro_serialize_size();
     void* data = malloc(size);
     if(retro_serialize(data, size)) {
-        QDir().mkdir(getEnv("HOME") + "/.local/share/kretro/" + m_romFilePath.split("/").last());
-        QFile file{getEnv("HOME") + "/.local/share/kretro/" + m_romFilePath.split("/").last() + "/0.state"};
+        QDir().mkdir(m_appdataDir + m_romFilePath.split("/").last());
+        QFile file{m_appdataDir + m_romFilePath.split("/").last() + "/0.state"};
         file.open(QIODevice::WriteOnly);
         file.write((char*)data, size);
         file.close();
@@ -411,12 +413,12 @@ QString App::error() const
     return m_error;
 }
 
-QString App::getRomFilePath()
+QString App::getRomFilePath() const
 {
     return m_romFilePath;
 }
 
-void App::loadSaveSlot(QString path)
+void App::loadSaveSlot(const QString &path)
 {
     auto retro_unserialize = reinterpret_cast<bool(*)(const void *data, size_t size)>(dlsym(m_lrCore, "retro_unserialize"));
     QFile stateFile{path};
@@ -428,7 +430,7 @@ void App::loadSaveSlot(QString path)
     }
 }
 
-void App::saveSaveSlot(QString path)
+void App::saveSaveSlot(const QString &path)
 {
     auto retro_serialize_size = reinterpret_cast<size_t(*)(void)>(dlsym(m_lrCore, "retro_serialize_size"));
     auto retro_serialize = reinterpret_cast<bool(*)(void*, size_t)>(dlsym(m_lrCore, "retro_serialize"));
@@ -443,24 +445,26 @@ void App::saveSaveSlot(QString path)
     }
 }
 
-void App::saveNewSaveSlot()
+QString App::saveNewSaveSlot()
 {
     auto retro_serialize_size = reinterpret_cast<size_t(*)(void)>(dlsym(m_lrCore, "retro_serialize_size"));
     auto retro_serialize = reinterpret_cast<bool(*)(void*, size_t)>(dlsym(m_lrCore, "retro_serialize"));
     auto size = retro_serialize_size();
     void* data = malloc(size);
-    if(retro_serialize(data, size)) {
-        QDir().mkdir(getEnv("HOME") + "/.local/share/kretro/" + m_romFilePath.split("/").last());
-        QFile file{getEnv("HOME") + "/.local/share/kretro/" + m_romFilePath.split("/").last() + "/" + QString::number(QDir(getEnv("HOME") + "/.local/share/kretro/" + m_romFilePath.split("/").last()).entryList().count()) + ".state"};
+    if (retro_serialize(data, size)) {
+        QDir().mkdir(m_appdataDir + m_romFilePath.split("/").last());
+        QFile file{m_appdataDir + m_romFilePath.split("/").last() + "/" + QString::number(QDir(m_appdataDir + m_romFilePath.split("/").last()).entryList().count()) + ".state"};
         file.open(QIODevice::WriteOnly);
         file.write((char*)data, size);
         file.close();
         qDebug() << "Saved state!";
+        return file.fileName();
     }
+
+    return {};
 }
 
-void App::removeSaveSlot(QString path)
+QString App::appdataDir() const
 {
-    QFile file{path};
-    file.remove();
+    return m_appdataDir;
 }
