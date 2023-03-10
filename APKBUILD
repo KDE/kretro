@@ -26,6 +26,7 @@ makedepends="
 	qt5-qtsvg-dev
 	qt5-qtwebsockets-dev
 	samurai
+    alsa-lib-dev
 	"
 source="https://invent.kde.org/seshpenguin/kretro.git"
 options="!check"
