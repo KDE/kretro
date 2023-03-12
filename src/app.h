@@ -8,8 +8,12 @@
 #include "libretro.h"
 #include <qbuffer.h>
 #include "objects/retrogame.h"
-#include <alsa/asoundlib.h>
-
+#ifdef __linux__ 
+    #include <alsa/asoundlib.h>
+#elif __APPLE__
+    
+#else
+#endif
 
 class QQuickWindow;
 
@@ -77,8 +81,9 @@ private:
     QString m_error;
 
     void *m_lrCore;
-
+#ifdef __linux__
     snd_pcm_t *m_pcm;
+#endif
 
     QString m_appdataDir;
 };

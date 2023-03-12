@@ -9,8 +9,15 @@
 #include <QDir>
 #include <dlfcn.h>
 #include <cstdarg>
-#include <alsa/asoundlib.h>
 #include <QStandardPaths>
+
+#ifdef __linux__ 
+    #include <alsa/asoundlib.h>
+#elif __APPLE__
+    #include <AudioToolbox/AudioToolbox.h>
+#else
+#endif
+
 
 App::App(QObject* parent)
     : QObject(parent)
@@ -180,16 +187,18 @@ void App::audioRefresh(const int16_t *data, size_t frames) {
 
     //auto size = m_audioBuffer->write(reinterpret_cast<const char*>(data), frames);
     //m_audioBuffer->seek(0);
+    #ifdef __linux__ 
+        int written = snd_pcm_writei(m_pcm, data, frames);
 
-    int written = snd_pcm_writei(m_pcm, data, frames);
-
-	if (written < 0) {
-		printf("Alsa warning/error #%i: ", -written);
-        qDebug() << "Alsa warning/error #" << -written;
-		snd_pcm_recover(m_pcm, written, 0);
-	}
-
-    
+        if (written < 0) {
+            printf("Alsa warning/error #%i: ", -written);
+            qDebug() << "Alsa warning/error #" << -written;
+            snd_pcm_recover(m_pcm, written, 0);
+        }
+    #elif __APPLE__
+        
+    #else
+    #endif
 }
 
 void App::startRetroCore()
@@ -311,18 +320,20 @@ void App::startRetroCore()
     m_audioOutput = new QAudioOutput(format, this);
     connect(m_audioOutput, SIGNAL(stateChanged(QAudio::State)), this, SLOT(handleStateChanged(QAudio::State)));
     m_audioOutput->start(m_audioBuffer);*/
+    #ifdef __linux__
+        int err;
 
-    int err;
+        if ((err = snd_pcm_open(&m_pcm, "default", SND_PCM_STREAM_PLAYBACK, 0)) < 0)
+            qDebug() << "Opened playback device" << snd_strerror(err); 
 
-	if ((err = snd_pcm_open(&m_pcm, "default", SND_PCM_STREAM_PLAYBACK, 0)) < 0)
-        qDebug() << "Opened playback device" << snd_strerror(err); 
+        err = snd_pcm_set_params(m_pcm, SND_PCM_FORMAT_S16, SND_PCM_ACCESS_RW_INTERLEAVED, 2, avinfo.timing.sample_rate, 1, 64 * 1000);
 
-	err = snd_pcm_set_params(m_pcm, SND_PCM_FORMAT_S16, SND_PCM_ACCESS_RW_INTERLEAVED, 2, avinfo.timing.sample_rate, 1, 64 * 1000);
-
-	if (err < 0) {
-        qDebug() << "Playback open error: " << snd_strerror(err);
-    }
-
+        if (err < 0) {
+            qDebug() << "Playback open error: " << snd_strerror(err);
+        }
+    #elif __APPLE__
+        
+    #endif
 
     m_frameTimer = new QTimer{this};
     connect(m_frameTimer, &QTimer::timeout, this, [retro_run]() { retro_run(); });
@@ -354,7 +365,9 @@ void App::stopRetroCore()
 
     retro_unload_game();
     retro_deinit();
-    snd_pcm_close(m_pcm);
+    #ifdef __linux__
+        snd_pcm_close(m_pcm);
+    #endif
     delete m_frameTimer;
     m_isRunning = false;
     qDebug() << "Stopped core!";
