@@ -1,8 +1,8 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: 2023 Seshan Ravikumar <seshan.r@sineware.ca>
 [Desktop Entry]
-Name=kretro
-Comment=kretro Kirigami Application
+Name=KRetro
+Comment=Libretro frontend for Plasma
 Version=1.0
 Exec=kretro
 Icon=applications-development
@@ -10,4 +10,4 @@ Type=Application
 Terminal=false
 # Add an actual main category here (and possibly applicable additional ones)
 #   https://specifications.freedesktop.org/menu-spec/latest/apa.html#main-category-registry
-Categories=Qt;KDE;
+Categories=Game;Qt;KDE;

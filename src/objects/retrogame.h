@@ -22,7 +22,7 @@ public:
 
     void setIcon(QString icon);
     QString icon() const;
-signals:
+Q_SIGNALS:
     void nameChanged();
     void pathChanged();
     void consoleChanged();

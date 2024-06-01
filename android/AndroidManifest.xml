@@ -8,12 +8,13 @@
           android:versionName="${versionName}"
           android:versionCode="${versionCode}"
           android:installLocation="auto">
-    <application android:name="org.qtproject.qt5.android.bindings.QtApplication" android:label="kretro" android:icon="@drawable/logo">
+    <application android:name="org.qtproject.qt.android.bindings.QtApplication" android:label="kretro" android:icon="@drawable/logo">
         <activity android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation"
-                  android:name="org.qtproject.qt5.android.bindings.QtActivity"
-                  android:label="kretro"
+                  android:name="org.qtproject.qt.android.bindings.QtActivity"
+                  android:label="KRetro"
                   android:windowSoftInputMode="adjustResize"
-                  android:launchMode="singleTop">
+                  android:launchMode="singleTop"
+                  android:exported="true">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

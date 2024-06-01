@@ -14,7 +14,7 @@ public:
     void setPath(QString path);
     QString path() const;
 
-signals:
+Q_SIGNALS:
     void slotChanged();
     void pathChanged();
 private:

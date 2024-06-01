@@ -3,6 +3,8 @@
 #include <QDir>
 #include <QStandardPaths>
 
+using namespace Qt::Literals::StringLiterals;
+
 namespace {
 QString pathToSlot(const QString &path)
 {
@@ -22,7 +24,7 @@ RetroGameSaveModel::RetroGameSaveModel(QObject *parent)
 
     qDebug() << romDir;
 
-    const QStringList roms = romDir.entryList(QStringList() << "*.state", QDir::Files);
+    const QStringList roms = romDir.entryList(QStringList() << u"*.state"_s, QDir::Files);
     for (const QString &rom : roms) {
         const QString path = romDir.absoluteFilePath(rom);
         qDebug() << "Found save file: " << path;

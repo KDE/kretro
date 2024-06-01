@@ -2,8 +2,8 @@
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-import QtQuick 2.15
-import QtQuick.Controls 2.15 as QQC2
+import QtQuick
+import QtQuick.Controls as Controls
 import QtQuick.Layouts 1.15
 import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kretro 1.0
@@ -17,7 +17,7 @@ Kirigami.ScrollablePage {
         header: RowLayout {
             id: text
 
-            QQC2.Label {
+            Controls.Label {
                 text: i18n("Select a save state to load or delete.\nSlot 0 is the default auto save slot\n(restored on game start, saved on exit)")
             }
 
@@ -25,7 +25,7 @@ Kirigami.ScrollablePage {
                 Layout.fillWidth: true
             }
 
-            QQC2.Button {
+            Controls.Button {
                 text: i18n("Save Game\n(New Slot)")
                 onClicked: {
                     const path = App.saveNewSaveSlot()
@@ -43,7 +43,7 @@ Kirigami.ScrollablePage {
             id: gameSaveModel
         }
 
-        delegate: QQC2.ItemDelegate {
+        delegate: Controls.ItemDelegate {
             id: saveDelegate
 
             required property int index
@@ -53,7 +53,7 @@ Kirigami.ScrollablePage {
             contentItem: RowLayout {
                 spacing: Kirigami.Units.smallSpacing
 
-                QQC2.Label {
+                Controls.Label {
                     text: i18n("Slot %1", saveDelegate.slot)
                 }
 
@@ -61,7 +61,7 @@ Kirigami.ScrollablePage {
                     Layout.fillWidth: true
                 }
 
-                QQC2.Button {
+                Controls.Button {
                     text: i18nc("@action:button", "Load")
                     onClicked: {
                         App.loadSaveSlot(saveDelegate.path)
@@ -69,7 +69,7 @@ Kirigami.ScrollablePage {
                     }
                 }
 
-                QQC2.Button {
+                Controls.Button {
                     text: i18nc("@action:button", "Save")
                     onClicked: {
                         App.saveSaveSlot(saveDelegate.path)
@@ -77,7 +77,7 @@ Kirigami.ScrollablePage {
                     }
                 }
 
-                QQC2.Button {
+                Controls.Button {
                     text: i18nc("@action:button", "Delete")
                     onClicked: {
                         gameSaveModel.removeSaveSlot(saveDelegate.index)

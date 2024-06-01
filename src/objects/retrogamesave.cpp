@@ -12,7 +12,7 @@ void RetroGameSave::setSlot(QString slot)
         return;
 
     m_slot = slot;
-    emit slotChanged();
+    Q_EMIT slotChanged();
 }
 QString RetroGameSave::slot() const
 {
@@ -26,7 +26,7 @@ void RetroGameSave::setPath(QString path)
         return;
 
     m_path = path;
-    emit pathChanged();
+    Q_EMIT pathChanged();
 }
 QString RetroGameSave::path() const
 {

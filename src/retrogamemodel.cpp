@@ -3,31 +3,33 @@
 #include "objects/retrogame.h"
 #include <QDir>
 
+using namespace Qt::Literals::StringLiterals;
+
 RetroGameModel::RetroGameModel(QObject *parent)
     : QAbstractListModel(parent)
     , m_count(0)
 {
-    append(new RetroGame{"2048", "", "TWENTY_FORTY_EIGHT", "qrc:/2048_icon.png", this});
+    append(new RetroGame{u"2048"_s, u""_s, u"TWENTY_FORTY_EIGHT"_s, u"qrc:/2048_icon.png"_s, this});
 
     // Game Boy Advance
     QString homeDir = QDir::homePath();
-    QDir romDir{homeDir + "/Documents/Games"};
-    QStringList roms = romDir.entryList(QStringList() << "*.gba", QDir::Files);
+    QDir romDir{homeDir + u"/Documents/Games"_s};
+    QStringList roms = romDir.entryList(QStringList() << u"*.gba"_s, QDir::Files);
     for (QString rom : roms) {
         QString path = romDir.absoluteFilePath(rom);
-        append(new RetroGame{rom, path, "GBA", "qrc:/gba_default_icon.png", this});
+        append(new RetroGame{rom, path, u"GBA"_s, u"qrc:/gba_default_icon.png"_s, this});
     }
 
-    QStringList snes_roms = romDir.entryList(QStringList() << "*.smc", QDir::Files);
+    QStringList snes_roms = romDir.entryList(QStringList() << u"*.smc"_s, QDir::Files);
     for (QString rom : snes_roms) {
         QString path = romDir.absoluteFilePath(rom);
-        append(new RetroGame{rom, path, "SNES", "qrc:/snes_default_icon.png", this});
+        append(new RetroGame{rom, path, u"SNES"_s, u"qrc:/snes_default_icon.png"_s, this});
     }
 
-    QStringList nes_roms = romDir.entryList(QStringList() << "*.nes", QDir::Files);
+    QStringList nes_roms = romDir.entryList(QStringList() << u"*.nes"_s, QDir::Files);
     for (QString rom : nes_roms) {
         QString path = romDir.absoluteFilePath(rom);
-        append(new RetroGame{rom, path, "NES", "qrc:/nes_default_icon.png", this});
+        append(new RetroGame{rom, path, u"NES"_s, u"qrc:/nes_default_icon.png"_s, this});
     }
 }
 
@@ -42,7 +44,7 @@ void RetroGameModel::setCount(int count)
         return;
 
     m_count = count;
-    emit countChanged(m_count);
+    Q_EMIT countChanged(m_count);
 }
 
 int RetroGameModel::rowCount(const QModelIndex &p) const
@@ -68,7 +70,7 @@ void RetroGameModel::append(QObject *o) {
     m_data.append(o);
     
     // Emit changed signals
-    emit countChanged(count());
+    Q_EMIT countChanged(count());
     
     endInsertRows();
 }
@@ -79,7 +81,7 @@ void RetroGameModel::insert(QObject *o, int i)
     m_data.insert(i, o);
 
     // Emit changed signals
-    emit countChanged(count());
+    Q_EMIT countChanged(count());
 
     endInsertRows();
 }

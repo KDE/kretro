@@ -18,6 +18,7 @@
 #else
 #endif
 
+using namespace Qt::Literals::StringLiterals;
 
 App::App(QObject* parent)
     : QObject(parent)
@@ -29,16 +30,16 @@ App::App(QObject* parent)
 
 void App::restoreWindowGeometry(QQuickWindow *window, const QString &group) const
 {
-    KConfig dataResource(QStringLiteral("data"), KConfig::SimpleConfig, QStandardPaths::AppDataLocation);
-    KConfigGroup windowGroup(&dataResource, QStringLiteral("Window-") + group);
+    KConfig dataResource(u"data"_s, KConfig::SimpleConfig, QStandardPaths::AppDataLocation);
+    KConfigGroup windowGroup(&dataResource, u"Window-"_s + group);
     KWindowConfig::restoreWindowSize(window, windowGroup);
     KWindowConfig::restoreWindowPosition(window, windowGroup);
 }
 
 void App::saveWindowGeometry(QQuickWindow *window, const QString &group) const
 {
-    KConfig dataResource(QStringLiteral("data"), KConfig::SimpleConfig, QStandardPaths::AppDataLocation);
-    KConfigGroup windowGroup(&dataResource, QStringLiteral("Window-") + group);
+    KConfig dataResource(u"data"_s, KConfig::SimpleConfig, QStandardPaths::AppDataLocation);
+    KConfigGroup windowGroup(&dataResource, u"Window-"_s+ group);
     KWindowConfig::saveWindowPosition(window, windowGroup);
     KWindowConfig::saveWindowSize(window, windowGroup);
     dataResource.sync();
@@ -148,29 +149,29 @@ int16_t input_state(unsigned port, unsigned device, unsigned index, unsigned id)
     //qDebug() << "ID: " <<id;
     switch(id) {
         case RETRO_DEVICE_ID_JOYPAD_A:
-            return App::self()->getButtonState("A");
+            return App::self()->getButtonState(u"A"_s);
         case RETRO_DEVICE_ID_JOYPAD_B:
-            return App::self()->getButtonState("B");
+            return App::self()->getButtonState(u"B"_s);
         case RETRO_DEVICE_ID_JOYPAD_X:
-            return App::self()->getButtonState("X");
+            return App::self()->getButtonState(u"X"_s);
         case RETRO_DEVICE_ID_JOYPAD_Y:
-            return App::self()->getButtonState("Y");
+            return App::self()->getButtonState(u"Y"_s);
         case RETRO_DEVICE_ID_JOYPAD_L:
-            return App::self()->getButtonState("L1");
+            return App::self()->getButtonState(u"L1"_s);
         case RETRO_DEVICE_ID_JOYPAD_R:
-            return App::self()->getButtonState("R1");
+            return App::self()->getButtonState(u"R1"_s);
         case RETRO_DEVICE_ID_JOYPAD_UP:
-            return App::self()->getButtonState("UP");
+            return App::self()->getButtonState(u"UP"_s);
         case RETRO_DEVICE_ID_JOYPAD_DOWN:
-            return App::self()->getButtonState("DOWN");
+            return App::self()->getButtonState(u"DOWN"_s);
         case RETRO_DEVICE_ID_JOYPAD_LEFT:
-            return App::self()->getButtonState("LEFT");
+            return App::self()->getButtonState(u"LEFT"_s);
         case RETRO_DEVICE_ID_JOYPAD_RIGHT:
-            return App::self()->getButtonState("RIGHT");
+            return App::self()->getButtonState(u"RIGHT"_s);
         case RETRO_DEVICE_ID_JOYPAD_START:
-            return App::self()->getButtonState("START");
+            return App::self()->getButtonState(u"START"_s);
         case RETRO_DEVICE_ID_JOYPAD_SELECT:
-            return App::self()->getButtonState("SELECT");
+            return App::self()->getButtonState(u"SELECT"_s);
     }
     return 0;
 }
@@ -206,22 +207,22 @@ void App::startRetroCore()
     QDir().mkdir(m_appdataDir);
 
     // Load core dynamic library
-    QString coreName = "";
-    if(m_romConsole == "TWENTY_FORTY_EIGHT") {
-        coreName = "2048_libretro.so";
-    } else if (m_romConsole == "GBA") {
-        coreName = "mednafen_gba_libretro.so";
-    } else if (m_romConsole == "SNES") {
-        coreName = "snes9x_libretro.so";
-    } else if (m_romConsole == "NES") {
-        coreName = "quicknes_libretro.so";
+    QString coreName = u""_s;
+    if(m_romConsole == u"TWENTY_FORTY_EIGHT"_s) {
+        coreName = u"2048_libretro.so"_s;
+    } else if (m_romConsole == u"GBA"_s) {
+        coreName = u"mednafen_gba_libretro.so"_s;
+    } else if (m_romConsole == u"SNES"_s) {
+        coreName = u"snes9x_libretro.so"_s;
+    } else if (m_romConsole == u"NES"_s) {
+        coreName = u"quicknes_libretro.so"_s;
     }
-    auto core_full_path = QTemporaryFile::createNativeFile(":/cores/" + QSysInfo::buildCpuArchitecture() + "/" + coreName)->fileName();
+    auto core_full_path = QTemporaryFile::createNativeFile(u":/cores/"_s + QSysInfo::buildCpuArchitecture() + u"/"_s + coreName)->fileName();
     qDebug() << "Loading core from" << core_full_path;
     void* lrcore = dlopen(core_full_path.toLocal8Bit().data(), RTLD_LAZY);
     if (!lrcore) {
         qDebug() << "Failed to load core!";
-        setError("Failed to load core!");
+        setError(u"Failed to load core!"_s);
         return;
     }
     m_lrCore = lrcore;
@@ -260,7 +261,7 @@ void App::startRetroCore()
     retro_system_av_info avinfo;
     retro_system_info system = {0};
 
-    if(m_romFilePath != "") {
+    if(m_romFilePath != u""_s) {
         retro_game_info info{m_romFilePath.toStdString().c_str(), 0};
         FILE *file = fopen(m_romFilePath.toStdString().c_str(), "rb");
         if (!file) {
@@ -301,7 +302,7 @@ void App::startRetroCore()
     // Load save state if it exists
     auto retro_unserialize = reinterpret_cast<bool(*)(const void *data, size_t size)>(dlsym(m_lrCore, "retro_unserialize"));
     // load state from ~/.local/share
-    QFile stateFile{m_appdataDir + m_romFilePath.split("/").last() + "/0.state"};
+    QFile stateFile{m_appdataDir + m_romFilePath.split(u"/"_s).last() + u"/0.state"_s};
     if(stateFile.exists()) {
         stateFile.open(QIODevice::ReadOnly);
         QByteArray stateData = stateFile.readAll();
@@ -355,8 +356,8 @@ void App::stopRetroCore()
     auto size = retro_serialize_size();
     void* data = malloc(size);
     if(retro_serialize(data, size)) {
-        QDir().mkdir(m_appdataDir + m_romFilePath.split("/").last());
-        QFile file{m_appdataDir + m_romFilePath.split("/").last() + "/0.state"};
+        QDir().mkdir(m_appdataDir + m_romFilePath.split(u"/"_s).last());
+        QFile file{m_appdataDir + m_romFilePath.split(u"/"_s).last() + u"/0.state"_s};
         file.open(QIODevice::WriteOnly);
         file.write((char*)data, size);
         file.close();
@@ -398,11 +399,6 @@ bool App::getButtonState(QString button)
 void App::setImageFormat(QImage::Format format)
 {
     m_imageFormat = format;
-}
-
-QString App::getEnv(QString key)
-{
-    return qgetenv(qPrintable(key));
 }
 
 void App::setRomFilePath(QString path)
@@ -465,8 +461,8 @@ QString App::saveNewSaveSlot()
     auto size = retro_serialize_size();
     void* data = malloc(size);
     if (retro_serialize(data, size)) {
-        QDir().mkdir(m_appdataDir + m_romFilePath.split("/").last());
-        QFile file{m_appdataDir + m_romFilePath.split("/").last() + "/" + QString::number(QDir(m_appdataDir + m_romFilePath.split("/").last()).entryList().count()) + ".state"};
+        QDir().mkdir(m_appdataDir + m_romFilePath.split(u"/"_s).last());
+        QFile file{m_appdataDir + m_romFilePath.split(u"/"_s).last() + u"/"_s + QString::number(QDir(m_appdataDir + m_romFilePath.split(u"/"_s).last()).entryList().count()) + u".state"_s};
         file.open(QIODevice::WriteOnly);
         file.write((char*)data, size);
         file.close();
