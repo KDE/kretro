@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2023 Seshan Ravikumar <seshan.r@sineware.ca>
+# SPDX-FileCopyrightText: 2023 Seshan Ravikumar <seshan@sineware.ca>
 # SPDX-License-Identifier: BSD-3-Clause
 
 cmake_minimum_required(VERSION 3.16)

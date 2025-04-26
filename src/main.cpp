@@ -1,6 +1,6 @@
 /*
     SPDX-License-Identifier: GPL-2.0-or-later
-    SPDX-FileCopyrightText: 2023 Seshan Ravikumar <seshan.r@sineware.ca>
+    SPDX-FileCopyrightText: 2023 Seshan Ravikumar <seshan@sineware.ca>
 */
 
 #include <QApplication>
@@ -41,7 +41,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
                          i18n("(c) 2023 KDE Community"));
     aboutData.addAuthor(i18nc("@info:credit", "Seshan Ravikumar"),
                         i18nc("@info:credit", "Developer"),
-                        u"seshan.r@sineware.ca"_s,
+                        u"seshan@sineware.ca"_s,
                         u"https://seshan.xyz"_s);
     aboutData.addAuthor(i18nc("@info:credit", "Devin Lin"),
                         i18nc("@info:credit", "Developer"),

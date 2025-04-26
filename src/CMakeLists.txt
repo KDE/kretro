@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: BSD-3-Clause
-# SPDX-FileCopyrightText: 2023 Seshan Ravikumar <seshan.r@sineware.ca>
+# SPDX-FileCopyrightText: 2023 Seshan Ravikumar <seshan@sineware.ca>
 
 add_executable(kretro
     main.cpp

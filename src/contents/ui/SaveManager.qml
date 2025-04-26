@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2023 Seshan Ravikumar <seshan.r@sineware.ca>
+// SPDX-FileCopyrightText: 2023 Seshan Ravikumar <seshan@sineware.ca>
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
