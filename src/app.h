@@ -15,6 +15,8 @@
 #else
 #endif
 
+using namespace Qt::Literals::StringLiterals;
+
 class QQuickWindow;
 
 class App : public QObject
@@ -24,9 +26,9 @@ class App : public QObject
 public:
     App(QObject* parent = nullptr);
     // Restore current window geometry
-    Q_INVOKABLE void restoreWindowGeometry(QQuickWindow *window, const QString &group = QStringLiteral("main")) const;
+    Q_INVOKABLE void restoreWindowGeometry(QQuickWindow *window, const QString &group = u"main"_s) const;
     // Save current window geometry
-    Q_INVOKABLE void saveWindowGeometry(QQuickWindow *window, const QString &group = QStringLiteral("main")) const;
+    Q_INVOKABLE void saveWindowGeometry(QQuickWindow *window, const QString &group = u"main"_s) const;
 
     Q_INVOKABLE void startRetroCore();
     Q_INVOKABLE void stopRetroCore();
@@ -44,8 +46,6 @@ public:
     void setImageFormat(QImage::Format format);
 
     retro_system_av_info m_avInfo;
-
-    Q_INVOKABLE QString getEnv(QString key);
     
     Q_INVOKABLE void setRomFilePath(QString path);
     Q_INVOKABLE void setRomConsole(QString console);

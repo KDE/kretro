@@ -11,16 +11,16 @@ add_executable(kretro
     resources.qrc)
 
 target_link_libraries(kretro
-    Qt5::Core
-    Qt5::Gui
-    Qt5::Qml
-    Qt5::Quick
-    Qt5::QuickControls2
-    Qt5::Svg
-    KF5::I18n
-    KF5::CoreAddons
-    KF5::ConfigCore
-    KF5::ConfigGui)
+    Qt6::Core
+    Qt6::Qml
+    Qt6::Gui
+    Qt6::QuickControls2
+    Qt6::Widgets
+    KF6::Kirigami
+    KF6::I18n
+    KF6::CoreAddons
+    KF6::ConfigCore
+    KF6::ConfigGui)
 include_directories(${ALSA_INCLUDE_DIRS})                  
 target_link_libraries (kretro ${ALSA_LIBRARIES})      
 

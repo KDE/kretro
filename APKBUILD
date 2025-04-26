@@ -1,32 +1,25 @@
 pkgname=kretro
 pkgver=1.0.0_git$GIT_VERNUM
 pkgrel=0
-pkgdesc="KRetro Plasma Mobile Retro Game Player"
+pkgdesc="Libretro frontend for Plasma"
 arch="all !ppc64le !s390x !armhf !riscv64"
 url="https://sineware.ca/labs"
 license="GPL-2.0"
 depends="
-	kirigami2
+	kirigami
+	kirigami-addons
 	"
 makedepends="
-    extra-cmake-modules
+    	extra-cmake-modules
 	kconfig-dev
-	kcoreaddons-dev
-	kdbusaddons-dev
 	ki18n-dev
-	kio-dev
 	kirigami-addons-dev
-	kirigami2-dev
-	knotifications-dev
-	qqc2-desktop-style-dev
-	qt5-qtbase-dev
-	qtkeychain-dev
-	qt5-qtmultimedia-dev
-	qt5-qtquickcontrols2-dev
-	qt5-qtsvg-dev
-	qt5-qtwebsockets-dev
+	kirigami-dev
+	qt6-qtbase-dev
+	qt6-qtmultimedia-dev
+	qt6-qtsvg-dev
 	samurai
-    alsa-lib-dev
+    	alsa-lib-dev
 	"
 source="https://invent.kde.org/seshpenguin/kretro.git"
 options="!check"

@@ -17,9 +17,9 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
     int count() const;
-signals:
+Q_SIGNALS:
     void countChanged(int count);
-public slots:
+public Q_SLOTS:
     void setCount(int count);
 private:
     int m_count;

@@ -1,9 +1,11 @@
 #include "retroframe.h"
 #include "app.h"
 
+using namespace Qt::Literals::StringLiterals;
+
 RetroFrame::RetroFrame(QQuickItem *parent)
   : QQuickPaintedItem{parent}
-  , m_currentImage{":/images/no_image.png"}
+  , m_currentImage{u":/images/no_image.png"_s}
 {
     App::self()->setRetroFrame(this);
     setRenderTarget(QQuickPaintedItem::FramebufferObject);

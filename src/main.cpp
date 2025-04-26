@@ -22,14 +22,13 @@
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
-    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QApplication app(argc, argv);
-    QCoreApplication::setOrganizationName(QStringLiteral("KDE"));
-    QCoreApplication::setApplicationName(QStringLiteral("kretro"));
+    QCoreApplication::setOrganizationName(u"KDE"_s);
+    QCoreApplication::setApplicationName(u"kretro"_s);
 
     KAboutData aboutData(
                          // The program name used internally.
-                         QStringLiteral("kretro"),
+                         u"kretro"_s,
                          // A displayable program name string.
                          i18nc("@title", "KRetro"),
                          // The program version string.
@@ -42,12 +41,12 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
                          i18n("(c) 2023 KDE Community"));
     aboutData.addAuthor(i18nc("@info:credit", "Seshan Ravikumar"),
                         i18nc("@info:credit", "Developer"),
-                        QStringLiteral("seshan.r@sineware.ca"),
-                        QStringLiteral("https://seshan.xyz"));
+                        u"seshan.r@sineware.ca"_s,
+                        u"https://seshan.xyz"_s);
     aboutData.addAuthor(i18nc("@info:credit", "Devin Lin"),
                         i18nc("@info:credit", "Developer"),
-                        QStringLiteral("devin@kde.org"),
-                        QStringLiteral("https://espi.dev"));
+                        u"devin@kde.org"_s,
+                        u"https://espi.dev"_s);
     KAboutData::setApplicationData(aboutData);
 
     QQmlApplicationEngine engine;
@@ -67,7 +66,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     qmlRegisterType<RetroGameSaveModel>("org.kde.kretro", 1, 0, "RetroGameSaveModel");
 
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
-    engine.load(QUrl(QStringLiteral("qrc:///main.qml")));
+    engine.load(QUrl(u"qrc:///main.qml"_s));
 
     if (engine.rootObjects().isEmpty()) {
         return -1;

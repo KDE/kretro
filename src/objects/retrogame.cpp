@@ -13,7 +13,7 @@ void RetroGame::setName(const QString name)
     if (m_name == name)
         return;
     m_name = name;
-    emit nameChanged();
+    Q_EMIT nameChanged();
 }
 QString RetroGame::name() const
 {
@@ -25,7 +25,7 @@ void RetroGame::setPath(const QString path)
     if (m_path == path)
         return;
     m_path = path;
-    emit pathChanged();
+    Q_EMIT pathChanged();
 }
 QString RetroGame::path() const
 {
@@ -37,7 +37,7 @@ void RetroGame::setConsole(QString console)
     if (m_console == console)
         return;
     m_console = console;
-    emit consoleChanged();
+    Q_EMIT consoleChanged();
 }
 QString RetroGame::console() const
 {
@@ -49,7 +49,7 @@ void RetroGame::setIcon(QString icon)
     if (m_icon == icon)
         return;
     m_icon = icon;
-    emit iconChanged();
+    Q_EMIT iconChanged();
 }
 QString RetroGame::icon() const
 {
