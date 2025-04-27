@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2023 Seshan Ravikumar <seshan@sineware.ca>
+// SPDX-FileCopyrightText: 2023-2025 Seshan Ravikumar <seshan@sineware.ca>
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
@@ -10,78 +10,100 @@ import org.kde.kretro 1.0
 
 Kirigami.ScrollablePage {
     id: page
-
-    title: i18n("Core Save States")
-
-    ListView {
-        header: RowLayout {
-            id: text
-
-            Controls.Label {
-                text: i18n("Select a save state to load or delete.\nSlot 0 is the default auto save slot\n(restored on game start, saved on exit)")
-            }
-
-            Item {
-                Layout.fillWidth: true
-            }
-
-            Controls.Button {
-                text: i18n("Save Game\n(New Slot)")
-                onClicked: {
-                    const path = App.saveNewSaveSlot()
-                    if (path.length > 0) {
-                        console.log(path);
-                        gameSaveModel.append(path);
-                    }
-
-                    pageStack.layers.pop()
-                }
+    
+    title: i18n("Save States")
+    
+    actions: Kirigami.Action {
+        icon.name: "list-add"
+        onTriggered: {
+            const path = App.saveNewSaveSlot()
+            if (path.length > 0) {
+                console.log(path);
+                gameSaveModel.append(path);
+                showPassiveNotification(i18n("Game saved!"));
             }
         }
-
+    }
+    
+    Kirigami.CardsListView {
+        id: saveStatesListView
+        
+        header: ColumnLayout {
+            width: parent.width
+            spacing: Kirigami.Units.largeSpacing
+            Item {
+                Layout.fillWidth: true
+                height: Kirigami.Units.largeSpacing
+            }
+            Kirigami.InlineMessage {
+                    Layout.fillWidth: true
+                    visible: true
+                    text: i18n("Slot 0 is the default auto save slot. It is restored on game start and saved on exit.")
+            }
+            Item {
+                Layout.fillWidth: true
+                height: Kirigami.Units.largeSpacing
+            }
+        }
+        
         model: RetroGameSaveModel {
             id: gameSaveModel
         }
-
-        delegate: Controls.ItemDelegate {
+        
+        delegate: Kirigami.AbstractCard {
             id: saveDelegate
-
+            
             required property int index
             required property string path
             required property string slot
-
-            contentItem: RowLayout {
-                spacing: Kirigami.Units.smallSpacing
-
-                Controls.Label {
-                    text: i18n("Slot %1", saveDelegate.slot)
-                }
-
-                Item {
-                    Layout.fillWidth: true
-                }
-
-                Controls.Button {
-                    text: i18nc("@action:button", "Load")
-                    onClicked: {
-                        App.loadSaveSlot(saveDelegate.path)
-                        pageStack.layers.pop()
+            
+            contentItem: Item {
+                implicitWidth: cardLayout.implicitWidth
+                implicitHeight: cardLayout.implicitHeight
+                
+                RowLayout {
+                    id: cardLayout
+                    anchors {
+                        left: parent.left
+                        top: parent.top
+                        right: parent.right
                     }
-                }
-
-                Controls.Button {
-                    text: i18nc("@action:button", "Save")
-                    onClicked: {
-                        App.saveSaveSlot(saveDelegate.path)
-                        pageStack.layers.pop()
+                    spacing: Kirigami.Units.largeSpacing
+                    
+                    Kirigami.Heading {
+                        level: 3
+                        text: i18n("Slot %1", saveDelegate.slot)
                     }
-                }
-
-                Controls.Button {
-                    text: i18nc("@action:button", "Delete")
-                    onClicked: {
-                        gameSaveModel.removeSaveSlot(saveDelegate.index)
-                        pageStack.layers.pop()
+                    
+                    Item {
+                        Layout.fillWidth: true
+                    }
+                    
+                    RowLayout {
+                        spacing: Kirigami.Units.smallSpacing
+                        
+                        Controls.Button {
+                            text: i18nc("@action:button", "Load")
+                            onClicked: {
+                                App.loadSaveSlot(saveDelegate.path)
+                                pageStack.layers.pop()
+                            }
+                        }
+                        
+                        Controls.Button {
+                            text: i18nc("@action:button", "Save")
+                            onClicked: {
+                                App.saveSaveSlot(saveDelegate.path)
+                                pageStack.layers.pop()
+                            }
+                        }
+                        
+                        Controls.Button {
+                            text: i18nc("@action:button", "Delete")
+                            onClicked: {
+                                gameSaveModel.removeSaveSlot(saveDelegate.index)
+                            }
+                        }
                     }
                 }
             }
