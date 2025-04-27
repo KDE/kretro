@@ -2,6 +2,7 @@
 #include <QAbstractListModel>
 #include <QObject>
 #include <QHash>
+#include <QDateTime>
 
 struct RetroGameSave
 {
@@ -21,6 +22,7 @@ public:
     enum ExtraRoles {
         SlotRole = Qt::UserRole + 1,
         PathRole,
+        LastModifiedRole,
     };
 
     Q_INVOKABLE void append(const QString &path);

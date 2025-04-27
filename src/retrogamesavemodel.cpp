@@ -2,6 +2,7 @@
 #include "app.h"
 #include <QDir>
 #include <QStandardPaths>
+#include <QFileInfo>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -49,6 +50,8 @@ QVariant RetroGameSaveModel::data(const QModelIndex &index, int role) const
         return save.slot;
     case PathRole:
         return save.path;
+    case LastModifiedRole:
+        return QFileInfo(save.path).lastModified();
     default:
         return {};
     }
@@ -59,6 +62,7 @@ QHash<int, QByteArray> RetroGameSaveModel::roleNames() const
     return {
         {SlotRole, "slot"},
         {PathRole, "path"},
+        {LastModifiedRole, "lastModified"},
     };
 }
 

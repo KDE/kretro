@@ -10,9 +10,7 @@ import org.kde.kretro 1.0
 
 Kirigami.ScrollablePage {
     id: page
-    
     title: i18n("Save States")
-    
     actions: Kirigami.Action {
         icon.name: "list-add"
         onTriggered: {
@@ -24,10 +22,8 @@ Kirigami.ScrollablePage {
             }
         }
     }
-    
     Kirigami.CardsListView {
         id: saveStatesListView
-        
         header: ColumnLayout {
             width: parent.width
             spacing: Kirigami.Units.largeSpacing
@@ -36,50 +32,64 @@ Kirigami.ScrollablePage {
                 height: Kirigami.Units.largeSpacing
             }
             Kirigami.InlineMessage {
-                    Layout.fillWidth: true
-                    visible: true
-                    text: i18n("Slot 0 is the default auto save slot. It is restored on game start and saved on exit.")
+                Layout.fillWidth: true
+                visible: true
+                text: i18n("Slot 0 is the default auto save slot. It is restored on game start and saved on exit.")
             }
             Item {
                 Layout.fillWidth: true
                 height: Kirigami.Units.largeSpacing
             }
         }
-        
         model: RetroGameSaveModel {
             id: gameSaveModel
         }
-        
         delegate: Kirigami.AbstractCard {
             id: saveDelegate
-            
             required property int index
             required property string path
             required property string slot
+            required property var lastModified
             
             contentItem: Item {
                 implicitWidth: cardLayout.implicitWidth
                 implicitHeight: cardLayout.implicitHeight
-                
-                RowLayout {
+                ColumnLayout {
                     id: cardLayout
                     anchors {
                         left: parent.left
                         top: parent.top
                         right: parent.right
                     }
-                    spacing: Kirigami.Units.largeSpacing
+                    spacing: Kirigami.Units.smallSpacing
                     
-                    Kirigami.Heading {
-                        level: 3
-                        text: i18n("Slot %1", saveDelegate.slot)
+                    RowLayout {
+                        Layout.fillWidth: true
+                        spacing: Kirigami.Units.largeSpacing
+                        
+                        Kirigami.Heading {
+                            level: 3
+                            text: i18n("Slot %1", saveDelegate.slot)
+                        }
+                        
+                        Item {
+                            Layout.fillWidth: true
+                        }
                     }
                     
-                    Item {
+                    Controls.Label {
                         Layout.fillWidth: true
+                        text: i18n("Last modified: %1", saveDelegate.lastModified.toLocaleString())
+                        font.italic: true
+                        opacity: 0.7
+                        wrapMode: Text.WordWrap
+                        maximumLineCount: 2
+                        elide: Text.ElideRight
                     }
                     
                     RowLayout {
+                        Layout.fillWidth: true
+                        Layout.topMargin: Kirigami.Units.smallSpacing
                         spacing: Kirigami.Units.smallSpacing
                         
                         Controls.Button {
@@ -89,7 +99,6 @@ Kirigami.ScrollablePage {
                                 pageStack.layers.pop()
                             }
                         }
-                        
                         Controls.Button {
                             text: i18nc("@action:button", "Save")
                             onClicked: {
@@ -97,7 +106,6 @@ Kirigami.ScrollablePage {
                                 pageStack.layers.pop()
                             }
                         }
-                        
                         Controls.Button {
                             text: i18nc("@action:button", "Delete")
                             onClicked: {

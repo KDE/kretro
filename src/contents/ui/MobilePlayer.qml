@@ -11,12 +11,18 @@ import org.kde.kretro
 Kirigami.Page {
     id: page
 
-    actions: Kirigami.Action {
-        icon.name: "document-save-all"
-        onTriggered: {
-            pageStack.layers.push('qrc:/SaveManager.qml')
+    actions: [
+        Kirigami.Action {
+            icon.name: "view-refresh"
+            onTriggered: resetPrompt.open()
+        },
+        Kirigami.Action {
+            icon.name: "document-save-all"
+            onTriggered: {
+                pageStack.layers.push('qrc:/SaveManager.qml')
+            }
         }
-    }
+    ]
 
     Layout.fillWidth: true
     Layout.fillHeight: true
@@ -78,6 +84,15 @@ Kirigami.Page {
     }
     Keys.onPressed: handleKeyPress(event, true)
     Keys.onReleased: handleKeyPress(event, false)
+
+    Kirigami.PromptDialog {
+        id: resetPrompt
+        title: i18n("Reset Game Core?")
+        subtitle: i18n("This will restart the game. Any unsaved progress will be lost!")
+        standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
+
+        onAccepted: App.resetRetroCore()
+    }
 
     Kirigami.InlineMessage {
         id: errorMessage

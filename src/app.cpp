@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
-// SPDX-FileCopyrightText: 2023 Seshan Ravikumar <seshan@sineware.ca>
+// SPDX-FileCopyrightText: 2023-2025 Seshan Ravikumar <seshan@sineware.ca>
 
 #include "app.h"
 #include <KSharedConfig>
@@ -373,6 +373,12 @@ void App::stopRetroCore()
     delete m_frameTimer;
     m_isRunning = false;
     qDebug() << "Stopped core!";
+}
+
+void App::resetRetroCore()
+{
+    auto retro_reset = reinterpret_cast<void(*)(void)>(dlsym(m_lrCore, "retro_reset"));
+    retro_reset();
 }
 
 
