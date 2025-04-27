@@ -303,7 +303,7 @@ void App::startRetroCore()
     // Load save state if it exists
     auto retro_unserialize = reinterpret_cast<bool(*)(const void *data, size_t size)>(dlsym(m_lrCore, "retro_unserialize"));
     // load state from ~/.local/share
-    QFile stateFile{m_appdataDir + m_romFilePath.split(u"/"_s).last() + u"/0.state"_s};
+    QFile stateFile{m_appdataDir + u"/"_s + m_romFilePath.split(u"/"_s).last() + u"/0.state"_s};
     if(stateFile.exists()) {
         stateFile.open(QIODevice::ReadOnly);
         QByteArray stateData = stateFile.readAll();
@@ -357,8 +357,8 @@ void App::stopRetroCore()
     auto size = retro_serialize_size();
     void* data = malloc(size);
     if(retro_serialize(data, size)) {
-        QDir().mkdir(m_appdataDir + m_romFilePath.split(u"/"_s).last());
-        QFile file{m_appdataDir + m_romFilePath.split(u"/"_s).last() + u"/0.state"_s};
+        QDir().mkdir(m_appdataDir + u"/"_s + m_romFilePath.split(u"/"_s).last());
+        QFile file{m_appdataDir + u"/"_s + m_romFilePath.split(u"/"_s).last() + u"/0.state"_s};
         file.open(QIODevice::WriteOnly);
         file.write((char*)data, size);
         file.close();
@@ -462,8 +462,8 @@ QString App::saveNewSaveSlot()
     auto size = retro_serialize_size();
     void* data = malloc(size);
     if (retro_serialize(data, size)) {
-        QDir().mkdir(m_appdataDir + m_romFilePath.split(u"/"_s).last());
-        QFile file{m_appdataDir + m_romFilePath.split(u"/"_s).last() + u"/"_s + QString::number(QDir(m_appdataDir + m_romFilePath.split(u"/"_s).last()).entryList().count()) + u".state"_s};
+        QDir().mkdir(m_appdataDir + u"/"_s + m_romFilePath.split(u"/"_s).last());
+        QFile file{m_appdataDir + u"/"_s + m_romFilePath.split(u"/"_s).last() + u"/"_s + QString::number(QDir(m_appdataDir + u"/"_s + m_romFilePath.split(u"/"_s).last()).entryList().count()) + u".state"_s};
         file.open(QIODevice::WriteOnly);
         file.write((char*)data, size);
         file.close();

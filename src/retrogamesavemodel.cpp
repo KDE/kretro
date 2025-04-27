@@ -20,7 +20,7 @@ RetroGameSaveModel::RetroGameSaveModel(QObject *parent)
 {
     // Game Boy Advance
     const QDir romDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)
-        + App::self()->getRomFilePath().split(QLatin1Char('/')).last() + QLatin1Char('/'));
+     + QLatin1Char('/') + App::self()->getRomFilePath().split(QLatin1Char('/')).last() + QLatin1Char('/'));
 
     qDebug() << romDir;
 
