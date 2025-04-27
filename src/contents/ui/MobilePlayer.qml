@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
-// SPDX-FileCopyrightText: 2023 Seshan Ravikumar <seshan@sineware.ca>
+// SPDX-FileCopyrightText: 2023-2025 Seshan Ravikumar <seshan@sineware.ca>
 
 import QtQuick
 import QtQuick.Controls as Controls
@@ -121,13 +121,21 @@ Kirigami.Page {
                 anchors.fill: parent
             }
         }
-        Item { Layout.preferredHeight: Kirigami.Units.gridUnit * 2
-        Layout.fillWidth: true }
+
+        Item {
+            Layout.preferredHeight: Kirigami.Units.gridUnit * 2
+            Layout.fillWidth: true 
+            visible: Kirigami.Settings.isMobile
+        }
         MobileController {
             Layout.fillWidth: true
             Layout.leftMargin: Kirigami.Units.gridUnit
             Layout.rightMargin: Kirigami.Units.gridUnit
+            visible: Kirigami.Settings.isMobile
         }
-        Item { Layout.preferredHeight: Kirigami.Units.gridUnit }
+        Item { 
+            Layout.preferredHeight: Kirigami.Units.gridUnit 
+            visible: Kirigami.Settings.isMobile
+        }
     }
 }
