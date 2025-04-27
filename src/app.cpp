@@ -25,6 +25,7 @@ App::App(QObject* parent)
     , m_retroFrame{nullptr}
     , m_frameTimer{new QTimer{this}}
     , m_appdataDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation))
+    , m_gamesDir(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + u"/Games"_s)
 {
 }
 
@@ -476,4 +477,9 @@ QString App::saveNewSaveSlot()
 QString App::appdataDir() const
 {
     return m_appdataDir;
+}
+
+QString App::gamesDir() const
+{
+    return m_gamesDir;
 }

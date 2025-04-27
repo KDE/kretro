@@ -44,7 +44,7 @@ Kirigami.ApplicationWindow {
                 text: i18n("Open ROMs Directory")
                 icon.name: "folder-add"
                 onTriggered: {
-                    var dir = App.appdataDir();
+                    var dir = App.gamesDir();
                     var fileUrl = "file://" + dir;
                     Qt.openUrlExternally(fileUrl);
                 }
