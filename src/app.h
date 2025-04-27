@@ -60,7 +60,7 @@ public:
     Q_INVOKABLE void saveSaveSlot(const QString &slot);
     Q_INVOKABLE QString saveNewSaveSlot();
 
-    QString appdataDir() const;
+    Q_INVOKABLE QString appdataDir() const;
 
 Q_SIGNALS:
     void errorChanged();

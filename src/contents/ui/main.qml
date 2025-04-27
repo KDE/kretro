@@ -41,6 +41,15 @@ Kirigami.ApplicationWindow {
         isMenu: !root.isMobile
         actions: [
             Kirigami.Action {
+                text: i18n("Open ROMs Directory")
+                icon.name: "folder-add"
+                onTriggered: {
+                    var dir = App.appdataDir();
+                    var fileUrl = "file://" + dir;
+                    Qt.openUrlExternally(fileUrl);
+                }
+            },
+            Kirigami.Action {
                 text: i18n("About kretro")
                 icon.name: "help-about"
                 onTriggered: pageStack.layers.push('qrc:/About.qml')
