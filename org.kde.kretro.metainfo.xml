@@ -23,4 +23,5 @@
     </ul>
     <p>Keep in mind to XML-escape characters, and that this is not HTML markup.</p>
   </description>
+  <url type="homepage">https://invent.kde.org/seshpenguin/kretro</url>
 </component>
