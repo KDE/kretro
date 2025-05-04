@@ -51,18 +51,8 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
-    auto config = kretroConfig::self();
-
-    qmlRegisterSingletonInstance("org.kde.kretro", 1, 0, "Config", config);
-
-    qmlRegisterSingletonInstance("org.kde.kretro", 1, 0, "App", App::self());
-
-    qmlRegisterType<RetroFrame>("org.kde.kretro", 1, 0, "RetroFrame");
-    qmlRegisterType<RetroGameModel>("org.kde.kretro", 1, 0, "RetroGameModel");
-    qmlRegisterType<RetroGameSaveModel>("org.kde.kretro", 1, 0, "RetroGameSaveModel");
-
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
-    engine.load(QUrl(u"qrc:///main.qml"_s));
+    engine.loadFromModule("org.kde.kretro", "Main");
 
     if (engine.rootObjects().isEmpty()) {
         return -1;

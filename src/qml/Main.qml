@@ -117,7 +117,7 @@ Kirigami.ApplicationWindow {
                     onPressed: {
                         App.setRomFilePath(model.rom.path)
                         App.setRomConsole(model.rom.console)
-                        pageStack.layers.push('qrc:/MobilePlayer.qml')
+                        pageStack.layers.push(Qt.resolvedUrl('./MobilePlayer.qml'))
                     }
                 }
             }

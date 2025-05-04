@@ -2,10 +2,13 @@
 #include <QAbstractListModel>
 #include <QObject>
 #include <QHash>
+#include <qqmlintegration.h>
 
 class RetroGameModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(int count READ count NOTIFY countChanged)
 public:
     explicit RetroGameModel(QObject *parent = nullptr);

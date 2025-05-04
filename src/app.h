@@ -2,8 +2,12 @@
 // SPDX-FileCopyrightText: 2023 Seshan Ravikumar <seshan@sineware.ca>
 
 #pragma once
+
 #include <QObject>
 #include <QTimer>
+#include <QQuickWindow>
+#include <qqmlintegration.h>
+
 #include "retroframe.h"
 #include "libretro.h"
 #include <qbuffer.h>
@@ -22,6 +26,9 @@ class QQuickWindow;
 class App : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
     Q_PROPERTY(QString error READ error WRITE setError NOTIFY errorChanged)
 public:
     App(QObject* parent = nullptr);

@@ -22,6 +22,7 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMSetupVersion)
 include(ECMGenerateHeaders)
 include(ECMPoQmTools)
+include(ECMQmlModule)
 
 ecm_setup_version(${PROJECT_VERSION}
     VARIABLE_PREFIX KRETRO
@@ -31,6 +32,8 @@ ecm_setup_version(${PROJECT_VERSION}
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Widgets Core Quick Gui Qml QuickControls2 Svg)
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Kirigami CoreAddons Config I18n)
 find_package(ALSA)
+
+qt_policy(SET QTP0004 NEW)
 
 find_package(KF6KirigamiAddons 1.0.0 REQUIRED)
 set_package_properties(KF6KirigamiAddons PROPERTIES
