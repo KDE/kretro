@@ -5,7 +5,6 @@
 <RCC>
     <qresource prefix="/">
         <file alias="main.qml">contents/ui/main.qml</file>
-        <file alias="About.qml">contents/ui/About.qml</file>
         <file alias="MobilePlayer.qml">contents/ui/MobilePlayer.qml</file>
         <file alias="MobileController.qml">contents/ui/MobileController.qml</file>
         <file alias="SaveManager.qml">contents/ui/SaveManager.qml</file>

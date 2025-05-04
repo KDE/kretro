@@ -52,7 +52,7 @@ Kirigami.ApplicationWindow {
             Kirigami.Action {
                 text: i18n("About kretro")
                 icon.name: "help-about"
-                onTriggered: pageStack.layers.push('qrc:/About.qml')
+                onTriggered: pageStack.layers.push(Qt.createComponent("org.kde.kirigamiaddons.formcard", "AboutPage"))
             },
             Kirigami.Action {
                 text: i18n("Quit")
