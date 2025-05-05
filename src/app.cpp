@@ -27,6 +27,7 @@ App::App(QObject* parent)
     , m_appdataDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation))
     , m_gamesDir(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + u"/Games"_s)
 {
+    static App* a = this;
 }
 
 void App::restoreWindowGeometry(QQuickWindow *window, const QString &group) const
@@ -388,19 +389,25 @@ App* App::self()
     return a;
 }
 
+App *App::create(QQmlEngine *qmlEngine, QJSEngine *)
+{
+    return App::self();
+}
+
 void App::setRetroFrame(RetroFrame *rf)
 {
     m_retroFrame = rf;
 }
 
-void App::setButtonState(QString button, bool state)
+void App::setButtonState(const QString &button, bool state)
 {
     m_inputStates[button] = state;
 }
 
-bool App::getButtonState(QString button)
+bool App::getButtonState(const QString &button)
 {
-    return m_inputStates.contains(button) && m_inputStates[button];
+    const auto val = m_inputStates.contains(button) && m_inputStates[button];
+    return val;
 }
 
 void App::setImageFormat(QImage::Format format)

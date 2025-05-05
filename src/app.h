@@ -31,7 +31,9 @@ class App : public QObject
 
     Q_PROPERTY(QString error READ error WRITE setError NOTIFY errorChanged)
 public:
-    App(QObject* parent = nullptr);
+    static App *self();
+    static App *create(QQmlEngine *qmlEngine, QJSEngine *);
+
     // Restore current window geometry
     Q_INVOKABLE void restoreWindowGeometry(QQuickWindow *window, const QString &group = u"main"_s) const;
     // Save current window geometry
@@ -44,12 +46,11 @@ public:
     void videoRefresh(const void *data, unsigned width, unsigned height, int pitch);
     void audioRefresh(const int16_t *data,size_t frames);
 
-    static App *self();
 
     void setRetroFrame(RetroFrame *rf);
 
-    Q_INVOKABLE void setButtonState(QString button, bool state);
-    bool getButtonState(QString button);
+    Q_INVOKABLE void setButtonState(const QString &button, bool state);
+    bool getButtonState(const QString &button);
 
     void setImageFormat(QImage::Format format);
 
@@ -75,6 +76,8 @@ Q_SIGNALS:
     void errorChanged();
 
 private:
+    explicit App(QObject* parent = nullptr);
+
     QImage::Format m_imageFormat;
 
     RetroFrame *m_retroFrame;
