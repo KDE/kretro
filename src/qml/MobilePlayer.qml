@@ -19,7 +19,7 @@ Kirigami.Page {
         Kirigami.Action {
             icon.name: "document-save-all"
             onTriggered: {
-                pageStack.layers.push('qrc:/SaveManager.qml')
+                pageStack.layers.push(Qt.resolvedUrl('./SaveManager.qml'))
             }
         }
     ]
