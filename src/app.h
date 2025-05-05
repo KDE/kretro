@@ -2,8 +2,11 @@
 // SPDX-FileCopyrightText: 2023 Seshan Ravikumar <seshan@sineware.ca>
 
 #pragma once
+
 #include <QObject>
 #include <QTimer>
+#include <qqmlintegration.h>
+
 #include "retroframe.h"
 #include "libretro.h"
 #include <qbuffer.h>
@@ -22,13 +25,13 @@ class QQuickWindow;
 class App : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
     Q_PROPERTY(QString error READ error WRITE setError NOTIFY errorChanged)
 public:
-    App(QObject* parent = nullptr);
-    // Restore current window geometry
-    Q_INVOKABLE void restoreWindowGeometry(QQuickWindow *window, const QString &group = u"main"_s) const;
-    // Save current window geometry
-    Q_INVOKABLE void saveWindowGeometry(QQuickWindow *window, const QString &group = u"main"_s) const;
+    static App *self();
+    static App *create(QQmlEngine *qmlEngine, QJSEngine *);
 
     Q_INVOKABLE void startRetroCore();
     Q_INVOKABLE void stopRetroCore();
@@ -37,12 +40,11 @@ public:
     void videoRefresh(const void *data, unsigned width, unsigned height, int pitch);
     void audioRefresh(const int16_t *data,size_t frames);
 
-    static App *self();
 
     void setRetroFrame(RetroFrame *rf);
 
-    Q_INVOKABLE void setButtonState(QString button, bool state);
-    bool getButtonState(QString button);
+    Q_INVOKABLE void setButtonState(const QString &button, bool state);
+    bool getButtonState(const QString &button);
 
     void setImageFormat(QImage::Format format);
 
@@ -68,6 +70,8 @@ Q_SIGNALS:
     void errorChanged();
 
 private:
+    explicit App(QObject* parent = nullptr);
+
     QImage::Format m_imageFormat;
 
     RetroFrame *m_retroFrame;

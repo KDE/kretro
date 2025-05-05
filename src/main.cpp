@@ -8,17 +8,12 @@
 #include <QUrl>
 #include <QtQml>
 
-#include "app.h"
 #include "version-kretro.h"
 #include <KAboutData>
 #include <KLocalizedContext>
 #include <KLocalizedString>
 
-#include "kretroconfig.h"
-#include "retroframe.h"
-#include "retrogamemodel.h"
-#include "retrogamesavemodel.h"
-
+using namespace Qt::StringLiterals;
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
@@ -51,28 +46,12 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
-    auto config = kretroConfig::self();
-
-    qmlRegisterSingletonInstance("org.kde.kretro", 1, 0, "Config", config);
-
-    qmlRegisterSingletonType("org.kde.kretro", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
-        return engine->toScriptValue(KAboutData::applicationData());
-    });
-
-    qmlRegisterSingletonInstance("org.kde.kretro", 1, 0, "App", App::self());
-
-    qmlRegisterType<RetroFrame>("org.kde.kretro", 1, 0, "RetroFrame");
-    qmlRegisterType<RetroGameModel>("org.kde.kretro", 1, 0, "RetroGameModel");
-    qmlRegisterType<RetroGameSaveModel>("org.kde.kretro", 1, 0, "RetroGameSaveModel");
-
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
-    engine.load(QUrl(u"qrc:///main.qml"_s));
+    engine.loadFromModule("org.kde.kretro", "Main");
 
     if (engine.rootObjects().isEmpty()) {
         return -1;
     }
-
-    //App::self()->startRetroCore();
 
     return app.exec();
 }

@@ -1,8 +1,10 @@
 #pragma once
+
 #include <QAbstractListModel>
 #include <QObject>
 #include <QHash>
 #include <QDateTime>
+#include <qqmlintegration.h>
 
 struct RetroGameSave
 {
@@ -15,6 +17,7 @@ using RetroGameSaveList = std::vector<RetroGameSave>;
 class RetroGameSaveModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
 
 public:
     explicit RetroGameSaveModel(QObject *parent = nullptr);

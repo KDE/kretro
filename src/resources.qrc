@@ -4,13 +4,6 @@
 -->
 <RCC>
     <qresource prefix="/">
-        <file alias="main.qml">contents/ui/main.qml</file>
-        <file alias="About.qml">contents/ui/About.qml</file>
-        <file alias="MobilePlayer.qml">contents/ui/MobilePlayer.qml</file>
-        <file alias="MobileController.qml">contents/ui/MobileController.qml</file>
-        <file alias="SaveManager.qml">contents/ui/SaveManager.qml</file>
-        <file alias="HapticsEffectLoader.qml">contents/ui/haptics/HapticsEffectLoader.qml</file>
-        <file alias="HapticsEffectWrapper.qml">contents/ui/haptics/HapticsEffectWrapper.qml</file>
         <file alias="SinewareLabs.001.png">contents/img/SinewareLabs.001.png</file>
         <file alias="2048_icon.png">contents/img/2048_icon.png</file>
         <file alias="gba_default_icon.png">contents/img/gba_default_icon.png</file>

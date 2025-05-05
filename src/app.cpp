@@ -3,8 +3,6 @@
 
 #include "app.h"
 #include <KSharedConfig>
-#include <KWindowConfig>
-#include <QQuickWindow>
 #include <QTemporaryFile>
 #include <QDir>
 #include <dlfcn.h>
@@ -27,23 +25,6 @@ App::App(QObject* parent)
     , m_appdataDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation))
     , m_gamesDir(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + u"/Games"_s)
 {
-}
-
-void App::restoreWindowGeometry(QQuickWindow *window, const QString &group) const
-{
-    KConfig dataResource(u"data"_s, KConfig::SimpleConfig, QStandardPaths::AppDataLocation);
-    KConfigGroup windowGroup(&dataResource, u"Window-"_s + group);
-    KWindowConfig::restoreWindowSize(window, windowGroup);
-    KWindowConfig::restoreWindowPosition(window, windowGroup);
-}
-
-void App::saveWindowGeometry(QQuickWindow *window, const QString &group) const
-{
-    KConfig dataResource(u"data"_s, KConfig::SimpleConfig, QStandardPaths::AppDataLocation);
-    KConfigGroup windowGroup(&dataResource, u"Window-"_s+ group);
-    KWindowConfig::saveWindowPosition(window, windowGroup);
-    KWindowConfig::saveWindowSize(window, windowGroup);
-    dataResource.sync();
 }
 
 void retrolog(enum retro_log_level level, const char *fmt, ...)
@@ -388,19 +369,25 @@ App* App::self()
     return a;
 }
 
+App *App::create(QQmlEngine *qmlEngine, QJSEngine *)
+{
+    return App::self();
+}
+
 void App::setRetroFrame(RetroFrame *rf)
 {
     m_retroFrame = rf;
 }
 
-void App::setButtonState(QString button, bool state)
+void App::setButtonState(const QString &button, bool state)
 {
     m_inputStates[button] = state;
 }
 
-bool App::getButtonState(QString button)
+bool App::getButtonState(const QString &button)
 {
-    return m_inputStates.contains(button) && m_inputStates[button];
+    const auto val = m_inputStates.contains(button) && m_inputStates[button];
+    return val;
 }
 
 void App::setImageFormat(QImage::Format format)

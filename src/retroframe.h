@@ -4,10 +4,12 @@
 #include <QQuickItem>
 #include <QPainter>
 #include <QImage>
+#include <qqmlintegration.h>
 
 class RetroFrame : public QQuickPaintedItem
 {
-Q_OBJECT
+    Q_OBJECT
+    QML_ELEMENT
     Q_PROPERTY(QImage image READ image WRITE setImage NOTIFY imageChanged)
 public:
     RetroFrame(QQuickItem *parent = nullptr);
