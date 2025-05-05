@@ -8,17 +8,12 @@
 #include <QUrl>
 #include <QtQml>
 
-#include "app.h"
 #include "version-kretro.h"
 #include <KAboutData>
 #include <KLocalizedContext>
 #include <KLocalizedString>
 
-#include "kretroconfig.h"
-#include "retroframe.h"
-#include "retrogamemodel.h"
-#include "retrogamesavemodel.h"
-
+using namespace Qt::StringLiterals;
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
@@ -57,8 +52,6 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     if (engine.rootObjects().isEmpty()) {
         return -1;
     }
-
-    //App::self()->startRetroCore();
 
     return app.exec();
 }
