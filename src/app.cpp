@@ -3,8 +3,6 @@
 
 #include "app.h"
 #include <KSharedConfig>
-#include <KWindowConfig>
-#include <QQuickWindow>
 #include <QTemporaryFile>
 #include <QDir>
 #include <dlfcn.h>
@@ -27,24 +25,6 @@ App::App(QObject* parent)
     , m_appdataDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation))
     , m_gamesDir(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + u"/Games"_s)
 {
-    static App* a = this;
-}
-
-void App::restoreWindowGeometry(QQuickWindow *window, const QString &group) const
-{
-    KConfig dataResource(u"data"_s, KConfig::SimpleConfig, QStandardPaths::AppDataLocation);
-    KConfigGroup windowGroup(&dataResource, u"Window-"_s + group);
-    KWindowConfig::restoreWindowSize(window, windowGroup);
-    KWindowConfig::restoreWindowPosition(window, windowGroup);
-}
-
-void App::saveWindowGeometry(QQuickWindow *window, const QString &group) const
-{
-    KConfig dataResource(u"data"_s, KConfig::SimpleConfig, QStandardPaths::AppDataLocation);
-    KConfigGroup windowGroup(&dataResource, u"Window-"_s+ group);
-    KWindowConfig::saveWindowPosition(window, windowGroup);
-    KWindowConfig::saveWindowSize(window, windowGroup);
-    dataResource.sync();
 }
 
 void retrolog(enum retro_log_level level, const char *fmt, ...)

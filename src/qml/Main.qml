@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Controls as Controls
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
+import org.kde.config as Config
 import org.kde.kretro
 
 Kirigami.ApplicationWindow {
@@ -17,24 +18,10 @@ Kirigami.ApplicationWindow {
     minimumWidth: Kirigami.Units.gridUnit * 20
     minimumHeight: Kirigami.Units.gridUnit * 20
 
-    onClosing: App.saveWindowGeometry(root)
-
-    onWidthChanged: saveWindowGeometryTimer.restart()
-    onHeightChanged: saveWindowGeometryTimer.restart()
-    onXChanged: saveWindowGeometryTimer.restart()
-    onYChanged: saveWindowGeometryTimer.restart()
-
-    Component.onCompleted: App.restoreWindowGeometry(root)
-
-    // This timer allows to batch update the window size change to reduce
-    // the io load and also work around the fact that x/y/width/height are
-    // changed when loading the page and overwrite the saved geometry from
-    // the previous session.
-    Timer {
-        id: saveWindowGeometryTimer
-        interval: 1000
-        onTriggered: App.saveWindowGeometry(root)
+    Config.WindowStateSaver {
+        configGroupName: "Main"
     }
+
     globalDrawer: Kirigami.GlobalDrawer {
         title: i18n("kretro")
         titleIcon: "applications-graphics"

@@ -5,7 +5,6 @@
 
 #include <QObject>
 #include <QTimer>
-#include <QQuickWindow>
 #include <qqmlintegration.h>
 
 #include "retroframe.h"
@@ -33,11 +32,6 @@ class App : public QObject
 public:
     static App *self();
     static App *create(QQmlEngine *qmlEngine, QJSEngine *);
-
-    // Restore current window geometry
-    Q_INVOKABLE void restoreWindowGeometry(QQuickWindow *window, const QString &group = u"main"_s) const;
-    // Save current window geometry
-    Q_INVOKABLE void saveWindowGeometry(QQuickWindow *window, const QString &group = u"main"_s) const;
 
     Q_INVOKABLE void startRetroCore();
     Q_INVOKABLE void stopRetroCore();
