@@ -319,6 +319,7 @@ void App::startRetroCore()
 
     m_frameTimer = new QTimer{this};
     connect(m_frameTimer, &QTimer::timeout, this, [retro_run]() { retro_run(); });
+    m_frameTimer->setTimerType(Qt::PreciseTimer);
     m_frameTimer->start(1000 / avinfo.timing.fps);
     m_isRunning = true;
 }
