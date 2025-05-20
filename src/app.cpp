@@ -158,11 +158,10 @@ int16_t input_state(unsigned port, unsigned device, unsigned index, unsigned id)
     return 0;
 }
 
-void App::videoRefresh(const void *data, unsigned width, unsigned height, int pitch) {
-    QImage i = QImage{reinterpret_cast<const uchar*>(data), static_cast<int>(width), static_cast<int>(height), pitch, m_imageFormat};
-    if(m_imageFormat == QImage::Format_RGBX8888)
-        i = i.rgbSwapped();
-    m_retroFrame->setImage(i);
+void App::videoRefresh(const void *data, unsigned width, unsigned height, size_t pitch) {
+    if (m_retroFrame) {
+        m_retroFrame->updateFrameData(data, width, height, pitch, m_imageFormat);
+    }
 }
 void App::audioRefresh(const int16_t *data, size_t frames) {
     // write to m_audioBuffer
@@ -320,6 +319,7 @@ void App::startRetroCore()
 
     m_frameTimer = new QTimer{this};
     connect(m_frameTimer, &QTimer::timeout, this, [retro_run]() { retro_run(); });
+    m_frameTimer->setTimerType(Qt::PreciseTimer);
     m_frameTimer->start(1000 / avinfo.timing.fps);
     m_isRunning = true;
 }
