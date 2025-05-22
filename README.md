@@ -23,3 +23,22 @@ Currently, the following cores are integrated:
 **arm64**
 - 2048_libretro
 - mednafen_gba_libretro
+
+## Building and Testing
+It is recommend to use `kde-builder`. Add the following to your `~/.config/kde-builder/config.yaml` file:
+
+```yaml
+project kretro:
+  repository: git@invent.kde.org:seshpenguin/kretro.git
+```
+Then, you can build kretro: `kde-builder kretro`
+
+To run kretro, first source the prefix, then run the app:
+
+```bash
+source ~/kde/build/kretro/prefix.sh
+kretro
+
+# To test the mobile player:
+QT_QUICK_CONTROLS_MOBILE=1 QT_QUICK_CONTROLS_STYLE=org.kde.breeze kretro
+```
