@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2025 Seshan Ravikumar <seshan@sineware.ca>
+# SPDX-License-Identifier: BSD-3-Clause
+
 pkgname=kretro
 pkgver=1.0.0_git$GIT_VERNUM
 pkgrel=0

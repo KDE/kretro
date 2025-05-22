@@ -1,3 +1,8 @@
+<!--
+- SPDX-FileCopyrightText: 2025 Seshan Ravikumar <seshan@sineware.ca>
+- SPDX-License-Identifier: FSFAP
+-->
+
 # KRetro - Libretro Emulation Frontend for Plasma
 
 Play your favourite games across Plasma platforms: in your pocket, desktop or TV!
