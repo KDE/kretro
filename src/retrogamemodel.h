@@ -14,6 +14,7 @@ public:
     explicit RetroGameModel(QObject *parent = nullptr);
     Q_INVOKABLE void append(QObject* o);
     Q_INVOKABLE void insert(QObject* o, int i);
+    Q_INVOKABLE QVariant get(int index) const;
 
     int rowCount(const QModelIndex &p) const override;
     QVariant data(const QModelIndex &index, int role) const override;

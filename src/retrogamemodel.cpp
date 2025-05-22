@@ -85,3 +85,11 @@ void RetroGameModel::insert(QObject *o, int i)
 
     endInsertRows();
 }
+
+QVariant RetroGameModel::get(int index) const
+{
+    if (index < 0 || index >= m_data.size()) {
+        return QVariant();
+    }
+    return QVariant::fromValue(m_data.at(index));
+}

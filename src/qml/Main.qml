@@ -18,6 +18,12 @@ Kirigami.ApplicationWindow {
     minimumWidth: Kirigami.Units.gridUnit * 20
     minimumHeight: Kirigami.Units.gridUnit * 20
 
+    function startGame(rom) {
+        App.setRomFilePath(rom.path);
+        App.setRomConsole(rom.console);
+        pageStack.layers.push(Qt.resolvedUrl('./MobilePlayer.qml'));
+    }
+
     Config.WindowStateSaver {
         configGroupName: "Main"
     }
@@ -80,8 +86,8 @@ Kirigami.ApplicationWindow {
             anchors.top: errorMessage.bottom
             text: i18n("Game Library")
         }
-
         GridView {
+            id: gamesGridView
             anchors.top: heading.bottom
             anchors.left: parent.left
             anchors.right: parent.right
@@ -90,10 +96,30 @@ Kirigami.ApplicationWindow {
 
             cellWidth: Kirigami.Units.gridUnit * 9
             cellHeight: Kirigami.Units.gridUnit * 9
+            
+            focus: true
+
+            highlight: Rectangle {
+                color: Kirigami.Theme.highlightColor
+                opacity: 0.3
+                radius: Kirigami.Units.cornerRadius
+                z: 2
+            }
+            highlightMoveDuration: Kirigami.Units.longDuration
+
+            keyNavigationEnabled: true
+            
+            Keys.onPressed: function(event) {
+                if (event.key === Qt.Key_Return || event.key === Qt.Key_Enter) {
+                    var retroGame = retroGameModel.get(gamesGridView.currentIndex);
+                    root.startGame(retroGame);
+                }
+            }
 
             RetroGameModel {
                 id: retroGameModel
             }
+            
             Component {
                 id: fileDelegate
                 Kirigami.Card {
@@ -101,10 +127,10 @@ Kirigami.ApplicationWindow {
                     banner.title: model.rom.name
                     implicitHeight: Kirigami.Units.gridUnit * 8
                     implicitWidth: Kirigami.Units.gridUnit * 8
+                    
                     onPressed: {
-                        App.setRomFilePath(model.rom.path)
-                        App.setRomConsole(model.rom.console)
-                        pageStack.layers.push(Qt.resolvedUrl('./MobilePlayer.qml'))
+                        gamesGridView.currentIndex = index;
+                        root.startGame(model.rom);
                     }
                 }
             }
@@ -112,5 +138,9 @@ Kirigami.ApplicationWindow {
             model: retroGameModel
             delegate: fileDelegate
         }
+    }
+    
+    Component.onCompleted: {
+        gamesGridView.forceActiveFocus();
     }
 }
