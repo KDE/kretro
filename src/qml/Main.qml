@@ -60,6 +60,14 @@ Kirigami.ApplicationWindow {
         id: contextDrawer
     }
 
+    onActiveFocusItemChanged: {
+        // hack: force focus to gridview upon return to main page
+        if (activeFocusItem.toString().includes("QQuickRowLayout")) {
+            console.log("Forcing focus to gridview");
+            gridViewFocusScope.forceActiveFocus();
+        }
+    }
+
     pageStack.initialPage: page
 
     Kirigami.Page {
@@ -80,67 +88,73 @@ Kirigami.ApplicationWindow {
             text: App.error
         }
 
-        // Heading
         Kirigami.Heading {
             id: heading
             anchors.top: errorMessage.bottom
             text: i18n("Game Library")
         }
-        GridView {
-            id: gamesGridView
+        FocusScope {
+            id: gridViewFocusScope
             anchors.top: heading.bottom
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.bottom: parent.bottom
             anchors.topMargin: Kirigami.Units.gridUnit
 
-            cellWidth: Kirigami.Units.gridUnit * 9
-            cellHeight: Kirigami.Units.gridUnit * 9
-            
             focus: true
-
-            highlight: Rectangle {
-                color: Kirigami.Theme.highlightColor
-                opacity: 0.3
-                radius: Kirigami.Units.cornerRadius
-                z: 2
-            }
-            highlightMoveDuration: Kirigami.Units.longDuration
-
-            keyNavigationEnabled: true
+            activeFocusOnTab: true
+            focusPolicy: Qt.StrongFocus
             
-            Keys.onPressed: function(event) {
-                if (event.key === Qt.Key_Return || event.key === Qt.Key_Enter) {
-                    var retroGame = retroGameModel.get(gamesGridView.currentIndex);
-                    root.startGame(retroGame);
+            GridView {
+                id: gamesGridView
+                anchors.fill: parent
+                
+                cellWidth: Kirigami.Units.gridUnit * 9
+                cellHeight: Kirigami.Units.gridUnit * 9
+                focus: true
+                
+                highlight: Rectangle {
+                    color: Kirigami.Theme.highlightColor
+                    opacity: 0.3
+                    radius: Kirigami.Units.cornerRadius
+                    z: 2
                 }
-            }
-
-            RetroGameModel {
-                id: retroGameModel
-            }
-            
-            Component {
-                id: fileDelegate
-                Kirigami.Card {
-                    banner.source: model.rom.icon
-                    banner.title: model.rom.name
-                    implicitHeight: Kirigami.Units.gridUnit * 8
-                    implicitWidth: Kirigami.Units.gridUnit * 8
-                    
-                    onPressed: {
-                        gamesGridView.currentIndex = index;
-                        root.startGame(model.rom);
+                highlightMoveDuration: Kirigami.Units.longDuration
+                
+                keyNavigationEnabled: true
+                Keys.onPressed: function(event) {
+                    if (event.key === Qt.Key_Return || event.key === Qt.Key_Enter) {
+                        var retroGame = retroGameModel.get(gamesGridView.currentIndex);
+                        root.startGame(retroGame);
                     }
                 }
+                
+                RetroGameModel {
+                    id: retroGameModel
+                }
+                
+                Component {
+                    id: fileDelegate
+                    Kirigami.Card {
+                        banner.source: model.rom.icon
+                        banner.title: model.rom.name
+                        implicitHeight: Kirigami.Units.gridUnit * 8
+                        implicitWidth: Kirigami.Units.gridUnit * 8
+                        onPressed: {
+                            gamesGridView.currentIndex = index;
+                            root.startGame(model.rom);
+                        }
+                    }
+                }
+                
+                model: retroGameModel
+                delegate: fileDelegate
             }
-
-            model: retroGameModel
-            delegate: fileDelegate
         }
     }
-    
+
+
     Component.onCompleted: {
-        gamesGridView.forceActiveFocus();
+        gridViewFocusScope.forceActiveFocus();
     }
 }

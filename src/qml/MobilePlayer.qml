@@ -42,6 +42,10 @@ Kirigami.Page {
     }
 
     function handleKeyPress(event, pressed) {
+        if (event.key === Qt.Key_Escape) {
+            pageStack.layers.pop();
+            return;
+        }
         switch(event.key) {
             case Qt.Key_Z:
                 App.setButtonState("A", pressed)
