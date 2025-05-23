@@ -8,6 +8,7 @@
 #include <QObject>
 #include <QHash>
 #include <qqmlintegration.h>
+#include "objects/retrogame.h"
 
 class RetroGameModel : public QAbstractListModel
 {
@@ -17,8 +18,8 @@ class RetroGameModel : public QAbstractListModel
     Q_PROPERTY(int count READ count NOTIFY countChanged)
 public:
     explicit RetroGameModel(QObject *parent = nullptr);
-    Q_INVOKABLE void append(QObject* o);
-    Q_INVOKABLE void insert(QObject* o, int i);
+    Q_INVOKABLE void append(RetroGame* o);
+    Q_INVOKABLE void insert(RetroGame* o, int i);
     Q_INVOKABLE QVariant get(int index) const;
 
     int rowCount(const QModelIndex &p) const override;
@@ -32,5 +33,5 @@ public Q_SLOTS:
     void setCount(int count);
 private:
     int m_count;
-    QList<QObject*> m_data;
+    QList<RetroGame*> m_data;
 };

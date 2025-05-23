@@ -4,8 +4,6 @@
 */
 
 #include "retrogamemodel.h"
-#include "app.h"
-#include "objects/retrogame.h"
 #include <QDir>
 
 using namespace Qt::Literals::StringLiterals;
@@ -69,7 +67,7 @@ QHash<int, QByteArray> RetroGameModel::roleNames() const
     return {{Qt::UserRole, "rom"}};
 }
 
-void RetroGameModel::append(QObject *o) {
+void RetroGameModel::append(RetroGame *o) {
     int i = m_data.size();
     beginInsertRows(QModelIndex(), i, i);
     m_data.append(o);
@@ -80,7 +78,7 @@ void RetroGameModel::append(QObject *o) {
     endInsertRows();
 }
 
-void RetroGameModel::insert(QObject *o, int i)
+void RetroGameModel::insert(RetroGame *o, int i)
 {
     beginInsertRows(QModelIndex(), i, i);
     m_data.insert(i, o);
