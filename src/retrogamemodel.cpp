@@ -1,3 +1,8 @@
+/*
+    SPDX-License-Identifier: GPL-2.0-or-later
+    SPDX-FileCopyrightText: 2023-2025 Seshan Ravikumar <seshan@sineware.ca>
+*/
+
 #include "retrogamemodel.h"
 #include "app.h"
 #include "objects/retrogame.h"

@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: Copyright (C) 2010-2024 The RetroArch team
+// SPDX-License-Identifier: MIT
 /*!
  * libretro.h is a simple API that allows for the creation of games and emulators.
  *

@@ -1,3 +1,8 @@
+/*
+    SPDX-License-Identifier: GPL-2.0-or-later
+    SPDX-FileCopyrightText: 2023-2025 Seshan Ravikumar <seshan@sineware.ca>
+*/
+
 #include "retrogame.h"
 RetroGame::RetroGame(QString name, QString path, QString console, QString icon, QObject *parent)
     : QObject(parent)

@@ -1,3 +1,8 @@
+<!--
+- SPDX-FileCopyrightText: 2025 Seshan Ravikumar <seshan@sineware.ca>
+- SPDX-License-Identifier: FSFAP
+-->
+
 # Core Sources
 
 `mednafen_gba_libretro.so` - [Beetle GBA](https://github.com/libretro/beetle-gba-libretro)
