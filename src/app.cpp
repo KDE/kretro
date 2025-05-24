@@ -8,6 +8,7 @@
 #include <dlfcn.h>
 #include <cstdarg>
 #include <QStandardPaths>
+#include "kretroconfig.h"
 
 #ifdef __linux__ 
     #include <alsa/asoundlib.h>
@@ -23,8 +24,8 @@ App::App(QObject* parent)
     , m_retroFrame{nullptr}
     , m_frameTimer{new QTimer{this}}
     , m_appdataDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation))
-    , m_gamesDir(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + u"/Games"_s)
 {
+    m_gamesDir = Config::self()->romsDirectory();
 }
 
 void retrolog(enum retro_log_level level, const char *fmt, ...)
@@ -192,14 +193,25 @@ void App::startRetroCore()
     if(m_romConsole == u"TWENTY_FORTY_EIGHT"_s) {
         coreName = u"2048_libretro.so"_s;
     } else if (m_romConsole == u"GBA"_s) {
-        coreName = u"mednafen_gba_libretro.so"_s;
+        coreName = Config::self()->gbaCore();
     } else if (m_romConsole == u"SNES"_s) {
-        coreName = u"snes9x_libretro.so"_s;
+        coreName = Config::self()->snesCore();
     } else if (m_romConsole == u"NES"_s) {
-        coreName = u"quicknes_libretro.so"_s;
+        coreName = Config::self()->nesCore();
     }
-    auto core_full_path = QTemporaryFile::createNativeFile(u":/cores/"_s + QSysInfo::buildCpuArchitecture() + u"/"_s + coreName)->fileName();
+    QString core_full_path = (coreName == u"2048_libretro.so"_s) ? 
+        QTemporaryFile::createNativeFile(u":/cores/"_s + QSysInfo::buildCpuArchitecture() + u"/"_s + coreName)->fileName() : 
+        Config::self()->libretroCoresDirectory() + u"/"_s + coreName;
+
     qDebug() << "Loading core from" << core_full_path;
+
+    // check if core exists
+    if (!QFile::exists(core_full_path)) {
+        qDebug() << "Core not found!";
+        setError(u"Core not found!"_s);
+        return;
+    }
+
     void* lrcore = dlopen(core_full_path.toLocal8Bit().data(), RTLD_LAZY);
     if (!lrcore) {
         qDebug() << "Failed to load core!";

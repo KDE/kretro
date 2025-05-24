@@ -4,13 +4,35 @@
     xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
     http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
 <!--
-SPDX-FileCopyrightText: 2023 Seshan Ravikumar <seshan@sineware.ca>
+SPDX-FileCopyrightText: 2023-2025 Seshan Ravikumar <seshan@sineware.ca>
 SPDX-License-Identifier: LGPL-2.0-or-later
 -->
     <group name="General">
-        <entry name="someSetting" type="Bool">
-            <label>Some setting description</label>
-            <default>true</default>
+        <entry name="romsDirectory" type="Path">
+            <label>Location for the ROMs directory.</label>
+            <default>$HOME/Documents/Games</default>
         </entry>
+        <entry name="libretroCoresDirectory" type="Path">
+            <label>Location for the libretro core files.</label>
+            <default>/usr/lib/libretro</default>
+        </entry>
+    </group>
+
+    <group name="Libretro">
+        <entry name="gbaCore" type="Path">
+            <label>GBA Libretro Core</label>
+            <default>mednafen_gba_libretro.so</default>
+        </entry>
+        <entry name="nesCore" type="Path">
+            <label>NES Libretro Core</label>
+            <default>nestopia_libretro.so</default>
+        </entry>
+        <entry name="snesCore" type="Path">
+            <label>SNES Libretro Core</label>
+            <default>snes9x_libretro.so</default>
+        </entry>
+    </group>
+
+    <group name="Controller">
     </group>
 </kcfg>

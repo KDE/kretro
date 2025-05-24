@@ -43,6 +43,13 @@ Kirigami.ApplicationWindow {
                 }
             },
             Kirigami.Action {
+                text: i18n("Settings")
+                icon.name: "settings-configure"
+                onTriggered: {
+                    pageStack.layers.push(Qt.resolvedUrl('./Settings.qml'));
+                }
+            },
+            Kirigami.Action {
                 text: i18n("About kretro")
                 icon.name: "help-about"
                 onTriggered: pageStack.layers.push(Qt.createComponent("org.kde.kirigamiaddons.formcard", "AboutPage"))

@@ -22,6 +22,7 @@ qt_target_qml_sources(kretro
         qml/MobileController.qml
         qml/MobilePlayer.qml
         qml/SaveManager.qml
+        qml/Settings.qml
 
         qml/haptics/HapticsEffectLoader.qml
         qml/haptics/HapticsEffectWrapper.qml
