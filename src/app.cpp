@@ -31,28 +31,28 @@ App::App(QObject* parent)
 void retrolog(enum retro_log_level level, const char *fmt, ...)
 {
     va_list ap;
-    int d;
-    char c, *s;
-
-   va_start(ap, fmt);
-    while (*fmt)
-        switch (*fmt++) {
-        case 's':              /* string */
-            s = va_arg(ap, char *);
-            printf("string %s\n", s);
-            break;
-        case 'd':              /* int */
-            d = va_arg(ap, int);
-            printf("int %d\n", d);
-            break;
-        case 'c':              /* char */
-            /* need a cast here since va_arg only
-               takes fully promoted types */
-            c = (char) va_arg(ap, int);
-            printf("char %c\n", c);
-            break;
-        }
+    va_start(ap, fmt);
+    
+    QString message = QString::vasprintf(fmt, ap);
     va_end(ap);
+    
+    switch (level) {
+        case RETRO_LOG_DEBUG:
+            qDebug() << message;
+            break;
+        case RETRO_LOG_INFO:
+            qInfo() << message;
+            break;
+        case RETRO_LOG_WARN:
+            qWarning() << message;
+            break;
+        case RETRO_LOG_ERROR:
+            qCritical() << message;
+            break;
+        default:
+            qDebug() << message;
+            break;
+    }
 }
 
 bool core_environment(unsigned cmd, void *data)
