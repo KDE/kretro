@@ -91,13 +91,28 @@ bool core_environment(unsigned cmd, void *data)
             *(const char **)data = App::self()->appdataDir().toLocal8Bit().data();
             qDebug () << "System directory" << *(const char **)data;
             return true;
+        case RETRO_ENVIRONMENT_GET_VARIABLE: {
+            struct retro_variable *var = (struct retro_variable *)data;
+            auto value = KSharedConfig::openConfig()->group(u"LibretroCoreVariables"_s).readEntry(var->key, QString());
+            if (value.isEmpty()) {
+                var->value = nullptr;
+                return false;
+            }
+            qDebug() << "Get Variable" << var->key << value;
+            if (var->value) {
+                free((void*)var->value);
+            }
+            var->value = strdup(value.toLocal8Bit().data());
+            return true;
+        }
         case RETRO_ENVIRONMENT_SET_VARIABLES: {
             const struct retro_variable *vars = (const struct retro_variable *)data;
             while (vars->key) {
-                // todo
-                qDebug() << "Variable" << vars->key << vars->value;
+                qDebug() << "Set Variable" << vars->key << vars->value;
+                KSharedConfig::openConfig()->group(u"LibretroCoreVariables"_s).writeEntry(vars->key, vars->value);
                 vars++;
             }
+            KSharedConfig::openConfig()->sync();
             break;
         }
         default:
