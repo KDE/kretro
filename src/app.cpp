@@ -93,6 +93,7 @@ bool core_environment(unsigned cmd, void *data)
             return true;
         case RETRO_ENVIRONMENT_GET_VARIABLE: {
             struct retro_variable *var = (struct retro_variable *)data;
+            // value here is the user overridden option (from one of the options declared in SET_VARIABLES), if it is set
             auto value = KSharedConfig::openConfig()->group(u"LibretroCoreVariables"_s).readEntry(var->key, QString());
             if (value.isEmpty()) {
                 var->value = nullptr;
@@ -107,12 +108,13 @@ bool core_environment(unsigned cmd, void *data)
         }
         case RETRO_ENVIRONMENT_SET_VARIABLES: {
             const struct retro_variable *vars = (const struct retro_variable *)data;
+            // value here is the variable description and list of possible values (for frontend)
+            // not the current value
             while (vars->key) {
                 qDebug() << "Set Variable" << vars->key << vars->value;
-                KSharedConfig::openConfig()->group(u"LibretroCoreVariables"_s).writeEntry(vars->key, vars->value);
+                App::self()->setCoreVariable(QString::fromLocal8Bit(vars->key), QString::fromLocal8Bit(vars->value));
                 vars++;
             }
-            KSharedConfig::openConfig()->sync();
             break;
         }
         default:
@@ -492,6 +494,19 @@ QString App::saveNewSaveSlot()
     }
 
     return {};
+}
+
+void App::setCoreVariable(const QString &key, const QString &value)
+{
+    m_coreVariables[key] = value;
+}
+QString App::getCoreVariable(const QString &key) const
+{
+    return m_coreVariables.value(key, QString());
+}
+QHash<QString, QString> App::coreVariables() const
+{
+    return m_coreVariables;
 }
 
 QString App::appdataDir() const

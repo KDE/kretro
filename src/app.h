@@ -53,6 +53,11 @@ public:
     Q_INVOKABLE void setRomFilePath(QString path);
     Q_INVOKABLE void setRomConsole(QString console);
 
+    Q_INVOKABLE void setCoreVariable(const QString &key, const QString &value);
+    Q_INVOKABLE QString getCoreVariable(const QString &key) const;
+    Q_INVOKABLE QHash<QString, QString> coreVariables() const;
+    
+
     void setError(const QString &author);
     QString error() const;
 
@@ -83,6 +88,7 @@ private:
 
     QString m_romFilePath;
     QString m_romConsole;
+    QHash<QString, QString> m_coreVariables;
 
     QString m_error;
 
