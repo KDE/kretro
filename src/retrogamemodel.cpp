@@ -6,6 +6,8 @@
 #include "retrogamemodel.h"
 #include <QDir>
 
+#include "kretroconfig.h"
+
 using namespace Qt::Literals::StringLiterals;
 
 RetroGameModel::RetroGameModel(QObject *parent)
@@ -14,21 +16,28 @@ RetroGameModel::RetroGameModel(QObject *parent)
 {
     append(new RetroGame{u"2048"_s, u""_s, u"TWENTY_FORTY_EIGHT"_s, u"qrc:/2048_icon.png"_s, this});
 
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup generalGroup = config->group(u"General"_s);
+
+    QString romsPath = generalGroup.readPathEntry(u"romsDirectory"_s,
+                                                QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + u"/Games"_s);
+    QDir romDir{romsPath};
+
     // Game Boy Advance
-    QString homeDir = QDir::homePath();
-    QDir romDir{homeDir + u"/Documents/Games"_s};
-    QStringList roms = romDir.entryList(QStringList() << u"*.gba"_s, QDir::Files);
-    for (QString rom : roms) {
+    QStringList gba_roms = romDir.entryList(QStringList() << u"*.gba"_s, QDir::Files);
+    for (QString rom : gba_roms) {
         QString path = romDir.absoluteFilePath(rom);
         append(new RetroGame{rom, path, u"GBA"_s, u"qrc:/gba_default_icon.png"_s, this});
     }
 
+    // Super Nintendo Entertainment System
     QStringList snes_roms = romDir.entryList(QStringList() << u"*.smc"_s, QDir::Files);
     for (QString rom : snes_roms) {
         QString path = romDir.absoluteFilePath(rom);
         append(new RetroGame{rom, path, u"SNES"_s, u"qrc:/snes_default_icon.png"_s, this});
     }
 
+    // Nintendo Entertainment System
     QStringList nes_roms = romDir.entryList(QStringList() << u"*.nes"_s, QDir::Files);
     for (QString rom : nes_roms) {
         QString path = romDir.absoluteFilePath(rom);
