@@ -6,6 +6,8 @@
 #include "retrogamemodel.h"
 #include <QDir>
 
+#include "kretroconfig.h"
+
 using namespace Qt::Literals::StringLiterals;
 
 RetroGameModel::RetroGameModel(QObject *parent)
@@ -14,8 +16,12 @@ RetroGameModel::RetroGameModel(QObject *parent)
 {
     append(new RetroGame{u"2048"_s, u""_s, u"TWENTY_FORTY_EIGHT"_s, u"qrc:/2048_icon.png"_s, this});
 
-    QString homeDir = QDir::homePath();
-    QDir romDir{homeDir + u"/Documents/Games"_s};
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup generalGroup = config->group(u"General"_s);
+
+    QString romsPath = generalGroup.readPathEntry(u"romsDirectory"_s,
+                                                QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + u"/Games"_s);
+    QDir romDir{romsPath};
 
     // Game Boy Advance
     QStringList gba_roms = romDir.entryList(QStringList() << u"*.gba"_s, QDir::Files);
