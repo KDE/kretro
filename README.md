@@ -17,17 +17,16 @@ Play your favourite games across Plasma platforms: in your pocket, desktop or TV
 
 ## Cores
 
-Currently, the following cores are integrated:
+Libretro cores (which are .so files) are dynamically loaded from your system (by default, from `/usr/lib/libretro`).
+Therefore you will need them installed either from your distro's package manager (ex. "pacman -S libretro"), or you will need to download them yourselves.
 
-**x86_64**
-- 2048_libretro
-- mednafen_gba_libretro
-- quicknes_libretro
-- snes9x_libretro
+The following consoles are currently supported:
 
-**arm64**
-- 2048_libretro
-- mednafen_gba_libretro
+- GBA
+- NES
+- SNES
+
+There is also a built in demo core for x86_64 and arm64, 2048_libretro.
 
 ## Building and Testing
 It is recommend to use `kde-builder`. Add the following to your `~/.config/kde-builder/config.yaml` file:
