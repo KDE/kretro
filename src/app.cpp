@@ -508,13 +508,13 @@ QVariantMap App::coreVariables() const
 void App::setCoreVariable(const QString &key, const QString &value)
 {
     m_coreVariables[key] = value;
-    Q_EMIT coreVariablesChanged();  // This will notify QML that the property changed
+    Q_EMIT coreVariablesChanged();
 }
 
 void App::clearCoreVariables()
 {
     m_coreVariables.clear();
-    Q_EMIT coreVariablesChanged();  // This will notify QML that the property changed
+    Q_EMIT coreVariablesChanged();
 }
 QString App::appdataDir() const
 {
