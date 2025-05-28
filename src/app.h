@@ -60,6 +60,10 @@ public:
     QString getCoreVariable(const QString &key) const;
     void clearCoreVariables();
     QVariantMap coreVariables() const;
+    // Allows a user to override the default core variable from QML
+    Q_INVOKABLE QString getUserCoreVariable(const QString &key) const;
+    Q_INVOKABLE void saveUserCoreVariable(const QString &key, const QString &value);
+    Q_INVOKABLE void resetUserCoreVariable(const QString &key);
     
 
     void setError(const QString &author);

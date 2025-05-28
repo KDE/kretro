@@ -8,7 +8,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kretro
 
-Kirigami.ScrollablePage {
+FormCard.FormCardPage {
     id: page
     title: i18n("Core Settings")
     
@@ -43,10 +43,16 @@ Kirigami.ScrollablePage {
     ColumnLayout {
         spacing: Kirigami.Units.largeSpacing
         
+
         FormCard.FormHeader {
             title: i18n("Core Variables")
         }
-        
+        Kirigami.InlineMessage {
+            visible: true
+            implicitWidth: Kirigami.Units.gridUnit * 30
+            Layout.alignment: Qt.AlignHCenter
+            text: i18n("Most settings require you to exit and reopen the game to take effect.")
+        }
         FormCard.FormCard {
             Repeater {
                 model: Object.keys(parsedVariables)
@@ -60,13 +66,21 @@ Kirigami.ScrollablePage {
                     description: i18n("Default: %1", variable?.defaultValue || "")
                     
                     Component.onCompleted: {
-                        let defaultValue = variable?.defaultValue || ""
+                        let userValue = App.getUserCoreVariable(variableKey);
+                        let defaultValue = userValue !== "" ? userValue : variable?.defaultValue || ""
                         let index = indexOfValue(defaultValue)
                         if (index >= 0) currentIndex = index
                     }
                     
                     onCurrentValueChanged: {
-                        // todo: save to kconfig
+                        let selectedValue = model[currentIndex];
+                        if(selectedValue !== variable?.defaultValue) {
+                            App.saveUserCoreVariable(variableKey, selectedValue);
+                            console.log("Saved variable:", variableKey, "with value:", selectedValue);
+                        } else {
+                            App.resetUserCoreVariable(variableKey);
+                            console.log("Removed variable:", variableKey);
+                        }
                     }
                 }
             }

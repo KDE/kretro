@@ -516,6 +516,24 @@ void App::clearCoreVariables()
     m_coreVariables.clear();
     Q_EMIT coreVariablesChanged();
 }
+
+QString App::getUserCoreVariable(const QString &key) const
+{
+    return KSharedConfig::openConfig()->group(u"LibretroCoreVariables"_s).readEntry(key, QString());
+}
+
+void App::saveUserCoreVariable(const QString &key, const QString &value)
+{
+    KSharedConfig::openConfig()->group(u"LibretroCoreVariables"_s).writeEntry(key, value);
+    KSharedConfig::openConfig()->sync();
+}
+
+void App::resetUserCoreVariable(const QString &key)
+{
+    KSharedConfig::openConfig()->group(u"LibretroCoreVariables"_s).deleteEntry(key);
+    KSharedConfig::openConfig()->sync();
+}
+
 QString App::appdataDir() const
 {
     return m_appdataDir;
