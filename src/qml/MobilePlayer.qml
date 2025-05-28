@@ -17,6 +17,12 @@ Kirigami.Page {
             onTriggered: resetPrompt.open()
         },
         Kirigami.Action {
+            icon.name: "settings-configure"
+            onTriggered: {
+                pageStack.layers.push(Qt.resolvedUrl('./SettingsRetroCore.qml'))
+            }
+        },
+        Kirigami.Action {
             icon.name: "document-save-all"
             onTriggered: {
                 pageStack.layers.push(Qt.resolvedUrl('./SaveManager.qml'))
@@ -123,6 +129,7 @@ Kirigami.Page {
             RetroFrame {
                 id: frame
                 anchors.fill: parent
+                smooth: true
             }
         }
 

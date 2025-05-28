@@ -5,6 +5,7 @@
 
 #include <QObject>
 #include <QTimer>
+#include <qcontainerfwd.h>
 #include <qqmlintegration.h>
 
 #include "retroframe.h"
@@ -29,6 +30,7 @@ class App : public QObject
     QML_SINGLETON
 
     Q_PROPERTY(QString error READ error WRITE setError NOTIFY errorChanged)
+    Q_PROPERTY(QVariantMap coreVariables READ coreVariables NOTIFY coreVariablesChanged)
 public:
     static App *self();
     static App *create(QQmlEngine *qmlEngine, QJSEngine *);
@@ -53,9 +55,11 @@ public:
     Q_INVOKABLE void setRomFilePath(QString path);
     Q_INVOKABLE void setRomConsole(QString console);
 
-    Q_INVOKABLE void setCoreVariable(const QString &key, const QString &value);
-    Q_INVOKABLE QString getCoreVariable(const QString &key) const;
-    Q_INVOKABLE QHash<QString, QString> coreVariables() const;
+    // Map of core variables (names and options list for UI)
+    void setCoreVariable(const QString &key, const QString &value);
+    QString getCoreVariable(const QString &key) const;
+    void clearCoreVariables();
+    QVariantMap coreVariables() const;
     
 
     void setError(const QString &author);
@@ -73,6 +77,7 @@ public:
 
 Q_SIGNALS:
     void errorChanged();
+    void coreVariablesChanged();
 
 private:
     explicit App(QObject* parent = nullptr);
@@ -88,7 +93,7 @@ private:
 
     QString m_romFilePath;
     QString m_romConsole;
-    QHash<QString, QString> m_coreVariables;
+    QVariantMap m_coreVariables;
 
     QString m_error;
 

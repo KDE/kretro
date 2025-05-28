@@ -23,6 +23,7 @@ App::App(QObject* parent)
     : QObject(parent)
     , m_retroFrame{nullptr}
     , m_frameTimer{new QTimer{this}}
+    , m_coreVariables{}
     , m_appdataDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation))
 {
     m_gamesDir = Config::self()->romsDirectory();
@@ -381,6 +382,9 @@ void App::stopRetroCore()
         snd_pcm_close(m_pcm);
     #endif
     delete m_frameTimer;
+
+    clearCoreVariables();
+
     m_isRunning = false;
     qDebug() << "Stopped core!";
 }
@@ -496,19 +500,22 @@ QString App::saveNewSaveSlot()
     return {};
 }
 
-void App::setCoreVariable(const QString &key, const QString &value)
-{
-    m_coreVariables[key] = value;
-}
-QString App::getCoreVariable(const QString &key) const
-{
-    return m_coreVariables.value(key, QString());
-}
-QHash<QString, QString> App::coreVariables() const
+QVariantMap App::coreVariables() const
 {
     return m_coreVariables;
 }
 
+void App::setCoreVariable(const QString &key, const QString &value)
+{
+    m_coreVariables[key] = value;
+    Q_EMIT coreVariablesChanged();  // This will notify QML that the property changed
+}
+
+void App::clearCoreVariables()
+{
+    m_coreVariables.clear();
+    Q_EMIT coreVariablesChanged();  // This will notify QML that the property changed
+}
 QString App::appdataDir() const
 {
     return m_appdataDir;
