@@ -31,6 +31,14 @@ SPDX-License-Identifier: LGPL-2.0-or-later
             <label>SNES Libretro Core</label>
             <default>snes9x_libretro.so</default>
         </entry>
+        <entry name="smsCore" type="Path">
+            <label>Master System Libretro Core</label>
+            <default>gearsystem_libretro.so</default>
+        </entry>
+        <entry name="genesisCore" type="Path">
+            <label>Genesis / Mega Drive Libretro Core</label>
+            <default>blastem_libretro.so</default>
+        </entry>
     </group>
 
     <group name="Controller">

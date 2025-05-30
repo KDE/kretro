@@ -27,6 +27,7 @@ App::App(QObject* parent)
     , m_appdataDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation))
 {
     m_gamesDir = Config::self()->romsDirectory();
+    m_systemDir = m_appdataDir + u"/"_s + u"system"_s;
 }
 
 void retrolog(enum retro_log_level level, const char *fmt, ...)
@@ -88,9 +89,12 @@ bool core_environment(unsigned cmd, void *data)
             return false;
         }
         case RETRO_ENVIRONMENT_GET_SYSTEM_DIRECTORY:
+            *(const char **)data = App::self()->systemDir().toLocal8Bit().data();
+            qDebug () << "Core System directory" << *(const char **)data;
+            return true;
         case RETRO_ENVIRONMENT_GET_SAVE_DIRECTORY:
             *(const char **)data = App::self()->appdataDir().toLocal8Bit().data();
-            qDebug () << "System directory" << *(const char **)data;
+            qDebug () << "Core Save directory" << *(const char **)data;
             return true;
         case RETRO_ENVIRONMENT_GET_VARIABLE: {
             struct retro_variable *var = (struct retro_variable *)data;
@@ -205,6 +209,7 @@ void App::audioRefresh(const int16_t *data, size_t frames) {
 void App::startRetroCore()
 {
     QDir().mkdir(m_appdataDir);
+    QDir().mkdir(m_systemDir);
 
     // Load core dynamic library
     QString coreName = u""_s;
@@ -216,6 +221,10 @@ void App::startRetroCore()
         coreName = Config::self()->snesCore();
     } else if (m_romConsole == u"NES"_s) {
         coreName = Config::self()->nesCore();
+    } else if (m_romConsole == u"SMS"_s) {
+        coreName = Config::self()->smsCore();
+    } else if (m_romConsole == u"GENESIS"_s) {
+        coreName = Config::self()->genesisCore();
     }
     QString core_full_path = (coreName == u"2048_libretro.so"_s) ? 
         QTemporaryFile::createNativeFile(u":/cores/"_s + QSysInfo::buildCpuArchitecture() + u"/"_s + coreName)->fileName() : 
@@ -537,6 +546,10 @@ void App::resetUserCoreVariable(const QString &key)
 QString App::appdataDir() const
 {
     return m_appdataDir;
+}
+QString App::systemDir() const
+{
+    return m_systemDir;
 }
 
 QString App::gamesDir() const

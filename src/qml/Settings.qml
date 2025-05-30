@@ -127,6 +127,44 @@ Kirigami.Page {
                     }
                 }
             }
+
+            FormCard.FormComboBoxDelegate {
+                id: smsComboBox
+                text: i18n("Master System Core:")
+                model: libretroModel
+                textRole: "fileName"
+                valueRole: "fileName"
+                
+                onCurrentValueChanged: {
+                    Config.smsCore = currentValue
+                }
+                
+                Connections {
+                    target: libretroModel
+                    function onCountChanged() {
+                        smsComboBox.currentIndex = smsComboBox.indexOfValue(Config.smsCore)
+                    }
+                }
+            }
+
+            FormCard.FormComboBoxDelegate {
+                id: genesisComboBox
+                text: i18n("Genesis / Mega Drive Core:")
+                model: libretroModel
+                textRole: "fileName"
+                valueRole: "fileName"
+                
+                onCurrentValueChanged: {
+                    Config.genesisCore = currentValue
+                }
+                
+                Connections {
+                    target: libretroModel
+                    function onCountChanged() {
+                        genesisComboBox.currentIndex = genesisComboBox.indexOfValue(Config.genesisCore)
+                    }
+                }
+            }
         }
         
         Item {

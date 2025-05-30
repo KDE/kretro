@@ -9,6 +9,8 @@
         <file alias="gba_default_icon.png">contents/img/gba_default_icon.png</file>
         <file alias="snes_default_icon.png">contents/img/snes_default_icon.png</file>
         <file alias="nes_default_icon.png">contents/img/nes_default_icon.png</file>
+        <file alias="sms_default_icon.png">contents/img/sms_default_icon.png</file>
+        <file alias="genesis_default_icon.png">contents/img/genesis_default_icon.png</file>
     </qresource>
     <qresource prefix="/cores/x86_64">
         <file alias="2048_libretro.so">contents/cores/x86_64/2048_libretro.so</file>

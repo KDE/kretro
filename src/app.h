@@ -77,6 +77,7 @@ public:
     Q_INVOKABLE QString saveNewSaveSlot();
 
     Q_INVOKABLE QString appdataDir() const;
+    Q_INVOKABLE QString systemDir() const;
     Q_INVOKABLE QString gamesDir() const;
 
 Q_SIGNALS:
@@ -107,5 +108,7 @@ private:
 #endif
 
     QString m_appdataDir;
+    QString m_systemDir;
     QString m_gamesDir;
+
 };

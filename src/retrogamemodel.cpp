@@ -43,6 +43,20 @@ RetroGameModel::RetroGameModel(QObject *parent)
         QString path = romDir.absoluteFilePath(rom);
         append(new RetroGame{rom, path, u"NES"_s, u"qrc:/nes_default_icon.png"_s, this});
     }
+
+    // Sega Master System / Game Gear
+    QStringList sms_roms = romDir.entryList(QStringList() << u"*.sms"_s << u"*.gg"_s, QDir::Files);
+    for (QString rom : sms_roms) {
+        QString path = romDir.absoluteFilePath(rom);
+        append(new RetroGame{rom, path, u"SMS"_s, u"qrc:/sms_default_icon.png"_s, this});
+    }
+
+    // Sega Genesis / Mega Drive
+    QStringList genesis_roms = romDir.entryList(QStringList() << u"*.gen"_s << u"*.md"_s, QDir::Files);
+    for (QString rom : genesis_roms) {
+        QString path = romDir.absoluteFilePath(rom);
+        append(new RetroGame{rom, path, u"GENESIS"_s, u"qrc:/genesis_default_icon.png"_s, this});
+    }
 }
 
 int RetroGameModel::count() const

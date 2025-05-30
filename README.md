@@ -20,11 +20,15 @@ Play your favourite games across Plasma platforms: in your pocket, desktop or TV
 Libretro cores (which are .so files) are dynamically loaded from your system (by default, from `/usr/lib/libretro`).
 Therefore you will need them installed either from your distro's package manager (ex. "pacman -S libretro"), or you will need to download them yourselves.
 
+> You can find a [bundle of x86_64 libretro cores](http://buildbot.libretro.com/nightly/linux/x86_64/RetroArch_cores.7z) from the libtretro buildbot, as well as [individual cores for armv7+](http://buildbot.libretro.com/nightly/linux/armv7-neon-hf/latest/).
+
 The following consoles are currently supported:
 
 - GBA
 - NES
 - SNES
+- SMS
+- Genesis/MD
 
 There is also a built in demo core for x86_64 and arm64, 2048_libretro.
 
