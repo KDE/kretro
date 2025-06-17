@@ -33,13 +33,9 @@ The following consoles are currently supported:
 There is also a built in demo core for x86_64 and arm64, 2048_libretro.
 
 ## Building and Testing
-It is recommend to use `kde-builder`. Add the following to your `~/.config/kde-builder/config.yaml` file:
+It is recommend to use `kde-builder`. 
 
-```yaml
-project kretro:
-  repository: git@invent.kde.org:seshpenguin/kretro.git
-```
-Then, you can build kretro: `kde-builder kretro`
+To build kretro: `kde-builder kretro`
 
 To run kretro, first source the prefix, then run the app:
 
@@ -47,6 +43,6 @@ To run kretro, first source the prefix, then run the app:
 source ~/kde/build/kretro/prefix.sh
 kretro
 
-# To test the mobile player:
+# Or, to test the mobile player:
 QT_QUICK_CONTROLS_MOBILE=1 QT_QUICK_CONTROLS_STYLE=org.kde.breeze kretro
 ```
