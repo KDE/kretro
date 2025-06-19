@@ -9,19 +9,14 @@
     <binary>kretro</binary>
   </provides>
   <launchable type="desktop-id">org.kde.kretro</launchable>
-  <name>kretro Kirigami Application</name>
-  <summary>A short summary describing what this software is about</summary>
+  <name>KRetro</name>
+  <summary>Libretro Emulation Frontend for Plasma</summary>
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-2.0-or-later</project_license>
-  <developer_name>The software vendor name, e.g. "ACME Corporation"</developer_name>
+  <developer_name>KDE Community</developer_name>
   <description>
-    <p>Multiple paragraphs of long description, describing this software component.</p>
-    <p>You can also use ordered and unordered lists:</p>
-    <ul>
-      <li>Feature 1</li>
-      <li>Feature 2</li>
-    </ul>
-    <p>Keep in mind to XML-escape characters, and that this is not HTML markup.</p>
+    <p>KRetro is a Libretro frontend written in Qt/Kirigami, designed for Plasma Desktop, Mobile, and Bigscreen.</p>
+    <p>It allows you to play games for retro consoles by supplying a ROM and Libretro core.</p>
   </description>
   <url type="homepage">https://invent.kde.org/seshpenguin/kretro</url>
 </component>
