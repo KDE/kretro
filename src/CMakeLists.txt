@@ -35,6 +35,7 @@ target_link_libraries(kretro PUBLIC
     Qt6::Gui
     Qt6::QuickControls2
     Qt6::Widgets
+    Qt6::Multimedia
     KF6::Kirigami
     KF6::I18n
     KF6::CoreAddons
