@@ -29,7 +29,7 @@ ecm_setup_version(${PROJECT_VERSION}
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/src/version-kretro.h"
 )
 
-find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Widgets Core Quick Gui Qml QuickControls2 Svg)
+find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Widgets Core Quick Gui Qml QuickControls2 Svg Multimedia)
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Kirigami CoreAddons Config I18n)
 find_package(ALSA)
 
