@@ -5,12 +5,6 @@
 
 #include <QObject>
 #include <QTimer>
-#include <QAudioFormat>
-#include <QAudioSink>
-#include <QIODevice>
-#include <QBuffer>
-#include <QMediaDevices>
-
 #include <qcontainerfwd.h>
 #include <qqmlintegration.h>
 
@@ -18,6 +12,12 @@
 #include "libretro.h"
 #include <qbuffer.h>
 #include "objects/retrogame.h"
+#ifdef __linux__ 
+    #include <alsa/asoundlib.h>
+#elif __APPLE__
+    
+#else
+#endif
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -94,6 +94,8 @@ private:
     bool m_isRunning;
     QHash<QString, bool> m_inputStates;
 
+    QBuffer *m_audioBuffer;
+
     QString m_romFilePath;
     QString m_romConsole;
     QVariantMap m_coreVariables;
@@ -101,10 +103,9 @@ private:
     QString m_error;
 
     void *m_lrCore;
-
-    QAudioSink* m_audioSink = nullptr;
-    QIODevice* m_audioDevice = nullptr;
-    QAudioFormat m_audioFormat;
+#ifdef __linux__
+    snd_pcm_t *m_pcm;
+#endif
 
     QString m_appdataDir;
     QString m_systemDir;
