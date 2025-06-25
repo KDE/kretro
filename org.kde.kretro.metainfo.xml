@@ -8,6 +8,7 @@
   <provides>
     <binary>kretro</binary>
   </provides>
+  <content_rating type="oars-1.1"/>
   <launchable type="desktop-id">org.kde.kretro</launchable>
   <name>KRetro</name>
   <summary>Libretro Emulation Frontend for Plasma</summary>
@@ -19,4 +20,5 @@
     <p>It allows you to play games for retro consoles by supplying a ROM and Libretro core.</p>
   </description>
   <url type="homepage">https://invent.kde.org/seshpenguin/kretro</url>
+  <releases></releases>
 </component>
