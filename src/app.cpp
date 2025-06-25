@@ -188,8 +188,10 @@ void App::videoRefresh(const void *data, unsigned width, unsigned height, size_t
 }
 void App::audioRefresh(const int16_t* data, size_t frames) {
     if (!m_audioDevice) return;
-    
+
     size_t byteSize = frames * m_audioFormat.channelCount() * sizeof(int16_t);
+    if (m_audioSink->bytesFree() < static_cast<qint64>(byteSize))return;
+    
     m_audioDevice->write(reinterpret_cast<const char*>(data), byteSize);
 }
 
