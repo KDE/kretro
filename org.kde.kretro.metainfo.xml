@@ -19,6 +19,11 @@
     <p>KRetro is a Libretro frontend written in Qt/Kirigami, designed for Plasma Desktop, Mobile, and Bigscreen.</p>
     <p>It allows you to play games for retro consoles by supplying a ROM and Libretro core.</p>
   </description>
+  <categories>
+    <category>Game</category>
+  </categories>
+  <icon type="stock">org.kde.kretro</icon>
   <url type="homepage">https://invent.kde.org/seshpenguin/kretro</url>
   <releases></releases>
+
 </component>
