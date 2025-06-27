@@ -357,11 +357,12 @@ void App::stopRetroCore()
     retro_unload_game();
     retro_deinit();
 
-    if (m_audioDevice) {
-        m_audioDevice->close();
-        delete m_audioDevice;
-        m_audioDevice = nullptr;
+    if (m_audioSink) {
+        m_audioSink->stop();
+        delete m_audioSink;
+        m_audioSink = nullptr;
     }
+    m_audioDevice = nullptr;
 
     delete m_frameTimer;
 
