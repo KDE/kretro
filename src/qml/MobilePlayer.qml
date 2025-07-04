@@ -52,6 +52,8 @@ Kirigami.Page {
             pageStack.layers.pop();
             return;
         }
+        console.error(App.getRetroPad())
+        App.getRetroPad().updateInputStates(event.key, pressed);
         switch(event.key) {
             case Qt.Key_Z:
                 App.setButtonState("A", pressed)

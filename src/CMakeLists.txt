@@ -7,6 +7,7 @@ add_executable(kretro
     retroframe.cpp
     retrogamemodel.cpp
     retrogamesavemodel.cpp
+    retropad.cpp
     objects/retrogame.cpp
     resources.qrc)
 
@@ -41,7 +42,7 @@ target_link_libraries(kretro PUBLIC
     KF6::CoreAddons
     KF6::ConfigCore
     KF6::ConfigGui
-    ALSA::ALSA
+    SDL3::SDL3
 )
 
 if (ANDROID)

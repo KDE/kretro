@@ -152,31 +152,33 @@ int16_t input_state(unsigned port, unsigned device, unsigned index, unsigned id)
     if(port || index || device != RETRO_DEVICE_JOYPAD)
         return 0;
     //qDebug() << "ID: " <<id;
+
+    auto retropad = App::self()->getRetroPad();
     switch(id) {
         case RETRO_DEVICE_ID_JOYPAD_A:
-            return App::self()->getButtonState(u"A"_s);
+            return retropad->getInputState(RetroPad::InputDevice{port, RETRO_DEVICE_ID_JOYPAD_A});
         case RETRO_DEVICE_ID_JOYPAD_B:
-            return App::self()->getButtonState(u"B"_s);
+            return retropad->getInputState(RetroPad::InputDevice{port, RETRO_DEVICE_ID_JOYPAD_B});
         case RETRO_DEVICE_ID_JOYPAD_X:
-            return App::self()->getButtonState(u"X"_s);
+            return retropad->getInputState(RetroPad::InputDevice{port, RETRO_DEVICE_ID_JOYPAD_X});
         case RETRO_DEVICE_ID_JOYPAD_Y:
-            return App::self()->getButtonState(u"Y"_s);
+            return retropad->getInputState(RetroPad::InputDevice{port, RETRO_DEVICE_ID_JOYPAD_Y});
         case RETRO_DEVICE_ID_JOYPAD_L:
-            return App::self()->getButtonState(u"L1"_s);
+            return retropad->getInputState(RetroPad::InputDevice{port, RETRO_DEVICE_ID_JOYPAD_L});
         case RETRO_DEVICE_ID_JOYPAD_R:
-            return App::self()->getButtonState(u"R1"_s);
+            return retropad->getInputState(RetroPad::InputDevice{port, RETRO_DEVICE_ID_JOYPAD_R});
         case RETRO_DEVICE_ID_JOYPAD_UP:
-            return App::self()->getButtonState(u"UP"_s);
+            return retropad->getInputState(RetroPad::InputDevice{port, RETRO_DEVICE_ID_JOYPAD_UP});
         case RETRO_DEVICE_ID_JOYPAD_DOWN:
-            return App::self()->getButtonState(u"DOWN"_s);
+            return retropad->getInputState(RetroPad::InputDevice{port, RETRO_DEVICE_ID_JOYPAD_DOWN});
         case RETRO_DEVICE_ID_JOYPAD_LEFT:
-            return App::self()->getButtonState(u"LEFT"_s);
+            return retropad->getInputState(RetroPad::InputDevice{port, RETRO_DEVICE_ID_JOYPAD_LEFT});
         case RETRO_DEVICE_ID_JOYPAD_RIGHT:
-            return App::self()->getButtonState(u"RIGHT"_s);
+            return retropad->getInputState(RetroPad::InputDevice{port, RETRO_DEVICE_ID_JOYPAD_RIGHT});
         case RETRO_DEVICE_ID_JOYPAD_START:
-            return App::self()->getButtonState(u"START"_s);
+            return retropad->getInputState(RetroPad::InputDevice{port, RETRO_DEVICE_ID_JOYPAD_START});
         case RETRO_DEVICE_ID_JOYPAD_SELECT:
-            return App::self()->getButtonState(u"SELECT"_s);
+            return retropad->getInputState(RetroPad::InputDevice{port, RETRO_DEVICE_ID_JOYPAD_SELECT});
     }
     return 0;
 }
@@ -323,6 +325,9 @@ void App::startRetroCore()
     const QAudioDevice &defaultDeviceInfo = QMediaDevices::defaultAudioOutput();
     m_audioSink = new QAudioSink(defaultDeviceInfo, m_audioFormat, this);
     m_audioDevice = m_audioSink->start();
+
+    // Start RetroPad input handling
+    m_retroPad = new RetroPad(this);
     
     m_frameTimer = new QTimer{this};
     connect(m_frameTimer, &QTimer::timeout, this, [retro_run]() { retro_run(); });
