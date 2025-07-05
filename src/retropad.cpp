@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: GPL-2.0-or-later
+// SPDX-FileCopyrightText: 2025 Seshan Ravikumar <seshan@sineware.ca>
+
 #include "retropad.h"
 #include <SDL3/SDL_events.h>
 #include <SDL3/SDL_gamepad.h>
@@ -9,6 +12,8 @@ RetroPad::RetroPad(QObject *parent)
     , m_keyboardStates()
     , m_controllerStates()
     , m_inputMappings()
+    , m_sdlEventThread(nullptr)
+    , m_running(true)
 {
 
     // todo kconfig and qml config for input mappings
@@ -26,16 +31,23 @@ RetroPad::RetroPad(QObject *parent)
     m_inputMappings.insert(InputDevice{0, RETRO_DEVICE_ID_JOYPAD_R}, InputMapping{InputType::Controller, SDL_GAMEPAD_BUTTON_RIGHT_SHOULDER});   
         
     initializeSDL();
-    m_sdlEventPollTimer = new QTimer(this);
-    connect(m_sdlEventPollTimer, &QTimer::timeout, this, &RetroPad::pollSDLEvents);
-    m_sdlEventPollTimer->start(16); // 60fps polling rate
+
+    m_sdlEventThread = QThread::create([this]() {
+        qDebug() << "SDL Event Thread started";
+        while (m_running) {
+            pollSDLEvents();
+            QThread::msleep(16); // 60fps polling rate
+        }
+    });
+    m_sdlEventThread->setParent(this);
+    m_sdlEventThread->start();
 }
 
 RetroPad::~RetroPad() {
+    m_running = false;
+    m_sdlEventThread->wait();
+
     cleanupSDL();
-    m_keyboardStates.clear();
-    m_controllerStates.clear();
-    m_sdlEventPollTimer->stop();
 }
 
 void RetroPad::initializeSDL() {
@@ -78,12 +90,14 @@ void RetroPad::pollSDLEvents() {
             case SDL_EVENT_GAMEPAD_BUTTON_DOWN: {
                 SDL_GamepadButton button = static_cast<SDL_GamepadButton>(event.gbutton.button);
                 qDebug() << "Gamepad button down:" << button;
+                QMutexLocker locker(&m_stateMutex);
                 m_controllerStates[button] = 255;
                 break;
             }
             case SDL_EVENT_GAMEPAD_BUTTON_UP: {
                 SDL_GamepadButton button = static_cast<SDL_GamepadButton>(event.gbutton.button);
                 qDebug() << "Gamepad button up:" << button;
+                QMutexLocker locker(&m_stateMutex);
                 m_controllerStates[button] = 0;
                 break;
             }
@@ -92,6 +106,7 @@ void RetroPad::pollSDLEvents() {
 }
 
 int16_t RetroPad::getInputState(InputDevice input_device) {
+    QMutexLocker locker(&m_stateMutex);
     if( m_inputMappings.contains(input_device)) {
         InputMapping mapping = m_inputMappings[input_device];
         if (mapping.type == InputType::Keyboard) {

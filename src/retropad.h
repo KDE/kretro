@@ -1,10 +1,16 @@
+// SPDX-License-Identifier: GPL-2.0-or-later
+// SPDX-FileCopyrightText: 2025 Seshan Ravikumar <seshan@sineware.ca>
+
 #pragma once 
 
 #include <QObject>
 #include <QQmlEngine>
 #include <QHash>
 #include <QTimer>
+#include <QMutex>
+#include <QThread>
 #include <SDL3/SDL.h>
+
 
 class RetroPad : public QObject {
     Q_OBJECT
@@ -47,6 +53,7 @@ private:
     // Maps SDL keys/buttons to their current state (pressed/released)
     QHash<Qt::Key, int16_t> m_keyboardStates;
     QHash<SDL_GamepadButton, int16_t> m_controllerStates;
+    QMutex m_stateMutex;
 
     QList<SDL_Gamepad*> m_gamepads;
 
@@ -56,7 +63,8 @@ private:
     void initializeSDL();
     void cleanupSDL();
 
-    QTimer *m_sdlEventPollTimer;
+    QThread *m_sdlEventThread;
+    bool m_running;
 };
 
 inline size_t qHash(const RetroPad::InputDevice& device, size_t seed = 0) {
