@@ -151,36 +151,9 @@ void input_poll() {
 int16_t input_state(unsigned port, unsigned device, unsigned index, unsigned id) {
     if(port || index || device != RETRO_DEVICE_JOYPAD)
         return 0;
-    //qDebug() << "ID: " <<id;
 
     auto retropad = App::self()->getRetroPad();
-    switch(id) {
-        case RETRO_DEVICE_ID_JOYPAD_A:
-            return retropad->getInputState(RetroPad::InputDevice{port, RETRO_DEVICE_ID_JOYPAD_A});
-        case RETRO_DEVICE_ID_JOYPAD_B:
-            return retropad->getInputState(RetroPad::InputDevice{port, RETRO_DEVICE_ID_JOYPAD_B});
-        case RETRO_DEVICE_ID_JOYPAD_X:
-            return retropad->getInputState(RetroPad::InputDevice{port, RETRO_DEVICE_ID_JOYPAD_X});
-        case RETRO_DEVICE_ID_JOYPAD_Y:
-            return retropad->getInputState(RetroPad::InputDevice{port, RETRO_DEVICE_ID_JOYPAD_Y});
-        case RETRO_DEVICE_ID_JOYPAD_L:
-            return retropad->getInputState(RetroPad::InputDevice{port, RETRO_DEVICE_ID_JOYPAD_L});
-        case RETRO_DEVICE_ID_JOYPAD_R:
-            return retropad->getInputState(RetroPad::InputDevice{port, RETRO_DEVICE_ID_JOYPAD_R});
-        case RETRO_DEVICE_ID_JOYPAD_UP:
-            return retropad->getInputState(RetroPad::InputDevice{port, RETRO_DEVICE_ID_JOYPAD_UP});
-        case RETRO_DEVICE_ID_JOYPAD_DOWN:
-            return retropad->getInputState(RetroPad::InputDevice{port, RETRO_DEVICE_ID_JOYPAD_DOWN});
-        case RETRO_DEVICE_ID_JOYPAD_LEFT:
-            return retropad->getInputState(RetroPad::InputDevice{port, RETRO_DEVICE_ID_JOYPAD_LEFT});
-        case RETRO_DEVICE_ID_JOYPAD_RIGHT:
-            return retropad->getInputState(RetroPad::InputDevice{port, RETRO_DEVICE_ID_JOYPAD_RIGHT});
-        case RETRO_DEVICE_ID_JOYPAD_START:
-            return retropad->getInputState(RetroPad::InputDevice{port, RETRO_DEVICE_ID_JOYPAD_START});
-        case RETRO_DEVICE_ID_JOYPAD_SELECT:
-            return retropad->getInputState(RetroPad::InputDevice{port, RETRO_DEVICE_ID_JOYPAD_SELECT});
-    }
-    return 0;
+    return retropad->getInputState(RetroPad::InputDevice{port, id});
 }
 
 void App::videoRefresh(const void *data, unsigned width, unsigned height, size_t pitch) {

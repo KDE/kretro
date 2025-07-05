@@ -1,7 +1,8 @@
 #include "retropad.h"
+#include <SDL3/SDL_events.h>
 #include <SDL3/SDL_gamepad.h>
 #include <SDL3/SDL_init.h>
-#include <qdebug.h>
+#include "libretro.h"
 
 RetroPad::RetroPad(QObject *parent)
     : QObject(parent)
@@ -9,6 +10,21 @@ RetroPad::RetroPad(QObject *parent)
     , m_controllerStates()
     , m_inputMappings()
 {
+
+    // todo kconfig and qml config for input mappings
+    m_inputMappings.insert(InputDevice{0, RETRO_DEVICE_ID_JOYPAD_UP}, InputMapping{InputType::Controller, SDL_GAMEPAD_BUTTON_DPAD_UP});
+    m_inputMappings.insert(InputDevice{0, RETRO_DEVICE_ID_JOYPAD_DOWN}, InputMapping{InputType::Controller, SDL_GAMEPAD_BUTTON_DPAD_DOWN});
+    m_inputMappings.insert(InputDevice{0, RETRO_DEVICE_ID_JOYPAD_LEFT}, InputMapping{InputType::Controller, SDL_GAMEPAD_BUTTON_DPAD_LEFT});
+    m_inputMappings.insert(InputDevice{0, RETRO_DEVICE_ID_JOYPAD_RIGHT}, InputMapping{InputType::Controller, SDL_GAMEPAD_BUTTON_DPAD_RIGHT});
+    m_inputMappings.insert(InputDevice{0, RETRO_DEVICE_ID_JOYPAD_A}, InputMapping{InputType::Controller, SDL_GAMEPAD_BUTTON_LABEL_A});
+    m_inputMappings.insert(InputDevice{0, RETRO_DEVICE_ID_JOYPAD_B}, InputMapping{InputType::Controller, SDL_GAMEPAD_BUTTON_LABEL_B});
+    m_inputMappings.insert(InputDevice{0, RETRO_DEVICE_ID_JOYPAD_X}, InputMapping{InputType::Controller, SDL_GAMEPAD_BUTTON_LABEL_X});
+    m_inputMappings.insert(InputDevice{0, RETRO_DEVICE_ID_JOYPAD_Y}, InputMapping{InputType::Controller, SDL_GAMEPAD_BUTTON_LABEL_Y});
+    m_inputMappings.insert(InputDevice{0, RETRO_DEVICE_ID_JOYPAD_START}, InputMapping{InputType::Controller, SDL_GAMEPAD_BUTTON_START});
+    m_inputMappings.insert(InputDevice{0, RETRO_DEVICE_ID_JOYPAD_SELECT}, InputMapping{InputType::Controller, SDL_GAMEPAD_BUTTON_BACK});
+    m_inputMappings.insert(InputDevice{0, RETRO_DEVICE_ID_JOYPAD_L}, InputMapping{InputType::Controller, SDL_GAMEPAD_BUTTON_LEFT_SHOULDER});
+    m_inputMappings.insert(InputDevice{0, RETRO_DEVICE_ID_JOYPAD_R}, InputMapping{InputType::Controller, SDL_GAMEPAD_BUTTON_RIGHT_SHOULDER});   
+        
     initializeSDL();
     m_sdlEventPollTimer = new QTimer(this);
     connect(m_sdlEventPollTimer, &QTimer::timeout, this, &RetroPad::pollSDLEvents);
@@ -58,7 +74,20 @@ void RetroPad::cleanupSDL() {
 void RetroPad::pollSDLEvents() {
     SDL_Event event;
     while (SDL_PollEvent(&event)) {
-        qDebug() << "Event type: " << event.type;
+        switch (event.type) {
+            case SDL_EVENT_GAMEPAD_BUTTON_DOWN: {
+                SDL_GamepadButton button = static_cast<SDL_GamepadButton>(event.gbutton.button);
+                qDebug() << "Gamepad button down:" << button;
+                m_controllerStates[button] = 255;
+                break;
+            }
+            case SDL_EVENT_GAMEPAD_BUTTON_UP: {
+                SDL_GamepadButton button = static_cast<SDL_GamepadButton>(event.gbutton.button);
+                qDebug() << "Gamepad button up:" << button;
+                m_controllerStates[button] = 0;
+                break;
+            }
+        }
     }
 }
 
@@ -66,17 +95,19 @@ int16_t RetroPad::getInputState(InputDevice input_device) {
     if( m_inputMappings.contains(input_device)) {
         InputMapping mapping = m_inputMappings[input_device];
         if (mapping.type == InputType::Keyboard) {
-            return m_keyboardStates.value(static_cast<Qt::Key>(mapping.sdl_key_or_button), 0);
+            return m_keyboardStates.value(static_cast<Qt::Key>(mapping.key_or_button), 0);
         } else if (mapping.type == InputType::Controller) {
-            return m_controllerStates.value(static_cast<SDL_GamepadButton>(mapping.sdl_key_or_button), 0);
+            return m_controllerStates.value(static_cast<SDL_GamepadButton>(mapping.key_or_button), 0);
         }
     }
     return 0;
 }
+
 void RetroPad::setMapping(InputDevice input_device, InputMapping mapping) {
     m_inputMappings[input_device] = mapping;
 }
+
 void RetroPad::updateInputStates(Qt::Key key, bool pressed) {
     qDebug() << "from retropad Key pressed:" << key << "State:" << pressed;
-    m_keyboardStates[key] = pressed ? 1 : 0;
+    m_keyboardStates[key] = pressed ? 255 : 0;
 }

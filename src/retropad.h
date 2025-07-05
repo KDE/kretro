@@ -5,8 +5,6 @@
 #include <QHash>
 #include <QTimer>
 #include <SDL3/SDL.h>
-#include <qdebug.h>
-#include <qnamespace.h>
 
 class RetroPad : public QObject {
     Q_OBJECT
@@ -22,7 +20,7 @@ public:
     // Describes the target mapping for an input device
     struct InputMapping {
         InputType type;
-        int16_t sdl_key_or_button;
+        int16_t key_or_button;
     };
     // Describes a libretro "requested" input device (from the core polling)
     struct InputDevice {
