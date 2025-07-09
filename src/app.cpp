@@ -151,34 +151,9 @@ void input_poll() {
 int16_t input_state(unsigned port, unsigned device, unsigned index, unsigned id) {
     if(port || index || device != RETRO_DEVICE_JOYPAD)
         return 0;
-    //qDebug() << "ID: " <<id;
-    switch(id) {
-        case RETRO_DEVICE_ID_JOYPAD_A:
-            return App::self()->getButtonState(u"A"_s);
-        case RETRO_DEVICE_ID_JOYPAD_B:
-            return App::self()->getButtonState(u"B"_s);
-        case RETRO_DEVICE_ID_JOYPAD_X:
-            return App::self()->getButtonState(u"X"_s);
-        case RETRO_DEVICE_ID_JOYPAD_Y:
-            return App::self()->getButtonState(u"Y"_s);
-        case RETRO_DEVICE_ID_JOYPAD_L:
-            return App::self()->getButtonState(u"L1"_s);
-        case RETRO_DEVICE_ID_JOYPAD_R:
-            return App::self()->getButtonState(u"R1"_s);
-        case RETRO_DEVICE_ID_JOYPAD_UP:
-            return App::self()->getButtonState(u"UP"_s);
-        case RETRO_DEVICE_ID_JOYPAD_DOWN:
-            return App::self()->getButtonState(u"DOWN"_s);
-        case RETRO_DEVICE_ID_JOYPAD_LEFT:
-            return App::self()->getButtonState(u"LEFT"_s);
-        case RETRO_DEVICE_ID_JOYPAD_RIGHT:
-            return App::self()->getButtonState(u"RIGHT"_s);
-        case RETRO_DEVICE_ID_JOYPAD_START:
-            return App::self()->getButtonState(u"START"_s);
-        case RETRO_DEVICE_ID_JOYPAD_SELECT:
-            return App::self()->getButtonState(u"SELECT"_s);
-    }
-    return 0;
+
+    auto retropad = App::self()->getRetroPad();
+    return retropad->getInputState(RetroPad::InputDevice{port, id});
 }
 
 void App::videoRefresh(const void *data, unsigned width, unsigned height, size_t pitch) {
@@ -323,6 +298,9 @@ void App::startRetroCore()
     const QAudioDevice &defaultDeviceInfo = QMediaDevices::defaultAudioOutput();
     m_audioSink = new QAudioSink(defaultDeviceInfo, m_audioFormat, this);
     m_audioDevice = m_audioSink->start();
+
+    // Start RetroPad input handling
+    startRetroPad();
     
     m_frameTimer = new QTimer{this};
     connect(m_frameTimer, &QTimer::timeout, this, [retro_run]() { retro_run(); });
@@ -365,7 +343,7 @@ void App::stopRetroCore()
     m_audioDevice = nullptr;
 
     delete m_frameTimer;
-
+    stopRetroPad();
     clearCoreVariables();
 
     m_isRunning = false;
@@ -393,17 +371,6 @@ App *App::create(QQmlEngine *qmlEngine, QJSEngine *)
 void App::setRetroFrame(RetroFrame *rf)
 {
     m_retroFrame = rf;
-}
-
-void App::setButtonState(const QString &button, bool state)
-{
-    m_inputStates[button] = state;
-}
-
-bool App::getButtonState(const QString &button)
-{
-    const auto val = m_inputStates.contains(button) && m_inputStates[button];
-    return val;
 }
 
 void App::setImageFormat(QImage::Format format)
@@ -529,4 +496,16 @@ QString App::systemDir() const
 QString App::gamesDir() const
 {
     return m_gamesDir;
+}
+
+void App::startRetroPad()
+{
+    m_retroPad = new RetroPad(this);
+}
+void App::stopRetroPad()
+{
+    if (m_retroPad) {
+        delete m_retroPad;
+        m_retroPad = nullptr;
+    }
 }

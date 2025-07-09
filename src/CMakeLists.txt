@@ -7,6 +7,7 @@ add_executable(kretro
     retroframe.cpp
     retrogamemodel.cpp
     retrogamesavemodel.cpp
+    retropad.cpp
     objects/retrogame.cpp
     resources.qrc)
 
@@ -24,6 +25,7 @@ qt_target_qml_sources(kretro
         qml/SaveManager.qml
         qml/Settings.qml
         qml/SettingsRetroCore.qml
+        qml/SettingsRetroPad.qml
 
         qml/haptics/HapticsEffectLoader.qml
         qml/haptics/HapticsEffectWrapper.qml
@@ -41,7 +43,7 @@ target_link_libraries(kretro PUBLIC
     KF6::CoreAddons
     KF6::ConfigCore
     KF6::ConfigGui
-    ALSA::ALSA
+    SDL3::SDL3
 )
 
 if (ANDROID)

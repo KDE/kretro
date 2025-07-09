@@ -31,7 +31,8 @@ ecm_setup_version(${PROJECT_VERSION}
 
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Widgets Core Quick Gui Qml QuickControls2 Svg Multimedia)
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Kirigami CoreAddons Config I18n)
-find_package(ALSA)
+find_package(SDL3 REQUIRED) # SDL3 is used for input handling
+
 
 qt_policy(SET QTP0004 NEW)
 

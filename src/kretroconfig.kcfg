@@ -40,7 +40,4 @@ SPDX-License-Identifier: LGPL-2.0-or-later
             <default>blastem_libretro.so</default>
         </entry>
     </group>
-
-    <group name="Controller">
-    </group>
 </kcfg>

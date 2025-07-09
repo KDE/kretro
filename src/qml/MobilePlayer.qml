@@ -52,45 +52,10 @@ Kirigami.Page {
             pageStack.layers.pop();
             return;
         }
-        switch(event.key) {
-            case Qt.Key_Z:
-                App.setButtonState("A", pressed)
-                break;
-            case Qt.Key_X:
-                App.setButtonState("B", pressed)
-                break;
-            case Qt.Key_C:
-                App.setButtonState("X", pressed)
-                break;
-            case Qt.Key_V:
-                App.setButtonState("Y", pressed)
-                break;
-            case Qt.Key_Q:
-                App.setButtonState("L1", pressed)
-                break;
-            case Qt.Key_W:
-                App.setButtonState("R1", pressed)
-                break;
-            case Qt.Key_Up:
-                App.setButtonState("UP", pressed)
-                break;
-            case Qt.Key_Down:
-                App.setButtonState("DOWN", pressed)
-                break;
-            case Qt.Key_Left:
-                App.setButtonState("LEFT", pressed)
-                break;
-            case Qt.Key_Right:
-                App.setButtonState("RIGHT", pressed)
-                break;
-            case Qt.Key_A:
-                App.setButtonState("START", pressed)
-                break;
-            case Qt.Key_S:
-                App.setButtonState("SELECT", pressed)
-                break;
-
+        if (event.isAutoRepeat) {
+            return;
         }
+        App.getRetroPad().updateInputStates(event.key, pressed);
     }
     Keys.onPressed: handleKeyPress(event, true)
     Keys.onReleased: handleKeyPress(event, false)

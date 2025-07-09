@@ -23,7 +23,7 @@ RowLayout {
             width: 50
             height: 50
             onPressedChanged: {
-                App.setButtonState("UP", pressed)
+                App.getRetroPad().updateInputStates(Qt.Key_Up, pressed)
                 haptics.buttonVibrate()
             }
         }
@@ -34,7 +34,7 @@ RowLayout {
             width: 50
             height: 50
             onPressedChanged: {
-                App.setButtonState("DOWN", pressed)
+                App.getRetroPad().updateInputStates(Qt.Key_Down, pressed)
                 haptics.buttonVibrate()
             }
         }
@@ -45,7 +45,7 @@ RowLayout {
             width: 50
             height: 50
             onPressedChanged: {
-                App.setButtonState("LEFT", pressed)
+                App.getRetroPad().updateInputStates(Qt.Key_Left, pressed)
                 haptics.buttonVibrate()
             }
         }
@@ -56,7 +56,7 @@ RowLayout {
             width: 50
             height: 50
             onPressedChanged: {
-                App.setButtonState("RIGHT", pressed)
+                App.getRetroPad().updateInputStates(Qt.Key_Right, pressed)
                 haptics.buttonVibrate()
             }
         }
@@ -73,7 +73,7 @@ RowLayout {
                     text: "START"
                     Layout.fillWidth: true
                     onPressedChanged: {
-                        App.setButtonState("START", pressed)
+                        App.getRetroPad().updateInputStates(Qt.Key_A, pressed)
                         haptics.buttonVibrate()
                     }
                 }
@@ -81,7 +81,7 @@ RowLayout {
                     text: "SELECT"
                     Layout.fillWidth: true
                     onPressedChanged: {
-                        App.setButtonState("SELECT", pressed)
+                        App.getRetroPad().updateInputStates(Qt.Key_S, pressed)
                         haptics.buttonVibrate()
                     }
                 }
@@ -91,7 +91,7 @@ RowLayout {
                     text: "L1"
                     Layout.fillWidth: true
                     onPressedChanged: {
-                        App.setButtonState("L1", pressed)
+                        App.getRetroPad().updateInputStates(Qt.Key_Q, pressed)
                         haptics.buttonVibrate()
                     }
                 }
@@ -99,10 +99,10 @@ RowLayout {
                     text: "R1"
                     Layout.fillWidth: true
                     onPressedChanged: {
-                        App.setButtonState("R1", pressed)
+                        App.getRetroPad().updateInputStates(Qt.Key_W, pressed)
                         haptics.buttonVibrate()
                     }
-            }
+                }
             }
         }
         RowLayout {
@@ -111,7 +111,7 @@ RowLayout {
                 Layout.fillWidth: true
                 implicitHeight: 50
                 onPressedChanged: {
-                    App.setButtonState("A", pressed)
+                    App.getRetroPad().updateInputStates(Qt.Key_Z, pressed)
                     haptics.buttonVibrate()
                 }
             }
@@ -120,7 +120,7 @@ RowLayout {
                 Layout.fillWidth: true
                 implicitHeight: 50
                 onPressedChanged: {
-                    App.setButtonState("B", pressed)
+                    App.getRetroPad().updateInputStates(Qt.Key_X, pressed)
                     haptics.buttonVibrate()
                 }
             }
@@ -131,7 +131,7 @@ RowLayout {
                 Layout.fillWidth: true
                 implicitHeight: 35
                 onPressedChanged: {
-                    App.setButtonState("X", pressed)
+                    App.getRetroPad().updateInputStates(Qt.Key_C, pressed)
                     haptics.buttonVibrate()
                 }
             }
@@ -140,7 +140,7 @@ RowLayout {
                 Layout.fillWidth: true
                 implicitHeight: 35
                 onPressedChanged: {
-                    App.setButtonState("Y", pressed)
+                    App.getRetroPad().updateInputStates(Qt.Key_V, pressed)
                     haptics.buttonVibrate()
                 }
             }

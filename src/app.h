@@ -16,8 +16,8 @@
 
 #include "retroframe.h"
 #include "libretro.h"
-#include <qbuffer.h>
 #include "objects/retrogame.h"
+#include "retropad.h"
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -42,11 +42,7 @@ public:
     void videoRefresh(const void *data, unsigned width, unsigned height, size_t pitch);
     void audioRefresh(const int16_t *data,size_t frames);
 
-
     void setRetroFrame(RetroFrame *rf);
-
-    Q_INVOKABLE void setButtonState(const QString &button, bool state);
-    bool getButtonState(const QString &button);
 
     void setImageFormat(QImage::Format format);
 
@@ -65,10 +61,8 @@ public:
     Q_INVOKABLE void saveUserCoreVariable(const QString &key, const QString &value);
     Q_INVOKABLE void resetUserCoreVariable(const QString &key);
     
-
     void setError(const QString &author);
     QString error() const;
-
 
     QString getRomFilePath() const;
 
@@ -79,6 +73,10 @@ public:
     Q_INVOKABLE QString appdataDir() const;
     Q_INVOKABLE QString systemDir() const;
     Q_INVOKABLE QString gamesDir() const;
+
+    Q_INVOKABLE void startRetroPad();
+    Q_INVOKABLE void stopRetroPad();
+    Q_INVOKABLE RetroPad *getRetroPad() const { return m_retroPad; }
 
 Q_SIGNALS:
     void errorChanged();
@@ -92,7 +90,6 @@ private:
     RetroFrame *m_retroFrame;
     QTimer *m_frameTimer;
     bool m_isRunning;
-    QHash<QString, bool> m_inputStates;
 
     QString m_romFilePath;
     QString m_romConsole;
@@ -109,5 +106,7 @@ private:
     QString m_appdataDir;
     QString m_systemDir;
     QString m_gamesDir;
+
+    RetroPad *m_retroPad;
 
 };
