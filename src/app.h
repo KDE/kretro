@@ -10,6 +10,7 @@
 #include <QIODevice>
 #include <QBuffer>
 #include <QMediaDevices>
+#include <QThread>
 
 #include <qcontainerfwd.h>
 #include <qqmlintegration.h>
@@ -88,7 +89,6 @@ private:
     QImage::Format m_imageFormat;
 
     RetroFrame *m_retroFrame;
-    QTimer *m_frameTimer;
     bool m_isRunning;
 
     QString m_romFilePath;
@@ -98,6 +98,9 @@ private:
     QString m_error;
 
     void *m_lrCore;
+    QThread *m_retroCoreThread;
+    QMutex m_retroCoreMutex;
+
 
     QAudioSink* m_audioSink = nullptr;
     QIODevice* m_audioDevice = nullptr;

@@ -38,7 +38,9 @@ void RetroFrame::updateFrameData(const void *data, unsigned width, unsigned heig
         memcpy(dst + y * bytesPerLine, src + y * pitch, copyWidth);
     }
     
-    update();
+    // Because this method is called from a non-GUI thread (libretro core thread),
+    // we need to schedule the update on the GUI thread.
+    QMetaObject::invokeMethod(this, "update", Qt::QueuedConnection);
 }
 
 void RetroFrame::paint(QPainter *painter)

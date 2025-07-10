@@ -22,7 +22,6 @@ using namespace Qt::Literals::StringLiterals;
 App::App(QObject* parent)
     : QObject(parent)
     , m_retroFrame{nullptr}
-    , m_frameTimer{new QTimer{this}}
     , m_coreVariables{}
     , m_appdataDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation))
 {
@@ -59,6 +58,10 @@ void retrolog(enum retro_log_level level, const char *fmt, ...)
 
 bool core_environment(unsigned cmd, void *data)
 {
+    static QByteArray systemDirBytes;
+    static QByteArray saveDirBytes;
+    static QHash<QString, QByteArray> variableValues;
+    
     switch(cmd) {
         case RETRO_ENVIRONMENT_GET_LOG_INTERFACE: {
             auto logstruct = reinterpret_cast<retro_log_callback*>(data);
@@ -71,9 +74,9 @@ bool core_environment(unsigned cmd, void *data)
             break;
         }
         case RETRO_ENVIRONMENT_SET_PIXEL_FORMAT: {
-            const enum retro_pixel_format *fmt = (enum retro_pixel_format *)data;
+            const enum retro_pixel_format *fmt = (enum retro_pixel_format*)data;
             qDebug() << "Requested pixel format" << *fmt;
-
+        
             if (*fmt > RETRO_PIXEL_FORMAT_RGB565)
                 return false;
             switch (*fmt) {
@@ -89,15 +92,19 @@ bool core_environment(unsigned cmd, void *data)
             return false;
         }
         case RETRO_ENVIRONMENT_GET_SYSTEM_DIRECTORY:
-            *(const char **)data = App::self()->systemDir().toLocal8Bit().data();
-            qDebug () << "Core System directory" << *(const char **)data;
+            systemDirBytes = App::self()->systemDir().toLocal8Bit();
+            *(const char**)data = systemDirBytes.data();
+            qDebug() << "Core System directory" << *(const char**)data;
             return true;
+            
         case RETRO_ENVIRONMENT_GET_SAVE_DIRECTORY:
-            *(const char **)data = App::self()->appdataDir().toLocal8Bit().data();
-            qDebug () << "Core Save directory" << *(const char **)data;
+            saveDirBytes = App::self()->appdataDir().toLocal8Bit();
+            *(const char**)data = saveDirBytes.data();
+            qDebug() << "Core Save directory" << *(const char**)data;
             return true;
+            
         case RETRO_ENVIRONMENT_GET_VARIABLE: {
-            struct retro_variable *var = (struct retro_variable *)data;
+            struct retro_variable *var = (struct retro_variable*)data;
             // value here is the user overridden option (from one of the options declared in SET_VARIABLES), if it is set
             auto value = KSharedConfig::openConfig()->group(u"LibretroCoreVariables"_s).readEntry(var->key, QString());
             if (value.isEmpty()) {
@@ -105,14 +112,14 @@ bool core_environment(unsigned cmd, void *data)
                 return false;
             }
             qDebug() << "Get Variable" << var->key << value;
-            if (var->value) {
-                free((void*)var->value);
-            }
-            var->value = strdup(value.toLocal8Bit().data());
+            
+            QString keyStr = QString::fromLocal8Bit(var->key);
+            variableValues[keyStr] = value.toLocal8Bit();
+            var->value = variableValues[keyStr].data();
             return true;
         }
         case RETRO_ENVIRONMENT_SET_VARIABLES: {
-            const struct retro_variable *vars = (const struct retro_variable *)data;
+            const struct retro_variable *vars = (const struct retro_variable*)data;
             // value here is the variable description and list of possible values (for frontend)
             // not the current value
             while (vars->key) {
@@ -151,7 +158,7 @@ void input_poll() {
 int16_t input_state(unsigned port, unsigned device, unsigned index, unsigned id) {
     if(port || index || device != RETRO_DEVICE_JOYPAD)
         return 0;
-
+    
     auto retropad = App::self()->getRetroPad();
     return retropad->getInputState(RetroPad::InputDevice{port, id});
 }
@@ -301,22 +308,45 @@ void App::startRetroCore()
 
     // Start RetroPad input handling
     startRetroPad();
-    
-    m_frameTimer = new QTimer{this};
-    connect(m_frameTimer, &QTimer::timeout, this, [retro_run]() { retro_run(); });
-    m_frameTimer->setTimerType(Qt::PreciseTimer);
-    m_frameTimer->start(1000 / avinfo.timing.fps);
 
+    // retro_run makes the core to advance the emulation by one frame
+    m_retroCoreThread = QThread::create([this, retro_run]() {
+        qDebug() << "Retro core thread started";
+    
+        const int targetFrameTimeMs = static_cast<int>(1000.0 / m_avInfo.timing.fps);
+        
+        while (m_isRunning) {
+            auto frameStart = std::chrono::high_resolution_clock::now();
+            {
+                QMutexLocker locker(&m_retroCoreMutex);
+                retro_run();
+            }
+            
+            auto frameEnd = std::chrono::high_resolution_clock::now();
+            auto frameTime = std::chrono::duration_cast<std::chrono::milliseconds>(frameEnd - frameStart).count();
+            
+            int sleepTime = targetFrameTimeMs - static_cast<int>(frameTime);
+            if (sleepTime > 0) {
+                QThread::msleep(sleepTime);
+            }
+        }
+    });
     m_isRunning = true;
+    m_retroCoreThread->setParent(this);
+    m_retroCoreThread->start();
 }
 void App::stopRetroCore()
 {
     if(!m_isRunning) {
         return;
     }
+
+    QMutexLocker locker(&m_retroCoreMutex);
+
     auto retro_unload_game = reinterpret_cast<unsigned(*)(void)>(dlsym(m_lrCore, "retro_unload_game"));
     auto retro_deinit = reinterpret_cast<unsigned(*)(void)>(dlsym(m_lrCore, "retro_deinit"));
-    m_frameTimer->stop();
+
+    m_isRunning = false;
 
     // serialize state and save it to ~/.local/share
     auto retro_serialize_size = reinterpret_cast<size_t(*)(void)>(dlsym(m_lrCore, "retro_serialize_size"));
@@ -342,16 +372,22 @@ void App::stopRetroCore()
     }
     m_audioDevice = nullptr;
 
-    delete m_frameTimer;
+    if (m_retroCoreThread) {
+        m_retroCoreThread->wait();
+        delete m_retroCoreThread;
+        m_retroCoreThread = nullptr;
+    }
+
     stopRetroPad();
     clearCoreVariables();
 
-    m_isRunning = false;
     qDebug() << "Stopped core!";
 }
 
 void App::resetRetroCore()
 {
+    QMutexLocker locker(&m_retroCoreMutex);
+
     auto retro_reset = reinterpret_cast<void(*)(void)>(dlsym(m_lrCore, "retro_reset"));
     retro_reset();
 }
@@ -406,6 +442,8 @@ QString App::getRomFilePath() const
 
 void App::loadSaveSlot(const QString &path)
 {
+    QMutexLocker locker(&m_retroCoreMutex);
+
     auto retro_unserialize = reinterpret_cast<bool(*)(const void *data, size_t size)>(dlsym(m_lrCore, "retro_unserialize"));
     QFile stateFile{path};
     if(stateFile.exists()) {
@@ -418,6 +456,8 @@ void App::loadSaveSlot(const QString &path)
 
 void App::saveSaveSlot(const QString &path)
 {
+    QMutexLocker locker(&m_retroCoreMutex);
+
     auto retro_serialize_size = reinterpret_cast<size_t(*)(void)>(dlsym(m_lrCore, "retro_serialize_size"));
     auto retro_serialize = reinterpret_cast<bool(*)(void*, size_t)>(dlsym(m_lrCore, "retro_serialize"));
     auto size = retro_serialize_size();
@@ -433,6 +473,8 @@ void App::saveSaveSlot(const QString &path)
 
 QString App::saveNewSaveSlot()
 {
+    QMutexLocker locker(&m_retroCoreMutex);
+
     auto retro_serialize_size = reinterpret_cast<size_t(*)(void)>(dlsym(m_lrCore, "retro_serialize_size"));
     auto retro_serialize = reinterpret_cast<bool(*)(void*, size_t)>(dlsym(m_lrCore, "retro_serialize"));
     auto size = retro_serialize_size();
