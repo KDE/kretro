@@ -8,6 +8,7 @@
 #include <dlfcn.h>
 #include <cstdarg>
 #include <QStandardPaths>
+#include <QProcessEnvironment>
 #include "kretroconfig.h"
 
 #ifdef __linux__ 
@@ -179,8 +180,8 @@ void App::audioRefresh(const int16_t* data, size_t frames) {
 
 void App::startRetroCore()
 {
-    QDir().mkdir(m_appdataDir);
-    QDir().mkdir(m_systemDir);
+    QDir().mkpath(m_appdataDir);
+    QDir().mkpath(m_systemDir);
 
     // Load core dynamic library
     QString coreName = u""_s;
@@ -197,9 +198,18 @@ void App::startRetroCore()
     } else if (m_romConsole == u"GENESIS"_s) {
         coreName = Config::self()->genesisCore();
     }
-    QString core_full_path = (coreName == u"2048_libretro.so"_s) ? 
-        QTemporaryFile::createNativeFile(u":/cores/"_s + QSysInfo::buildCpuArchitecture() + u"/"_s + coreName)->fileName() : 
-        Config::self()->libretroCoresDirectory() + u"/"_s + coreName;
+    QString core_full_path;
+    if (coreName == u"2048_libretro.so"_s) {
+        core_full_path = QTemporaryFile::createNativeFile(u":/cores/"_s + QSysInfo::buildCpuArchitecture() + u"/"_s + coreName)->fileName();
+    } else {
+        QString dir = Config::self()->libretroCoresDirectory();
+        if (dir == Config::self()->defaultLibretroCoresDirectoryValue() && QProcessEnvironment::systemEnvironment().value(u"container"_s) == u"flatpak"_s) {
+            core_full_path = u"/app/lib/libretro/"_s + coreName;
+        } else {
+            core_full_path = dir + u"/"_s + coreName;
+        }
+    }
+
 
     qDebug() << "Loading core from" << core_full_path;
 
@@ -346,6 +356,7 @@ void App::stopRetroCore()
     auto retro_unload_game = reinterpret_cast<unsigned(*)(void)>(dlsym(m_lrCore, "retro_unload_game"));
     auto retro_deinit = reinterpret_cast<unsigned(*)(void)>(dlsym(m_lrCore, "retro_deinit"));
 
+    qDebug() << "isRunning false!";
     m_isRunning = false;
 
     // serialize state and save it to ~/.local/share

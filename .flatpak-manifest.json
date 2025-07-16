@@ -12,7 +12,8 @@
         "--socket=fallback-x11",
         "--socket=wayland",
         "--socket=pulseaudio",
-        "--device=dri"
+        "--device=dri",
+        "--filesystem=xdg-documents:ro"
     ],
     "separate-locales": false,
 
@@ -41,6 +42,27 @@
                     "tag": "release-3.2.16"
                 }
             ]
+        },
+        {
+            "name": "snes9x-libretro",
+            "buildsystem": "simple",
+            "build-commands": [
+                "make -C libretro -j$FLATPAK_BUILDER_N_JOBS",
+                "mkdir -p /app/lib/libretro",
+                "install -Dm755 libretro/snes9x_libretro.so /app/lib/libretro/snes9x_libretro.so"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/libretro/snes9x.git"
+                }
+            ],
+            "build-options": {
+                "env": {
+                    "CC": "gcc",
+                    "CXX": "g++"
+                }
+            }
         },
         {
             "name": "kretro",
