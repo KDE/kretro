@@ -10,7 +10,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kretro
 
-Kirigami.Page {
+Kirigami.ScrollablePage {
     id: page
     actions: []
     
@@ -63,6 +63,12 @@ Kirigami.Page {
                 description: Config.libretroCoresDirectory
                 onClicked: libretroCoreFolderDialog.open()
                 icon.name: "folder-open"
+            }
+            FormCard.FormSwitchDelegate {
+                text: i18n("Override Mobile Controller Visibility")
+                description: i18n("Overrides the default visibility of the touch controller.")
+                checked: Config.overrideMobileControllerVisibility
+                onCheckedChanged: Config.overrideMobileControllerVisibility = checked
             }
         }
         

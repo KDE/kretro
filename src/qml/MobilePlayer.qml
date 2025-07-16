@@ -11,6 +11,8 @@ import org.kde.kretro
 Kirigami.Page {
     id: page
 
+    property bool isMobileControllerVisible: Config.overrideMobileControllerVisibility ? !Kirigami.Settings.isMobile : Kirigami.Settings.isMobile
+
     actions: [
         Kirigami.Action {
             icon.name: "view-refresh"
@@ -101,17 +103,17 @@ Kirigami.Page {
         Item {
             Layout.preferredHeight: Kirigami.Units.gridUnit * 2
             Layout.fillWidth: true 
-            visible: Kirigami.Settings.isMobile
+            visible: page.isMobileControllerVisible
         }
         MobileController {
             Layout.fillWidth: true
             Layout.leftMargin: Kirigami.Units.gridUnit
             Layout.rightMargin: Kirigami.Units.gridUnit
-            visible: Kirigami.Settings.isMobile
+            visible: page.isMobileControllerVisible
         }
         Item { 
             Layout.preferredHeight: Kirigami.Units.gridUnit 
-            visible: Kirigami.Settings.isMobile
+            visible: page.isMobileControllerVisible
         }
     }
 }

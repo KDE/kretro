@@ -16,6 +16,10 @@ SPDX-License-Identifier: LGPL-2.0-or-later
             <label>Location for the libretro core files.</label>
             <default>/usr/lib/libretro</default>
         </entry>
+        <entry name="overrideMobileControllerVisibility" type="Bool">
+            <label>Overrides the default visibility of the touch controller to true on desktop, false on mobile.</label>
+            <default>false</default>
+        </entry>
     </group>
 
     <group name="Libretro">
