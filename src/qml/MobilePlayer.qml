@@ -11,6 +11,7 @@ import org.kde.kretro
 Kirigami.Page {
     id: page
 
+    globalToolBarStyle: Kirigami.ApplicationHeaderStyle.ToolBar;
     property bool isMobileControllerVisible: Config.overrideMobileControllerVisibility ? !Kirigami.Settings.isMobile : Kirigami.Settings.isMobile
     property bool isFullscreen: false
 
