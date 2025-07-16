@@ -15,6 +15,12 @@ Kirigami.ApplicationWindow {
 
     title: i18n("kretro")
 
+    pageStack {
+        globalToolBar {
+            style: Kirigami.ApplicationHeaderStyle.ToolBar
+        }
+    }
+
     minimumWidth: Kirigami.Units.gridUnit * 20
     minimumHeight: Kirigami.Units.gridUnit * 20
 

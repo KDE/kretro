@@ -21,7 +21,7 @@ Kirigami.Page {
             page.globalToolBarStyle = Kirigami.ApplicationHeaderStyle.None;
         } else {
             appWindow.visibility = Window.Windowed;
-            page.globalToolBarStyle = Kirigami.ApplicationHeaderStyle.Auto;
+            page.globalToolBarStyle = Kirigami.ApplicationHeaderStyle.ToolBar;
         }
     }
 
