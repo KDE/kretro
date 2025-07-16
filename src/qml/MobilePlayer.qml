@@ -12,8 +12,27 @@ Kirigami.Page {
     id: page
 
     property bool isMobileControllerVisible: Config.overrideMobileControllerVisibility ? !Kirigami.Settings.isMobile : Kirigami.Settings.isMobile
+    property bool isFullscreen: false
+
+    onIsFullscreenChanged: {
+        var appWindow = applicationWindow();
+        if (isFullscreen) {
+            appWindow.visibility = Window.FullScreen;
+            page.globalToolBarStyle = Kirigami.ApplicationHeaderStyle.None;
+        } else {
+            appWindow.visibility = Window.Windowed;
+            page.globalToolBarStyle = Kirigami.ApplicationHeaderStyle.Auto;
+        }
+    }
 
     actions: [
+        Kirigami.Action {
+            icon.name: "view-fullscreen"
+            onTriggered: {
+                page.isFullscreen = !page.isFullscreen;
+                showPassiveNotification(i18n("Press Escape to exit fullscreen mode!"));
+            }
+        },
         Kirigami.Action {
             icon.name: "view-refresh"
             onTriggered: resetPrompt.open()
@@ -47,14 +66,22 @@ Kirigami.Page {
     Component.onDestruction: {
         App.stopRetroCore()
         App.error = ""
+
+        var appWindow = applicationWindow();
+        appWindow.visibility = Window.Windowed;
+        appWindow.pageStack.globalToolBar.style = Kirigami.ApplicationHeaderStyle.Auto;
     }
 
     function handleKeyPress(event, pressed) {
-        if (event.key === Qt.Key_Escape) {
-            pageStack.layers.pop();
+        if (event.isAutoRepeat) {
             return;
         }
-        if (event.isAutoRepeat) {
+        if (event.key === Qt.Key_Escape && pressed) {
+            if(page.isFullscreen) {
+                page.isFullscreen = false;
+            } else {
+                pageStack.layers.pop();
+            }
             return;
         }
         App.getRetroPad().updateInputStates(event.key, pressed);
