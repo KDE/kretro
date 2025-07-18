@@ -9,6 +9,7 @@ add_executable(kretro
     retrogamesavemodel.cpp
     retropad.cpp
     objects/retrogame.cpp
+    idleinhibit.cpp
     resources.qrc)
 
 ecm_add_qml_module(kretro
@@ -38,6 +39,7 @@ target_link_libraries(kretro PUBLIC
     Qt6::QuickControls2
     Qt6::Widgets
     Qt6::Multimedia
+    Qt6::DBus
     KF6::Kirigami
     KF6::I18n
     KF6::CoreAddons

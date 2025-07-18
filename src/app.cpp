@@ -67,12 +67,12 @@ bool core_environment(unsigned cmd, void *data)
         case RETRO_ENVIRONMENT_GET_LOG_INTERFACE: {
             auto logstruct = reinterpret_cast<retro_log_callback*>(data);
             logstruct->log = retrolog;
-            break;
+            return true;
         }
         case RETRO_ENVIRONMENT_GET_CAN_DUPE: {
             bool *bval = (bool*)data;
             *bval = true;
-            break;
+            return true;
         }
         case RETRO_ENVIRONMENT_SET_PIXEL_FORMAT: {
             const enum retro_pixel_format *fmt = (enum retro_pixel_format*)data;
@@ -128,7 +128,7 @@ bool core_environment(unsigned cmd, void *data)
                 App::self()->setCoreVariable(QString::fromLocal8Bit(vars->key), QString::fromLocal8Bit(vars->value));
                 vars++;
             }
-            break;
+            return true;
         }
         default:
             //qDebug() << RETRO_LOG_DEBUG <<  "Unhandled env #" << cmd;

@@ -90,6 +90,10 @@ Kirigami.Page {
     Keys.onPressed: handleKeyPress(event, true)
     Keys.onReleased: handleKeyPress(event, false)
 
+    IdleInhibit {
+        id: idleInhibit
+    }
+
     Kirigami.PromptDialog {
         id: resetPrompt
         title: i18n("Reset Game Core?")
