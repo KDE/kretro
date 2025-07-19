@@ -33,7 +33,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
                          // The license this code is released under.
                          KAboutLicense::GPL,
                          // Copyright Statement.
-                         i18n("(c) 2023 KDE Community"));
+                         i18n("(c) 2023-2025 KDE Community"));
     aboutData.addAuthor(i18nc("@info:credit", "Seshan Ravikumar"),
                         i18nc("@info:credit", "Developer"),
                         u"seshan@sineware.ca"_s,
