@@ -20,6 +20,7 @@ Kirigami.Page {
         if (isFullscreen) {
             appWindow.visibility = Window.FullScreen;
             page.globalToolBarStyle = Kirigami.ApplicationHeaderStyle.None;
+            showPassiveNotification(i18n("Press Escape to exit fullscreen mode!"));
         } else {
             appWindow.visibility = Window.Windowed;
             page.globalToolBarStyle = Kirigami.ApplicationHeaderStyle.ToolBar;
@@ -31,7 +32,6 @@ Kirigami.Page {
             icon.name: "view-fullscreen"
             onTriggered: {
                 page.isFullscreen = !page.isFullscreen;
-                showPassiveNotification(i18n("Press Escape to exit fullscreen mode!"));
             }
         },
         Kirigami.Action {
@@ -62,6 +62,9 @@ Kirigami.Page {
     title: i18n("KRetro Mobile Player")
 
     Component.onCompleted:  {
+        if (Config.defaultFullscreen) {
+            page.isFullscreen = true;
+        }
         App.startRetroCore()
     }
     Component.onDestruction: {

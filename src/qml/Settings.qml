@@ -70,6 +70,12 @@ Kirigami.ScrollablePage {
                 checked: Config.overrideMobileControllerVisibility
                 onCheckedChanged: Config.overrideMobileControllerVisibility = checked
             }
+            FormCard.FormSwitchDelegate {
+                text: i18n("Fullscreen Mode")
+                description: i18n("Open games in fullscreen mode by default.")
+                checked: Config.defaultFullscreen
+                onCheckedChanged: Config.defaultFullscreen = checked
+            }
         }
         
         FormCard.FormHeader {
