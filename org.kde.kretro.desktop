@@ -2,7 +2,27 @@
 # SPDX-FileCopyrightText: 2023 Seshan Ravikumar <seshan@sineware.ca>
 [Desktop Entry]
 Name=KRetro
+Name[ca]=KRetro
+Name[ca@valencia]=KRetro
+Name[es]=KRetro
+Name[eu]=KRetro
+Name[he]=KRetro
+Name[nl]=KRetro
+Name[sl]=KRetro
+Name[sv]=Kretro
+Name[uk]=KRetro
+Name[x-test]=xxKRetroxx
 Comment=Libretro frontend for Plasma
+Comment[ca]=Frontal de la Libretro per al Plasma
+Comment[ca@valencia]=Frontal de la Libretro per a Plasma
+Comment[es]=Interfaz de Libretro para Plasma
+Comment[eu]=Plasmarako Libretoren aurrealdekoa
+Comment[he]=ממשק Libretro לפלזמה
+Comment[nl]=Libretro-frontend voor Plasma
+Comment[sl]=Libretro začelje za Plasmo
+Comment[sv]=Libretro-gränssnitt för Plasma
+Comment[uk]=Оболонка Libretro для Плазми
+Comment[x-test]=xxLibretro frontend for Plasmaxx
 Version=1.0
 Exec=kretro
 Icon=org.kde.kretro
