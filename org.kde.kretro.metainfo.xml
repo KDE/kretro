@@ -11,7 +11,9 @@
   <content_rating type="oars-1.1"/>
   <launchable type="desktop-id">org.kde.kretro.desktop</launchable>
   <name>KRetro</name>
+  <name xml:lang="x-test">xxKRetroxx</name>
   <summary>Libretro emulation frontend for Plasma</summary>
+  <summary xml:lang="x-test">xxLibretro emulation frontend for Plasmaxx</summary>
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-2.0-or-later</project_license>
   <developer id="org.kde">
@@ -19,13 +21,14 @@
   </developer>
   <description>
     <p>KRetro is a Libretro frontend written in Qt/Kirigami, designed for Plasma Desktop, Mobile, and Bigscreen.</p>
+    <p xml:lang="x-test">xxKRetro is a Libretro frontend written in Qt/Kirigami, designed for Plasma Desktop, Mobile, and Bigscreen.xx</p>
     <p>It allows you to play games for retro consoles by supplying a ROM and Libretro core.</p>
+    <p xml:lang="x-test">xxIt allows you to play games for retro consoles by supplying a ROM and Libretro core.xx</p>
   </description>
   <categories>
     <category>Game</category>
   </categories>
   <icon type="stock">org.kde.kretro</icon>
   <url type="homepage">https://apps.kde.org/kretro</url>
-  <releases></releases>
-
+  <releases/>
 </component>
