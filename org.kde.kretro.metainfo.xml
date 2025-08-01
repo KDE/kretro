@@ -11,8 +11,26 @@
   <content_rating type="oars-1.1"/>
   <launchable type="desktop-id">org.kde.kretro.desktop</launchable>
   <name>KRetro</name>
+  <name xml:lang="ca">KRetro</name>
+  <name xml:lang="ca-valencia">KRetro</name>
+  <name xml:lang="es">KRetro</name>
+  <name xml:lang="eu">KRetro</name>
+  <name xml:lang="he">KRetro</name>
+  <name xml:lang="nl">KRetro</name>
+  <name xml:lang="sl">KRetro</name>
+  <name xml:lang="sv">Kretro</name>
+  <name xml:lang="uk">KRetro</name>
   <name xml:lang="x-test">xxKRetroxx</name>
   <summary>Libretro emulation frontend for Plasma</summary>
+  <summary xml:lang="ca">Frontal de l'emulació Libretro per al Plasma</summary>
+  <summary xml:lang="ca-valencia">Frontal de l'emulació Libretro per a Plasma</summary>
+  <summary xml:lang="es">Interfaz de emulación Libretro para Plasma</summary>
+  <summary xml:lang="eu">Plasmarako Libreto emulazioaren aurrealdekoa</summary>
+  <summary xml:lang="he">ממשק הדמיית Libretro לפלזמה</summary>
+  <summary xml:lang="nl">Emulatie-frontend  van Libretro voor Plasma</summary>
+  <summary xml:lang="sl">Emulacija začelja Libretra za Plasmo</summary>
+  <summary xml:lang="sv">Libretro-emuleringsgränssnitt för Plasma</summary>
+  <summary xml:lang="uk">Оболонка емуляції Libretro для Плазми</summary>
   <summary xml:lang="x-test">xxLibretro emulation frontend for Plasmaxx</summary>
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-2.0-or-later</project_license>
@@ -21,8 +39,26 @@
   </developer>
   <description>
     <p>KRetro is a Libretro frontend written in Qt/Kirigami, designed for Plasma Desktop, Mobile, and Bigscreen.</p>
+    <p xml:lang="ca">El KRetro és un frontal del Libretro escrit en Qt/Kirigami, dissenyat per a l'escriptori, el mòbil i la Bigscreen del Plasma.</p>
+    <p xml:lang="ca-valencia">KRetro és un frontal de Libretro escrit en Qt/Kirigami, dissenyat per a l'escriptori, el mòbil i la Bigscreen de Plasma.</p>
+    <p xml:lang="es">KRetro es una interfaz de Libretro escrita en Qt/Kirigami, diseñada para el escritorio Plasma, Plasma Mobile y Bigscreen.</p>
+    <p xml:lang="eu">KRetro Plasma Mahaigainerako, Mugikorrerako, eta Bigscreen-erako Qt/Kirigamirekin idatzitako Libretoren aurrealdeko bat da.</p>
+    <p xml:lang="he">KRetro הוא ממשק Libretro שנכתב ב־Qt/Kirigami, תוכנן עבור מהדורות שולחן העבודה, הניידים והמסכים הגדולים של פלזמה.</p>
+    <p xml:lang="nl">KRetro is een Libretro-frontend geschreven in Qt/Kirigami, ontworpen voor Plasma bureaublad, Mobiel en Bigscreen.</p>
+    <p xml:lang="sl">KRetro je začelje za Libretro, napisan v Qt/Kirigami, zasnovan za namizne računalnike, mobilne naprave in velike zaslone Plasma.</p>
+    <p xml:lang="sv">Kretro är ett Libretro-emuleringsgränssnitt skrivet i Qt/Kirigami, konstruerat för Plasma skrivbord, mobil och storskärm.</p>
+    <p xml:lang="uk">KRetro — оболонка Libretro, яку написано на Qt/Kirigami, розроблено для Плазми для робочих станцій, мобільних пристроїв та пристроїв з великим екраном.</p>
     <p xml:lang="x-test">xxKRetro is a Libretro frontend written in Qt/Kirigami, designed for Plasma Desktop, Mobile, and Bigscreen.xx</p>
     <p>It allows you to play games for retro consoles by supplying a ROM and Libretro core.</p>
+    <p xml:lang="ca">Permet jugar jocs per a consoles retro proporcionant una ROM i un nucli Libretro.</p>
+    <p xml:lang="ca-valencia">Permet jugar jocs per a consoles retro proporcionant una ROM i un nucli Libretro.</p>
+    <p xml:lang="es">Permite jugar con juegos de consolas retro proporcionando una ROM y un core de Libretro.</p>
+    <p xml:lang="eu">ROM bat eta Libreto nukleo bat hornituz, kontsola retroetarako jokoetan jokatzeko aukera ematen dizu.</p>
+    <p xml:lang="he">מאפשר לך לשחק משחקים לקונסולות משחקים מיושנות („רטרו”) על ידי אספקת דמות ROM והליבה של Libretro.</p>
+    <p xml:lang="nl">Het biedt u games te spelen voor retroconsoles door een ROM en Libretro-core te leveren.</p>
+    <p xml:lang="sl">Omogoča vam igranje iger za retro konzole z dobavo ROM-a in jedra Libretro.</p>
+    <p xml:lang="sv">Det låter dig spela spela för gammaldags spelkonsoler genom att tillhandahålla ett ROM och Librettos kärna.</p>
+    <p xml:lang="uk">Програма надає вам змогу грати в ігри для ретроконсолей на основі ROM та програмного ядра Libretro.</p>
     <p xml:lang="x-test">xxIt allows you to play games for retro consoles by supplying a ROM and Libretro core.xx</p>
   </description>
   <categories>
