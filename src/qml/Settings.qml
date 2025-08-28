@@ -35,7 +35,6 @@ Kirigami.ScrollablePage {
     
     FolderDialog {
         id: libretroCoreFolderDialog
-        visible: !App.isFlatpak()
         title: i18n("Select Libretro Cores Directory")
         currentFolder: "file://" + Config.libretroCoresDirectory
         onAccepted: {
@@ -60,6 +59,7 @@ Kirigami.ScrollablePage {
             }
             
             FormCard.FormButtonDelegate {
+                visible: !App.isFlatpak()
                 text: i18n("Libretro Cores Directory")
                 description: Config.libretroCoresDirectory
                 onClicked: libretroCoreFolderDialog.open()
