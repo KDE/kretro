@@ -56,13 +56,68 @@
                     "type": "git",
                     "url": "https://github.com/libretro/snes9x.git"
                 }
+            ]
+        },
+        {
+            "name": "mgba-libretro",
+            "buildsystem": "simple",
+            "build-commands": [
+                "make -f Makefile.libretro -j$FLATPAK_BUILDER_N_JOBS",
+                "mkdir -p /app/lib/libretro",
+                "install -Dm755 mgba_libretro.so /app/lib/libretro/mgba_libretro.so"
             ],
-            "build-options": {
-                "env": {
-                    "CC": "gcc",
-                    "CXX": "g++"
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/libretro/mgba.git"
                 }
-            }
+            ]
+        },
+        {
+            "name": "nestopia-libretro",
+            "buildsystem": "simple",
+            "build-commands": [
+                "make -C libretro -j$FLATPAK_BUILDER_N_JOBS",
+                "mkdir -p /app/lib/libretro",
+                "install -Dm755 libretro/nestopia_libretro.so /app/lib/libretro/nestopia_libretro.so"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/libretro/nestopia.git"
+                }
+            ]
+        },
+        {
+            "name": "gearsystem-libretro",
+            "buildsystem": "simple",
+            "build-commands": [
+                "make -C platforms/libretro -j$FLATPAK_BUILDER_N_JOBS",
+                "mkdir -p /app/lib/libretro",
+                "install -Dm755 platforms/libretro/gearsystem_libretro.so /app/lib/libretro/gearsystem_libretro.so"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/drhelius/Gearsystem.git"
+                }
+            ]
+        },
+        {
+            "name": "blastem-libretro",
+            "buildsystem": "simple",
+            "build-commands": [
+                "make -f Makefile.libretro -j$FLATPAK_BUILDER_N_JOBS",
+                "mkdir -p /app/lib/libretro",
+                "install -Dm755 blastem_libretro.so /app/lib/libretro/blastem_libretro.so"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/libretro/blastem.git",
+                    "branch": "libretro"
+                }
+            ]
         },
         {
             "name": "kretro",

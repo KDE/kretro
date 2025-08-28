@@ -29,7 +29,7 @@ SPDX-License-Identifier: LGPL-2.0-or-later
     <group name="Libretro">
         <entry name="gbaCore" type="Path">
             <label>GBA Libretro Core</label>
-            <default>mednafen_gba_libretro.so</default>
+            <default>mgba_libretro.so</default>
         </entry>
         <entry name="nesCore" type="Path">
             <label>NES Libretro Core</label>
