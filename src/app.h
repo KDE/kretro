@@ -79,6 +79,8 @@ public:
     Q_INVOKABLE void stopRetroPad();
     Q_INVOKABLE RetroPad *getRetroPad() const { return m_retroPad; }
 
+    Q_INVOKABLE bool isFlatpak() const;
+
 Q_SIGNALS:
     void errorChanged();
     void coreVariablesChanged();

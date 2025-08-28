@@ -203,7 +203,7 @@ void App::startRetroCore()
         core_full_path = QTemporaryFile::createNativeFile(u":/cores/"_s + QSysInfo::buildCpuArchitecture() + u"/"_s + coreName)->fileName();
     } else {
         QString dir = Config::self()->libretroCoresDirectory();
-        if (dir == Config::self()->defaultLibretroCoresDirectoryValue() && QProcessEnvironment::systemEnvironment().value(u"container"_s) == u"flatpak"_s) {
+        if (dir == Config::self()->defaultLibretroCoresDirectoryValue() && App::self()->isFlatpak()) {
             core_full_path = u"/app/lib/libretro/"_s + coreName;
         } else {
             core_full_path = dir + u"/"_s + coreName;
@@ -561,4 +561,9 @@ void App::stopRetroPad()
         delete m_retroPad;
         m_retroPad = nullptr;
     }
+}
+
+bool App::isFlatpak() const
+{
+    return QProcessEnvironment::systemEnvironment().value(u"container"_s) == u"flatpak"_s;
 }

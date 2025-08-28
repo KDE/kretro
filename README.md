@@ -15,6 +15,11 @@ Play your favourite games across Plasma platforms: in your pocket, desktop or TV
   <img src="./screenshots/screenshot-mobile.png" alt="KRetro Mobile Player" width="30%" />
 </div>
 
+## Nightly Flatpak
+The easiest way to test and use KRetro is to install the nightly flatpak. It comes bundled with the recommended libretro cores.
+
+> flatpak install https://cdn.kde.org/flatpak/kretro-nightly/org.kde.kretro.flatpakref
+
 ## Cores
 
 Libretro cores (which are .so files) are dynamically loaded from your system (by default, from `/usr/lib/libretro`).

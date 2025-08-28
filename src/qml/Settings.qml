@@ -35,6 +35,7 @@ Kirigami.ScrollablePage {
     
     FolderDialog {
         id: libretroCoreFolderDialog
+        visible: !App.isFlatpak()
         title: i18n("Select Libretro Cores Directory")
         currentFolder: "file://" + Config.libretroCoresDirectory
         onAccepted: {
@@ -83,6 +84,8 @@ Kirigami.ScrollablePage {
         }
         
         FormCard.FormCard {
+            visible: !App.isFlatpak()
+
             FormCard.FormComboBoxDelegate {
                 id: gbaComboBox
                 text: i18n("GBA Core:")
@@ -179,6 +182,13 @@ Kirigami.ScrollablePage {
             }
         }
         
+        Kirigami.InlineMessage {
+            visible: App.isFlatpak()
+            implicitWidth: Kirigami.Units.gridUnit * 30
+            Layout.alignment: Qt.AlignHCenter
+            text: i18n("Flatpak releases of KRetro manage retro cores automatically.")
+        }
+
         Item {
             Layout.fillHeight: true
         }
