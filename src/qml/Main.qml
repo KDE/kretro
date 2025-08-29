@@ -82,7 +82,7 @@ Kirigami.ApplicationWindow {
 
     onActiveFocusItemChanged: {
         // hack: force focus to gridview upon return to main page
-        if (activeFocusItem.toString().includes("QQuickRowLayout")) {
+        if (activeFocusItem?.toString().includes("QQuickRowLayout")) {
             console.log("Forcing focus to gridview");
             gridViewFocusScope.forceActiveFocus();
         }

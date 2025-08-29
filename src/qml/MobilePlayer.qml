@@ -52,14 +52,14 @@ Kirigami.Page {
         }
     ]
 
-    Layout.fillWidth: true
-    Layout.fillHeight: true
     topPadding: 0
     bottomPadding: 0
     leftPadding: 0
     rightPadding: 0
 
     title: i18n("KRetro Mobile Player")
+
+    focusPolicy: Qt.StrongFocus
 
     Component.onCompleted:  {
         if (Config.defaultFullscreen) {
@@ -132,6 +132,13 @@ Kirigami.Page {
                 id: frame
                 anchors.fill: parent
                 smooth: true
+
+                // when clicking on the game, force focus to the page
+                TapHandler {
+                    onTapped: {
+                        page.forceActiveFocus();
+                    }
+                }
             }
         }
 
