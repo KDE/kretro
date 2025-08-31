@@ -26,6 +26,7 @@
   <name xml:lang="tr">K Retro</name>
   <name xml:lang="uk">KRetro</name>
   <name xml:lang="x-test">xxKRetroxx</name>
+  <name xml:lang="zh-TW">KRetro</name>
   <summary>Libretro emulation frontend for Plasma</summary>
   <summary xml:lang="ca">Frontal de l'emulació Libretro per al Plasma</summary>
   <summary xml:lang="ca-valencia">Frontal de l'emulació Libretro per a Plasma</summary>
@@ -42,6 +43,7 @@
   <summary xml:lang="tr">Plasma için Libretro öykünme ön yüzü</summary>
   <summary xml:lang="uk">Оболонка емуляції Libretro для Плазми</summary>
   <summary xml:lang="x-test">xxLibretro emulation frontend for Plasmaxx</summary>
+  <summary xml:lang="zh-TW">Plasma 用的 Libretro 模擬器前端</summary>
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-2.0-or-later</project_license>
   <developer id="org.kde">
@@ -64,6 +66,7 @@
     <p xml:lang="tr">K Retro, Plasma Masaüstü, Cep ve Büyük Ekran için tasarlanmış, Qt/Kirigami ile yazılmış bir Libretro ön yüzüdür.</p>
     <p xml:lang="uk">KRetro — оболонка Libretro, яку написано на Qt/Kirigami, розроблено для Плазми для робочих станцій, мобільних пристроїв та пристроїв з великим екраном.</p>
     <p xml:lang="x-test">xxKRetro is a Libretro frontend written in Qt/Kirigami, designed for Plasma Desktop, Mobile, and Bigscreen.xx</p>
+    <p xml:lang="zh-TW">KRetro 是一個用 Qt/Kirigami 撰寫的 Libretro 前端，設計給 Plasma 桌面、行動與大螢幕使用。</p>
     <p>It allows you to play games for retro consoles by supplying a ROM and Libretro core.</p>
     <p xml:lang="ca">Permet jugar jocs per a consoles retro proporcionant una ROM i un nucli Libretro.</p>
     <p xml:lang="ca-valencia">Permet jugar jocs per a consoles retro proporcionant una ROM i un nucli Libretro.</p>
@@ -80,6 +83,7 @@
     <p xml:lang="tr">Bir ROM sağlayarak ve Libretro çekirdeğini kullanarak retro konsollara ait oyunları oynamanıza olanak tanır.</p>
     <p xml:lang="uk">Програма надає вам змогу грати в ігри для ретроконсолей на основі ROM та програмного ядра Libretro.</p>
     <p xml:lang="x-test">xxIt allows you to play games for retro consoles by supplying a ROM and Libretro core.xx</p>
+    <p xml:lang="zh-TW">它讓您遊玩復古遊戲機的遊戲，只要提供 ROM 和 Libretro 核心。</p>
   </description>
   <categories>
     <category>Game</category>
