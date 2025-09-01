@@ -15,6 +15,7 @@
   <name xml:lang="ca-valencia">KRetro</name>
   <name xml:lang="es">KRetro</name>
   <name xml:lang="eu">KRetro</name>
+  <name xml:lang="fi">KRetro</name>
   <name xml:lang="he">KRetro</name>
   <name xml:lang="it">KRetro</name>
   <name xml:lang="ka">KRetro</name>
@@ -32,6 +33,7 @@
   <summary xml:lang="ca-valencia">Frontal de l'emulació Libretro per a Plasma</summary>
   <summary xml:lang="es">Interfaz de emulación Libretro para Plasma</summary>
   <summary xml:lang="eu">Plasmarako Libreto emulazioaren aurrealdekoa</summary>
+  <summary xml:lang="fi">Libretro-emulointikäyttöliittymä Plasmaan</summary>
   <summary xml:lang="he">ממשק הדמיית Libretro לפלזמה</summary>
   <summary xml:lang="it">Interfaccia di emulazione Libretro per Plasma</summary>
   <summary xml:lang="ka">Libretro-ის ემულაციის წინაბოლო Plasma-სთვის</summary>
@@ -55,6 +57,7 @@
     <p xml:lang="ca-valencia">KRetro és un frontal de Libretro escrit en Qt/Kirigami, dissenyat per a l'escriptori, el mòbil i la Bigscreen de Plasma.</p>
     <p xml:lang="es">KRetro es una interfaz de Libretro escrita en Qt/Kirigami, diseñada para el escritorio Plasma, Plasma Mobile y Bigscreen.</p>
     <p xml:lang="eu">KRetro Plasma Mahaigainerako, Mugikorrerako, eta Bigscreen-erako Qt/Kirigamirekin idatzitako Libretoren aurrealdeko bat da.</p>
+    <p xml:lang="fi">KRetro on Qt/Kirigamilla kirjoitettu Libretro-käyttöliittymä, joka on suunniteltu Plasma-työpöydälle,  Mobilelle ja Bigscreenille.</p>
     <p xml:lang="he">KRetro הוא ממשק Libretro שנכתב ב־Qt/Kirigami, תוכנן עבור מהדורות שולחן העבודה, הניידים והמסכים הגדולים של פלזמה.</p>
     <p xml:lang="it">KRetro è un'interfaccia Libretro scritta in Qt/Kirigami, progettata per Plasma Desktop, Mobile e Bigscreen.</p>
     <p xml:lang="ka">KRetro წარმოადგენს Libretro-ის წინაბოლოს და დაწერილია Qt/Kirigami-ის გამოყენებით. განკუთვნილია Plasma Desktop, Plasma Mobile და Plasma Bigscreen-სთვის.</p>
@@ -72,6 +75,7 @@
     <p xml:lang="ca-valencia">Permet jugar jocs per a consoles retro proporcionant una ROM i un nucli Libretro.</p>
     <p xml:lang="es">Permite jugar con juegos de consolas retro proporcionando una ROM y un core de Libretro.</p>
     <p xml:lang="eu">ROM bat eta Libreto nukleo bat hornituz, kontsola retroetarako jokoetan jokatzeko aukera ematen dizu.</p>
+    <p xml:lang="fi">Se mahdollistaa retrokonsolipelien pelaamisen tarjoamallaan ROM- ja Libretro-ytimellä.</p>
     <p xml:lang="he">מאפשר לך לשחק משחקים לקונסולות משחקים מיושנות („רטרו”) על ידי אספקת דמות ROM והליבה של Libretro.</p>
     <p xml:lang="it">Permette di giocare ai giochi per console retro fornendo una ROM e un core Libretro.</p>
     <p xml:lang="ka">ის საშუალებას გაძლევთ, ითამაშოთ რეტრო კონსოლის თამაშები ROM-ის და Libtretro-ის ბირთვის საშუალებით.</p>
