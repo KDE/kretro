@@ -29,22 +29,26 @@ Kirigami.Page {
 
     actions: [
         Kirigami.Action {
+            text: i18n("Fullscreen")
             icon.name: "view-fullscreen"
             onTriggered: {
                 page.isFullscreen = !page.isFullscreen;
             }
         },
         Kirigami.Action {
+            text: i18n("Reset Core")
             icon.name: "view-refresh"
             onTriggered: resetPrompt.open()
         },
         Kirigami.Action {
+            text: i18n("Core Settings")
             icon.name: "settings-configure"
             onTriggered: {
                 pageStack.layers.push(Qt.resolvedUrl('./SettingsRetroCore.qml'))
             }
         },
         Kirigami.Action {
+            text: i18n("Save Slots")
             icon.name: "document-save-all"
             onTriggered: {
                 pageStack.layers.push(Qt.resolvedUrl('./SaveManager.qml'))
@@ -57,7 +61,7 @@ Kirigami.Page {
     leftPadding: 0
     rightPadding: 0
 
-    title: i18n("KRetro Mobile Player")
+    title: i18n("KRetro Player")
 
     focusPolicy: Qt.StrongFocus
 
