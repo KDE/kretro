@@ -35,9 +35,6 @@ qt_target_qml_sources(kretro
         qml/Settings.qml
         qml/SettingsRetroCore.qml
         qml/SettingsRetroPad.qml
-
-        qml/haptics/HapticsEffectLoader.qml
-        qml/haptics/HapticsEffectWrapper.qml
 )
 
 target_link_libraries(kretro PUBLIC
