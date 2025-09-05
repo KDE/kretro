@@ -1,6 +1,10 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2023 Seshan Ravikumar <seshan@sineware.ca>
 
+set_source_files_properties(dbus/org.sigxcpu.Feedback.Haptic.xml PROPERTIES INCLUDE vibrationevent.h)
+qt_add_dbus_interfaces(dbusinterface_SRCS
+    dbus/org.sigxcpu.Feedback.Haptic.xml)
+
 add_executable(kretro
     main.cpp
     app.cpp
@@ -10,7 +14,11 @@ add_executable(kretro
     retropad.cpp
     objects/retrogame.cpp
     idleinhibit.cpp
-    resources.qrc)
+    vibration.cpp
+    resources.qrc
+    ${dbusinterface_SRCS}
+)
+
 
 ecm_add_qml_module(kretro
     GENERATE_PLUGIN_SOURCE

@@ -10,9 +10,6 @@ import org.kde.kirigami as Kirigami
 import org.kde.kretro
 
 RowLayout {
-    HapticsEffectLoader {
-        id: haptics
-    }
     Item {
         height: 150
         width: 150
@@ -24,7 +21,7 @@ RowLayout {
             height: 50
             onPressedChanged: {
                 App.getRetroPad().updateInputStates(Qt.Key_Up, pressed)
-                haptics.buttonVibrate()
+                Vibration.vibrate(10)
             }
         }
         Controls.Button {
@@ -35,7 +32,7 @@ RowLayout {
             height: 50
             onPressedChanged: {
                 App.getRetroPad().updateInputStates(Qt.Key_Down, pressed)
-                haptics.buttonVibrate()
+                Vibration.vibrate(10)
             }
         }
         Controls.Button {
@@ -46,7 +43,7 @@ RowLayout {
             height: 50
             onPressedChanged: {
                 App.getRetroPad().updateInputStates(Qt.Key_Left, pressed)
-                haptics.buttonVibrate()
+                Vibration.vibrate(10)
             }
         }
         Controls.Button {
@@ -57,7 +54,7 @@ RowLayout {
             height: 50
             onPressedChanged: {
                 App.getRetroPad().updateInputStates(Qt.Key_Right, pressed)
-                haptics.buttonVibrate()
+                Vibration.vibrate(10)
             }
         }
     }
@@ -74,7 +71,7 @@ RowLayout {
                     Layout.fillWidth: true
                     onPressedChanged: {
                         App.getRetroPad().updateInputStates(Qt.Key_A, pressed)
-                        haptics.buttonVibrate()
+                        Vibration.vibrate(10)
                     }
                 }
                 Controls.Button {
@@ -82,7 +79,7 @@ RowLayout {
                     Layout.fillWidth: true
                     onPressedChanged: {
                         App.getRetroPad().updateInputStates(Qt.Key_S, pressed)
-                        haptics.buttonVibrate()
+                        Vibration.vibrate(10)
                     }
                 }
             }
@@ -92,7 +89,7 @@ RowLayout {
                     Layout.fillWidth: true
                     onPressedChanged: {
                         App.getRetroPad().updateInputStates(Qt.Key_Q, pressed)
-                        haptics.buttonVibrate()
+                        Vibration.vibrate(10)
                     }
                 }
                 Controls.Button {
@@ -100,7 +97,7 @@ RowLayout {
                     Layout.fillWidth: true
                     onPressedChanged: {
                         App.getRetroPad().updateInputStates(Qt.Key_W, pressed)
-                        haptics.buttonVibrate()
+                        Vibration.vibrate(10)
                     }
                 }
             }
@@ -112,7 +109,7 @@ RowLayout {
                 implicitHeight: 50
                 onPressedChanged: {
                     App.getRetroPad().updateInputStates(Qt.Key_Z, pressed)
-                    haptics.buttonVibrate()
+                    Vibration.vibrate(10)
                 }
             }
             Controls.Button {
@@ -121,7 +118,7 @@ RowLayout {
                 implicitHeight: 50
                 onPressedChanged: {
                     App.getRetroPad().updateInputStates(Qt.Key_X, pressed)
-                    haptics.buttonVibrate()
+                    Vibration.vibrate(10)
                 }
             }
         }
@@ -132,7 +129,7 @@ RowLayout {
                 implicitHeight: 35
                 onPressedChanged: {
                     App.getRetroPad().updateInputStates(Qt.Key_C, pressed)
-                    haptics.buttonVibrate()
+                    Vibration.vibrate(10)
                 }
             }
             Controls.Button {
@@ -141,7 +138,7 @@ RowLayout {
                 implicitHeight: 35
                 onPressedChanged: {
                     App.getRetroPad().updateInputStates(Qt.Key_V, pressed)
-                    haptics.buttonVibrate()
+                    Vibration.vibrate(10)
                 }
             }
         }
