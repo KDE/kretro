@@ -88,6 +88,17 @@ Kirigami.AbstractApplicationWindow {
 
         title: i18n("KRetro")
 
+        actions: [
+            Kirigami.Action {
+                text: i18n("Help")
+                visible: !page.isMobileControllerVisible
+                icon.name: "help-contextual"
+                onTriggered: {
+                    pageStack.push(Qt.resolvedUrl('./Help.qml'))
+                }
+            }
+        ]
+
         Kirigami.InlineMessage {
             id: errorMessage
             type: Kirigami.MessageType.Error
@@ -116,7 +127,7 @@ Kirigami.AbstractApplicationWindow {
             focus: true
             activeFocusOnTab: true
             focusPolicy: Qt.StrongFocus
-            
+
             GridView {
                 id: gamesGridView
                 anchors.fill: parent
