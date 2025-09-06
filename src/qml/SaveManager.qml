@@ -13,6 +13,7 @@ Kirigami.ScrollablePage {
     title: i18n("Save States")
     actions: Kirigami.Action {
         icon.name: "list-add"
+        text: i18nc("@action:button", "New Save State")
         onTriggered: {
             const path = App.saveNewSaveSlot()
             if (path.length > 0) {
