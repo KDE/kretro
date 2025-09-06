@@ -124,6 +124,7 @@ Kirigami.AbstractApplicationWindow {
                 cellWidth: Kirigami.Units.gridUnit * 9
                 cellHeight: Kirigami.Units.gridUnit * 9
                 focus: true
+                clip: true
                 
                 highlight: Rectangle {
                     color: Kirigami.Theme.highlightColor
