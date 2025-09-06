@@ -49,8 +49,7 @@ FormCard.FormCardPage {
         }
         Kirigami.InlineMessage {
             visible: true
-            implicitWidth: Kirigami.Units.gridUnit * 30
-            Layout.alignment: Qt.AlignHCenter
+            Layout.fillWidth: true
             text: i18n("Most settings require you to exit and reopen the game to take effect.")
         }
         FormCard.FormCard {
