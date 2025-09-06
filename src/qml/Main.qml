@@ -8,18 +8,15 @@ import org.kde.kirigami as Kirigami
 import org.kde.config as Config
 import org.kde.kretro
 
-Kirigami.ApplicationWindow {
+Kirigami.AbstractApplicationWindow {
     id: root
-    pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar;
-    pageStack.globalToolBar.showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton;
-
-    title: i18n("kretro")
-
-    pageStack {
-        globalToolBar {
-            style: Kirigami.ApplicationHeaderStyle.ToolBar
+    pageStack: PageStack {
+        Component.onCompleted: {
+            push(page)
         }
     }
+
+    title: i18n("kretro")
 
     minimumWidth: Kirigami.Units.gridUnit * 20
     minimumHeight: Kirigami.Units.gridUnit * 20
@@ -27,52 +24,48 @@ Kirigami.ApplicationWindow {
     function startGame(rom) {
         App.setRomFilePath(rom.path);
         App.setRomConsole(rom.console);
-        pageStack.layers.push(Qt.resolvedUrl('./MobilePlayer.qml'));
+        pageStack.push(Qt.resolvedUrl('./MobilePlayer.qml'));
     }
 
     Config.WindowStateSaver {
         configGroupName: "Main"
     }
 
-    globalDrawer: Kirigami.GlobalDrawer {
-        title: i18n("kretro")
-        titleIcon: "applications-graphics"
-        isMenu: !root.isMobile
-        actions: [
-            Kirigami.Action {
-                text: i18n("Open ROMs Directory")
-                icon.name: "folder-add"
-                onTriggered: {
-                    var dir = App.gamesDir();
-                    var fileUrl = "file://" + dir;
-                    Qt.openUrlExternally(fileUrl);
-                }
-            },
-            Kirigami.Action {
-                text: i18n("Settings")
-                icon.name: "settings-configure"
-                onTriggered: {
-                    pageStack.layers.push(Qt.resolvedUrl('./Settings.qml'));
-                }
-            },
-            Kirigami.Action {
-                text: i18n("Controller Settings")
-                icon.name: "input-gamepad-symbolic"
-                onTriggered: {
-                    pageStack.layers.push(Qt.resolvedUrl('./SettingsRetroPad.qml'));
-                }
-            },
-            Kirigami.Action {
-                text: i18n("About kretro")
-                icon.name: "help-about"
-                onTriggered: pageStack.layers.push(Qt.createComponent("org.kde.kirigamiaddons.formcard", "AboutPage"))
-            },
-            Kirigami.Action {
-                text: i18n("Quit")
-                icon.name: "application-exit"
-                onTriggered: Qt.quit()
+    property Controls.Menu mainMenu: Controls.Menu {
+        parent: root
+        Kirigami.Action {
+            text: i18n("Open ROMs Directory")
+            icon.name: "folder-add"
+            onTriggered: {
+                var dir = App.gamesDir();
+                var fileUrl = "file://" + dir;
+                Qt.openUrlExternally(fileUrl);
             }
-        ]
+        }
+        Kirigami.Action {
+            text: i18n("Settings")
+            icon.name: "settings-configure"
+            onTriggered: {
+                pageStack.push(Qt.resolvedUrl('./Settings.qml'));
+            }
+        }
+        Kirigami.Action {
+            text: i18n("Controller Settings")
+            icon.name: "input-gamepad-symbolic"
+            onTriggered: {
+                pageStack.push(Qt.resolvedUrl('./SettingsRetroPad.qml'));
+            }
+        }
+        Kirigami.Action {
+            text: i18n("About kretro")
+            icon.name: "help-about"
+            onTriggered: pageStack.push(Qt.createComponent("org.kde.kirigamiaddons.formcard", "AboutPage"))
+        }
+        Kirigami.Action {
+            text: i18n("Quit")
+            icon.name: "application-exit"
+            onTriggered: Qt.quit()
+        }
     }
 
 
@@ -88,7 +81,6 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    pageStack.initialPage: page
 
     Kirigami.Page {
         id: page

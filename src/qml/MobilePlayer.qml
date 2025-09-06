@@ -11,7 +11,6 @@ import org.kde.kretro
 Kirigami.Page {
     id: page
 
-    globalToolBarStyle: Kirigami.ApplicationHeaderStyle.ToolBar;
     property bool isMobileControllerVisible: Config.overrideMobileControllerVisibility ? !Kirigami.Settings.isMobile : Kirigami.Settings.isMobile
     property bool isFullscreen: false
 
@@ -19,17 +18,23 @@ Kirigami.Page {
         var appWindow = applicationWindow();
         if (isFullscreen) {
             appWindow.visibility = Window.FullScreen;
-            page.globalToolBarStyle = Kirigami.ApplicationHeaderStyle.None;
+            page.titleDelegate = null;
             showPassiveNotification(i18n("Press Escape to exit fullscreen mode!"));
         } else {
             appWindow.visibility = Window.Windowed;
-            page.globalToolBarStyle = Kirigami.ApplicationHeaderStyle.ToolBar;
+            page.titleDelegate = item;
         }
+    }
+
+    Component { 
+        id: item 
+        Item { }
     }
 
     actions: [
         Kirigami.Action {
             text: i18n("Fullscreen")
+            visible: !page.isMobileControllerVisible
             icon.name: "view-fullscreen"
             onTriggered: {
                 page.isFullscreen = !page.isFullscreen;
@@ -44,14 +49,14 @@ Kirigami.Page {
             text: i18n("Core Settings")
             icon.name: "settings-configure"
             onTriggered: {
-                pageStack.layers.push(Qt.resolvedUrl('./SettingsRetroCore.qml'))
+                pageStack.push(Qt.resolvedUrl('./SettingsRetroCore.qml'))
             }
         },
         Kirigami.Action {
             text: i18n("Save Slots")
             icon.name: "document-save-all"
             onTriggered: {
-                pageStack.layers.push(Qt.resolvedUrl('./SaveManager.qml'))
+                pageStack.push(Qt.resolvedUrl('./SaveManager.qml'))
             }
         }
     ]
@@ -77,7 +82,7 @@ Kirigami.Page {
 
         var appWindow = applicationWindow();
         appWindow.visibility = Window.Windowed;
-        appWindow.pageStack.globalToolBar.style = Kirigami.ApplicationHeaderStyle.Auto;
+        page.titleDelegate = item;        
     }
 
     function handleKeyPress(event, pressed) {
@@ -88,7 +93,7 @@ Kirigami.Page {
             if(page.isFullscreen) {
                 page.isFullscreen = false;
             } else {
-                pageStack.layers.pop();
+                pageStack.pop();
             }
             return;
         }

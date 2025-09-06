@@ -35,6 +35,10 @@ qt_target_qml_sources(kretro
         qml/Settings.qml
         qml/SettingsRetroCore.qml
         qml/SettingsRetroPad.qml
+
+        qml/components/PageContainer.qml
+        qml/components/PageHeader.qml
+        qml/components/PageStack.qml
 )
 
 target_link_libraries(kretro PUBLIC
