@@ -40,11 +40,35 @@ Item {
 
     function push(item, properties, operation) {
         // TODO support pushing multiple pages?
-        return stackView.push(__initItem(item, properties), properties, operation);
+
+        let pageItem = __initItem(item, properties);
+        if (pageItem instanceof Kirigami.Page) {
+            // Wrap Kirigami pages in PageContainer
+            // StackView manages deleting the item
+            return stackView.push(pageContainer, {
+                'page': pageItem,
+                'showBackButton': root.depth >= 1,
+                'destroyPage': !(item instanceof Kirigami.Page)
+            }, operation);
+        } else {
+            return stackView.push(pageItem, properties, operation);
+        }
     }
 
     function replace(target, item, properties, operation) {
-        return stackView.replace(target, __initItem(item, properties), properties, operation);
+        let pageItem = __initItem(item, properties);
+
+        if (pageItem instanceof Kirigami.Page) {
+            // Wrap Kirigami pages in PageContainer
+            // StackView manages deleting the item
+            return stackView.replace(target, pageContainer, {
+                'page': pageItem,
+                'showBackButton': root.depth >= 1,
+                'destroyPage': !(item instanceof Kirigami.Page)
+            }, operation);
+        } else {
+            return stackView.replace(target, __initItem(item, properties), properties, operation);
+        }
     }
 
     function __initItem(item, properties) {
@@ -67,13 +91,6 @@ Item {
                     page[prop] = properties[prop];
                 }
             }
-        }
-
-        if (page instanceof Kirigami.Page) {
-            page = pageContainer.createObject(stackView, {
-                'page': page,
-                'showBackButton': root.depth >= 1
-            });
         }
         return page;
     }

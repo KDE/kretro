@@ -15,6 +15,13 @@ Item {
 
     property Kirigami.Page page
     property bool showBackButton
+    property bool destroyPage
+
+    Component.onDestruction: {
+        if (page && destroyPage) {
+            page.destroy();
+        }
+    }
 
     onPageChanged: {
         if (!page) {
