@@ -90,7 +90,7 @@ private:
 
     QImage::Format m_imageFormat;
 
-    RetroFrame *m_retroFrame;
+    RetroFrame *m_retroFrame = nullptr;
     bool m_isRunning;
 
     QString m_romFilePath;
@@ -112,6 +112,6 @@ private:
     QString m_systemDir;
     QString m_gamesDir;
 
-    RetroPad *m_retroPad;
+    RetroPad *m_retroPad = nullptr;
 
 };
