@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: None
 # SPDX-License-Identifier: CC0-1.0
 
-build
+/build*/
 .kdev4
 *.kdev4
 .vscode
@@ -10,3 +10,4 @@ compile_commands.json
 .flatpak-builder
 repo
 builddir
+.qtcreator
