@@ -14,8 +14,8 @@ class IdleInhibit : public QObject
     Q_OBJECT
     QML_ELEMENT
 public:
-    IdleInhibit(QObject *parent = nullptr);
-    ~IdleInhibit();
+    explicit IdleInhibit(QObject *parent = nullptr);
+    ~IdleInhibit() override;
 
     static IdleInhibit *create(QQmlEngine *qmlEngine, QJSEngine *);
 

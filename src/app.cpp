@@ -425,11 +425,11 @@ void App::setImageFormat(QImage::Format format)
     m_imageFormat = format;
 }
 
-void App::setRomFilePath(QString path)
+void App::setRomFilePath(const QString &path)
 {
     m_romFilePath = path;
 }
-void App::setRomConsole(QString console)
+void App::setRomConsole(const QString &console)
 {
     m_romConsole = console;
 }

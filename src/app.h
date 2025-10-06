@@ -49,8 +49,8 @@ public:
 
     retro_system_av_info m_avInfo;
     
-    Q_INVOKABLE void setRomFilePath(QString path);
-    Q_INVOKABLE void setRomConsole(QString console);
+    Q_INVOKABLE void setRomFilePath(const QString &path);
+    Q_INVOKABLE void setRomConsole(const QString &console);
 
     // Map of core variables (names and options list for UI)
     void setCoreVariable(const QString &key, const QString &value);

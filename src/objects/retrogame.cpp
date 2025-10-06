@@ -4,7 +4,7 @@
 */
 
 #include "retrogame.h"
-RetroGame::RetroGame(QString name, QString path, QString console, QString icon, QObject *parent)
+RetroGame::RetroGame(const QString &name, const QString &path, const QString &console, const QString &icon, QObject *parent)
     : QObject(parent)
 {
     setName(name);
@@ -13,7 +13,7 @@ RetroGame::RetroGame(QString name, QString path, QString console, QString icon, 
     setIcon(icon);
 }
 
-void RetroGame::setName(const QString name)
+void RetroGame::setName(const QString &name)
 {
     if (m_name == name)
         return;
@@ -25,7 +25,7 @@ QString RetroGame::name() const
     return m_name;
 }
 
-void RetroGame::setPath(const QString path)
+void RetroGame::setPath(const QString &path)
 {
     if (m_path == path)
         return;
@@ -37,7 +37,7 @@ QString RetroGame::path() const
     return m_path;
 }
 
-void RetroGame::setConsole(QString console)
+void RetroGame::setConsole(const QString &console)
 {
     if (m_console == console)
         return;
@@ -49,7 +49,7 @@ QString RetroGame::console() const
     return m_console;
 }
 
-void RetroGame::setIcon(QString icon)
+void RetroGame::setIcon(const QString &icon)
 {
     if (m_icon == icon)
         return;

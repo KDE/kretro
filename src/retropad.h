@@ -56,8 +56,8 @@ public:
     using InputMapping = RetroPadTypes::InputMapping;
     using InputDevice = RetroPadTypes::InputDevice;
 
-    RetroPad(QObject *parent = nullptr);
-    ~RetroPad();
+    explicit RetroPad(QObject *parent = nullptr);
+    ~RetroPad() override;
 
     Q_ENUM(InputType);
 

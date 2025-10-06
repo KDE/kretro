@@ -14,18 +14,18 @@ class RetroGame : public QObject
     Q_PROPERTY(QString console READ console WRITE setConsole NOTIFY consoleChanged)
     Q_PROPERTY(QString icon READ icon WRITE setIcon NOTIFY iconChanged)
 public:
-    RetroGame(QString name, QString path, QString console, QString icon, QObject *parent = nullptr);
+    RetroGame(const QString &name, const QString &path, const QString &console, const QString &icon, QObject *parent = nullptr);
 
-    void setName(const QString name);
+    void setName(const QString &name);
     QString name() const;
     
-    void setPath(const QString path);
+    void setPath(const QString &path);
     QString path() const;
 
-    void setConsole(QString console);
+    void setConsole(const QString &console);
     QString console() const;
 
-    void setIcon(QString icon);
+    void setIcon(const QString &icon);
     QString icon() const;
 Q_SIGNALS:
     void nameChanged();
