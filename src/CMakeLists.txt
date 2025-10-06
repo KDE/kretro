@@ -8,13 +8,21 @@ qt_add_dbus_interfaces(dbusinterface_SRCS
 add_executable(kretro
     main.cpp
     app.cpp
+    app.h
     retroframe.cpp
+    retroframe.h
     retrogamemodel.cpp
+    retrogamemodel.h
     retrogamesavemodel.cpp
+    retrogamesavemodel.h
     retropad.cpp
+    retropad.h
     objects/retrogame.cpp
+    objects/retrogame.h
     idleinhibit.cpp
+    idleinhibit.h
     vibration.cpp
+    vibration.h
     resources.qrc
     ${dbusinterface_SRCS}
 )
