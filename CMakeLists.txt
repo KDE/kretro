@@ -3,7 +3,7 @@
 
 cmake_minimum_required(VERSION 3.16)
 
-project(kretro VERSION 0.1)
+project(kretro VERSION 0.0.2)
 
 include(FeatureSummary)
 
