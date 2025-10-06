@@ -89,10 +89,43 @@
     <p xml:lang="uk">Програма надає вам змогу грати в ігри для ретроконсолей на основі ROM та програмного ядра Libretro.</p>
     <p xml:lang="zh-TW">它讓您遊玩復古遊戲機的遊戲，只要提供 ROM 和 Libretro 核心。</p>
   </description>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Mobile - Games Library</caption>
+      <image>https://cdn.kde.org/screenshots/kretro/kretro-mobile-game-library.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Desktop - Game Library</caption>
+      <image>https://cdn.kde.org/screenshots/kretro/kretro-desktop-game-library.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Mobile - Game Player</caption>
+      <image>https://cdn.kde.org/screenshots/kretro/kretro-mobile-player.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Desktop - Game Player</caption>
+      <image>https://cdn.kde.org/screenshots/kretro/kretro-desktop-player.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Mobile - Save Slots Manager</caption>
+      <image>https://cdn.kde.org/screenshots/kretro/kretro-mobile-save-slots.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Desktop - Save Slots Manager</caption>
+      <image>https://cdn.kde.org/screenshots/kretro/kretro-desktop-save-slots.png</image>
+    </screenshot>
+  </screenshots>
   <categories>
     <category>Game</category>
   </categories>
   <icon type="stock">org.kde.kretro</icon>
   <url type="homepage">https://apps.kde.org/kretro</url>
-  <releases/>
+  <releases>
+    <release version="0.0.1" date="2022-10-05">
+      <url>https://blog.seshan.xyz/2025/10/05/introducing-kretro-a-libretro-game-emulator-from-kde-alpha-release/</url>
+        <description>
+          <p>First alpha release!</p>
+        </description>
+    </release>
+  </releases>
 </component>
