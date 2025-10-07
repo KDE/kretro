@@ -123,9 +123,9 @@
   <releases>
     <release version="0.0.1" date="2022-10-05">
       <url>https://blog.seshan.xyz/2025/10/05/introducing-kretro-a-libretro-game-emulator-from-kde-alpha-release/</url>
-        <description>
-          <p>First alpha release!</p>
-        </description>
+      <description>
+        <p>First alpha release!</p>
+      </description>
     </release>
   </releases>
 </component>
