@@ -567,3 +567,5 @@ bool App::isFlatpak() const
 {
     return QProcessEnvironment::systemEnvironment().value(u"container"_s) == u"flatpak"_s;
 }
+
+#include "moc_app.cpp"

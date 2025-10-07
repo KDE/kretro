@@ -75,3 +75,5 @@ void IdleInhibit::release()
     m_cookie = 0;
 #endif
 }
+
+#include "moc_idleinhibit.cpp"

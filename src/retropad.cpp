@@ -233,3 +233,5 @@ QVariantMap RetroPad::currentMappings() const {
     
     return mappings;
 }
+
+#include "moc_retropad.cpp"

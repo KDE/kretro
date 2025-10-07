@@ -67,3 +67,5 @@ void RetroFrame::paint(QPainter *painter)
         QRectF(0, 0, displayImage.width(), displayImage.height())
     );
 }
+
+#include "moc_retroframe.cpp"

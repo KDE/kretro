@@ -95,3 +95,5 @@ void RetroGameSaveModel::removeSaveSlot(int row)
     m_saves.erase(std::next(m_saves.cbegin(), row));
     endRemoveRows();
 }
+
+#include "moc_retrogamesavemodel.cpp"

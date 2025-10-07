@@ -38,3 +38,5 @@ QString RetroGameSave::path() const
     return m_path;
 }
 
+
+#include "moc_retrogamesave.cpp"

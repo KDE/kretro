@@ -119,3 +119,5 @@ QVariant RetroGameModel::get(int index) const
     }
     return QVariant::fromValue(m_data.at(index));
 }
+
+#include "moc_retrogamemodel.cpp"

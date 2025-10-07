@@ -60,3 +60,5 @@ QString RetroGame::icon() const
 {
     return m_icon;
 }
+
+#include "moc_retrogame.cpp"
