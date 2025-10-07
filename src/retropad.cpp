@@ -47,7 +47,7 @@ void RetroPad::populateMappings() {
     KConfig config(u"kretrorc"_s);
     KConfigGroup inputGroup(&config, u"Input"_s);
 
-    auto isController = inputGroup.readEntry(u"Port_Type_0"_s, u"Keyboard"_s) == u"Controller"_s;
+    bool isController = inputGroup.readEntry(u"Port_Type_0"_s, u"Keyboard"_s) == u"Controller"_s;
     auto insertMapping = [&](unsigned device_id, const QString &configKey, int defaultKey) {
         m_inputMappings.insert(
             InputDevice{0, device_id},
@@ -166,7 +166,7 @@ void RetroPad::setMapping(InputDevice input_device, InputMapping mapping) {
     
     // get KConfig key from m_buttonNames
     QString kconfigKey;
-    for (const auto &button : m_buttonNames) {
+    for (const auto &button : std::as_const(m_buttonNames)) {
         if (std::get<0>(button) == input_device.libretro_device_id) {
             kconfigKey = std::get<1>(button);
             break;

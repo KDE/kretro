@@ -35,7 +35,7 @@ void retrolog(enum retro_log_level level, const char *fmt, ...)
     va_list ap;
     va_start(ap, fmt);
     
-    QString message = QString::vasprintf(fmt, ap);
+    const QString message = QString::vasprintf(fmt, ap);
     va_end(ap);
     
     switch (level) {
@@ -114,7 +114,7 @@ bool core_environment(unsigned cmd, void *data)
             }
             qDebug() << "Get Variable" << var->key << value;
             
-            QString keyStr = QString::fromLocal8Bit(var->key);
+            const QString keyStr = QString::fromLocal8Bit(var->key);
             variableValues[keyStr] = value.toLocal8Bit();
             var->value = variableValues[keyStr].data();
             return true;
@@ -202,7 +202,7 @@ void App::startRetroCore()
     if (coreName == u"2048_libretro.so"_s) {
         core_full_path = QTemporaryFile::createNativeFile(u":/cores/"_s + QSysInfo::buildCpuArchitecture() + u"/"_s + coreName)->fileName();
     } else {
-        QString dir = Config::self()->libretroCoresDirectory();
+        const QString dir = Config::self()->libretroCoresDirectory();
         if (dir == Config::self()->defaultLibretroCoresDirectoryValue() && App::self()->isFlatpak()) {
             core_full_path = u"/app/lib/libretro/"_s + coreName;
         } else {

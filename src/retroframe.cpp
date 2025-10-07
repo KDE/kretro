@@ -49,14 +49,14 @@ void RetroFrame::paint(QPainter *painter)
         return;
     }
     
-    QRectF boundingRect = this->boundingRect();
+    const QRectF boundingRect = this->boundingRect();
     
-    QImage displayImage = m_needsRgbSwap ? m_frameBuffer.rgbSwapped() : m_frameBuffer;
+    const QImage displayImage = m_needsRgbSwap ? m_frameBuffer.rgbSwapped() : m_frameBuffer;
     
-    QSizeF sourceSize = displayImage.size();
-    QSizeF targetSize = sourceSize.scaled(boundingRect.size(), Qt::KeepAspectRatio);
+    const QSizeF sourceSize = displayImage.size();
+    const QSizeF targetSize = sourceSize.scaled(boundingRect.size(), Qt::KeepAspectRatio);
     
-    QPointF position(
+    const QPointF position(
         (boundingRect.width() - targetSize.width()) / 2.0,
         (boundingRect.height() - targetSize.height()) / 2.0
     );

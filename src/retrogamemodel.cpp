@@ -19,42 +19,42 @@ RetroGameModel::RetroGameModel(QObject *parent)
     KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup generalGroup = config->group(u"General"_s);
 
-    QString romsPath = generalGroup.readPathEntry(u"romsDirectory"_s,
+    const QString romsPath = generalGroup.readPathEntry(u"romsDirectory"_s,
                                                 QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + u"/Games"_s);
     QDir romDir{romsPath};
 
     // Game Boy Advance
-    QStringList gba_roms = romDir.entryList(QStringList() << u"*.gba"_s, QDir::Files);
-    for (QString rom : gba_roms) {
-        QString path = romDir.absoluteFilePath(rom);
+    const QStringList gba_roms = romDir.entryList(QStringList() << u"*.gba"_s, QDir::Files);
+    for (const QString &rom : gba_roms) {
+        const QString path = romDir.absoluteFilePath(rom);
         append(new RetroGame{rom, path, u"GBA"_s, u"qrc:/gba_default_icon.png"_s, this});
     }
 
     // Super Nintendo Entertainment System
-    QStringList snes_roms = romDir.entryList(QStringList() << u"*.smc"_s, QDir::Files);
-    for (QString rom : snes_roms) {
-        QString path = romDir.absoluteFilePath(rom);
+    const QStringList snes_roms = romDir.entryList(QStringList() << u"*.smc"_s, QDir::Files);
+    for (const QString &rom : snes_roms) {
+        const QString path = romDir.absoluteFilePath(rom);
         append(new RetroGame{rom, path, u"SNES"_s, u"qrc:/snes_default_icon.png"_s, this});
     }
 
     // Nintendo Entertainment System
-    QStringList nes_roms = romDir.entryList(QStringList() << u"*.nes"_s, QDir::Files);
-    for (QString rom : nes_roms) {
-        QString path = romDir.absoluteFilePath(rom);
+    const QStringList nes_roms = romDir.entryList(QStringList() << u"*.nes"_s, QDir::Files);
+    for (const QString &rom : nes_roms) {
+        const QString path = romDir.absoluteFilePath(rom);
         append(new RetroGame{rom, path, u"NES"_s, u"qrc:/nes_default_icon.png"_s, this});
     }
 
     // Sega Master System / Game Gear
-    QStringList sms_roms = romDir.entryList(QStringList() << u"*.sms"_s << u"*.gg"_s, QDir::Files);
-    for (QString rom : sms_roms) {
-        QString path = romDir.absoluteFilePath(rom);
+    const QStringList sms_roms = romDir.entryList(QStringList() << u"*.sms"_s << u"*.gg"_s, QDir::Files);
+    for (const QString &rom : sms_roms) {
+        const QString path = romDir.absoluteFilePath(rom);
         append(new RetroGame{rom, path, u"SMS"_s, u"qrc:/sms_default_icon.png"_s, this});
     }
 
     // Sega Genesis / Mega Drive
-    QStringList genesis_roms = romDir.entryList(QStringList() << u"*.gen"_s << u"*.md"_s, QDir::Files);
-    for (QString rom : genesis_roms) {
-        QString path = romDir.absoluteFilePath(rom);
+    const QStringList genesis_roms = romDir.entryList(QStringList() << u"*.gen"_s << u"*.md"_s, QDir::Files);
+    for (const QString &rom : genesis_roms) {
+        const QString path = romDir.absoluteFilePath(rom);
         append(new RetroGame{rom, path, u"GENESIS"_s, u"qrc:/genesis_default_icon.png"_s, this});
     }
 }
