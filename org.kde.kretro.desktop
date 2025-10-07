@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2023 Seshan Ravikumar <seshan@sineware.ca>
 [Desktop Entry]
 Name=KRetro
+Name[ar]=كي ريترو
 Name[ca]=KRetro
 Name[ca@valencia]=KRetro
 Name[es]=KRetro
@@ -20,6 +21,7 @@ Name[tr]=K Retro
 Name[uk]=KRetro
 Name[zh_TW]=KRetro
 Comment=Libretro frontend for Plasma
+Comment[ar]=واجهة Libretro لبلازما
 Comment[ca]=Frontal de la Libretro per al Plasma
 Comment[ca@valencia]=Frontal de la Libretro per a Plasma
 Comment[es]=Interfaz de Libretro para Plasma
