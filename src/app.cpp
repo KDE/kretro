@@ -11,9 +11,9 @@
 #include <QProcessEnvironment>
 #include "kretroconfig.h"
 
-#ifdef __linux__ 
+#if defined(Q_OS_UNIX)
     #include <alsa/asoundlib.h>
-#elif __APPLE__
+#elif defined(Q_OS_MAC)
     #include <AudioToolbox/AudioToolbox.h>
 #else
 #endif

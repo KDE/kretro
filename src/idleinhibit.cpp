@@ -10,7 +10,7 @@ using namespace Qt::Literals::StringLiterals;
 
 IdleInhibit::IdleInhibit(QObject *parent)
     : QObject(parent)
-    #ifdef Q_OS_LINUX
+    #ifdef Q_OS_UNIX
     , m_connection(QDBusConnection::sessionBus())
     , m_interface(u"org.freedesktop.ScreenSaver"_s, u"/org/freedesktop/ScreenSaver"_s, u"org.freedesktop.ScreenSaver"_s, m_connection)
     #endif
@@ -27,6 +27,7 @@ IdleInhibit::~IdleInhibit()
 
 void IdleInhibit::acquire()
 {
+#ifdef Q_OS_UNIX
     if(!m_interface.isValid()) {
         qWarning() << "Could not inhibit idle, failed to connect to org.freedesktop.ScreenSaver: "
                    << m_connection.lastError().message();
@@ -46,10 +47,12 @@ void IdleInhibit::acquire()
     }
 
     m_cookie = reply.value();
+#endif
 }
 
 void IdleInhibit::release()
 {
+#ifdef Q_OS_UNIX
     if (m_cookie == 0) {
         qWarning() << "No idle inhibition to release.";
         return;
@@ -70,4 +73,5 @@ void IdleInhibit::release()
     }
 
     m_cookie = 0;
+#endif
 }
