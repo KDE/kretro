@@ -8,7 +8,7 @@ project(kretro VERSION 0.0.2)
 include(FeatureSummary)
 
 set(QT_MIN_VERSION 6.6)
-set(KF_MIN_VERSION 6.0.0)
+set(KF_MIN_VERSION 6.8.0)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -49,7 +49,7 @@ if (ANDROID)
 endif()
 
 ecm_set_disabled_deprecation_versions(QT 6.10.0
-    KF 6.7.0
+    KF 6.18.0
 )
 
 add_subdirectory(src)

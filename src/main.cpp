@@ -10,7 +10,7 @@
 
 #include "version-kretro.h"
 #include <KAboutData>
-#include <KLocalizedContext>
+#include <KLocalizedQmlContext>
 #include <KLocalizedString>
 
 using namespace Qt::StringLiterals;
@@ -46,7 +46,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
-    engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
+    engine.rootContext()->setContextObject(new KLocalizedQmlContext(&engine));
     engine.loadFromModule("org.kde.kretro", "Main");
 
     if (engine.rootObjects().isEmpty()) {
