@@ -1,0 +1,404 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the kretro package.
+#
+# SPDX-FileCopyrightText: 2025 Emir SARI <emir_sari@îcloud.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: kretro\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-10-07 00:40+0000\n"
+"PO-Revision-Date: 2025-10-07 20:51+0300\n"
+"Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
+"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 25.08.1\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Emir SARI"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "emir_sari@icloud.com"
+
+#: main.cpp:28
+#, kde-format
+msgctxt "@title"
+msgid "KRetro"
+msgstr "K Retro"
+
+#: main.cpp:32
+#, kde-format
+msgid "Libretro frontend for Plasma"
+msgstr "Plasma için libretro ön yüzü"
+
+#: main.cpp:36
+#, kde-format
+msgid "(c) 2023-2025 KDE Community"
+msgstr "© 2023–2025 KDE Topluluğu"
+
+#: main.cpp:37
+#, kde-format
+msgctxt "@info:credit"
+msgid "Seshan Ravikumar"
+msgstr "Seşan Ravikumar"
+
+#: main.cpp:38 main.cpp:42
+#, kde-format
+msgctxt "@info:credit"
+msgid "Developer"
+msgstr "Geliştirici"
+
+#: main.cpp:41
+#, kde-format
+msgctxt "@info:credit"
+msgid "Devin Lin"
+msgstr "Devin Lin"
+
+#: qml/Help.qml:13
+#, kde-format
+msgid "KRetro Help"
+msgstr "K Retro Yardımı"
+
+#: qml/Help.qml:20
+#, kde-format
+msgid "Getting Started"
+msgstr "Başlangıç"
+
+#: qml/Help.qml:25
+#, kde-format
+msgid "Installing Retro Cores"
+msgstr "Retro Çekirdekleri Kurulumu"
+
+#: qml/Help.qml:26
+#, kde-format
+msgid ""
+"KRetro (non-flatpak) requires you to install emulators, called 'libretro "
+"cores'.\n"
+"You should find these from your distro's package manager, for example, "
+"'libretro-mgba' for the GBA emulator core. Once installed, you can select "
+"them in the settings."
+msgstr ""
+"K Retro (Flatpak olmayan sürüm), adına “libretro çekirdekleri” denilen "
+"öykünücüler kurmanızı gerektirir.\n"
+"Bunları, dağıtımınızın paket yöneticisinden bulabilirsiniz. Örneğin, GBA "
+"öykünücüsü çekirdeği için “libretro-mgba” aramasını yapın. Kurulum sonrası "
+"onları ayarlardan seçebilirsiniz."
+
+#: qml/Help.qml:29
+#, kde-format
+msgid "Installing Retro Cores (Flatpak)"
+msgstr "Retro Çekirdekleri Kurulumu (Flatpak)"
+
+#: qml/Help.qml:30
+#, kde-format
+msgid ""
+"The flatpak version of KRetro comes with a curated set of cores already! If "
+"you installed KRetro from the official flatpak, you are all set!"
+msgstr ""
+"K Retro’nun Flatpak sürümü, envaî çeşit bir çekirdek kümesi ile birlikte "
+"gelir. Resmî Flatpak sürümünü kurduktan sonra doğrudan kullanmaya "
+"başlayabilirsiniz."
+
+#: qml/Help.qml:35
+#, kde-format
+msgid "Installing Games"
+msgstr "Oyun Kurulumu"
+
+#: qml/Help.qml:39
+#, kde-format
+msgid "Adding ROMs"
+msgstr "ROM’lar Eklemek"
+
+#: qml/Help.qml:40
+#, kde-format
+msgid ""
+"KRetro automatically detects supported games (by file extension) from the "
+"ROMs directory (which by default is ~/Documents/Games). Simply add your ROMs "
+"there and they will appear in the game library!"
+msgstr ""
+"K Retro, ROM’lar dizininden kendiliğinden desteklenen oyunları (genelde "
+"öntanımlı konum ~/Documents/Games dizinidir) algılayabilir. Yalnızca "
+"ROM’larınızı oraya koyun ve oyun kitaplığında görüneceklerdir."
+
+#: qml/Main.qml:19
+#, kde-format
+msgid "kretro"
+msgstr "K Retro"
+
+#: qml/Main.qml:37
+#, kde-format
+msgid "Open ROMs Directory"
+msgstr "ROM’lar Dizinini Aç"
+
+#: qml/Main.qml:46 qml/Settings.qml:17
+#, kde-format
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: qml/Main.qml:53
+#, kde-format
+msgid "Controller Settings"
+msgstr "Kol Ayarları"
+
+#: qml/Main.qml:60
+#, kde-format
+msgid "About kretro"
+msgstr "K Retro Hakkında"
+
+#: qml/Main.qml:65
+#, kde-format
+msgid "Quit"
+msgstr "Çık"
+
+#: qml/Main.qml:89
+#, kde-format
+msgid "KRetro"
+msgstr "K Retro"
+
+#: qml/Main.qml:93
+#, kde-format
+msgid "Help"
+msgstr "Yardım"
+
+#: qml/Main.qml:117
+#, kde-format
+msgid "Game Library"
+msgstr "Oyun Kitaplığı"
+
+#: qml/MobilePlayer.qml:22
+#, kde-format
+msgid "Press Escape to exit fullscreen mode!"
+msgstr "Tam ekran kipinden çıkmak için Vazgeç (Esc) düğmesine basın!"
+
+#: qml/MobilePlayer.qml:36
+#, kde-format
+msgid "Fullscreen"
+msgstr "Tam Ekran"
+
+#: qml/MobilePlayer.qml:44
+#, kde-format
+msgid "Reset Core"
+msgstr "Çekirdeği Sıfırla"
+
+#: qml/MobilePlayer.qml:49 qml/SettingsRetroCore.qml:13
+#, kde-format
+msgid "Core Settings"
+msgstr "Çekirdek Ayarları"
+
+#: qml/MobilePlayer.qml:56
+#, kde-format
+msgid "Save Slots"
+msgstr "Yuvaları Kaydet"
+
+#: qml/MobilePlayer.qml:69
+#, kde-format
+msgid "KRetro Player"
+msgstr "K Retro Oyuncusu"
+
+#: qml/MobilePlayer.qml:111
+#, kde-format
+msgid "Reset Game Core?"
+msgstr "Oyun Çekirdeğini Sıfırla?"
+
+#: qml/MobilePlayer.qml:112
+#, kde-format
+msgid "This will restart the game. Any unsaved progress will be lost!"
+msgstr "Bu, oyunu yeniden başlatacaktır. Kaydedilmemiş ilerlemeniz kaybolur!"
+
+#: qml/SaveManager.qml:13
+#, kde-format
+msgid "Save States"
+msgstr "Durumları Kaydet"
+
+#: qml/SaveManager.qml:16
+#, kde-format
+msgctxt "@action:button"
+msgid "New Save State"
+msgstr "Yeni Kayıt Durumu"
+
+#: qml/SaveManager.qml:22
+#, kde-format
+msgid "Game saved!"
+msgstr "Oyun kaydedildi!"
+
+#: qml/SaveManager.qml:38
+#, kde-format
+msgid ""
+"Slot 0 is the default auto save slot. It is restored on game start and saved "
+"on exit."
+msgstr ""
+"Yuva 0, öntanımlı kendiliğinden kayıt yuvasıdır. Oyun başlangıcında geri "
+"yüklenir ve çıkışta kaydedilir."
+
+#: qml/SaveManager.qml:73
+#, kde-format
+msgid "Slot %1"
+msgstr "Yuva %1"
+
+#: qml/SaveManager.qml:83
+#, kde-format
+msgid "Last modified: %1"
+msgstr "Son değişiklik: %1"
+
+#: qml/SaveManager.qml:97
+#, kde-format
+msgctxt "@action:button"
+msgid "Load"
+msgstr "Yükle"
+
+#: qml/SaveManager.qml:104
+#, kde-format
+msgctxt "@action:button"
+msgid "Save"
+msgstr "Kaydet"
+
+#: qml/SaveManager.qml:111
+#, kde-format
+msgctxt "@action:button"
+msgid "Delete"
+msgstr "Sil"
+
+#: qml/Settings.qml:29
+#, kde-format
+msgid "Select ROMs Directory"
+msgstr "ROM’lar Dizini Seç"
+
+#: qml/Settings.qml:38
+#, kde-format
+msgid "Select Libretro Cores Directory"
+msgstr "Libretro Çekirdekleri Dizini Seç"
+
+#: qml/Settings.qml:50
+#, kde-format
+msgid "General"
+msgstr "Genel"
+
+#: qml/Settings.qml:55
+#, kde-format
+msgid "ROMs Directory"
+msgstr "ROM’lar dizini"
+
+#: qml/Settings.qml:63
+#, kde-format
+msgid "Libretro Cores Directory"
+msgstr "Libretro çekirdekleri dizini"
+
+#: qml/Settings.qml:69
+#, kde-format
+msgid "Override Mobile Controller Visibility"
+msgstr "Taşınabilir kol görünürlüğünü geçersiz kıl"
+
+#: qml/Settings.qml:70
+#, kde-format
+msgid "Overrides the default visibility of the touch controller."
+msgstr "Dokunmatik kolun öntanımlı görünürlüğünü geçersiz kılar."
+
+#: qml/Settings.qml:75
+#, kde-format
+msgid "Fullscreen Mode"
+msgstr "Tam ekran kipi"
+
+#: qml/Settings.qml:76
+#, kde-format
+msgid "Open games in fullscreen mode by default."
+msgstr "Öntanımlı olarak oyunları tam ekran kipinde açar."
+
+#: qml/Settings.qml:83
+#, kde-format
+msgid "Libretro Cores"
+msgstr "Libretro Çekirdekleri"
+
+#: qml/Settings.qml:91
+#, kde-format
+msgid "GBA Core:"
+msgstr "GBA çekirdeği:"
+
+#: qml/Settings.qml:110
+#, kde-format
+msgid "NES Core:"
+msgstr "NES çekirdeği:"
+
+#: qml/Settings.qml:129
+#, kde-format
+msgid "SNES Core:"
+msgstr "SNES çekirdeği:"
+
+#: qml/Settings.qml:148
+#, kde-format
+msgid "Master System Core:"
+msgstr "Ana sistem çekirdeği:"
+
+#: qml/Settings.qml:167
+#, kde-format
+msgid "Genesis / Mega Drive Core:"
+msgstr "Genesis / Mega Drive çekirdeği:"
+
+#: qml/Settings.qml:189
+#, kde-format
+msgid "Flatpak releases of KRetro manage retro cores automatically."
+msgstr ""
+"K Retro’nun Flatpak sürümü, retro çekirdeklerinin yönetimini kendiliğinden "
+"yapar."
+
+#: qml/Settings.qml:199 qml/SettingsRetroPad.qml:96
+#, kde-format
+msgid "Settings saved!"
+msgstr "Ayarlar kaydedildi!"
+
+#: qml/SettingsRetroCore.qml:48
+#, kde-format
+msgid "Core Variables"
+msgstr "Çekirdek Değişkenleri"
+
+#: qml/SettingsRetroCore.qml:53
+#, kde-format
+msgid "Most settings require you to exit and reopen the game to take effect."
+msgstr ""
+"Çoğu ayarın etkili olabilmesi için oyundan çıkıp yeniden girmeniz gerekir."
+
+#: qml/SettingsRetroCore.qml:65
+#, kde-format
+msgid "Default: %1"
+msgstr "Öntanımlı: %1"
+
+#: qml/SettingsRetroPad.qml:16
+#, kde-format
+msgid "Reset Mappings"
+msgstr "Eşlemleri Sıfırla"
+
+#: qml/SettingsRetroPad.qml:19
+#, kde-format
+msgid "Retropad mappings reset!"
+msgstr "RetroPad eşlemleri sıfırlandı!"
+
+#: qml/SettingsRetroPad.qml:24
+#, kde-format
+msgid "RetroPad Controller Settings"
+msgstr "RetroPad Kolu Ayarları"
+
+#: qml/SettingsRetroPad.qml:55
+#, kde-format
+msgid "Controller Port 0"
+msgstr "Kol Kapısı 0"
+
+#: qml/SettingsRetroPad.qml:64
+#, kde-format
+msgid "Press a controller button or key to bind..."
+msgstr "Bağıntılamak için kolun bir düğmesine basın…"
+
+#: qml/SettingsRetroPad.qml:65
+#, kde-format
+msgid "Currently unbound"
+msgstr "Şu anda bağıntılı değil"
+
+#: qml/SettingsRetroPad.qml:65
+#, kde-format
+msgid "Currently bound to: %1"
+msgstr "Şu anda şuna bağıntılı: %1"
