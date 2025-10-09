@@ -7,14 +7,14 @@ msgstr ""
 "Project-Id-Version: kretro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-07 00:40+0000\n"
-"PO-Revision-Date: 2025-10-07 23:47+0200\n"
+"PO-Revision-Date: 2025-10-08 12:25+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 25.08.1\n"
 
 #, kde-format
@@ -31,12 +31,12 @@ msgstr "freekdekruijf@kde.nl"
 #, kde-format
 msgctxt "@title"
 msgid "KRetro"
-msgstr ""
+msgstr "KRetro"
 
 #: main.cpp:32
 #, kde-format
 msgid "Libretro frontend for Plasma"
-msgstr ""
+msgstr "Libretro-frontend voor Plasma"
 
 #: main.cpp:36
 #, kde-format
@@ -47,7 +47,7 @@ msgstr "(c) 2023-2025 KDE gemeenschap"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Seshan Ravikumar"
-msgstr ""
+msgstr "Seshan Ravikumar"
 
 #: main.cpp:38 main.cpp:42
 #, kde-format
@@ -64,7 +64,7 @@ msgstr "Devin Lin"
 #: qml/Help.qml:13
 #, kde-format
 msgid "KRetro Help"
-msgstr ""
+msgstr "KRetro Help"
 
 #: qml/Help.qml:20
 #, kde-format
@@ -74,7 +74,7 @@ msgstr "Aan de slag"
 #: qml/Help.qml:25
 #, kde-format
 msgid "Installing Retro Cores"
-msgstr ""
+msgstr "Retro-kernen worden geïnstalleerd"
 
 #: qml/Help.qml:26
 #, kde-format
@@ -85,11 +85,16 @@ msgid ""
 "'libretro-mgba' for the GBA emulator core. Once installed, you can select "
 "them in the settings."
 msgstr ""
+"KRetro (niet-flatpak) vereist dat u emulatoren installeert, genaamd "
+"'libretro-kernen'.\n"
+"U zou deze moeten vinden in de pakketbeheerder van u distributie, "
+"bijvoorbeeld, 'libretro-mgba' voor de GBA-emulatorkern. Eenmaal "
+"geïnstalleerd, kunt u ze selecteren in de instellingen."
 
 #: qml/Help.qml:29
 #, kde-format
 msgid "Installing Retro Cores (Flatpak)"
-msgstr ""
+msgstr "Retro-kernen worden geïnstalleerd (Flatpak)"
 
 #: qml/Help.qml:30
 #, kde-format
@@ -97,16 +102,19 @@ msgid ""
 "The flatpak version of KRetro comes with a curated set of cores already! If "
 "you installed KRetro from the official flatpak, you are all set!"
 msgstr ""
+"De versie van KRetro in flatpak komt al met een gefilterde set van kernen! "
+"Als u KRetro hebt geïnstalleerd uit het officiële flatpak, bent u helemaal "
+"klaar!"
 
 #: qml/Help.qml:35
 #, kde-format
 msgid "Installing Games"
-msgstr ""
+msgstr "Games worden geïnstalleerd"
 
 #: qml/Help.qml:39
 #, kde-format
 msgid "Adding ROMs"
-msgstr ""
+msgstr "ROM's worden geïnstalleerd"
 
 #: qml/Help.qml:40
 #, kde-format

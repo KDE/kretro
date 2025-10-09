@@ -1,0 +1,404 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kretro package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kretro\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-10-07 00:40+0000\n"
+"PO-Revision-Date: 2025-10-08 03:12+0200\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
+"Language: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.7\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Temuri Doghonadze"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "temuri.doghonadze@gmail.com"
+
+#: main.cpp:28
+#, kde-format
+msgctxt "@title"
+msgid "KRetro"
+msgstr "KRetro"
+
+#: main.cpp:32
+#, kde-format
+msgid "Libretro frontend for Plasma"
+msgstr "Libretro-ის წინაბოლო Plasma-ისთვის"
+
+#: main.cpp:36
+#, kde-format
+msgid "(c) 2023-2025 KDE Community"
+msgstr "(c) 2023-2025 KDE-ის საზოგადოება"
+
+#: main.cpp:37
+#, kde-format
+msgctxt "@info:credit"
+msgid "Seshan Ravikumar"
+msgstr "სეშან რავიკუმარი"
+
+#: main.cpp:38 main.cpp:42
+#, kde-format
+msgctxt "@info:credit"
+msgid "Developer"
+msgstr "პროგრამისტი"
+
+#: main.cpp:41
+#, kde-format
+msgctxt "@info:credit"
+msgid "Devin Lin"
+msgstr "Devin Lin"
+
+#: qml/Help.qml:13
+#, kde-format
+msgid "KRetro Help"
+msgstr "KRetro-ის დახმარება"
+
+#: qml/Help.qml:20
+#, kde-format
+msgid "Getting Started"
+msgstr "დავიწყოთ"
+
+#: qml/Help.qml:25
+#, kde-format
+msgid "Installing Retro Cores"
+msgstr "Retro Core-ების დაყენება"
+
+#: qml/Help.qml:26
+#, kde-format
+msgid ""
+"KRetro (non-flatpak) requires you to install emulators, called 'libretro "
+"cores'.\n"
+"You should find these from your distro's package manager, for example, "
+"'libretro-mgba' for the GBA emulator core. Once installed, you can select "
+"them in the settings."
+msgstr ""
+"KRetro (არა-flatpak-ის ვერსია) მოითხოვს, რომ დააყენოთ ემულატორები, რომლებსაც "
+"'libretro core' ჰქვიათ.\n"
+"ისინი თქვენი დისტრიბუტივის პაკეტების მმართველიდან უნდა იპოვოთ. მაგალითად, "
+"'libretro-mgba' aris GBA-ის ემულატორის ბირთვი. როცა დააყენებთ, მათი არჩევა "
+"მორგების ფანჯარაში შეგიძლიათ."
+
+#: qml/Help.qml:29
+#, kde-format
+msgid "Installing Retro Cores (Flatpak)"
+msgstr "Retro Core-ების (Flatpak) დაყენება"
+
+#: qml/Help.qml:30
+#, kde-format
+msgid ""
+"The flatpak version of KRetro comes with a curated set of cores already! If "
+"you installed KRetro from the official flatpak, you are all set!"
+msgstr ""
+"KRetro-ის flatpak-ის ვერსიას ბირთვები თან მოჰყვება! თუ KRetro ოფიციალური "
+"flatpak-დან დააყენეთ, მეტი არაფრის გაკეთება დაგჭირდებათ!"
+
+#: qml/Help.qml:35
+#, kde-format
+msgid "Installing Games"
+msgstr "თამაშების დაყენება"
+
+#: qml/Help.qml:39
+#, kde-format
+msgid "Adding ROMs"
+msgstr "ROM-ების დამატება"
+
+#: qml/Help.qml:40
+#, kde-format
+msgid ""
+"KRetro automatically detects supported games (by file extension) from the "
+"ROMs directory (which by default is ~/Documents/Games). Simply add your ROMs "
+"there and they will appear in the game library!"
+msgstr ""
+"KRetro ავტომატურად დაადგენს მხარდაჭერილ თამაშებს (ფაილის გაფართოების "
+"მიხედვით) ROM-ების საქაღალდეში (რომლის ნაგულისხმევი მდებარეობაა ~/Documents/"
+"Games). უბრალოდ დაამატეთ თქვენი ROM-ები იქ და ისინი თამაშების ბიბლიოთეკაში "
+"გამოჩნდება!"
+
+#: qml/Main.qml:19
+#, kde-format
+msgid "kretro"
+msgstr "kretro"
+
+#: qml/Main.qml:37
+#, kde-format
+msgid "Open ROMs Directory"
+msgstr "ROM-ების საქაღალდის გახსნა"
+
+#: qml/Main.qml:46 qml/Settings.qml:17
+#, kde-format
+msgid "Settings"
+msgstr "მორგება"
+
+#: qml/Main.qml:53
+#, kde-format
+msgid "Controller Settings"
+msgstr "კონტროლერის მორგება"
+
+#: qml/Main.qml:60
+#, kde-format
+msgid "About kretro"
+msgstr "KRetro-ის შესახებ"
+
+#: qml/Main.qml:65
+#, kde-format
+msgid "Quit"
+msgstr "გასვლა"
+
+#: qml/Main.qml:89
+#, kde-format
+msgid "KRetro"
+msgstr "KRetro"
+
+#: qml/Main.qml:93
+#, kde-format
+msgid "Help"
+msgstr "დახმარება"
+
+#: qml/Main.qml:117
+#, kde-format
+msgid "Game Library"
+msgstr "თამაშების ბიბლიოთეკა"
+
+#: qml/MobilePlayer.qml:22
+#, kde-format
+msgid "Press Escape to exit fullscreen mode!"
+msgstr "სრულეკრანიანი რეჟიმიდან გასვლისას დააჭირეთ ღილაკს Escape!"
+
+#: qml/MobilePlayer.qml:36
+#, kde-format
+msgid "Fullscreen"
+msgstr "სრულ ეკრანზე"
+
+#: qml/MobilePlayer.qml:44
+#, kde-format
+msgid "Reset Core"
+msgstr "Core-ის გადატვირთვა"
+
+#: qml/MobilePlayer.qml:49 qml/SettingsRetroCore.qml:13
+#, kde-format
+msgid "Core Settings"
+msgstr "Core-ის მორგება"
+
+#: qml/MobilePlayer.qml:56
+#, kde-format
+msgid "Save Slots"
+msgstr "სლოტების შენახვა"
+
+#: qml/MobilePlayer.qml:69
+#, kde-format
+msgid "KRetro Player"
+msgstr "KRetro-ის მოთამასე"
+
+#: qml/MobilePlayer.qml:111
+#, kde-format
+msgid "Reset Game Core?"
+msgstr "გადავტვირთო თამაშის ბირთვი?"
+
+#: qml/MobilePlayer.qml:112
+#, kde-format
+msgid "This will restart the game. Any unsaved progress will be lost!"
+msgstr "ეს გადატვირთავს თამაშს. შეუნახავი ცვლილებები დაიკარგება!"
+
+#: qml/SaveManager.qml:13
+#, kde-format
+msgid "Save States"
+msgstr "მდგობარეობების შენახვა"
+
+#: qml/SaveManager.qml:16
+#, kde-format
+msgctxt "@action:button"
+msgid "New Save State"
+msgstr "ახალი თამაშის მდგომარეობა"
+
+#: qml/SaveManager.qml:22
+#, kde-format
+msgid "Game saved!"
+msgstr "თამაში შენახულია!"
+
+#: qml/SaveManager.qml:38
+#, kde-format
+msgid ""
+"Slot 0 is the default auto save slot. It is restored on game start and saved "
+"on exit."
+msgstr ""
+"სლოტი 0 ნაგულისხმევი ავტოშენახვის სლოტია. ის აღდგება თამაშის გაშვებისას, "
+"შენახვა კი გასვლისას ხდება."
+
+#: qml/SaveManager.qml:73
+#, kde-format
+msgid "Slot %1"
+msgstr "სლოტი %1"
+
+#: qml/SaveManager.qml:83
+#, kde-format
+msgid "Last modified: %1"
+msgstr "ბოლო ცვლილება: %1"
+
+#: qml/SaveManager.qml:97
+#, kde-format
+msgctxt "@action:button"
+msgid "Load"
+msgstr "ჩატვირთვა"
+
+#: qml/SaveManager.qml:104
+#, kde-format
+msgctxt "@action:button"
+msgid "Save"
+msgstr "შენახვა"
+
+#: qml/SaveManager.qml:111
+#, kde-format
+msgctxt "@action:button"
+msgid "Delete"
+msgstr "წაშლა"
+
+#: qml/Settings.qml:29
+#, kde-format
+msgid "Select ROMs Directory"
+msgstr "აირჩიეთ ROM-ების საქაღალდე"
+
+#: qml/Settings.qml:38
+#, kde-format
+msgid "Select Libretro Cores Directory"
+msgstr "აირჩიეთ Libretro Core-ის საქაღალდე"
+
+#: qml/Settings.qml:50
+#, kde-format
+msgid "General"
+msgstr "ზოგადი"
+
+#: qml/Settings.qml:55
+#, kde-format
+msgid "ROMs Directory"
+msgstr "ROM-ების საქაღალდე"
+
+#: qml/Settings.qml:63
+#, kde-format
+msgid "Libretro Cores Directory"
+msgstr "Libretro Core-ების საქაღალდე"
+
+#: qml/Settings.qml:69
+#, kde-format
+msgid "Override Mobile Controller Visibility"
+msgstr "მობილური კონტროლერის ხილვადობის გადაფარვა"
+
+#: qml/Settings.qml:70
+#, kde-format
+msgid "Overrides the default visibility of the touch controller."
+msgstr "გადაფარავს ნაგულისხმევ ხილვადობას სენსორული კონტროლერისთვის."
+
+#: qml/Settings.qml:75
+#, kde-format
+msgid "Fullscreen Mode"
+msgstr "სრულეკრანიანი რეჟიმი"
+
+#: qml/Settings.qml:76
+#, kde-format
+msgid "Open games in fullscreen mode by default."
+msgstr "თამაშის სრულეკრანიან რეჟიმში ნაგულისხმევად გახსნა."
+
+#: qml/Settings.qml:83
+#, kde-format
+msgid "Libretro Cores"
+msgstr "Libretro Core-ები"
+
+#: qml/Settings.qml:91
+#, kde-format
+msgid "GBA Core:"
+msgstr "ბირთვი GBA:"
+
+#: qml/Settings.qml:110
+#, kde-format
+msgid "NES Core:"
+msgstr "ბირთვი NES:"
+
+#: qml/Settings.qml:129
+#, kde-format
+msgid "SNES Core:"
+msgstr "ბირთვი SNES:"
+
+#: qml/Settings.qml:148
+#, kde-format
+msgid "Master System Core:"
+msgstr "ძირითადი სისტემური ბირთვი:"
+
+#: qml/Settings.qml:167
+#, kde-format
+msgid "Genesis / Mega Drive Core:"
+msgstr "ბირთვი Genesis / Mega Drive:"
+
+#: qml/Settings.qml:189
+#, kde-format
+msgid "Flatpak releases of KRetro manage retro cores automatically."
+msgstr "KRetro-ის Flatpak რელიზები retro core-ებს ავტომატურად მართავს."
+
+#: qml/Settings.qml:199 qml/SettingsRetroPad.qml:96
+#, kde-format
+msgid "Settings saved!"
+msgstr "პარამეტრები დამახსოვრებულია!"
+
+#: qml/SettingsRetroCore.qml:48
+#, kde-format
+msgid "Core Variables"
+msgstr "ბირთვის ცვლადები"
+
+#: qml/SettingsRetroCore.qml:53
+#, kde-format
+msgid "Most settings require you to exit and reopen the game to take effect."
+msgstr ""
+"პარამეტრების უმრავლესობა ძალაში შესასვლელად მოითხოვს, რომ გახვიდეთ თამაშიდან "
+"და თავიდან გახსნათ ის."
+
+#: qml/SettingsRetroCore.qml:65
+#, kde-format
+msgid "Default: %1"
+msgstr "ნაგულისხმევი: %1"
+
+#: qml/SettingsRetroPad.qml:16
+#, kde-format
+msgid "Reset Mappings"
+msgstr "ასახვების ჩამოყრა"
+
+#: qml/SettingsRetroPad.qml:19
+#, kde-format
+msgid "Retropad mappings reset!"
+msgstr "რეტროპადის ასახვები ჩამოყრილია!"
+
+#: qml/SettingsRetroPad.qml:24
+#, kde-format
+msgid "RetroPad Controller Settings"
+msgstr "რეტროპადის კონტროლერის მორგება"
+
+#: qml/SettingsRetroPad.qml:55
+#, kde-format
+msgid "Controller Port 0"
+msgstr "კონტროლერის პორტი 0"
+
+#: qml/SettingsRetroPad.qml:64
+#, kde-format
+msgid "Press a controller button or key to bind..."
+msgstr "დააჭირეთ კონტროლერის ან კლავიატურის ღილაკს მისაბმელად..."
+
+#: qml/SettingsRetroPad.qml:65
+#, kde-format
+msgid "Currently unbound"
+msgstr "ამჟამად ასახული არაა"
+
+#: qml/SettingsRetroPad.qml:65
+#, kde-format
+msgid "Currently bound to: %1"
+msgstr "ამჟამად ასახულია რაზე: %1"

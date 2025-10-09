@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kretro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-07 00:40+0000\n"
-"PO-Revision-Date: 2025-10-07 04:26+0100\n"
+"PO-Revision-Date: 2025-10-08 17:37+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -76,7 +76,7 @@ msgstr "Introducción"
 #: qml/Help.qml:25
 #, kde-format
 msgid "Installing Retro Cores"
-msgstr ""
+msgstr "Instalación de cores retro"
 
 #: qml/Help.qml:26
 #, kde-format
@@ -87,11 +87,16 @@ msgid ""
 "'libretro-mgba' for the GBA emulator core. Once installed, you can select "
 "them in the settings."
 msgstr ""
+"KRetro (no en Flatpak) necesita que instales emuladores, llamados «cores de "
+"libretro».\n"
+"Puedes encontrarlos en el gestor de paquetes de tu distribución. Por "
+"ejemplo, «libretro-mgba» para el core emulador de GBA. Una vez instalados, "
+"puedes seleccionarlos en las preferencias."
 
 #: qml/Help.qml:29
 #, kde-format
 msgid "Installing Retro Cores (Flatpak)"
-msgstr ""
+msgstr "Instalación de cores retro (Flatpak)"
 
 #: qml/Help.qml:30
 #, kde-format
@@ -99,6 +104,8 @@ msgid ""
 "The flatpak version of KRetro comes with a curated set of cores already! If "
 "you installed KRetro from the official flatpak, you are all set!"
 msgstr ""
+"La versión Flatpak de KRetro ya contiene una selección de cores. Si has "
+"instalado KRetro mediante el flatpak oficial, ¡ya tienes todo!"
 
 #: qml/Help.qml:35
 #, kde-format
@@ -117,6 +124,10 @@ msgid ""
 "ROMs directory (which by default is ~/Documents/Games). Simply add your ROMs "
 "there and they will appear in the game library!"
 msgstr ""
+"KRetro detecta automáticamente los juegos compatibles (por su extensión de "
+"archivo) en el directorio de las ROM (que es ~/Documentos/Juegos de forma "
+"predeterminada). Solo tienes que añadir tus ROM a ese directorio para que "
+"aparezcan en la biblioteca de juegos."
 
 #: qml/Main.qml:19
 #, kde-format
@@ -126,7 +137,7 @@ msgstr "kretro"
 #: qml/Main.qml:37
 #, kde-format
 msgid "Open ROMs Directory"
-msgstr ""
+msgstr "Abrir directorio de ROM"
 
 #: qml/Main.qml:46 qml/Settings.qml:17
 #, kde-format
@@ -176,12 +187,12 @@ msgstr "Pantalla completa"
 #: qml/MobilePlayer.qml:44
 #, kde-format
 msgid "Reset Core"
-msgstr ""
+msgstr "Reiniciar core"
 
 #: qml/MobilePlayer.qml:49 qml/SettingsRetroCore.qml:13
 #, kde-format
 msgid "Core Settings"
-msgstr ""
+msgstr "Preferencias del core"
 
 #: qml/MobilePlayer.qml:56
 #, kde-format
@@ -196,12 +207,13 @@ msgstr ""
 #: qml/MobilePlayer.qml:111
 #, kde-format
 msgid "Reset Game Core?"
-msgstr ""
+msgstr "¿Reiniciar el core del juego?"
 
 #: qml/MobilePlayer.qml:112
 #, kde-format
 msgid "This will restart the game. Any unsaved progress will be lost!"
 msgstr ""
+"Esto reiniciará el juego. ¡Perderás todo el avance que no hayas guardado!"
 
 #: qml/SaveManager.qml:13
 #, kde-format
@@ -234,7 +246,7 @@ msgstr ""
 #: qml/SaveManager.qml:83
 #, kde-format
 msgid "Last modified: %1"
-msgstr ""
+msgstr "Última modificación: %1"
 
 #: qml/SaveManager.qml:97
 #, kde-format
@@ -257,12 +269,12 @@ msgstr "Borrar"
 #: qml/Settings.qml:29
 #, kde-format
 msgid "Select ROMs Directory"
-msgstr ""
+msgstr "Selecciona el directorio para las ROM"
 
 #: qml/Settings.qml:38
 #, kde-format
 msgid "Select Libretro Cores Directory"
-msgstr ""
+msgstr "Selecciona el directorio de cores de Libretro"
 
 #: qml/Settings.qml:50
 #, kde-format
@@ -277,7 +289,7 @@ msgstr "Directorio de ROM"
 #: qml/Settings.qml:63
 #, kde-format
 msgid "Libretro Cores Directory"
-msgstr ""
+msgstr "Directorio de cores de Libretro"
 
 #: qml/Settings.qml:69
 #, kde-format
@@ -297,42 +309,43 @@ msgstr "Modo a pantalla completa"
 #: qml/Settings.qml:76
 #, kde-format
 msgid "Open games in fullscreen mode by default."
-msgstr ""
+msgstr "Abrir los juegos a pantalla completa de forma predeterminada."
 
 #: qml/Settings.qml:83
 #, kde-format
 msgid "Libretro Cores"
-msgstr ""
+msgstr "Cores de Libretro"
 
 #: qml/Settings.qml:91
 #, kde-format
 msgid "GBA Core:"
-msgstr ""
+msgstr "Core de GBA:"
 
 #: qml/Settings.qml:110
 #, kde-format
 msgid "NES Core:"
-msgstr ""
+msgstr "Core de NES:"
 
 #: qml/Settings.qml:129
 #, kde-format
 msgid "SNES Core:"
-msgstr ""
+msgstr "Core de SNES:"
 
 #: qml/Settings.qml:148
 #, kde-format
 msgid "Master System Core:"
-msgstr ""
+msgstr "Core de Master System:"
 
 #: qml/Settings.qml:167
 #, kde-format
 msgid "Genesis / Mega Drive Core:"
-msgstr ""
+msgstr "Core de Genesis / Mega Drive:"
 
 #: qml/Settings.qml:189
 #, kde-format
 msgid "Flatpak releases of KRetro manage retro cores automatically."
 msgstr ""
+"Las versiones Flatpak de KRetro gestionan los cores retro automáticamente."
 
 #: qml/Settings.qml:199 qml/SettingsRetroPad.qml:96
 #, kde-format
@@ -342,49 +355,51 @@ msgstr "Preferencias guardadas"
 #: qml/SettingsRetroCore.qml:48
 #, kde-format
 msgid "Core Variables"
-msgstr ""
+msgstr "Variables del core"
 
 #: qml/SettingsRetroCore.qml:53
 #, kde-format
 msgid "Most settings require you to exit and reopen the game to take effect."
 msgstr ""
+"La mayoría de los ajustes necesitan que salgas del juego y vuelvas a "
+"iniciarlo para tener efecto."
 
 #: qml/SettingsRetroCore.qml:65
 #, kde-format
 msgid "Default: %1"
-msgstr ""
+msgstr "Predeterminado: %1"
 
 #: qml/SettingsRetroPad.qml:16
 #, kde-format
 msgid "Reset Mappings"
-msgstr ""
+msgstr "Reiniciar asignaciones"
 
 #: qml/SettingsRetroPad.qml:19
 #, kde-format
 msgid "Retropad mappings reset!"
-msgstr ""
+msgstr "Asignaciones de RetroPad reiniciadas"
 
 #: qml/SettingsRetroPad.qml:24
 #, kde-format
 msgid "RetroPad Controller Settings"
-msgstr ""
+msgstr "Ajustes del mando RetroPad"
 
 #: qml/SettingsRetroPad.qml:55
 #, kde-format
 msgid "Controller Port 0"
-msgstr ""
+msgstr "Puerto de mando 0"
 
 #: qml/SettingsRetroPad.qml:64
 #, kde-format
 msgid "Press a controller button or key to bind..."
-msgstr ""
+msgstr "Pulsa un botón o tecla del mando para asignarla…"
 
 #: qml/SettingsRetroPad.qml:65
 #, kde-format
 msgid "Currently unbound"
-msgstr ""
+msgstr "Sin asignar"
 
 #: qml/SettingsRetroPad.qml:65
 #, kde-format
 msgid "Currently bound to: %1"
-msgstr ""
+msgstr "Asignado a: %1"
