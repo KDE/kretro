@@ -96,46 +96,76 @@
   <screenshots>
     <screenshot type="default">
       <caption>Mobile - Games Library</caption>
+      <caption xml:lang="ca">Mòbil - Biblioteca de jocs</caption>
       <caption xml:lang="es">Móvil - Biblioteca de juegos</caption>
       <caption xml:lang="he">נייד - ספריית משחקים</caption>
       <caption xml:lang="ka">მობილური - თამაშების ბიბლიოთეკა</caption>
+      <caption xml:lang="nl">Mobiel - Spellenbibliotheek</caption>
+      <caption xml:lang="pt-BR">Celular - Biblioteca de jogos</caption>
       <caption xml:lang="sl">Mobile - Knjižnica iger</caption>
+      <caption xml:lang="tr">Taşınabilir — Oyun kitaplığı</caption>
+      <caption xml:lang="uk">Мобільний – Бібліотека ігор</caption>
       <image>https://cdn.kde.org/screenshots/kretro/kretro-mobile-game-library.png</image>
     </screenshot>
     <screenshot>
       <caption>Desktop - Game Library</caption>
+      <caption xml:lang="ca">Escriptori - Biblioteca de jocs</caption>
       <caption xml:lang="es">Escritorio - Biblioteca de juegos</caption>
       <caption xml:lang="he">שולחן עבודה - ספריית משחקים</caption>
       <caption xml:lang="ka">კომპიუტერი - თამაშების ბიბლიოთეკა</caption>
+      <caption xml:lang="nl">Bureaublad - Spellenbibilotheek</caption>
+      <caption xml:lang="pt-BR">Desktop - Biblioteca de jogos</caption>
       <caption xml:lang="sl">Namizje - Knjižnica iger</caption>
+      <caption xml:lang="tr">Masaüstü — Oyun kitaplığı</caption>
+      <caption xml:lang="uk">Робоча станція – Бібліотека ігор</caption>
       <image>https://cdn.kde.org/screenshots/kretro/kretro-desktop-game-library.png</image>
     </screenshot>
     <screenshot>
       <caption>Mobile - Game Player</caption>
+      <caption xml:lang="ca">Mòbil - Jugador</caption>
       <caption xml:lang="he">נייד - מריץ משחקים</caption>
       <caption xml:lang="ka">მობილური - თამაშის მოთამაშე</caption>
+      <caption xml:lang="nl">Mobiel - Speler van games</caption>
+      <caption xml:lang="pt-BR">Celular - Jogador</caption>
       <caption xml:lang="sl">Mobile - Game Player</caption>
+      <caption xml:lang="tr">Taşınabilir — Oyuncu</caption>
+      <caption xml:lang="uk">Мобільний – Програвач ігор</caption>
       <image>https://cdn.kde.org/screenshots/kretro/kretro-mobile-player.png</image>
     </screenshot>
     <screenshot>
       <caption>Desktop - Game Player</caption>
+      <caption xml:lang="ca">Escriptori - Jugador</caption>
       <caption xml:lang="he">שולחן עבודה - מריץ משחקים</caption>
       <caption xml:lang="ka">კომპიუტერი - თამაშის მოთამაშე</caption>
+      <caption xml:lang="nl">Bureaublad - Speler van games</caption>
+      <caption xml:lang="pt-BR">Desktop - Jogador</caption>
       <caption xml:lang="sl">Namizje - Game Player</caption>
+      <caption xml:lang="tr">Masaüstü — Oyuncu</caption>
+      <caption xml:lang="uk">Робоча станція – Програвач ігор</caption>
       <image>https://cdn.kde.org/screenshots/kretro/kretro-desktop-player.png</image>
     </screenshot>
     <screenshot>
       <caption>Mobile - Save Slots Manager</caption>
+      <caption xml:lang="ca">Mòbil - Gestor d'espais de desament</caption>
       <caption xml:lang="he">נייד - מנהל חריצי שמירה</caption>
       <caption xml:lang="ka">მობილური - სლოტების მმართველის შენახვა</caption>
+      <caption xml:lang="nl">Mobiele - Slots van beheerder opslaan</caption>
+      <caption xml:lang="pt-BR">Celular - Gerenciador de Slots Salvos</caption>
       <caption xml:lang="sl">Mobile - Save Slots Manager</caption>
+      <caption xml:lang="tr">Taşınabilir — Yuva kaydı yöneticisi</caption>
+      <caption xml:lang="uk">Мобільний – Керування слотами ігор</caption>
       <image>https://cdn.kde.org/screenshots/kretro/kretro-mobile-save-slots.png</image>
     </screenshot>
     <screenshot>
       <caption>Desktop - Save Slots Manager</caption>
+      <caption xml:lang="ca">Escriptori - Gestor d'espais de desament</caption>
       <caption xml:lang="he">שולחן עבודה - מנהל חריצי שמירה</caption>
       <caption xml:lang="ka">კომპიუტერი - სლოტების მმართველის შენახვა</caption>
+      <caption xml:lang="nl">Bureaublad - Slots van beheerder opslaan</caption>
+      <caption xml:lang="pt-BR">Desktop - Gerenciador de Slots Salvos</caption>
       <caption xml:lang="sl">Namizje - Save Slots Manager</caption>
+      <caption xml:lang="tr">Masaüstü — Yuva kaydı yöneticisi</caption>
+      <caption xml:lang="uk">Робоча станція – Керування слотами ігор</caption>
       <image>https://cdn.kde.org/screenshots/kretro/kretro-desktop-save-slots.png</image>
     </screenshot>
   </screenshots>
