@@ -81,7 +81,7 @@ Kirigami.ScrollablePage {
 
     function handleKeyPress(event, pressed) {
         if (event.key === Qt.Key_Escape) {
-            pageStack.layers.pop();
+            pageStack.pop();
             return;
         }
         if (event.isAutoRepeat) {

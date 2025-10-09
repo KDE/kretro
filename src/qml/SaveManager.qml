@@ -97,14 +97,14 @@ Kirigami.ScrollablePage {
                             text: i18nc("@action:button", "Load")
                             onClicked: {
                                 App.loadSaveSlot(saveDelegate.path)
-                                pageStack.layers.pop()
+                                pageStack.pop()
                             }
                         }
                         Controls.Button {
                             text: i18nc("@action:button", "Save")
                             onClicked: {
                                 App.saveSaveSlot(saveDelegate.path)
-                                pageStack.layers.pop()
+                                pageStack.pop()
                             }
                         }
                         Controls.Button {
