@@ -214,7 +214,6 @@ QList<QVariantMap> RetroPad::buttonNames() const {
 }
 QVariantMap RetroPad::currentMappings() const {
     QVariantMap mappings;
-    
     for (const auto &button : m_buttonNames) {
         unsigned id = std::get<0>(button);
         if(m_inputMappings.contains(InputDevice{0, id})) {
@@ -223,14 +222,19 @@ QVariantMap RetroPad::currentMappings() const {
             if (mapping.type == InputType::Keyboard) {
                 mappingString = QKeySequence(mapping.key_or_button).toString();
             } else if (mapping.type == InputType::Controller) {
-                mappingString = QString::fromStdString(SDL_GetGamepadStringForButton(
+                const char* buttonName = SDL_GetGamepadStringForButton(
                     static_cast<SDL_GamepadButton>(mapping.key_or_button)
-                ));
+                );
+                if (buttonName != nullptr) {
+                    mappingString = QString::fromUtf8(buttonName);
+                } else {
+                    // Fallback to showing the button ID
+                    mappingString = u"Button %1"_s.arg(mapping.key_or_button);
+                }
             }
             mappings[QString::number(id)] = mappingString;
         }
     }
-    
     return mappings;
 }
 
