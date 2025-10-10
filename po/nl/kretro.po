@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kretro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-07 00:40+0000\n"
-"PO-Revision-Date: 2025-10-08 12:25+0200\n"
+"PO-Revision-Date: 2025-10-09 21:53+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -123,16 +123,19 @@ msgid ""
 "ROMs directory (which by default is ~/Documents/Games). Simply add your ROMs "
 "there and they will appear in the game library!"
 msgstr ""
+"KRetro detecteert automatisch ondersteunde games (op bestandsextensie) uit "
+"de map met ROM's (die standaard ~/Documenten/Spellen is). Voeg eenvoudig uw "
+"ROM's daar toe en ze zullen in de spelbibliotheek verschijnen!"
 
 #: qml/Main.qml:19
 #, kde-format
 msgid "kretro"
-msgstr ""
+msgstr "kretro"
 
 #: qml/Main.qml:37
 #, kde-format
 msgid "Open ROMs Directory"
-msgstr ""
+msgstr "Map met ROM's openen"
 
 #: qml/Main.qml:46 qml/Settings.qml:17
 #, kde-format
@@ -142,12 +145,12 @@ msgstr "Instellingen"
 #: qml/Main.qml:53
 #, kde-format
 msgid "Controller Settings"
-msgstr ""
+msgstr "Instellingen van de controller"
 
 #: qml/Main.qml:60
 #, kde-format
 msgid "About kretro"
-msgstr ""
+msgstr "Info over kretro"
 
 #: qml/Main.qml:65
 #, kde-format
@@ -157,7 +160,7 @@ msgstr "Afsluiten"
 #: qml/Main.qml:89
 #, kde-format
 msgid "KRetro"
-msgstr ""
+msgstr "KRetro"
 
 #: qml/Main.qml:93
 #, kde-format
@@ -167,12 +170,12 @@ msgstr "Help"
 #: qml/Main.qml:117
 #, kde-format
 msgid "Game Library"
-msgstr ""
+msgstr "Spelbibliotheek"
 
 #: qml/MobilePlayer.qml:22
 #, kde-format
 msgid "Press Escape to exit fullscreen mode!"
-msgstr ""
+msgstr "Druk op Escape om modus volledig scherm te verlaten!"
 
 #: qml/MobilePlayer.qml:36
 #, kde-format
@@ -182,12 +185,12 @@ msgstr "Volledig scherm"
 #: qml/MobilePlayer.qml:44
 #, kde-format
 msgid "Reset Core"
-msgstr ""
+msgstr "Kern resetten"
 
 #: qml/MobilePlayer.qml:49 qml/SettingsRetroCore.qml:13
 #, kde-format
 msgid "Core Settings"
-msgstr ""
+msgstr "Instellingen van kern"
 
 #: qml/MobilePlayer.qml:56
 #, kde-format
