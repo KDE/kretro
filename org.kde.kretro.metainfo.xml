@@ -88,7 +88,7 @@
     <p xml:lang="nl">Het biedt u games te spelen voor retroconsoles door een ROM en Libretro-core te leveren.</p>
     <p xml:lang="pt-BR">Ele permite que você jogue jogos de consoles retrô fornecendo uma ROM e um núcleo Libretro.</p>
     <p xml:lang="sl">Omogoča vam igranje iger za retro konzole z dobavo ROM-a in jedra Libretro.</p>
-    <p xml:lang="sv">Det låter dig spela spela för gammaldags spelkonsoler genom att tillhandahålla ett ROM och Librettos kärna.</p>
+    <p xml:lang="sv">Det låter dig spela spel för gammaldags spelkonsoler genom att tillhandahålla ett ROM och Librettos kärna.</p>
     <p xml:lang="tr">Bir ROM sağlayarak ve Libretro çekirdeğini kullanarak retro konsollara ait oyunları oynamanıza olanak tanır.</p>
     <p xml:lang="uk">Програма надає вам змогу грати в ігри для ретроконсолей на основі ROM та програмного ядра Libretro.</p>
     <p xml:lang="zh-TW">它讓您遊玩復古遊戲機的遊戲，只要提供 ROM 和 Libretro 核心。</p>
@@ -105,6 +105,7 @@
       <caption xml:lang="nl">Mobiel - Spellenbibliotheek</caption>
       <caption xml:lang="pt-BR">Celular - Biblioteca de jogos</caption>
       <caption xml:lang="sl">Mobile - Knjižnica iger</caption>
+      <caption xml:lang="sv">Mobil: Spelbibliotek</caption>
       <caption xml:lang="tr">Taşınabilir — Oyun kitaplığı</caption>
       <caption xml:lang="uk">Мобільний – Бібліотека ігор</caption>
       <image>https://cdn.kde.org/screenshots/kretro/kretro-mobile-game-library.png</image>
@@ -120,6 +121,7 @@
       <caption xml:lang="nl">Bureaublad - Spellenbibilotheek</caption>
       <caption xml:lang="pt-BR">Desktop - Biblioteca de jogos</caption>
       <caption xml:lang="sl">Namizje - Knjižnica iger</caption>
+      <caption xml:lang="sv">Skrivbord: Spelbibliotek</caption>
       <caption xml:lang="tr">Masaüstü — Oyun kitaplığı</caption>
       <caption xml:lang="uk">Робоча станція – Бібліотека ігор</caption>
       <image>https://cdn.kde.org/screenshots/kretro/kretro-desktop-game-library.png</image>
@@ -134,6 +136,7 @@
       <caption xml:lang="nl">Mobiel - Speler van games</caption>
       <caption xml:lang="pt-BR">Celular - Jogador</caption>
       <caption xml:lang="sl">Mobile - Game Player</caption>
+      <caption xml:lang="sv">Mobil: Spelprogram</caption>
       <caption xml:lang="tr">Taşınabilir — Oyuncu</caption>
       <caption xml:lang="uk">Мобільний – Програвач ігор</caption>
       <image>https://cdn.kde.org/screenshots/kretro/kretro-mobile-player.png</image>
@@ -148,6 +151,7 @@
       <caption xml:lang="nl">Bureaublad - Speler van games</caption>
       <caption xml:lang="pt-BR">Desktop - Jogador</caption>
       <caption xml:lang="sl">Namizje - Game Player</caption>
+      <caption xml:lang="sv">Skrivbord: Spelprogram</caption>
       <caption xml:lang="tr">Masaüstü — Oyuncu</caption>
       <caption xml:lang="uk">Робоча станція – Програвач ігор</caption>
       <image>https://cdn.kde.org/screenshots/kretro/kretro-desktop-player.png</image>
@@ -162,6 +166,7 @@
       <caption xml:lang="nl">Mobiele - Slots van beheerder opslaan</caption>
       <caption xml:lang="pt-BR">Celular - Gerenciador de Slots Salvos</caption>
       <caption xml:lang="sl">Mobile - Save Slots Manager</caption>
+      <caption xml:lang="sv">Mobil: Hantering av sparplatser</caption>
       <caption xml:lang="tr">Taşınabilir — Yuva kaydı yöneticisi</caption>
       <caption xml:lang="uk">Мобільний – Керування слотами ігор</caption>
       <image>https://cdn.kde.org/screenshots/kretro/kretro-mobile-save-slots.png</image>
@@ -176,6 +181,7 @@
       <caption xml:lang="nl">Bureaublad - Slots van beheerder opslaan</caption>
       <caption xml:lang="pt-BR">Desktop - Gerenciador de Slots Salvos</caption>
       <caption xml:lang="sl">Namizje - Save Slots Manager</caption>
+      <caption xml:lang="sv">Skrivbord: Hantering av sparplatser</caption>
       <caption xml:lang="tr">Masaüstü — Yuva kaydı yöneticisi</caption>
       <caption xml:lang="uk">Робоча станція – Керування слотами ігор</caption>
       <image>https://cdn.kde.org/screenshots/kretro/kretro-desktop-save-slots.png</image>
