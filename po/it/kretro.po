@@ -1,81 +1,80 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the kretro package.
-# SPDX-FileCopyrightText: 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2025 Vincenzo Reale <smart2128vr@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kretro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-07 00:40+0000\n"
-"PO-Revision-Date: 2025-10-08 20:54+0400\n"
-"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
-"Language-Team: ar\n"
-"Language: ar\n"
+"PO-Revision-Date: 2025-10-08 09:18+0200\n"
+"Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "زايد السعيدي"
+msgstr "Vincenzo Reale"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "zayed.alsaidi@gmail.com"
+msgstr "smart2128vr@gmail.com"
 
 #: main.cpp:28
 #, kde-format
 msgctxt "@title"
 msgid "KRetro"
-msgstr "كي ريترو"
+msgstr "KRetro"
 
 #: main.cpp:32
 #, kde-format
 msgid "Libretro frontend for Plasma"
-msgstr "واجهة Libretro لبلازما"
+msgstr "Interfaccia Libretro per Plasma"
 
 #: main.cpp:36
 #, kde-format
 msgid "(c) 2023-2025 KDE Community"
-msgstr "(ج)  مجتمع كِيدِي 2023-2025"
+msgstr "(c) 2023-2025 Comunità KDE"
 
 #: main.cpp:37
 #, kde-format
 msgctxt "@info:credit"
 msgid "Seshan Ravikumar"
-msgstr "سيشان رافيكومار"
+msgstr "Seshan Ravikumar"
 
 #: main.cpp:38 main.cpp:42
 #, kde-format
 msgctxt "@info:credit"
 msgid "Developer"
-msgstr "مطوّر"
+msgstr "Sviluppatore"
 
 #: main.cpp:41
 #, kde-format
 msgctxt "@info:credit"
 msgid "Devin Lin"
-msgstr "ديفين لين"
+msgstr "Devin Lin"
 
 #: qml/Help.qml:13
 #, kde-format
 msgid "KRetro Help"
-msgstr "مساعدة كي ريترو"
+msgstr "Guida di KRetro"
 
 #: qml/Help.qml:20
 #, kde-format
 msgid "Getting Started"
-msgstr "ابدأ"
+msgstr "Primi passi"
 
 #: qml/Help.qml:25
 #, kde-format
 msgid "Installing Retro Cores"
-msgstr "ثبّت نُوى ريترو"
+msgstr "Installazione Retro Cores"
 
 #: qml/Help.qml:26
 #, kde-format
@@ -86,14 +85,15 @@ msgid ""
 "'libretro-mgba' for the GBA emulator core. Once installed, you can select "
 "them in the settings."
 msgstr ""
-"كي ريترو (غير فلاتباك) يطلب منك تثبيت محاكيات تدعى 'نُوى ليبريترو'.\n"
-"يجب أن تجد هذه من مدير حزم توزيعتك، على سبيل المثال، 'libretro-mgba' لنواة "
-"محاكي GBA. عند تثبيتها، يمكنك اختيارها في الإعدادات."
+"KRetro (non flatpak) richiede l'installazione di emulatori, chiamati «core "
+"libretro». Dovresti trovarli nel gestore pacchetti della tua distribuzione, "
+"ad esempio «libretro-mgba» per il core dell'emulatore GBA. Una volta "
+"installati, puoi selezionarli nelle impostazioni."
 
 #: qml/Help.qml:29
 #, kde-format
 msgid "Installing Retro Cores (Flatpak)"
-msgstr "ثبّت نُوى ريترو (فلاتباك)"
+msgstr "Installazione Retro Core (Flatpak)"
 
 #: qml/Help.qml:30
 #, kde-format
@@ -101,18 +101,18 @@ msgid ""
 "The flatpak version of KRetro comes with a curated set of cores already! If "
 "you installed KRetro from the official flatpak, you are all set!"
 msgstr ""
-"نسخة كي ريترو فلاتباك تأتي مع مجموعة منتقاة من النُوى! لو ثبّت كي ريترو من "
-"فلاتباك الرسمي، فكلّ شيء جاهز!"
+"La versione flatpak di KRetro include già un insieme di core selezionati! Se "
+"hai installato KRetro dal flatpak ufficiale, sei pronto!"
 
 #: qml/Help.qml:35
 #, kde-format
 msgid "Installing Games"
-msgstr "ثبّت ألعاباً"
+msgstr "Installazione giochi"
 
 #: qml/Help.qml:39
 #, kde-format
 msgid "Adding ROMs"
-msgstr "أضف رومات"
+msgstr "Aggiunta delle ROM"
 
 #: qml/Help.qml:40
 #, kde-format
@@ -121,110 +121,111 @@ msgid ""
 "ROMs directory (which by default is ~/Documents/Games). Simply add your ROMs "
 "there and they will appear in the game library!"
 msgstr ""
-"كي ريترو يكتشف آلياً الألعاب المدعومة (عن طريق امتداد الملف) من دليل الرومات "
-"(والذي هو مبدئياً ~/Documents/Games). ببساطة أضف روماتك هناك وستظهر في مكتبة "
-"الألعاب!"
+"KRetro rileva automaticamente i giochi supportati (in base all'estensione "
+"del file) dalla cartella delle ROM (che in modo predefinito è ~/Documenti/"
+"Giochi). Basta aggiungere le ROM lì e appariranno nella raccolta dei giochi!"
 
 #: qml/Main.qml:19
 #, kde-format
 msgid "kretro"
-msgstr "كي ريترو"
+msgstr "kretro"
 
 #: qml/Main.qml:37
 #, kde-format
 msgid "Open ROMs Directory"
-msgstr "افتح دليل الرومات"
+msgstr "Apri la cartella delle ROM"
 
 #: qml/Main.qml:46 qml/Settings.qml:17
 #, kde-format
 msgid "Settings"
-msgstr "إعدادات"
+msgstr "Impostazioni"
 
 #: qml/Main.qml:53
 #, kde-format
 msgid "Controller Settings"
-msgstr "إعدادات المتحكّم"
+msgstr "Impostazioni controller"
 
 #: qml/Main.qml:60
 #, kde-format
 msgid "About kretro"
-msgstr "عن كي ريترو"
+msgstr "Informazioni su kretro"
 
 #: qml/Main.qml:65
 #, kde-format
 msgid "Quit"
-msgstr "أنهِ"
+msgstr "Esci"
 
 #: qml/Main.qml:89
 #, kde-format
 msgid "KRetro"
-msgstr "كي ريترو"
+msgstr "KRetro"
 
 #: qml/Main.qml:93
 #, kde-format
 msgid "Help"
-msgstr "مساعدة"
+msgstr "Aiuto"
 
 #: qml/Main.qml:117
 #, kde-format
 msgid "Game Library"
-msgstr "مكتبة الألعاب"
+msgstr "Raccolta giochi"
 
 #: qml/MobilePlayer.qml:22
 #, kde-format
 msgid "Press Escape to exit fullscreen mode!"
-msgstr "اضغط على Escape للخروج من وضع ملء الشاشة!"
+msgstr "Premi Esc per uscire dalla modalità a schermo intero!"
 
 #: qml/MobilePlayer.qml:36
 #, kde-format
 msgid "Fullscreen"
-msgstr "ملء الشّاشة"
+msgstr "Schermo intero"
 
 #: qml/MobilePlayer.qml:44
 #, kde-format
 msgid "Reset Core"
-msgstr "أعد ضبط النواة"
+msgstr "Ripristina core"
 
 #: qml/MobilePlayer.qml:49 qml/SettingsRetroCore.qml:13
 #, kde-format
 msgid "Core Settings"
-msgstr "إعدادات النواة"
+msgstr "Impostazioni core"
 
 #: qml/MobilePlayer.qml:56
 #, kde-format
 msgid "Save Slots"
-msgstr "شّقوق الحفظ"
+msgstr "Slot di salvataggio"
 
 #: qml/MobilePlayer.qml:69
 #, kde-format
 msgid "KRetro Player"
-msgstr "مُشغّل كي ريترو"
+msgstr "Lettore KRetro"
 
 #: qml/MobilePlayer.qml:111
 #, kde-format
 msgid "Reset Game Core?"
-msgstr "أعد ضبط نواة اللعبة؟"
+msgstr "Vuoi ripristinare il core di gioco?"
 
 #: qml/MobilePlayer.qml:112
 #, kde-format
 msgid "This will restart the game. Any unsaved progress will be lost!"
-msgstr "سيعيد هذا تشغيل اللعبة. أي تقدّم غير محفوظ سيضيع!"
+msgstr ""
+"Questo riavvierà il gioco. Tutti i progressi non salvati andranno persi!"
 
 #: qml/SaveManager.qml:13
 #, kde-format
 msgid "Save States"
-msgstr "حالات الحفظ"
+msgstr "Stati di salvataggio"
 
 #: qml/SaveManager.qml:16
 #, kde-format
 msgctxt "@action:button"
 msgid "New Save State"
-msgstr "حالة حفظ جديدة"
+msgstr "Nuovo stato di salvataggio"
 
 #: qml/SaveManager.qml:22
 #, kde-format
 msgid "Game saved!"
-msgstr "حُفظت اللعبة!"
+msgstr "Partita salvata!"
 
 #: qml/SaveManager.qml:38
 #, kde-format
@@ -232,167 +233,170 @@ msgid ""
 "Slot 0 is the default auto save slot. It is restored on game start and saved "
 "on exit."
 msgstr ""
-"الشّق 0 هو شّق الحفظ الآليّ المبدئيّ. يسترجع عند بدء اللعبة ويحفظ عند الخروج."
+"Lo slot 0 è lo slot di salvataggio automatico predefinito. Viene "
+"ripristinato all'avvio del gioco e salvato all'uscita."
 
 #: qml/SaveManager.qml:73
 #, kde-format
 msgid "Slot %1"
-msgstr "شّق %1"
+msgstr "Slot %1"
 
 #: qml/SaveManager.qml:83
 #, kde-format
 msgid "Last modified: %1"
-msgstr "آخر تعديل: %1"
+msgstr "Ultima modifica: %1"
 
 #: qml/SaveManager.qml:97
 #, kde-format
 msgctxt "@action:button"
 msgid "Load"
-msgstr "حمّل"
+msgstr "Carica"
 
 #: qml/SaveManager.qml:104
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr "احفظ"
+msgstr "Salva"
 
 #: qml/SaveManager.qml:111
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
-msgstr "احذف"
+msgstr "Elimina"
 
 #: qml/Settings.qml:29
 #, kde-format
 msgid "Select ROMs Directory"
-msgstr "اختر دليل الرومات"
+msgstr "Seleziona la cartella delle ROM"
 
 #: qml/Settings.qml:38
 #, kde-format
 msgid "Select Libretro Cores Directory"
-msgstr "اختر دليل نُوى ليبريترو"
+msgstr "Seleziona la cartella dei core Libretro"
 
 #: qml/Settings.qml:50
 #, kde-format
 msgid "General"
-msgstr "عامّ"
+msgstr "Generale"
 
 #: qml/Settings.qml:55
 #, kde-format
 msgid "ROMs Directory"
-msgstr "دليل الرومات"
+msgstr "Cartella delle ROM"
 
 #: qml/Settings.qml:63
 #, kde-format
 msgid "Libretro Cores Directory"
-msgstr "دليل نُوى ليبريترو"
+msgstr "Cartella core Libretro"
 
 #: qml/Settings.qml:69
 #, kde-format
 msgid "Override Mobile Controller Visibility"
-msgstr "أبطل إظهار المتحكّم المحمول"
+msgstr "Ignora la visibilità del controller mobile"
 
 #: qml/Settings.qml:70
 #, kde-format
 msgid "Overrides the default visibility of the touch controller."
-msgstr "يبطل الرؤية المبدئية للمتحكّم اللمسيّ."
+msgstr "Ignora la visibilità predefinita del controller touch."
 
 #: qml/Settings.qml:75
 #, kde-format
 msgid "Fullscreen Mode"
-msgstr "وضع ملء الشاشة"
+msgstr "Modalità a schermo intero"
 
 #: qml/Settings.qml:76
 #, kde-format
 msgid "Open games in fullscreen mode by default."
-msgstr "افتح الألعاب في وضع ملء الشاشة مبدئياً."
+msgstr "Apri i giochi in modalità a schermo intero in modo predefinito."
 
 #: qml/Settings.qml:83
 #, kde-format
 msgid "Libretro Cores"
-msgstr "نُوى ليبريترو"
+msgstr "Core Libretro"
 
 #: qml/Settings.qml:91
 #, kde-format
 msgid "GBA Core:"
-msgstr "نواة GBA:"
+msgstr "Core GBA:"
 
 #: qml/Settings.qml:110
 #, kde-format
 msgid "NES Core:"
-msgstr "نواة NES:"
+msgstr "Core NES:"
 
 #: qml/Settings.qml:129
 #, kde-format
 msgid "SNES Core:"
-msgstr "نواة SNES:"
+msgstr "Core SNES:"
 
 #: qml/Settings.qml:148
 #, kde-format
 msgid "Master System Core:"
-msgstr "نواة ماستر سيستم:"
+msgstr "Core Master System:"
 
 #: qml/Settings.qml:167
 #, kde-format
 msgid "Genesis / Mega Drive Core:"
-msgstr "نواة جينيسيس / ميجا درايف:"
+msgstr "Core Genesis / Mega Drive:"
 
 #: qml/Settings.qml:189
 #, kde-format
 msgid "Flatpak releases of KRetro manage retro cores automatically."
-msgstr "إصدارات فلاتباك من كي ريترو تدير نُوى ريترو آلياً."
+msgstr "Le versioni Flatpak di KRetro gestiscono automaticamente i core retro."
 
 #: qml/Settings.qml:199 qml/SettingsRetroPad.qml:96
 #, kde-format
 msgid "Settings saved!"
-msgstr "حفظت الإعدادات!"
+msgstr "Impostazioni salvate."
 
 #: qml/SettingsRetroCore.qml:48
 #, kde-format
 msgid "Core Variables"
-msgstr "مُتغيرات النواة"
+msgstr "Variabili core"
 
 #: qml/SettingsRetroCore.qml:53
 #, kde-format
 msgid "Most settings require you to exit and reopen the game to take effect."
-msgstr "معظم الإعدادات تطلب منك الخروج وإعادة فتح اللعبة لتصبح سارية المفعول."
+msgstr ""
+"Per rendere attive la maggior parte delle impostazioni, devi uscire e "
+"riaprire il gioco."
 
 #: qml/SettingsRetroCore.qml:65
 #, kde-format
 msgid "Default: %1"
-msgstr "المبدئيّ: %1"
+msgstr "Predefinito: %1"
 
 #: qml/SettingsRetroPad.qml:16
 #, kde-format
 msgid "Reset Mappings"
-msgstr "أعد ضبط التعيينات"
+msgstr "Ripristina le mappature"
 
 #: qml/SettingsRetroPad.qml:19
 #, kde-format
 msgid "Retropad mappings reset!"
-msgstr "أعيد ضبط تعيينات ريتروباد!"
+msgstr "Mappature Retropad ripristinate!"
 
 #: qml/SettingsRetroPad.qml:24
 #, kde-format
 msgid "RetroPad Controller Settings"
-msgstr "إعدادات متحكّم ريتروباد"
+msgstr "Impostazioni controller RetroPad"
 
 #: qml/SettingsRetroPad.qml:55
 #, kde-format
 msgid "Controller Port 0"
-msgstr "مَنفذ المتحكّم 0"
+msgstr "Porta del controller 0"
 
 #: qml/SettingsRetroPad.qml:64
 #, kde-format
 msgid "Press a controller button or key to bind..."
-msgstr "اضغط على زر متحكّم أو مفتاح لتعيينه..."
+msgstr "Premi un pulsante o un tasto del controller per associare..."
 
 #: qml/SettingsRetroPad.qml:65
 #, kde-format
 msgid "Currently unbound"
-msgstr "غير مُعيّن حالياً"
+msgstr "Attualmente non associato"
 
 #: qml/SettingsRetroPad.qml:65
 #, kde-format
 msgid "Currently bound to: %1"
-msgstr "مُعيّن حالياً إلى: %1"
+msgstr "Attualmente associato a: %1"
