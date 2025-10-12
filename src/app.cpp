@@ -11,13 +11,6 @@
 #include <QProcessEnvironment>
 #include "kretroconfig.h"
 
-#if defined(Q_OS_UNIX)
-    #include <alsa/asoundlib.h>
-#elif defined(Q_OS_MAC)
-    #include <AudioToolbox/AudioToolbox.h>
-#else
-#endif
-
 using namespace Qt::Literals::StringLiterals;
 
 App::App(QObject* parent)
