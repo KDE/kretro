@@ -196,7 +196,6 @@
   <categories>
     <category>Game</category>
   </categories>
-  <icon type="stock">org.kde.kretro</icon>
   <url type="homepage">https://apps.kde.org/kretro</url>
   <releases>
     <release version="0.0.1" date="2025-10-05">
