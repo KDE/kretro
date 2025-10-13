@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kretro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-07 00:40+0000\n"
-"PO-Revision-Date: 2025-10-09 21:53+0200\n"
+"PO-Revision-Date: 2025-10-12 18:09+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -195,33 +195,34 @@ msgstr "Instellingen van kern"
 #: qml/MobilePlayer.qml:56
 #, kde-format
 msgid "Save Slots"
-msgstr ""
+msgstr "Slots opslaan"
 
 #: qml/MobilePlayer.qml:69
 #, kde-format
 msgid "KRetro Player"
-msgstr ""
+msgstr "KRetro-speler"
 
 #: qml/MobilePlayer.qml:111
 #, kde-format
 msgid "Reset Game Core?"
-msgstr ""
+msgstr "Gamekern resetten?"
 
 #: qml/MobilePlayer.qml:112
 #, kde-format
 msgid "This will restart the game. Any unsaved progress will be lost!"
 msgstr ""
+"Dit zal de game herstarten. Elke niet opgeslagen voortgang zal verloren gaan!"
 
 #: qml/SaveManager.qml:13
 #, kde-format
 msgid "Save States"
-msgstr ""
+msgstr "Statussen opslaan"
 
 #: qml/SaveManager.qml:16
 #, kde-format
 msgctxt "@action:button"
 msgid "New Save State"
-msgstr ""
+msgstr "Nieuwe opgeslagen status"
 
 #: qml/SaveManager.qml:22
 #, kde-format
@@ -234,6 +235,8 @@ msgid ""
 "Slot 0 is the default auto save slot. It is restored on game start and saved "
 "on exit."
 msgstr ""
+"Slot 0 is het standaard automatische opslagslot. Het wordt hersteld bij "
+"opstarten van de game en opgeslagen bij verlaten."
 
 #: qml/SaveManager.qml:73
 #, kde-format
@@ -266,12 +269,12 @@ msgstr "Verwijderen"
 #: qml/Settings.qml:29
 #, kde-format
 msgid "Select ROMs Directory"
-msgstr ""
+msgstr "De map van ROM selecteren"
 
 #: qml/Settings.qml:38
 #, kde-format
 msgid "Select Libretro Cores Directory"
-msgstr ""
+msgstr "Map van Libretro kernen selecteren"
 
 #: qml/Settings.qml:50
 #, kde-format
@@ -281,22 +284,22 @@ msgstr "Algemeen"
 #: qml/Settings.qml:55
 #, kde-format
 msgid "ROMs Directory"
-msgstr ""
+msgstr "Map van ROM's"
 
 #: qml/Settings.qml:63
 #, kde-format
 msgid "Libretro Cores Directory"
-msgstr ""
+msgstr "Map van Libretro kernen"
 
 #: qml/Settings.qml:69
 #, kde-format
 msgid "Override Mobile Controller Visibility"
-msgstr ""
+msgstr "Zichtbaarheid van mobiele besturing overschrijven"
 
 #: qml/Settings.qml:70
 #, kde-format
 msgid "Overrides the default visibility of the touch controller."
-msgstr ""
+msgstr "Overschrijft de standaard zichtbaarheid van de aanraakcontroller."
 
 #: qml/Settings.qml:75
 #, kde-format
@@ -306,12 +309,12 @@ msgstr "Modus volledig scherm"
 #: qml/Settings.qml:76
 #, kde-format
 msgid "Open games in fullscreen mode by default."
-msgstr ""
+msgstr "Games standaard in modus volledig schermmode openen."
 
 #: qml/Settings.qml:83
 #, kde-format
 msgid "Libretro Cores"
-msgstr ""
+msgstr "Libretro-kernen"
 
 #: qml/Settings.qml:91
 #, kde-format
