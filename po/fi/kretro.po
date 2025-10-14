@@ -1,31 +1,31 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the kretro package.
+# SPDX-FileCopyrightText: 2025 Tommi Nieminen <translator@legisign.org>
 #
-# SPDX-FileCopyrightText: 2025 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: kretro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-07 00:40+0000\n"
-"PO-Revision-Date: 2025-10-14 00:20+0200\n"
-"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
-"Language-Team: \n"
-"Language: nl\n"
+"PO-Revision-Date: 2025-10-12 20:33+0300\n"
+"Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
+"Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Freek de Kruijf - 2025"
+msgstr "Tommi Nieminen"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "freekdekruijf@kde.nl"
+msgstr "translator@legisign.org"
 
 #: main.cpp:28
 #, kde-format
@@ -36,12 +36,12 @@ msgstr "KRetro"
 #: main.cpp:32
 #, kde-format
 msgid "Libretro frontend for Plasma"
-msgstr "Libretro-frontend voor Plasma"
+msgstr "Libretro-käyttöliittymä Plasmaan"
 
 #: main.cpp:36
 #, kde-format
 msgid "(c) 2023-2025 KDE Community"
-msgstr "(c) 2023-2025 KDE gemeenschap"
+msgstr "© 2023-2025 KDE-yhteisö"
 
 #: main.cpp:37
 #, kde-format
@@ -53,7 +53,7 @@ msgstr "Seshan Ravikumar"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Developer"
-msgstr "Ontwikkelaar"
+msgstr "Kehittäjä"
 
 #: main.cpp:41
 #, kde-format
@@ -64,17 +64,17 @@ msgstr "Devin Lin"
 #: qml/Help.qml:13
 #, kde-format
 msgid "KRetro Help"
-msgstr "KRetro Help"
+msgstr "KRetron ohje"
 
 #: qml/Help.qml:20
 #, kde-format
 msgid "Getting Started"
-msgstr "Aan de slag"
+msgstr "Alkuunpääsy"
 
 #: qml/Help.qml:25
 #, kde-format
 msgid "Installing Retro Cores"
-msgstr "Retro-kernen worden geïnstalleerd"
+msgstr "Retroydinten asentaminen"
 
 #: qml/Help.qml:26
 #, kde-format
@@ -85,16 +85,15 @@ msgid ""
 "'libretro-mgba' for the GBA emulator core. Once installed, you can select "
 "them in the settings."
 msgstr ""
-"KRetro (niet-flatpak) vereist dat u emulatoren installeert, genaamd "
-"'libretro-kernen'.\n"
-"U zou deze moeten vinden in de pakketbeheerder van u distributie, "
-"bijvoorbeeld, 'libretro-mgba' voor de GBA-emulatorkern. Eenmaal "
-"geïnstalleerd, kunt u ze selecteren in de instellingen."
+"KRetro (ei-Flatpak) vaatii asentamaan ”libretro-ytimiksi” kutsuttuja "
+"emulaattoreita.\n"
+"Näitä löytänee jakelun paketinhallinnasta, esim. GBA-emulaattorin ydin voi "
+"olla ”libretro-mgba”. Asennuksen jälkeen ne voi asetuksista valita."
 
 #: qml/Help.qml:29
 #, kde-format
 msgid "Installing Retro Cores (Flatpak)"
-msgstr "Retro-kernen worden geïnstalleerd (Flatpak)"
+msgstr "Retroydinten asentaminen (Flatpak)"
 
 #: qml/Help.qml:30
 #, kde-format
@@ -102,19 +101,18 @@ msgid ""
 "The flatpak version of KRetro comes with a curated set of cores already! If "
 "you installed KRetro from the official flatpak, you are all set!"
 msgstr ""
-"De versie van KRetro in flatpak komt al met een gefilterde set van kernen! "
-"Als u KRetro hebt geïnstalleerd uit het officiële flatpak, bent u helemaal "
-"klaar!"
+"KRetron Flatpak-version mukana tulee jo valikoitu joukko ytimiä! Jos asensit "
+"KRetron virallisesta Flatpakistä, kaikki on valmista!"
 
 #: qml/Help.qml:35
 #, kde-format
 msgid "Installing Games"
-msgstr "Games worden geïnstalleerd"
+msgstr "Pelien asentaminen"
 
 #: qml/Help.qml:39
 #, kde-format
 msgid "Adding ROMs"
-msgstr "ROM's worden geïnstalleerd"
+msgstr "ROMien lisääminen"
 
 #: qml/Help.qml:40
 #, kde-format
@@ -123,9 +121,9 @@ msgid ""
 "ROMs directory (which by default is ~/Documents/Games). Simply add your ROMs "
 "there and they will appear in the game library!"
 msgstr ""
-"KRetro detecteert automatisch ondersteunde games (op bestandsextensie) uit "
-"de map met ROM's (die standaard ~/Documenten/Spellen is). Voeg eenvoudig uw "
-"ROM's daar toe en ze zullen in de spelbibliotheek verschijnen!"
+"KRetro havaitsee tuetut pelit (tiedostopäätteen mukaan) ROM-kansiosta "
+"(oletuksena ~/Documents/Games) automaattisesti. Lisää vain ROMit sinne, ja "
+"ne ilmestyvät pelikirjastoon!"
 
 #: qml/Main.qml:19
 #, kde-format
@@ -135,27 +133,27 @@ msgstr "kretro"
 #: qml/Main.qml:37
 #, kde-format
 msgid "Open ROMs Directory"
-msgstr "Map met ROM's openen"
+msgstr "Avaa ROM-kansio"
 
 #: qml/Main.qml:46 qml/Settings.qml:17
 #, kde-format
 msgid "Settings"
-msgstr "Instellingen"
+msgstr "Asetukset"
 
 #: qml/Main.qml:53
 #, kde-format
 msgid "Controller Settings"
-msgstr "Instellingen van de controller"
+msgstr "Ohjainasetukset"
 
 #: qml/Main.qml:60
 #, kde-format
 msgid "About kretro"
-msgstr "Info over kretro"
+msgstr "Tietoa KRetrosta"
 
 #: qml/Main.qml:65
 #, kde-format
 msgid "Quit"
-msgstr "Afsluiten"
+msgstr "Lopeta"
 
 #: qml/Main.qml:89
 #, kde-format
@@ -165,69 +163,68 @@ msgstr "KRetro"
 #: qml/Main.qml:93
 #, kde-format
 msgid "Help"
-msgstr "Help"
+msgstr "Ohje"
 
 #: qml/Main.qml:117
 #, kde-format
 msgid "Game Library"
-msgstr "Spelbibliotheek"
+msgstr "Pelikirjasto"
 
 #: qml/MobilePlayer.qml:22
 #, kde-format
 msgid "Press Escape to exit fullscreen mode!"
-msgstr "Druk op Escape om modus volledig scherm te verlaten!"
+msgstr "Poistu koko näytöltä painamalla Esc!"
 
 #: qml/MobilePlayer.qml:36
 #, kde-format
 msgid "Fullscreen"
-msgstr "Volledig scherm"
+msgstr "Koko näyttö"
 
 #: qml/MobilePlayer.qml:44
 #, kde-format
 msgid "Reset Core"
-msgstr "Kern resetten"
+msgstr "Palauta ydin"
 
 #: qml/MobilePlayer.qml:49 qml/SettingsRetroCore.qml:13
 #, kde-format
 msgid "Core Settings"
-msgstr "Instellingen van kern"
+msgstr "Ydinasetukset"
 
 #: qml/MobilePlayer.qml:56
 #, kde-format
 msgid "Save Slots"
-msgstr "Slots opslaan"
+msgstr "Tallennuslokerot"
 
 #: qml/MobilePlayer.qml:69
 #, kde-format
 msgid "KRetro Player"
-msgstr "KRetro-speler"
+msgstr "KRetro-pelaaja"
 
 #: qml/MobilePlayer.qml:111
 #, kde-format
 msgid "Reset Game Core?"
-msgstr "Gamekern resetten?"
+msgstr "Palautetaanko peliydin?"
 
 #: qml/MobilePlayer.qml:112
 #, kde-format
 msgid "This will restart the game. Any unsaved progress will be lost!"
-msgstr ""
-"Dit zal de game herstarten. Elke niet opgeslagen voortgang zal verloren gaan!"
+msgstr "Tämä käynnistää pelin uudelleen. Tallentamaton tila menetetään!"
 
 #: qml/SaveManager.qml:13
 #, kde-format
 msgid "Save States"
-msgstr "Statussen opslaan"
+msgstr "Tallennustilat"
 
 #: qml/SaveManager.qml:16
 #, kde-format
 msgctxt "@action:button"
 msgid "New Save State"
-msgstr "Nieuwe opgeslagen status"
+msgstr "Uusi tallennustila"
 
 #: qml/SaveManager.qml:22
 #, kde-format
 msgid "Game saved!"
-msgstr "Spel opgeslagen!"
+msgstr "Peli tallennettu!"
 
 #: qml/SaveManager.qml:38
 #, kde-format
@@ -235,168 +232,170 @@ msgid ""
 "Slot 0 is the default auto save slot. It is restored on game start and saved "
 "on exit."
 msgstr ""
-"Slot 0 is het standaard automatische opslagslot. Het wordt hersteld bij "
-"opstarten van de game en opgeslagen bij verlaten."
+"Lokero 0 on oletustallennuslokero. Se palautetaan pelin alkaessa ja "
+"tallennetaan lopetettaessa."
 
 #: qml/SaveManager.qml:73
 #, kde-format
 msgid "Slot %1"
-msgstr "Slot %1"
+msgstr "Lokero %1"
 
 #: qml/SaveManager.qml:83
 #, kde-format
 msgid "Last modified: %1"
-msgstr "Laatst gewijzigd: %1"
+msgstr "Viimeksi muutettu: %1"
 
 #: qml/SaveManager.qml:97
 #, kde-format
 msgctxt "@action:button"
 msgid "Load"
-msgstr "Laden"
+msgstr "Lataa"
 
 #: qml/SaveManager.qml:104
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr "Opslaan"
+msgstr "Tallenna"
 
 #: qml/SaveManager.qml:111
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
-msgstr "Verwijderen"
+msgstr "Poista"
 
 #: qml/Settings.qml:29
 #, kde-format
 msgid "Select ROMs Directory"
-msgstr "De map van ROM selecteren"
+msgstr "Valitse ROM-kansio"
 
 #: qml/Settings.qml:38
 #, kde-format
 msgid "Select Libretro Cores Directory"
-msgstr "Map van Libretro kernen selecteren"
+msgstr "Valitse Libretro-ydinten kansio"
 
 #: qml/Settings.qml:50
 #, kde-format
 msgid "General"
-msgstr "Algemeen"
+msgstr "Perusasetukset"
 
 #: qml/Settings.qml:55
 #, kde-format
 msgid "ROMs Directory"
-msgstr "Map van ROM's"
+msgstr "ROM-kansio"
 
 #: qml/Settings.qml:63
 #, kde-format
 msgid "Libretro Cores Directory"
-msgstr "Map van Libretro kernen"
+msgstr "Libretro-ydinten kansio"
 
 #: qml/Settings.qml:69
 #, kde-format
 msgid "Override Mobile Controller Visibility"
-msgstr "Zichtbaarheid van mobiele besturing overschrijven"
+msgstr "Ohita mobiiliohjaimen näkyvyys"
 
 #: qml/Settings.qml:70
 #, kde-format
 msgid "Overrides the default visibility of the touch controller."
-msgstr "Overschrijft de standaard zichtbaarheid van de aanraakcontroller."
+msgstr "Ohittaa kosketusohjaimen oletusnäkyvyyden."
 
 #: qml/Settings.qml:75
 #, kde-format
 msgid "Fullscreen Mode"
-msgstr "Modus volledig scherm"
+msgstr "Koko näytön tila"
 
 #: qml/Settings.qml:76
 #, kde-format
 msgid "Open games in fullscreen mode by default."
-msgstr "Games standaard in modus volledig schermmode openen."
+msgstr "Avaa pelit oletuksena koko näytön tilaan."
 
 #: qml/Settings.qml:83
 #, kde-format
 msgid "Libretro Cores"
-msgstr "Libretro-kernen"
+msgstr "Libretro-ytimet"
 
 #: qml/Settings.qml:91
 #, kde-format
 msgid "GBA Core:"
-msgstr "GBA-kern:"
+msgstr "GBA-ydin:"
 
 #: qml/Settings.qml:110
 #, kde-format
 msgid "NES Core:"
-msgstr "NES-kern:"
+msgstr "NES-ydin:"
 
 #: qml/Settings.qml:129
 #, kde-format
 msgid "SNES Core:"
-msgstr "SNES-kern:"
+msgstr "SNES-ydin:"
 
 #: qml/Settings.qml:148
 #, kde-format
 msgid "Master System Core:"
-msgstr "Hoofdsysteemkern:"
+msgstr "Järjestelmän pääydin:"
 
 #: qml/Settings.qml:167
 #, kde-format
 msgid "Genesis / Mega Drive Core:"
-msgstr "Genesis / Mega Drive-kern:"
+msgstr "Genesis / Mega Drive -ydin"
 
 #: qml/Settings.qml:189
 #, kde-format
 msgid "Flatpak releases of KRetro manage retro cores automatically."
-msgstr ""
+msgstr "KRetron Flatpak-julkaisut hallinnoivat retroytimiä automaattisesti."
 
 #: qml/Settings.qml:199 qml/SettingsRetroPad.qml:96
 #, kde-format
 msgid "Settings saved!"
-msgstr "Instellingen opgeslagen!"
+msgstr "Asetukset tallennettu!"
 
 #: qml/SettingsRetroCore.qml:48
 #, kde-format
 msgid "Core Variables"
-msgstr ""
+msgstr "Ydinmuuttujat"
 
 #: qml/SettingsRetroCore.qml:53
 #, kde-format
 msgid "Most settings require you to exit and reopen the game to take effect."
 msgstr ""
+"Useimmat asetukset vaativat voimaan tullakseen lopettamaan ja avaamaan pelin "
+"uudelleen."
 
 #: qml/SettingsRetroCore.qml:65
 #, kde-format
 msgid "Default: %1"
-msgstr "Standaard: %1"
+msgstr "Oletus: %1"
 
 #: qml/SettingsRetroPad.qml:16
 #, kde-format
 msgid "Reset Mappings"
-msgstr ""
+msgstr "Palauta kytkennät"
 
 #: qml/SettingsRetroPad.qml:19
 #, kde-format
 msgid "Retropad mappings reset!"
-msgstr ""
+msgstr "Retropad-kytkennät palautettu!"
 
 #: qml/SettingsRetroPad.qml:24
 #, kde-format
 msgid "RetroPad Controller Settings"
-msgstr ""
+msgstr "RetroPad-ohjainasetukset"
 
 #: qml/SettingsRetroPad.qml:55
 #, kde-format
 msgid "Controller Port 0"
-msgstr ""
+msgstr "Ohjainportti 0"
 
 #: qml/SettingsRetroPad.qml:64
 #, kde-format
 msgid "Press a controller button or key to bind..."
-msgstr ""
+msgstr "Kytke painamalla näppäintä tai ohjaimen painiketta…"
 
 #: qml/SettingsRetroPad.qml:65
 #, kde-format
 msgid "Currently unbound"
-msgstr ""
+msgstr "Ei kytketty"
 
 #: qml/SettingsRetroPad.qml:65
 #, kde-format
 msgid "Currently bound to: %1"
-msgstr ""
+msgstr "Kytketty: %1"
