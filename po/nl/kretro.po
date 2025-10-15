@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kretro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-07 00:40+0000\n"
-"PO-Revision-Date: 2025-10-14 00:20+0200\n"
+"PO-Revision-Date: 2025-10-14 23:53+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -344,7 +344,7 @@ msgstr "Genesis / Mega Drive-kern:"
 #: qml/Settings.qml:189
 #, kde-format
 msgid "Flatpak releases of KRetro manage retro cores automatically."
-msgstr ""
+msgstr "Uitgaven van KRetro in Flatpak beheren automatisch retro-kernen."
 
 #: qml/Settings.qml:199 qml/SettingsRetroPad.qml:96
 #, kde-format
@@ -354,12 +354,14 @@ msgstr "Instellingen opgeslagen!"
 #: qml/SettingsRetroCore.qml:48
 #, kde-format
 msgid "Core Variables"
-msgstr ""
+msgstr "Kern-variabelen"
 
 #: qml/SettingsRetroCore.qml:53
 #, kde-format
 msgid "Most settings require you to exit and reopen the game to take effect."
 msgstr ""
+"De meeste instellingen vereisen u er uit te gaan en de game opnieuw te "
+"openen om effect te hebben."
 
 #: qml/SettingsRetroCore.qml:65
 #, kde-format
@@ -369,34 +371,34 @@ msgstr "Standaard: %1"
 #: qml/SettingsRetroPad.qml:16
 #, kde-format
 msgid "Reset Mappings"
-msgstr ""
+msgstr "Reset overeenkomstige zaken"
 
 #: qml/SettingsRetroPad.qml:19
 #, kde-format
 msgid "Retropad mappings reset!"
-msgstr ""
+msgstr "Overeenkomstige zaken in RetroPad resetten!"
 
 #: qml/SettingsRetroPad.qml:24
 #, kde-format
 msgid "RetroPad Controller Settings"
-msgstr ""
+msgstr "Instellingen van de controller van RetroPad"
 
 #: qml/SettingsRetroPad.qml:55
 #, kde-format
 msgid "Controller Port 0"
-msgstr ""
+msgstr "Controller van poort 0"
 
 #: qml/SettingsRetroPad.qml:64
 #, kde-format
 msgid "Press a controller button or key to bind..."
-msgstr ""
+msgstr "Druk op een controllerknop of toets om te  binden..."
 
 #: qml/SettingsRetroPad.qml:65
 #, kde-format
 msgid "Currently unbound"
-msgstr ""
+msgstr "Nu niet gebonden"
 
 #: qml/SettingsRetroPad.qml:65
 #, kde-format
 msgid "Currently bound to: %1"
-msgstr ""
+msgstr "Nu gebonden aan: %1"
