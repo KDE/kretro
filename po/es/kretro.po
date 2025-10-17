@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kretro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-07 00:40+0000\n"
-"PO-Revision-Date: 2025-10-08 17:37+0100\n"
+"PO-Revision-Date: 2025-10-16 02:40+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -197,12 +197,12 @@ msgstr "Preferencias del core"
 #: qml/MobilePlayer.qml:56
 #, kde-format
 msgid "Save Slots"
-msgstr ""
+msgstr "Espacios de estado"
 
 #: qml/MobilePlayer.qml:69
 #, kde-format
 msgid "KRetro Player"
-msgstr ""
+msgstr "Jugador de KRetro"
 
 #: qml/MobilePlayer.qml:111
 #, kde-format
@@ -218,13 +218,13 @@ msgstr ""
 #: qml/SaveManager.qml:13
 #, kde-format
 msgid "Save States"
-msgstr ""
+msgstr "Estados de guardado"
 
 #: qml/SaveManager.qml:16
 #, kde-format
 msgctxt "@action:button"
 msgid "New Save State"
-msgstr ""
+msgstr "Nuevo estado de guardado"
 
 #: qml/SaveManager.qml:22
 #, kde-format
@@ -237,11 +237,13 @@ msgid ""
 "Slot 0 is the default auto save slot. It is restored on game start and saved "
 "on exit."
 msgstr ""
+"En el espacio 0, el juego se guarda automáticamente al salir y se restaura "
+"automáticamente cuando se inicia."
 
 #: qml/SaveManager.qml:73
 #, kde-format
 msgid "Slot %1"
-msgstr ""
+msgstr "Espacio %1"
 
 #: qml/SaveManager.qml:83
 #, kde-format
@@ -294,12 +296,12 @@ msgstr "Directorio de cores de Libretro"
 #: qml/Settings.qml:69
 #, kde-format
 msgid "Override Mobile Controller Visibility"
-msgstr ""
+msgstr "Anular la visibilidad del mando móvil"
 
 #: qml/Settings.qml:70
 #, kde-format
 msgid "Overrides the default visibility of the touch controller."
-msgstr ""
+msgstr "Anula la visibilidad predeterminada el mando táctil."
 
 #: qml/Settings.qml:75
 #, kde-format
