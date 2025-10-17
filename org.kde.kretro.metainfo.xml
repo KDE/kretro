@@ -133,6 +133,7 @@
       <caption xml:lang="ar">الجوال - مشغّل الألعاب</caption>
       <caption xml:lang="ca">Mòbil - Jugador</caption>
       <caption xml:lang="ca-valencia">Mòbil - Jugador</caption>
+      <caption xml:lang="es">Móvil - Lanzador del juego</caption>
       <caption xml:lang="he">נייד - מריץ משחקים</caption>
       <caption xml:lang="it">Mobile - Lettore di giochi</caption>
       <caption xml:lang="ka">მობილური - თამაშის მოთამაშე</caption>
@@ -149,6 +150,7 @@
       <caption xml:lang="ar">سطح المكتب - مشغّل الألعاب</caption>
       <caption xml:lang="ca">Escriptori - Jugador</caption>
       <caption xml:lang="ca-valencia">Escriptori - Jugador</caption>
+      <caption xml:lang="es">Escritorio - Lanzador del juego</caption>
       <caption xml:lang="he">שולחן עבודה - מריץ משחקים</caption>
       <caption xml:lang="it">Desktop - Lettore di giochi</caption>
       <caption xml:lang="ka">კომპიუტერი - თამაშის მოთამაშე</caption>
@@ -165,6 +167,7 @@
       <caption xml:lang="ar">الجوال - مدير شّقوق الحفظ</caption>
       <caption xml:lang="ca">Mòbil - Gestor d'espais de desament</caption>
       <caption xml:lang="ca-valencia">Mòbil - Gestor d'espais de guardada</caption>
+      <caption xml:lang="es">Móvil - Gestor de espacios de guardado</caption>
       <caption xml:lang="he">נייד - מנהל חריצי שמירה</caption>
       <caption xml:lang="it">Mobile - Gestore slot di salvataggio</caption>
       <caption xml:lang="ka">მობილური - სლოტების მმართველის შენახვა</caption>
@@ -181,6 +184,7 @@
       <caption xml:lang="ar">سطح المكتب - مدير شّقوق الحفظ</caption>
       <caption xml:lang="ca">Escriptori - Gestor d'espais de desament</caption>
       <caption xml:lang="ca-valencia">Escriptori - Gestor d'espais de guardada</caption>
+      <caption xml:lang="es">Escritorio - Gestor de espacios de guardado</caption>
       <caption xml:lang="he">שולחן עבודה - מנהל חריצי שמירה</caption>
       <caption xml:lang="it">Desktop - Gestore slot di salvataggio</caption>
       <caption xml:lang="ka">კომპიუტერი - სლოტების მმართველის შენახვა</caption>
