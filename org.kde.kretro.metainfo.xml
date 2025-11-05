@@ -36,7 +36,7 @@
   <summary xml:lang="es">Interfaz de emulación Libretro para Plasma</summary>
   <summary xml:lang="eu">Plasmarako Libreto emulazioaren aurrealdekoa</summary>
   <summary xml:lang="fi">Libretro-emulointikäyttöliittymä Plasmaan</summary>
-  <summary xml:lang="fr">Interface d"émulation pour Libretro sous Plasma</summary>
+  <summary xml:lang="fr">Interface d'émulation pour Libretro sous Plasma</summary>
   <summary xml:lang="he">ממשק הדמיית Libretro לפלזמה</summary>
   <summary xml:lang="it">Interfaccia di emulazione Libretro per Plasma</summary>
   <summary xml:lang="ka">Libretro-ის ემულაციის წინაბოლო Plasma-სთვის</summary>
@@ -101,6 +101,7 @@
       <caption xml:lang="ca-valencia">Mòbil - Biblioteca de jocs</caption>
       <caption xml:lang="es">Móvil - Biblioteca de juegos</caption>
       <caption xml:lang="fi">Mobiili – pelikirjasto</caption>
+      <caption xml:lang="fr">Mobile - Bibliothèque de jeux</caption>
       <caption xml:lang="he">נייד - ספריית משחקים</caption>
       <caption xml:lang="it">Mobile - Raccolta giochi</caption>
       <caption xml:lang="ka">მობილური - თამაშების ბიბლიოთეკა</caption>
@@ -119,6 +120,7 @@
       <caption xml:lang="ca-valencia">Escriptori - Biblioteca de jocs</caption>
       <caption xml:lang="es">Escritorio - Biblioteca de juegos</caption>
       <caption xml:lang="fi">Työpöytä – pelikirjasto</caption>
+      <caption xml:lang="fr">Ordinateur de bureau - Bibliothèque de jeux</caption>
       <caption xml:lang="he">שולחן עבודה - ספריית משחקים</caption>
       <caption xml:lang="it">Desktop - Raccolta giochi</caption>
       <caption xml:lang="ka">კომპიუტერი - თამაშების ბიბლიოთეკა</caption>
@@ -137,6 +139,7 @@
       <caption xml:lang="ca-valencia">Mòbil - Jugador</caption>
       <caption xml:lang="es">Móvil - Lanzador del juego</caption>
       <caption xml:lang="fi">Mobiili – pelin pelaaja</caption>
+      <caption xml:lang="fr">Mobile - Joueur</caption>
       <caption xml:lang="he">נייד - מריץ משחקים</caption>
       <caption xml:lang="it">Mobile - Lettore di giochi</caption>
       <caption xml:lang="ka">მობილური - თამაშის მოთამაშე</caption>
@@ -155,6 +158,7 @@
       <caption xml:lang="ca-valencia">Escriptori - Jugador</caption>
       <caption xml:lang="es">Escritorio - Lanzador del juego</caption>
       <caption xml:lang="fi">Työpöytä – pelin pelaaja</caption>
+      <caption xml:lang="fr">Bureau - Joueur</caption>
       <caption xml:lang="he">שולחן עבודה - מריץ משחקים</caption>
       <caption xml:lang="it">Desktop - Lettore di giochi</caption>
       <caption xml:lang="ka">კომპიუტერი - თამაშის მოთამაშე</caption>
@@ -173,6 +177,7 @@
       <caption xml:lang="ca-valencia">Mòbil - Gestor d'espais de guardada</caption>
       <caption xml:lang="es">Móvil - Gestor de espacios de guardado</caption>
       <caption xml:lang="fi">Mobiili – tallennuslokerohallinta</caption>
+      <caption xml:lang="fr">Mobile - Gestionnaire d'emplacements d'enregistrement</caption>
       <caption xml:lang="he">נייד - מנהל חריצי שמירה</caption>
       <caption xml:lang="it">Mobile - Gestore slot di salvataggio</caption>
       <caption xml:lang="ka">მობილური - სლოტების მმართველის შენახვა</caption>
@@ -191,6 +196,7 @@
       <caption xml:lang="ca-valencia">Escriptori - Gestor d'espais de guardada</caption>
       <caption xml:lang="es">Escritorio - Gestor de espacios de guardado</caption>
       <caption xml:lang="fi">Työpöytä – tallennuslokerohallinta</caption>
+      <caption xml:lang="fr">Ordinateur de bureau - Gestionnaire d'emplacements d'enregistrement</caption>
       <caption xml:lang="he">שולחן עבודה - מנהל חריצי שמירה</caption>
       <caption xml:lang="it">Desktop - Gestore slot di salvataggio</caption>
       <caption xml:lang="ka">კომპიუტერი - სლოტების მმართველის შენახვა</caption>
