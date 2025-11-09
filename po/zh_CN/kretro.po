@@ -1,0 +1,388 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kdeorg\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-10-07 00:40+0000\n"
+"PO-Revision-Date: 2025-11-08 11:47\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: kdeorg\n"
+"X-Crowdin-Project-ID: 269464\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /kf6-trunk/messages/kretro/kretro.pot\n"
+"X-Crowdin-File-ID: 58544\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: main.cpp:28
+#, kde-format
+msgctxt "@title"
+msgid "KRetro"
+msgstr ""
+
+#: main.cpp:32
+#, kde-format
+msgid "Libretro frontend for Plasma"
+msgstr ""
+
+#: main.cpp:36
+#, kde-format
+msgid "(c) 2023-2025 KDE Community"
+msgstr ""
+
+#: main.cpp:37
+#, kde-format
+msgctxt "@info:credit"
+msgid "Seshan Ravikumar"
+msgstr ""
+
+#: main.cpp:38 main.cpp:42
+#, kde-format
+msgctxt "@info:credit"
+msgid "Developer"
+msgstr ""
+
+#: main.cpp:41
+#, kde-format
+msgctxt "@info:credit"
+msgid "Devin Lin"
+msgstr ""
+
+#: qml/Help.qml:13
+#, kde-format
+msgid "KRetro Help"
+msgstr ""
+
+#: qml/Help.qml:20
+#, kde-format
+msgid "Getting Started"
+msgstr ""
+
+#: qml/Help.qml:25
+#, kde-format
+msgid "Installing Retro Cores"
+msgstr ""
+
+#: qml/Help.qml:26
+#, kde-format
+msgid ""
+"KRetro (non-flatpak) requires you to install emulators, called 'libretro "
+"cores'.\n"
+"You should find these from your distro's package manager, for example, "
+"'libretro-mgba' for the GBA emulator core. Once installed, you can select "
+"them in the settings."
+msgstr ""
+
+#: qml/Help.qml:29
+#, kde-format
+msgid "Installing Retro Cores (Flatpak)"
+msgstr ""
+
+#: qml/Help.qml:30
+#, kde-format
+msgid ""
+"The flatpak version of KRetro comes with a curated set of cores already! If "
+"you installed KRetro from the official flatpak, you are all set!"
+msgstr ""
+
+#: qml/Help.qml:35
+#, kde-format
+msgid "Installing Games"
+msgstr ""
+
+#: qml/Help.qml:39
+#, kde-format
+msgid "Adding ROMs"
+msgstr ""
+
+#: qml/Help.qml:40
+#, kde-format
+msgid ""
+"KRetro automatically detects supported games (by file extension) from the "
+"ROMs directory (which by default is ~/Documents/Games). Simply add your ROMs "
+"there and they will appear in the game library!"
+msgstr ""
+
+#: qml/Main.qml:19
+#, kde-format
+msgid "kretro"
+msgstr ""
+
+#: qml/Main.qml:37
+#, kde-format
+msgid "Open ROMs Directory"
+msgstr ""
+
+#: qml/Main.qml:46 qml/Settings.qml:17
+#, kde-format
+msgid "Settings"
+msgstr ""
+
+#: qml/Main.qml:53
+#, kde-format
+msgid "Controller Settings"
+msgstr ""
+
+#: qml/Main.qml:60
+#, kde-format
+msgid "About kretro"
+msgstr ""
+
+#: qml/Main.qml:65
+#, kde-format
+msgid "Quit"
+msgstr ""
+
+#: qml/Main.qml:89
+#, kde-format
+msgid "KRetro"
+msgstr ""
+
+#: qml/Main.qml:93
+#, kde-format
+msgid "Help"
+msgstr ""
+
+#: qml/Main.qml:117
+#, kde-format
+msgid "Game Library"
+msgstr ""
+
+#: qml/MobilePlayer.qml:22
+#, kde-format
+msgid "Press Escape to exit fullscreen mode!"
+msgstr ""
+
+#: qml/MobilePlayer.qml:36
+#, kde-format
+msgid "Fullscreen"
+msgstr ""
+
+#: qml/MobilePlayer.qml:44
+#, kde-format
+msgid "Reset Core"
+msgstr ""
+
+#: qml/MobilePlayer.qml:49 qml/SettingsRetroCore.qml:13
+#, kde-format
+msgid "Core Settings"
+msgstr ""
+
+#: qml/MobilePlayer.qml:56
+#, kde-format
+msgid "Save Slots"
+msgstr ""
+
+#: qml/MobilePlayer.qml:69
+#, kde-format
+msgid "KRetro Player"
+msgstr ""
+
+#: qml/MobilePlayer.qml:111
+#, kde-format
+msgid "Reset Game Core?"
+msgstr ""
+
+#: qml/MobilePlayer.qml:112
+#, kde-format
+msgid "This will restart the game. Any unsaved progress will be lost!"
+msgstr ""
+
+#: qml/SaveManager.qml:13
+#, kde-format
+msgid "Save States"
+msgstr ""
+
+#: qml/SaveManager.qml:16
+#, kde-format
+msgctxt "@action:button"
+msgid "New Save State"
+msgstr ""
+
+#: qml/SaveManager.qml:22
+#, kde-format
+msgid "Game saved!"
+msgstr ""
+
+#: qml/SaveManager.qml:38
+#, kde-format
+msgid ""
+"Slot 0 is the default auto save slot. It is restored on game start and saved "
+"on exit."
+msgstr ""
+
+#: qml/SaveManager.qml:73
+#, kde-format
+msgid "Slot %1"
+msgstr ""
+
+#: qml/SaveManager.qml:83
+#, kde-format
+msgid "Last modified: %1"
+msgstr ""
+
+#: qml/SaveManager.qml:97
+#, kde-format
+msgctxt "@action:button"
+msgid "Load"
+msgstr ""
+
+#: qml/SaveManager.qml:104
+#, kde-format
+msgctxt "@action:button"
+msgid "Save"
+msgstr ""
+
+#: qml/SaveManager.qml:111
+#, kde-format
+msgctxt "@action:button"
+msgid "Delete"
+msgstr ""
+
+#: qml/Settings.qml:29
+#, kde-format
+msgid "Select ROMs Directory"
+msgstr ""
+
+#: qml/Settings.qml:38
+#, kde-format
+msgid "Select Libretro Cores Directory"
+msgstr ""
+
+#: qml/Settings.qml:50
+#, kde-format
+msgid "General"
+msgstr ""
+
+#: qml/Settings.qml:55
+#, kde-format
+msgid "ROMs Directory"
+msgstr ""
+
+#: qml/Settings.qml:63
+#, kde-format
+msgid "Libretro Cores Directory"
+msgstr ""
+
+#: qml/Settings.qml:69
+#, kde-format
+msgid "Override Mobile Controller Visibility"
+msgstr ""
+
+#: qml/Settings.qml:70
+#, kde-format
+msgid "Overrides the default visibility of the touch controller."
+msgstr ""
+
+#: qml/Settings.qml:75
+#, kde-format
+msgid "Fullscreen Mode"
+msgstr ""
+
+#: qml/Settings.qml:76
+#, kde-format
+msgid "Open games in fullscreen mode by default."
+msgstr ""
+
+#: qml/Settings.qml:83
+#, kde-format
+msgid "Libretro Cores"
+msgstr ""
+
+#: qml/Settings.qml:91
+#, kde-format
+msgid "GBA Core:"
+msgstr ""
+
+#: qml/Settings.qml:110
+#, kde-format
+msgid "NES Core:"
+msgstr ""
+
+#: qml/Settings.qml:129
+#, kde-format
+msgid "SNES Core:"
+msgstr ""
+
+#: qml/Settings.qml:148
+#, kde-format
+msgid "Master System Core:"
+msgstr ""
+
+#: qml/Settings.qml:167
+#, kde-format
+msgid "Genesis / Mega Drive Core:"
+msgstr ""
+
+#: qml/Settings.qml:189
+#, kde-format
+msgid "Flatpak releases of KRetro manage retro cores automatically."
+msgstr ""
+
+#: qml/Settings.qml:199 qml/SettingsRetroPad.qml:96
+#, kde-format
+msgid "Settings saved!"
+msgstr ""
+
+#: qml/SettingsRetroCore.qml:48
+#, kde-format
+msgid "Core Variables"
+msgstr ""
+
+#: qml/SettingsRetroCore.qml:53
+#, kde-format
+msgid "Most settings require you to exit and reopen the game to take effect."
+msgstr ""
+
+#: qml/SettingsRetroCore.qml:65
+#, kde-format
+msgid "Default: %1"
+msgstr ""
+
+#: qml/SettingsRetroPad.qml:16
+#, kde-format
+msgid "Reset Mappings"
+msgstr ""
+
+#: qml/SettingsRetroPad.qml:19
+#, kde-format
+msgid "Retropad mappings reset!"
+msgstr ""
+
+#: qml/SettingsRetroPad.qml:24
+#, kde-format
+msgid "RetroPad Controller Settings"
+msgstr ""
+
+#: qml/SettingsRetroPad.qml:55
+#, kde-format
+msgid "Controller Port 0"
+msgstr ""
+
+#: qml/SettingsRetroPad.qml:64
+#, kde-format
+msgid "Press a controller button or key to bind..."
+msgstr ""
+
+#: qml/SettingsRetroPad.qml:65
+#, kde-format
+msgid "Currently unbound"
+msgstr ""
+
+#: qml/SettingsRetroPad.qml:65
+#, kde-format
+msgid "Currently bound to: %1"
+msgstr ""
