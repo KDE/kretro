@@ -111,6 +111,7 @@
       <caption xml:lang="sv">Mobil: Spelbibliotek</caption>
       <caption xml:lang="tr">Taşınabilir — Oyun kitaplığı</caption>
       <caption xml:lang="uk">Мобільний – Бібліотека ігор</caption>
+      <caption xml:lang="zh-TW">手機 - 遊戲庫</caption>
       <image>https://cdn.kde.org/screenshots/kretro/kretro-mobile-game-library.png</image>
     </screenshot>
     <screenshot>
@@ -130,6 +131,7 @@
       <caption xml:lang="sv">Skrivbord: Spelbibliotek</caption>
       <caption xml:lang="tr">Masaüstü — Oyun kitaplığı</caption>
       <caption xml:lang="uk">Робоча станція – Бібліотека ігор</caption>
+      <caption xml:lang="zh-TW">桌面 - 遊戲庫</caption>
       <image>https://cdn.kde.org/screenshots/kretro/kretro-desktop-game-library.png</image>
     </screenshot>
     <screenshot>
@@ -149,6 +151,7 @@
       <caption xml:lang="sv">Mobil: Spelprogram</caption>
       <caption xml:lang="tr">Taşınabilir — Oyuncu</caption>
       <caption xml:lang="uk">Мобільний – Програвач ігор</caption>
+      <caption xml:lang="zh-TW">手機 - 遊玩介面</caption>
       <image>https://cdn.kde.org/screenshots/kretro/kretro-mobile-player.png</image>
     </screenshot>
     <screenshot>
@@ -168,6 +171,7 @@
       <caption xml:lang="sv">Skrivbord: Spelprogram</caption>
       <caption xml:lang="tr">Masaüstü — Oyuncu</caption>
       <caption xml:lang="uk">Робоча станція – Програвач ігор</caption>
+      <caption xml:lang="zh-TW">桌面 - 遊玩介面</caption>
       <image>https://cdn.kde.org/screenshots/kretro/kretro-desktop-player.png</image>
     </screenshot>
     <screenshot>
@@ -187,6 +191,7 @@
       <caption xml:lang="sv">Mobil: Hantering av sparplatser</caption>
       <caption xml:lang="tr">Taşınabilir — Yuva kaydı yöneticisi</caption>
       <caption xml:lang="uk">Мобільний – Керування слотами ігор</caption>
+      <caption xml:lang="zh-TW">手機 - 存檔槽管理器</caption>
       <image>https://cdn.kde.org/screenshots/kretro/kretro-mobile-save-slots.png</image>
     </screenshot>
     <screenshot>
@@ -206,6 +211,7 @@
       <caption xml:lang="sv">Skrivbord: Hantering av sparplatser</caption>
       <caption xml:lang="tr">Masaüstü — Yuva kaydı yöneticisi</caption>
       <caption xml:lang="uk">Робоча станція – Керування слотами ігор</caption>
+      <caption xml:lang="zh-TW">桌面 - 存檔槽管理器</caption>
       <image>https://cdn.kde.org/screenshots/kretro/kretro-desktop-save-slots.png</image>
     </screenshot>
   </screenshots>
