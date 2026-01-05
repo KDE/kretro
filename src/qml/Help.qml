@@ -10,33 +10,33 @@ import org.kde.kretro
 
 Kirigami.ScrollablePage {
     id: page
-    title: i18n("KRetro Help")
+    title: i18nc("@title", "KRetro Help")
 
 
     ColumnLayout {
         anchors.fill: parent
         spacing: Kirigami.Units.largeSpacing
         FormCard.FormHeader {
-            title: i18n("Getting Started")
+            title: i18nc("@title", "Getting Started")
         }
         
         FormCard.FormCard {
             FormCard.FormTextDelegate {
-                text: i18n("Installing Retro Cores")
+                text: i18nc("@title", "Installing Retro Cores")
                 description: i18n("KRetro (non-flatpak) requires you to install emulators, called 'libretro cores'.\nYou should find these from your distro's package manager, for example, 'libretro-mgba' for the GBA emulator core. Once installed, you can select them in the settings.")
             }
             FormCard.FormTextDelegate {
-                text: i18n("Installing Retro Cores (Flatpak)")
-                description: i18n("The flatpak version of KRetro comes with a curated set of cores already! If you installed KRetro from the official flatpak, you are all set!")
+                text: i18nc("@title", "Installing Retro Cores (Flatpak)")
+                description: i18n("The flatpak version of KRetro comes with a curated set of cores already. If you installed KRetro from the official flatpak, you are all set!")
             }
         }
 
         FormCard.FormHeader {
-            title: i18n("Installing Games")
+            title: i18nc("@title", "Installing Games")
         }
         FormCard.FormCard {
             FormCard.FormTextDelegate {
-                text: i18n("Adding ROMs")
+                text: i18nc("@title", "Adding ROMs")
                 description: i18n("KRetro automatically detects supported games (by file extension) from the ROMs directory (which by default is ~/Documents/Games). Simply add your ROMs there and they will appear in the game library!")
             }
         }
