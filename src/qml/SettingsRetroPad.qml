@@ -16,7 +16,7 @@ Kirigami.ScrollablePage {
             text: i18n("Reset Mappings")
             onTriggered: {
                 retroPad.resetMappings();
-                showPassiveNotification(i18n("Retropad mappings reset!"));
+                showPassiveNotification(i18n("Retropad mappings reset"));
             }
         }
     ]
@@ -93,6 +93,6 @@ Kirigami.ScrollablePage {
     Keys.onReleased: handleKeyPress(event, false)
 
     Component.onDestruction: {
-        showPassiveNotification(i18n("Settings saved!"));
+        showPassiveNotification(i18n("Settings saved"));
     }
 }

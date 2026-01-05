@@ -19,7 +19,7 @@ Kirigami.ScrollablePage {
             if (path.length > 0) {
                 console.log(path);
                 gameSaveModel.append(path);
-                showPassiveNotification(i18n("Game saved!"));
+                showPassiveNotification(i18n("Game saved"));
             }
         }
     }

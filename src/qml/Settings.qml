@@ -196,6 +196,6 @@ Kirigami.ScrollablePage {
     
     Component.onDestruction: {
         Config.save()
-        showPassiveNotification(i18n("Settings saved!"));
+        showPassiveNotification(i18n("Settings saved"));
     }
 }

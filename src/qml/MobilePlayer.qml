@@ -19,7 +19,7 @@ Kirigami.Page {
         if (isFullscreen) {
             appWindow.visibility = Window.FullScreen;
             page.titleDelegate = null;
-            showPassiveNotification(i18n("Press Escape to exit fullscreen mode!"));
+            showPassiveNotification(i18n("Press Escape to exit fullscreen mode"));
         } else {
             appWindow.visibility = Window.Windowed;
             page.titleDelegate = item;

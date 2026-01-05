@@ -16,7 +16,7 @@ Kirigami.AbstractApplicationWindow {
         }
     }
 
-    title: i18n("kretro")
+    title: i18n("KRetro")
 
     minimumWidth: Kirigami.Units.gridUnit * 20
     minimumHeight: Kirigami.Units.gridUnit * 20
@@ -57,7 +57,7 @@ Kirigami.AbstractApplicationWindow {
             }
         }
         Kirigami.Action {
-            text: i18n("About kretro")
+            text: i18n("About KRetro")
             icon.name: "help-about"
             onTriggered: pageStack.push(Qt.createComponent("org.kde.kirigamiaddons.formcard", "AboutPage"))
         }
