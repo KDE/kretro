@@ -61,7 +61,7 @@ Kirigami.ScrollablePage {
                 delegate: FormCard.FormButtonDelegate {
                     text: modelData.friendly_name
                     description: bindingMode && page.bindingDeviceId === modelData.id ?
-                        i18n("Press a controller button or key to bind...")
+                        i18n("Press a controller button or key to bind…")
                         : i18n("Currently bound to: %1", retroPad.currentMappings[modelData.id.toString()] || i18n("Currently unbound"))
 
                     icon.name: "input-gamepad-symbolic"
