@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kretro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:50+0000\n"
+"POT-Creation-Date: 2026-01-08 00:40+0000\n"
 "PO-Revision-Date: 2025-11-24 19:10+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -39,8 +39,9 @@ msgid "Libretro frontend for Plasma"
 msgstr "Plasma 用的 Libretro 前端"
 
 #: main.cpp:36
-#, kde-format
-msgid "(c) 2023-2025 KDE Community"
+#, fuzzy, kde-format
+#| msgid "(c) 2023-2025 KDE Community"
+msgid "© 2023–2025 KDE Community"
 msgstr "(c) 2023-2025 KDE 社群"
 
 #: main.cpp:37
@@ -62,17 +63,23 @@ msgid "Devin Lin"
 msgstr "Devin Lin"
 
 #: qml/Help.qml:13
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "KRetro Help"
+msgctxt "@title"
 msgid "KRetro Help"
 msgstr "KRetro 說明"
 
 #: qml/Help.qml:20
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Getting Started"
+msgctxt "@title"
 msgid "Getting Started"
 msgstr "新手入門"
 
 #: qml/Help.qml:25
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installing Retro Cores"
+msgctxt "@title"
 msgid "Installing Retro Cores"
 msgstr "安裝 Retro 核心"
 
@@ -90,26 +97,35 @@ msgstr ""
 "軟體包提供 GBA 的模擬器核心。安裝後您將可以從設定中選取它們。"
 
 #: qml/Help.qml:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installing Retro Cores (Flatpak)"
+msgctxt "@title"
 msgid "Installing Retro Cores (Flatpak)"
 msgstr "安裝 Retro 核心 (Flatpak)"
 
 #: qml/Help.qml:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "The flatpak version of KRetro comes with a curated set of cores already! "
+#| "If you installed KRetro from the official flatpak, you are all set!"
 msgid ""
-"The flatpak version of KRetro comes with a curated set of cores already! If "
+"The flatpak version of KRetro comes with a curated set of cores already. If "
 "you installed KRetro from the official flatpak, you are all set!"
 msgstr ""
 "Flatpak 版的 KRetro 已經內含精選的核心！如果您是從官方的 Flatpak 安裝 KRetro "
 "的話，就不用再多做設定了！"
 
 #: qml/Help.qml:35
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installing Games"
+msgctxt "@title"
 msgid "Installing Games"
 msgstr "安裝遊戲"
 
 #: qml/Help.qml:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Adding ROMs"
+msgctxt "@title"
 msgid "Adding ROMs"
 msgstr "新增 ROM"
 
@@ -123,10 +139,10 @@ msgstr ""
 "KRetro 會從 ROM 目錄（預設為 ~/文件/Games）自動依副檔名偵測支援的遊戲。只要"
 "將 ROM 加到該處它們便會出現在遊戲庫當中！"
 
-#: qml/Main.qml:19
+#: qml/Main.qml:19 qml/Main.qml:89
 #, kde-format
-msgid "kretro"
-msgstr "kretro"
+msgid "KRetro"
+msgstr "KRetro"
 
 #: qml/Main.qml:37
 #, kde-format
@@ -144,19 +160,15 @@ msgid "Controller Settings"
 msgstr "控制器設定"
 
 #: qml/Main.qml:60
-#, kde-format
-msgid "About kretro"
+#, fuzzy, kde-format
+#| msgid "About kretro"
+msgid "About KRetro"
 msgstr "關於 KRetro"
 
 #: qml/Main.qml:65
 #, kde-format
 msgid "Quit"
 msgstr "離開"
-
-#: qml/Main.qml:89
-#, kde-format
-msgid "KRetro"
-msgstr "KRetro"
 
 #: qml/Main.qml:93
 #, kde-format
@@ -169,8 +181,9 @@ msgid "Game Library"
 msgstr "遊戲庫"
 
 #: qml/MobilePlayer.qml:22
-#, kde-format
-msgid "Press Escape to exit fullscreen mode!"
+#, fuzzy, kde-format
+#| msgid "Press Escape to exit fullscreen mode!"
+msgid "Press Escape to exit fullscreen mode"
 msgstr "按下 Esc 離開全螢幕模式！"
 
 #: qml/MobilePlayer.qml:36
@@ -220,8 +233,9 @@ msgid "New Save State"
 msgstr "新即時存檔"
 
 #: qml/SaveManager.qml:22
-#, kde-format
-msgid "Game saved!"
+#, fuzzy, kde-format
+#| msgid "Game saved!"
+msgid "Game saved"
 msgstr "遊戲已儲存！"
 
 #: qml/SaveManager.qml:38
@@ -341,8 +355,9 @@ msgid "Flatpak releases of KRetro manage retro cores automatically."
 msgstr "KRetro 的 Flatpak 版本會自動管理 Retro 核心。"
 
 #: qml/Settings.qml:199 qml/SettingsRetroPad.qml:96
-#, kde-format
-msgid "Settings saved!"
+#, fuzzy, kde-format
+#| msgid "Settings saved!"
+msgid "Settings saved"
 msgstr "設定已儲存！"
 
 #: qml/SettingsRetroCore.qml:48
@@ -366,8 +381,9 @@ msgid "Reset Mappings"
 msgstr "重設按鍵映射"
 
 #: qml/SettingsRetroPad.qml:19
-#, kde-format
-msgid "Retropad mappings reset!"
+#, fuzzy, kde-format
+#| msgid "Retropad mappings reset!"
+msgid "Retropad mappings reset"
 msgstr "RetroPad 映射已重設！"
 
 #: qml/SettingsRetroPad.qml:24
@@ -381,8 +397,9 @@ msgid "Controller Port 0"
 msgstr "控制器連接埠 0"
 
 #: qml/SettingsRetroPad.qml:64
-#, kde-format
-msgid "Press a controller button or key to bind..."
+#, fuzzy, kde-format
+#| msgid "Press a controller button or key to bind..."
+msgid "Press a controller button or key to bind…"
 msgstr "按下要綁定的控制器按鈕或按鍵…"
 
 #: qml/SettingsRetroPad.qml:65
@@ -394,3 +411,6 @@ msgstr "目前未綁定"
 #, kde-format
 msgid "Currently bound to: %1"
 msgstr "目前綁定為：%1"
+
+#~ msgid "kretro"
+#~ msgstr "kretro"

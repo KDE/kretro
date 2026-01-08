@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kretro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:50+0000\n"
+"POT-Creation-Date: 2026-01-08 00:40+0000\n"
 "PO-Revision-Date: 2025-11-17 11:50+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -41,7 +41,7 @@ msgstr ""
 
 #: main.cpp:36
 #, kde-format
-msgid "(c) 2023-2025 KDE Community"
+msgid "© 2023–2025 KDE Community"
 msgstr ""
 
 #: main.cpp:37
@@ -64,16 +64,19 @@ msgstr ""
 
 #: qml/Help.qml:13
 #, kde-format
+msgctxt "@title"
 msgid "KRetro Help"
 msgstr ""
 
 #: qml/Help.qml:20
 #, kde-format
+msgctxt "@title"
 msgid "Getting Started"
 msgstr ""
 
 #: qml/Help.qml:25
 #, kde-format
+msgctxt "@title"
 msgid "Installing Retro Cores"
 msgstr ""
 
@@ -89,23 +92,26 @@ msgstr ""
 
 #: qml/Help.qml:29
 #, kde-format
+msgctxt "@title"
 msgid "Installing Retro Cores (Flatpak)"
 msgstr ""
 
 #: qml/Help.qml:30
 #, kde-format
 msgid ""
-"The flatpak version of KRetro comes with a curated set of cores already! If "
+"The flatpak version of KRetro comes with a curated set of cores already. If "
 "you installed KRetro from the official flatpak, you are all set!"
 msgstr ""
 
 #: qml/Help.qml:35
 #, kde-format
+msgctxt "@title"
 msgid "Installing Games"
 msgstr ""
 
 #: qml/Help.qml:39
 #, kde-format
+msgctxt "@title"
 msgid "Adding ROMs"
 msgstr ""
 
@@ -117,9 +123,9 @@ msgid ""
 "there and they will appear in the game library!"
 msgstr ""
 
-#: qml/Main.qml:19
+#: qml/Main.qml:19 qml/Main.qml:89
 #, kde-format
-msgid "kretro"
+msgid "KRetro"
 msgstr ""
 
 #: qml/Main.qml:37
@@ -139,17 +145,12 @@ msgstr ""
 
 #: qml/Main.qml:60
 #, kde-format
-msgid "About kretro"
+msgid "About KRetro"
 msgstr ""
 
 #: qml/Main.qml:65
 #, kde-format
 msgid "Quit"
-msgstr ""
-
-#: qml/Main.qml:89
-#, kde-format
-msgid "KRetro"
 msgstr ""
 
 #: qml/Main.qml:93
@@ -164,7 +165,7 @@ msgstr ""
 
 #: qml/MobilePlayer.qml:22
 #, kde-format
-msgid "Press Escape to exit fullscreen mode!"
+msgid "Press Escape to exit fullscreen mode"
 msgstr ""
 
 #: qml/MobilePlayer.qml:36
@@ -215,7 +216,7 @@ msgstr ""
 
 #: qml/SaveManager.qml:22
 #, kde-format
-msgid "Game saved!"
+msgid "Game saved"
 msgstr ""
 
 #: qml/SaveManager.qml:38
@@ -335,7 +336,7 @@ msgstr ""
 
 #: qml/Settings.qml:199 qml/SettingsRetroPad.qml:96
 #, kde-format
-msgid "Settings saved!"
+msgid "Settings saved"
 msgstr ""
 
 #: qml/SettingsRetroCore.qml:48
@@ -360,7 +361,7 @@ msgstr ""
 
 #: qml/SettingsRetroPad.qml:19
 #, kde-format
-msgid "Retropad mappings reset!"
+msgid "Retropad mappings reset"
 msgstr ""
 
 #: qml/SettingsRetroPad.qml:24
@@ -375,7 +376,7 @@ msgstr ""
 
 #: qml/SettingsRetroPad.qml:64
 #, kde-format
-msgid "Press a controller button or key to bind..."
+msgid "Press a controller button or key to bind…"
 msgstr ""
 
 #: qml/SettingsRetroPad.qml:65

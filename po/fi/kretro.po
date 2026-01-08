@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kretro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:50+0000\n"
+"POT-Creation-Date: 2026-01-08 00:40+0000\n"
 "PO-Revision-Date: 2025-10-12 20:33+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -39,8 +39,9 @@ msgid "Libretro frontend for Plasma"
 msgstr "Libretro-käyttöliittymä Plasmaan"
 
 #: main.cpp:36
-#, kde-format
-msgid "(c) 2023-2025 KDE Community"
+#, fuzzy, kde-format
+#| msgid "(c) 2023-2025 KDE Community"
+msgid "© 2023–2025 KDE Community"
 msgstr "© 2023-2025 KDE-yhteisö"
 
 #: main.cpp:37
@@ -62,17 +63,23 @@ msgid "Devin Lin"
 msgstr "Devin Lin"
 
 #: qml/Help.qml:13
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "KRetro Help"
+msgctxt "@title"
 msgid "KRetro Help"
 msgstr "KRetron ohje"
 
 #: qml/Help.qml:20
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Getting Started"
+msgctxt "@title"
 msgid "Getting Started"
 msgstr "Alkuunpääsy"
 
 #: qml/Help.qml:25
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installing Retro Cores"
+msgctxt "@title"
 msgid "Installing Retro Cores"
 msgstr "Retroydinten asentaminen"
 
@@ -91,26 +98,35 @@ msgstr ""
 "olla ”libretro-mgba”. Asennuksen jälkeen ne voi asetuksista valita."
 
 #: qml/Help.qml:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installing Retro Cores (Flatpak)"
+msgctxt "@title"
 msgid "Installing Retro Cores (Flatpak)"
 msgstr "Retroydinten asentaminen (Flatpak)"
 
 #: qml/Help.qml:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "The flatpak version of KRetro comes with a curated set of cores already! "
+#| "If you installed KRetro from the official flatpak, you are all set!"
 msgid ""
-"The flatpak version of KRetro comes with a curated set of cores already! If "
+"The flatpak version of KRetro comes with a curated set of cores already. If "
 "you installed KRetro from the official flatpak, you are all set!"
 msgstr ""
 "KRetron Flatpak-version mukana tulee jo valikoitu joukko ytimiä! Jos asensit "
 "KRetron virallisesta Flatpakistä, kaikki on valmista!"
 
 #: qml/Help.qml:35
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installing Games"
+msgctxt "@title"
 msgid "Installing Games"
 msgstr "Pelien asentaminen"
 
 #: qml/Help.qml:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Adding ROMs"
+msgctxt "@title"
 msgid "Adding ROMs"
 msgstr "ROMien lisääminen"
 
@@ -125,10 +141,10 @@ msgstr ""
 "(oletuksena ~/Documents/Games) automaattisesti. Lisää vain ROMit sinne, ja "
 "ne ilmestyvät pelikirjastoon!"
 
-#: qml/Main.qml:19
+#: qml/Main.qml:19 qml/Main.qml:89
 #, kde-format
-msgid "kretro"
-msgstr "kretro"
+msgid "KRetro"
+msgstr "KRetro"
 
 #: qml/Main.qml:37
 #, kde-format
@@ -146,19 +162,15 @@ msgid "Controller Settings"
 msgstr "Ohjainasetukset"
 
 #: qml/Main.qml:60
-#, kde-format
-msgid "About kretro"
+#, fuzzy, kde-format
+#| msgid "About kretro"
+msgid "About KRetro"
 msgstr "Tietoa KRetrosta"
 
 #: qml/Main.qml:65
 #, kde-format
 msgid "Quit"
 msgstr "Lopeta"
-
-#: qml/Main.qml:89
-#, kde-format
-msgid "KRetro"
-msgstr "KRetro"
 
 #: qml/Main.qml:93
 #, kde-format
@@ -171,8 +183,9 @@ msgid "Game Library"
 msgstr "Pelikirjasto"
 
 #: qml/MobilePlayer.qml:22
-#, kde-format
-msgid "Press Escape to exit fullscreen mode!"
+#, fuzzy, kde-format
+#| msgid "Press Escape to exit fullscreen mode!"
+msgid "Press Escape to exit fullscreen mode"
 msgstr "Poistu koko näytöltä painamalla Esc!"
 
 #: qml/MobilePlayer.qml:36
@@ -222,8 +235,9 @@ msgid "New Save State"
 msgstr "Uusi tallennustila"
 
 #: qml/SaveManager.qml:22
-#, kde-format
-msgid "Game saved!"
+#, fuzzy, kde-format
+#| msgid "Game saved!"
+msgid "Game saved"
 msgstr "Peli tallennettu!"
 
 #: qml/SaveManager.qml:38
@@ -344,8 +358,9 @@ msgid "Flatpak releases of KRetro manage retro cores automatically."
 msgstr "KRetron Flatpak-julkaisut hallinnoivat retroytimiä automaattisesti."
 
 #: qml/Settings.qml:199 qml/SettingsRetroPad.qml:96
-#, kde-format
-msgid "Settings saved!"
+#, fuzzy, kde-format
+#| msgid "Settings saved!"
+msgid "Settings saved"
 msgstr "Asetukset tallennettu!"
 
 #: qml/SettingsRetroCore.qml:48
@@ -371,8 +386,9 @@ msgid "Reset Mappings"
 msgstr "Palauta kytkennät"
 
 #: qml/SettingsRetroPad.qml:19
-#, kde-format
-msgid "Retropad mappings reset!"
+#, fuzzy, kde-format
+#| msgid "Retropad mappings reset!"
+msgid "Retropad mappings reset"
 msgstr "Retropad-kytkennät palautettu!"
 
 #: qml/SettingsRetroPad.qml:24
@@ -386,8 +402,9 @@ msgid "Controller Port 0"
 msgstr "Ohjainportti 0"
 
 #: qml/SettingsRetroPad.qml:64
-#, kde-format
-msgid "Press a controller button or key to bind..."
+#, fuzzy, kde-format
+#| msgid "Press a controller button or key to bind..."
+msgid "Press a controller button or key to bind…"
 msgstr "Kytke painamalla näppäintä tai ohjaimen painiketta…"
 
 #: qml/SettingsRetroPad.qml:65
@@ -399,3 +416,6 @@ msgstr "Ei kytketty"
 #, kde-format
 msgid "Currently bound to: %1"
 msgstr "Kytketty: %1"
+
+#~ msgid "kretro"
+#~ msgstr "kretro"
