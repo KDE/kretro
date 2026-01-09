@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the kretro package.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2025.
+# Yuri Chornoivan <yurchor@ukr.net>, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: kretro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-08 00:40+0000\n"
-"PO-Revision-Date: 2025-10-07 16:51+0300\n"
+"PO-Revision-Date: 2026-01-08 08:10+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -40,8 +40,7 @@ msgid "Libretro frontend for Plasma"
 msgstr "Оболонка Libretro для Плазми"
 
 #: main.cpp:36
-#, fuzzy, kde-format
-#| msgid "(c) 2023-2025 KDE Community"
+#, kde-format
 msgid "© 2023–2025 KDE Community"
 msgstr "© Спільнота KDE, 2023–2025"
 
@@ -64,22 +63,19 @@ msgid "Devin Lin"
 msgstr "Devin Lin"
 
 #: qml/Help.qml:13
-#, fuzzy, kde-format
-#| msgid "KRetro Help"
+#, kde-format
 msgctxt "@title"
 msgid "KRetro Help"
 msgstr "Довідка з KRetro"
 
 #: qml/Help.qml:20
-#, fuzzy, kde-format
-#| msgid "Getting Started"
+#, kde-format
 msgctxt "@title"
 msgid "Getting Started"
 msgstr "Початкові зауваження"
 
 #: qml/Help.qml:25
-#, fuzzy, kde-format
-#| msgid "Installing Retro Cores"
+#, kde-format
 msgctxt "@title"
 msgid "Installing Retro Cores"
 msgstr "Встановлення ядер Retro"
@@ -100,34 +96,28 @@ msgstr ""
 "встановлення ви можете вибрати їх у параметрах."
 
 #: qml/Help.qml:29
-#, fuzzy, kde-format
-#| msgid "Installing Retro Cores (Flatpak)"
+#, kde-format
 msgctxt "@title"
 msgid "Installing Retro Cores (Flatpak)"
 msgstr "Встановлення ядер Retro (Flatpak)"
 
 #: qml/Help.qml:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "The flatpak version of KRetro comes with a curated set of cores already! "
-#| "If you installed KRetro from the official flatpak, you are all set!"
+#, kde-format
 msgid ""
 "The flatpak version of KRetro comes with a curated set of cores already. If "
 "you installed KRetro from the official flatpak, you are all set!"
 msgstr ""
-"Версія flatpak KRetro позначається із ретельно вибраним набором ядер! Якщо "
+"Версія flatpak KRetro постачається із ретельно вибраним набором ядер.! Якщо "
 "вами встановлено KRetro з офіційного flatpak, у вас уже все є!"
 
 #: qml/Help.qml:35
-#, fuzzy, kde-format
-#| msgid "Installing Games"
+#, kde-format
 msgctxt "@title"
 msgid "Installing Games"
 msgstr "Встановлення ігор"
 
 #: qml/Help.qml:39
-#, fuzzy, kde-format
-#| msgid "Adding ROMs"
+#, kde-format
 msgctxt "@title"
 msgid "Adding ROMs"
 msgstr "Додавання ROM"
@@ -164,10 +154,9 @@ msgid "Controller Settings"
 msgstr "Параметри контролера"
 
 #: qml/Main.qml:60
-#, fuzzy, kde-format
-#| msgid "About kretro"
+#, kde-format
 msgid "About KRetro"
-msgstr "Про kretro"
+msgstr "Про KRetro"
 
 #: qml/Main.qml:65
 #, kde-format
@@ -185,10 +174,9 @@ msgid "Game Library"
 msgstr "Бібліотека ігор"
 
 #: qml/MobilePlayer.qml:22
-#, fuzzy, kde-format
-#| msgid "Press Escape to exit fullscreen mode!"
+#, kde-format
 msgid "Press Escape to exit fullscreen mode"
-msgstr "Натисніть клавішу Esc, щоб вийти з повноекранного режиму!"
+msgstr "Натисніть клавішу Esc, щоб вийти з повноекранного режиму"
 
 #: qml/MobilePlayer.qml:36
 #, kde-format
@@ -238,10 +226,9 @@ msgid "New Save State"
 msgstr "Новий стан збереження"
 
 #: qml/SaveManager.qml:22
-#, fuzzy, kde-format
-#| msgid "Game saved!"
+#, kde-format
 msgid "Game saved"
-msgstr "Гру збережено!"
+msgstr "Гру збережено"
 
 #: qml/SaveManager.qml:38
 #, kde-format
@@ -361,10 +348,9 @@ msgid "Flatpak releases of KRetro manage retro cores automatically."
 msgstr "Випуски KRetro у Flatpak керують ретроядрами автоматично."
 
 #: qml/Settings.qml:199 qml/SettingsRetroPad.qml:96
-#, fuzzy, kde-format
-#| msgid "Settings saved!"
+#, kde-format
 msgid "Settings saved"
-msgstr "Параметри збережено!"
+msgstr "Параметри збережено"
 
 #: qml/SettingsRetroCore.qml:48
 #, kde-format
@@ -389,10 +375,9 @@ msgid "Reset Mappings"
 msgstr "Скинути прив'язки"
 
 #: qml/SettingsRetroPad.qml:19
-#, fuzzy, kde-format
-#| msgid "Retropad mappings reset!"
+#, kde-format
 msgid "Retropad mappings reset"
-msgstr "Прив'язки Retropad скинуто!"
+msgstr "Прив'язки Retropad скинуто"
 
 #: qml/SettingsRetroPad.qml:24
 #, kde-format
@@ -405,8 +390,7 @@ msgid "Controller Port 0"
 msgstr "Порт 0 контролера"
 
 #: qml/SettingsRetroPad.qml:64
-#, fuzzy, kde-format
-#| msgid "Press a controller button or key to bind..."
+#, kde-format
 msgid "Press a controller button or key to bind…"
 msgstr "Натисніть кнопку або клавішу контролера для прив'язування…"
 

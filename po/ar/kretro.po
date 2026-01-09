@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the kretro package.
-# SPDX-FileCopyrightText: 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kretro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-08 00:40+0000\n"
-"PO-Revision-Date: 2025-10-08 20:54+0400\n"
+"PO-Revision-Date: 2026-01-08 11:50+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -40,10 +40,9 @@ msgid "Libretro frontend for Plasma"
 msgstr "واجهة Libretro لبلازما"
 
 #: main.cpp:36
-#, fuzzy, kde-format
-#| msgid "(c) 2023-2025 KDE Community"
+#, kde-format
 msgid "© 2023–2025 KDE Community"
-msgstr "(ج)  مجتمع كِيدِي 2023-2025"
+msgstr "© 202-3–2025 مجتمع كِيدِي"
 
 #: main.cpp:37
 #, kde-format
@@ -64,22 +63,19 @@ msgid "Devin Lin"
 msgstr "ديفين لين"
 
 #: qml/Help.qml:13
-#, fuzzy, kde-format
-#| msgid "KRetro Help"
+#, kde-format
 msgctxt "@title"
 msgid "KRetro Help"
 msgstr "مساعدة كي ريترو"
 
 #: qml/Help.qml:20
-#, fuzzy, kde-format
-#| msgid "Getting Started"
+#, kde-format
 msgctxt "@title"
 msgid "Getting Started"
 msgstr "ابدأ"
 
 #: qml/Help.qml:25
-#, fuzzy, kde-format
-#| msgid "Installing Retro Cores"
+#, kde-format
 msgctxt "@title"
 msgid "Installing Retro Cores"
 msgstr "ثبّت نُوى ريترو"
@@ -98,34 +94,28 @@ msgstr ""
 "محاكي GBA. عند تثبيتها، يمكنك اختيارها في الإعدادات."
 
 #: qml/Help.qml:29
-#, fuzzy, kde-format
-#| msgid "Installing Retro Cores (Flatpak)"
+#, kde-format
 msgctxt "@title"
 msgid "Installing Retro Cores (Flatpak)"
 msgstr "ثبّت نُوى ريترو (فلاتباك)"
 
 #: qml/Help.qml:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "The flatpak version of KRetro comes with a curated set of cores already! "
-#| "If you installed KRetro from the official flatpak, you are all set!"
+#, kde-format
 msgid ""
 "The flatpak version of KRetro comes with a curated set of cores already. If "
 "you installed KRetro from the official flatpak, you are all set!"
 msgstr ""
-"نسخة كي ريترو فلاتباك تأتي مع مجموعة منتقاة من النُوى! لو ثبّت كي ريترو من "
+"نسخة كي ريترو فلاتباك تأتي مع مجموعة منتقاة من النُوى. لو ثبّت كي ريترو من "
 "فلاتباك الرسمي، فكلّ شيء جاهز!"
 
 #: qml/Help.qml:35
-#, fuzzy, kde-format
-#| msgid "Installing Games"
+#, kde-format
 msgctxt "@title"
 msgid "Installing Games"
 msgstr "ثبّت ألعاباً"
 
 #: qml/Help.qml:39
-#, fuzzy, kde-format
-#| msgid "Adding ROMs"
+#, kde-format
 msgctxt "@title"
 msgid "Adding ROMs"
 msgstr "أضف رومات"
@@ -162,8 +152,7 @@ msgid "Controller Settings"
 msgstr "إعدادات المتحكّم"
 
 #: qml/Main.qml:60
-#, fuzzy, kde-format
-#| msgid "About kretro"
+#, kde-format
 msgid "About KRetro"
 msgstr "عن كي ريترو"
 
@@ -183,10 +172,9 @@ msgid "Game Library"
 msgstr "مكتبة الألعاب"
 
 #: qml/MobilePlayer.qml:22
-#, fuzzy, kde-format
-#| msgid "Press Escape to exit fullscreen mode!"
+#, kde-format
 msgid "Press Escape to exit fullscreen mode"
-msgstr "اضغط على Escape للخروج من وضع ملء الشاشة!"
+msgstr "اضغط على Escape للخروج من وضع ملء الشاشة"
 
 #: qml/MobilePlayer.qml:36
 #, kde-format
@@ -235,10 +223,9 @@ msgid "New Save State"
 msgstr "حالة حفظ جديدة"
 
 #: qml/SaveManager.qml:22
-#, fuzzy, kde-format
-#| msgid "Game saved!"
+#, kde-format
 msgid "Game saved"
-msgstr "حُفظت اللعبة!"
+msgstr "حُفظت اللعبة"
 
 #: qml/SaveManager.qml:38
 #, kde-format
@@ -357,10 +344,9 @@ msgid "Flatpak releases of KRetro manage retro cores automatically."
 msgstr "إصدارات فلاتباك من كي ريترو تدير نُوى ريترو آلياً."
 
 #: qml/Settings.qml:199 qml/SettingsRetroPad.qml:96
-#, fuzzy, kde-format
-#| msgid "Settings saved!"
+#, kde-format
 msgid "Settings saved"
-msgstr "حفظت الإعدادات!"
+msgstr "حفظت الإعدادات"
 
 #: qml/SettingsRetroCore.qml:48
 #, kde-format
@@ -383,10 +369,9 @@ msgid "Reset Mappings"
 msgstr "أعد ضبط التعيينات"
 
 #: qml/SettingsRetroPad.qml:19
-#, fuzzy, kde-format
-#| msgid "Retropad mappings reset!"
+#, kde-format
 msgid "Retropad mappings reset"
-msgstr "أعيد ضبط تعيينات ريتروباد!"
+msgstr "أعيد ضبط تعيينات ريتروباد"
 
 #: qml/SettingsRetroPad.qml:24
 #, kde-format
@@ -399,10 +384,9 @@ msgid "Controller Port 0"
 msgstr "مَنفذ المتحكّم 0"
 
 #: qml/SettingsRetroPad.qml:64
-#, fuzzy, kde-format
-#| msgid "Press a controller button or key to bind..."
+#, kde-format
 msgid "Press a controller button or key to bind…"
-msgstr "اضغط على زر متحكّم أو مفتاح لتعيينه..."
+msgstr "اضغط على زر متحكّم أو مفتاح لتعيينه…"
 
 #: qml/SettingsRetroPad.qml:65
 #, kde-format
