@@ -1,15 +1,15 @@
 # Translation of kretro.po to Catalan (Valencian)
-# Copyright (C) 2025 This_file_is_part_of_KDE
+# Copyright (C) 2025-2026 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# SPDX-FileCopyrightText: 2025 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kretro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-08 00:40+0000\n"
-"PO-Revision-Date: 2025-10-07 12:41+0200\n"
+"PO-Revision-Date: 2026-01-08 10:39+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -41,10 +41,9 @@ msgid "Libretro frontend for Plasma"
 msgstr "Frontal de la Libretro per a Plasma"
 
 #: main.cpp:36
-#, fuzzy, kde-format
-#| msgid "(c) 2023-2025 KDE Community"
+#, kde-format
 msgid "© 2023–2025 KDE Community"
-msgstr "(c) 2023-2025 Comunitat KDE"
+msgstr "© 2023–2025 Comunitat KDE"
 
 #: main.cpp:37
 #, kde-format
@@ -65,22 +64,19 @@ msgid "Devin Lin"
 msgstr "Devin Lin"
 
 #: qml/Help.qml:13
-#, fuzzy, kde-format
-#| msgid "KRetro Help"
+#, kde-format
 msgctxt "@title"
 msgid "KRetro Help"
 msgstr "Ajuda de KRetro"
 
 #: qml/Help.qml:20
-#, fuzzy, kde-format
-#| msgid "Getting Started"
+#, kde-format
 msgctxt "@title"
 msgid "Getting Started"
 msgstr "Com començar"
 
 #: qml/Help.qml:25
-#, fuzzy, kde-format
-#| msgid "Installing Retro Cores"
+#, kde-format
 msgctxt "@title"
 msgid "Installing Retro Cores"
 msgstr "Instal·lació de nuclis Retro"
@@ -101,34 +97,28 @@ msgstr ""
 "vegada instal·lats, podeu seleccionar-los a la configuració."
 
 #: qml/Help.qml:29
-#, fuzzy, kde-format
-#| msgid "Installing Retro Cores (Flatpak)"
+#, kde-format
 msgctxt "@title"
 msgid "Installing Retro Cores (Flatpak)"
 msgstr "Instal·lació de nuclis Retro (Flatpak)"
 
 #: qml/Help.qml:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "The flatpak version of KRetro comes with a curated set of cores already! "
-#| "If you installed KRetro from the official flatpak, you are all set!"
+#, kde-format
 msgid ""
 "The flatpak version of KRetro comes with a curated set of cores already. If "
 "you installed KRetro from the official flatpak, you are all set!"
 msgstr ""
-"La versió flatpak de KRetro ja ve amb un conjunt seleccionat de nuclis! Si "
+"La versió flatpak de KRetro ja ve amb un conjunt seleccionat de nuclis. Si "
 "heu instal·lat KRetro des de flatpak oficial, estan tots configurats!"
 
 #: qml/Help.qml:35
-#, fuzzy, kde-format
-#| msgid "Installing Games"
+#, kde-format
 msgctxt "@title"
 msgid "Installing Games"
 msgstr "Instal·lació de jocs"
 
 #: qml/Help.qml:39
-#, fuzzy, kde-format
-#| msgid "Adding ROMs"
+#, kde-format
 msgctxt "@title"
 msgid "Adding ROMs"
 msgstr "Afegir ROM"
@@ -166,8 +156,7 @@ msgid "Controller Settings"
 msgstr "Configureu el controlador"
 
 #: qml/Main.qml:60
-#, fuzzy, kde-format
-#| msgid "About kretro"
+#, kde-format
 msgid "About KRetro"
 msgstr "Quant a KRetro"
 
@@ -187,10 +176,9 @@ msgid "Game Library"
 msgstr "Biblioteca de jocs"
 
 #: qml/MobilePlayer.qml:22
-#, fuzzy, kde-format
-#| msgid "Press Escape to exit fullscreen mode!"
+#, kde-format
 msgid "Press Escape to exit fullscreen mode"
-msgstr "Premeu Escape per a eixir del mode a pantalla completa!"
+msgstr "Premeu «Escape» per a eixir del mode a pantalla completa"
 
 #: qml/MobilePlayer.qml:36
 #, kde-format
@@ -239,10 +227,9 @@ msgid "New Save State"
 msgstr "Estat de guardada nou"
 
 #: qml/SaveManager.qml:22
-#, fuzzy, kde-format
-#| msgid "Game saved!"
+#, kde-format
 msgid "Game saved"
-msgstr "S'ha guardat el joc!"
+msgstr "S'ha guardat el joc"
 
 #: qml/SaveManager.qml:38
 #, kde-format
@@ -363,10 +350,9 @@ msgstr ""
 "Els llançaments Flatpak de KRetro gestionen automàticament els nuclis retro."
 
 #: qml/Settings.qml:199 qml/SettingsRetroPad.qml:96
-#, fuzzy, kde-format
-#| msgid "Settings saved!"
+#, kde-format
 msgid "Settings saved"
-msgstr "S'ha guardat la configuració!"
+msgstr "S'ha guardat la configuració"
 
 #: qml/SettingsRetroCore.qml:48
 #, kde-format
@@ -391,10 +377,9 @@ msgid "Reset Mappings"
 msgstr "Reinicialitza les assignacions"
 
 #: qml/SettingsRetroPad.qml:19
-#, fuzzy, kde-format
-#| msgid "Retropad mappings reset!"
+#, kde-format
 msgid "Retropad mappings reset"
-msgstr "S'han reinicialitzat les assignacions de RetroPad!"
+msgstr "S'han reinicialitzat les assignacions de RetroPad"
 
 #: qml/SettingsRetroPad.qml:24
 #, kde-format
@@ -407,8 +392,7 @@ msgid "Controller Port 0"
 msgstr "Port del controlador 0"
 
 #: qml/SettingsRetroPad.qml:64
-#, fuzzy, kde-format
-#| msgid "Press a controller button or key to bind..."
+#, kde-format
 msgid "Press a controller button or key to bind…"
 msgstr "Premeu un botó o una tecla del controlador per a vincular…"
 
@@ -421,6 +405,3 @@ msgstr "Actualment sense vincular"
 #, kde-format
 msgid "Currently bound to: %1"
 msgstr "Actualment vinculat a: %1"
-
-#~ msgid "kretro"
-#~ msgstr "kretro"
