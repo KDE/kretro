@@ -1,19 +1,19 @@
 #
-# SPDX-FileCopyrightText: 2025 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2025, 2026 Xavier Besnard <xavier.besnard@kde.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: kretro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-08 00:40+0000\n"
-"PO-Revision-Date: 2025-10-27 21:17+0100\n"
+"PO-Revision-Date: 2026-01-09 11:05+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
-"Language-Team: French <French <kde-francophone@kde.org>>\n"
+"Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -37,10 +37,9 @@ msgid "Libretro frontend for Plasma"
 msgstr "Interface de Libretro pour Plasma"
 
 #: main.cpp:36
-#, fuzzy, kde-format
-#| msgid "(c) 2023-2025 KDE Community"
+#, kde-format
 msgid "© 2023–2025 KDE Community"
-msgstr "(c) 2023-2025 Communauté KDE"
+msgstr "©  2023 - 2025 Communauté KDE"
 
 #: main.cpp:37
 #, kde-format
@@ -61,25 +60,22 @@ msgid "Devin Lin"
 msgstr "Devin Lin"
 
 #: qml/Help.qml:13
-#, fuzzy, kde-format
-#| msgid "KRetro Help"
+#, kde-format
 msgctxt "@title"
 msgid "KRetro Help"
-msgstr "Aide de KRetro"
+msgstr "Aide pour KRetro"
 
 #: qml/Help.qml:20
-#, fuzzy, kde-format
-#| msgid "Getting Started"
+#, kde-format
 msgctxt "@title"
 msgid "Getting Started"
 msgstr "Premiers pas"
 
 #: qml/Help.qml:25
-#, fuzzy, kde-format
-#| msgid "Installing Retro Cores"
+#, kde-format
 msgctxt "@title"
 msgid "Installing Retro Cores"
-msgstr "Installation des cœurs Retro"
+msgstr "Installation des noyaux pour Retro"
 
 #: qml/Help.qml:26
 #, kde-format
@@ -98,35 +94,29 @@ msgstr ""
 "configuration."
 
 #: qml/Help.qml:29
-#, fuzzy, kde-format
-#| msgid "Installing Retro Cores (Flatpak)"
+#, kde-format
 msgctxt "@title"
 msgid "Installing Retro Cores (Flatpak)"
-msgstr "Installation de noyaux rétro (Flatpak)"
+msgstr "Installation de noyaux pour Retro (Flatpak)"
 
 #: qml/Help.qml:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "The flatpak version of KRetro comes with a curated set of cores already! "
-#| "If you installed KRetro from the official flatpak, you are all set!"
+#, kde-format
 msgid ""
 "The flatpak version of KRetro comes with a curated set of cores already. If "
 "you installed KRetro from the official flatpak, you are all set!"
 msgstr ""
-"La version « Flatpak » de KRetro est déjà livrée avec un ensemble de cœurs "
+"La version « Flatpak » de KRetro est déjà livrée avec un ensemble de noyaux "
 "sélectionnés ! Si vous avez installé KRetro depuis le site officiel "
 "« Flatpak », vous êtes totalement est prêt !"
 
 #: qml/Help.qml:35
-#, fuzzy, kde-format
-#| msgid "Installing Games"
+#, kde-format
 msgctxt "@title"
 msgid "Installing Games"
 msgstr "Installation des jeux"
 
 #: qml/Help.qml:39
-#, fuzzy, kde-format
-#| msgid "Adding ROMs"
+#, kde-format
 msgctxt "@title"
 msgid "Adding ROMs"
 msgstr "Ajout de ROM"
@@ -164,8 +154,7 @@ msgid "Controller Settings"
 msgstr "Configuration de contrôleur"
 
 #: qml/Main.qml:60
-#, fuzzy, kde-format
-#| msgid "About kretro"
+#, kde-format
 msgid "About KRetro"
 msgstr "À propos de KRetro"
 
@@ -185,10 +174,11 @@ msgid "Game Library"
 msgstr "Bibliothèque de jeux"
 
 #: qml/MobilePlayer.qml:22
-#, fuzzy, kde-format
-#| msgid "Press Escape to exit fullscreen mode!"
+#, kde-format
 msgid "Press Escape to exit fullscreen mode"
-msgstr "Appuyez sur la touche « Échap » pour quitter le mode plein écran !"
+msgstr ""
+"Veuillez appuyer sur la touche « Échap » pour sortir du mode « Plein "
+"écran » !"
 
 #: qml/MobilePlayer.qml:36
 #, kde-format
@@ -239,10 +229,9 @@ msgid "New Save State"
 msgstr "Nouvel état enregistré"
 
 #: qml/SaveManager.qml:22
-#, fuzzy, kde-format
-#| msgid "Game saved!"
+#, kde-format
 msgid "Game saved"
-msgstr "Partie enregistrée !"
+msgstr "Partie enregistrée"
 
 #: qml/SaveManager.qml:38
 #, kde-format
@@ -363,10 +352,9 @@ msgstr ""
 "Les versions en « Flatpak » de KRetro gèrent automatiquement les cœurs rétro."
 
 #: qml/Settings.qml:199 qml/SettingsRetroPad.qml:96
-#, fuzzy, kde-format
-#| msgid "Settings saved!"
+#, kde-format
 msgid "Settings saved"
-msgstr "Configuration enregistrée !"
+msgstr "Configuration enregistrée"
 
 #: qml/SettingsRetroCore.qml:48
 #, kde-format
@@ -391,10 +379,9 @@ msgid "Reset Mappings"
 msgstr "Réinitialiser les correspondances"
 
 #: qml/SettingsRetroPad.qml:19
-#, fuzzy, kde-format
-#| msgid "Retropad mappings reset!"
+#, kde-format
 msgid "Retropad mappings reset"
-msgstr "Réinitialisation des associations de Retropad !"
+msgstr "Réinitialisation des associations de Retropad"
 
 #: qml/SettingsRetroPad.qml:24
 #, kde-format
@@ -407,11 +394,11 @@ msgid "Controller Port 0"
 msgstr "Port 0 du contrôleur"
 
 #: qml/SettingsRetroPad.qml:64
-#, fuzzy, kde-format
-#| msgid "Press a controller button or key to bind..."
+#, kde-format
 msgid "Press a controller button or key to bind…"
 msgstr ""
-"Appuyez sur un bouton ou une touche du contrôleur pour effectuer un lien..."
+"Veuillez appuyer sur un bouton ou une touche du contrôleur pour effectuer "
+"une association..."
 
 #: qml/SettingsRetroPad.qml:65
 #, kde-format
