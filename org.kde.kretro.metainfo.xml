@@ -14,6 +14,7 @@
   <name xml:lang="ar">كي ريترو</name>
   <name xml:lang="ca">KRetro</name>
   <name xml:lang="ca-valencia">KRetro</name>
+  <name xml:lang="de">KRetro</name>
   <name xml:lang="es">KRetro</name>
   <name xml:lang="eu">KRetro</name>
   <name xml:lang="fi">KRetro</name>
@@ -33,6 +34,7 @@
   <summary xml:lang="ar">واجهة محاكاة Libretro لبلازما</summary>
   <summary xml:lang="ca">Frontal de l'emulació Libretro per al Plasma</summary>
   <summary xml:lang="ca-valencia">Frontal de l'emulació Libretro per a Plasma</summary>
+  <summary xml:lang="de">Libretro-Oberfläche für Plasma</summary>
   <summary xml:lang="es">Interfaz de emulación Libretro para Plasma</summary>
   <summary xml:lang="eu">Plasmarako Libreto emulazioaren aurrealdekoa</summary>
   <summary xml:lang="fi">Libretro-emulointikäyttöliittymä Plasmaan</summary>
@@ -58,6 +60,7 @@
     <p xml:lang="ar">كي ريترو هو واجهة Libretro مكتوبة بلغة Qt/Kirigami، مصممة لسطح المكتب بلازما، والأجهزة المحمولة، والشاشات الكبيرة.</p>
     <p xml:lang="ca">El KRetro és un frontal del Libretro escrit en Qt/Kirigami, dissenyat per a l'escriptori, el mòbil i la Bigscreen del Plasma.</p>
     <p xml:lang="ca-valencia">KRetro és un frontal de Libretro escrit en Qt/Kirigami, dissenyat per a l'escriptori, el mòbil i la Bigscreen de Plasma.</p>
+    <p xml:lang="de">KRetro ist eine in Qt/Kirigami geschriebene Libretro-Oberfläche, entworfen für Plasma Desktop, Plasma Mobile und Bigscreen.</p>
     <p xml:lang="es">KRetro es una interfaz de Libretro escrita en Qt/Kirigami, diseñada para el escritorio Plasma, Plasma Mobile y Bigscreen.</p>
     <p xml:lang="eu">KRetro Plasma Mahaigainerako, Mugikorrerako, eta Bigscreen-erako Qt/Kirigamirekin idatzitako Libretoren aurrealdeko bat da.</p>
     <p xml:lang="fi">KRetro on Qt/Kirigamilla kirjoitettu Libretro-käyttöliittymä, joka on suunniteltu Plasma-työpöydälle,  Mobilelle ja Bigscreenille.</p>
