@@ -20,64 +20,64 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Tyson Tan"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "tds00@qq.com"
 
 #: main.cpp:28
 #, kde-format
 msgctxt "@title"
 msgid "KRetro"
-msgstr ""
+msgstr "KRetro 模拟器前端"
 
 #: main.cpp:32
 #, kde-format
 msgid "Libretro frontend for Plasma"
-msgstr ""
+msgstr "Plasma 的 Libretro 前端程序"
 
 #: main.cpp:36
 #, kde-format
 msgid "© 2023–2025 KDE Community"
-msgstr ""
+msgstr "© 2023–2025 KDE Community"
 
 #: main.cpp:37
 #, kde-format
 msgctxt "@info:credit"
 msgid "Seshan Ravikumar"
-msgstr ""
+msgstr "Seshan Ravikumar"
 
 #: main.cpp:38 main.cpp:42
 #, kde-format
 msgctxt "@info:credit"
 msgid "Developer"
-msgstr ""
+msgstr "开发人员"
 
 #: main.cpp:41
 #, kde-format
 msgctxt "@info:credit"
 msgid "Devin Lin"
-msgstr ""
+msgstr "Devin Lin"
 
 #: qml/Help.qml:13
 #, kde-format
 msgctxt "@title"
 msgid "KRetro Help"
-msgstr ""
+msgstr "KRetro 帮助"
 
 #: qml/Help.qml:20
 #, kde-format
 msgctxt "@title"
 msgid "Getting Started"
-msgstr ""
+msgstr "入门指南"
 
 #: qml/Help.qml:25
 #, kde-format
 msgctxt "@title"
 msgid "Installing Retro Cores"
-msgstr ""
+msgstr "安装 Retro 核心"
 
 #: qml/Help.qml:26
 #, kde-format
@@ -88,12 +88,15 @@ msgid ""
 "'libretro-mgba' for the GBA emulator core. Once installed, you can select "
 "them in the settings."
 msgstr ""
+"KRetro (非 flatpak 版本) 需要您另外安装模拟器，它们被称作“libretro 核心”。\n"
+"模拟器核心可以通过发行版的软件包管理器安装，例如 libretro-mgba 就是 GBA 的模"
+"拟器核心。安装完成后，即可在 Kretro 的设置中选择它们。"
 
 #: qml/Help.qml:29
 #, kde-format
 msgctxt "@title"
 msgid "Installing Retro Cores (Flatpak)"
-msgstr ""
+msgstr "安装 Retro 核心 (Flatpak 版本)"
 
 #: qml/Help.qml:30
 #, kde-format
@@ -101,18 +104,20 @@ msgid ""
 "The flatpak version of KRetro comes with a curated set of cores already. If "
 "you installed KRetro from the official flatpak, you are all set!"
 msgstr ""
+"KRetro 的 Flatpak 版本已经预装了一系列精选的模拟器核心。如果您安装的是 "
+"KRetro 官方提供的 Flatpak 软件包，可开箱即玩。"
 
 #: qml/Help.qml:35
 #, kde-format
 msgctxt "@title"
 msgid "Installing Games"
-msgstr ""
+msgstr "安装游戏"
 
 #: qml/Help.qml:39
 #, kde-format
 msgctxt "@title"
 msgid "Adding ROMs"
-msgstr ""
+msgstr "添加 ROM"
 
 #: qml/Help.qml:40
 #, kde-format
@@ -121,102 +126,104 @@ msgid ""
 "ROMs directory (which by default is ~/Documents/Games). Simply add your ROMs "
 "there and they will appear in the game library!"
 msgstr ""
+"KRetro 会按照文件扩展名自动检测在 ROM 目录 (默认位于 ~/Documents/Games) 中支"
+"持的游戏。只需将 ROM 放到该目录，它们就会自动被添加到游戏库。"
 
 #: qml/Main.qml:19 qml/Main.qml:89
 #, kde-format
 msgid "KRetro"
-msgstr ""
+msgstr "KRetro"
 
 #: qml/Main.qml:37
 #, kde-format
 msgid "Open ROMs Directory"
-msgstr ""
+msgstr "打开 ROM 目录"
 
 #: qml/Main.qml:46 qml/Settings.qml:17
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "设置"
 
 #: qml/Main.qml:53
 #, kde-format
 msgid "Controller Settings"
-msgstr ""
+msgstr "控制器设置"
 
 #: qml/Main.qml:60
 #, kde-format
 msgid "About KRetro"
-msgstr ""
+msgstr "关于 KRetro"
 
 #: qml/Main.qml:65
 #, kde-format
 msgid "Quit"
-msgstr ""
+msgstr "退出"
 
 #: qml/Main.qml:93
 #, kde-format
 msgid "Help"
-msgstr ""
+msgstr "帮助"
 
 #: qml/Main.qml:117
 #, kde-format
 msgid "Game Library"
-msgstr ""
+msgstr "游戏库"
 
 #: qml/MobilePlayer.qml:22
 #, kde-format
 msgid "Press Escape to exit fullscreen mode"
-msgstr ""
+msgstr "按 ESC 键退出全屏模式"
 
 #: qml/MobilePlayer.qml:36
 #, kde-format
 msgid "Fullscreen"
-msgstr ""
+msgstr "全屏"
 
 #: qml/MobilePlayer.qml:44
 #, kde-format
 msgid "Reset Core"
-msgstr ""
+msgstr "重置核心"
 
 #: qml/MobilePlayer.qml:49 qml/SettingsRetroCore.qml:13
 #, kde-format
 msgid "Core Settings"
-msgstr ""
+msgstr "核心设置"
 
 #: qml/MobilePlayer.qml:56
 #, kde-format
 msgid "Save Slots"
-msgstr ""
+msgstr "即时存档"
 
 #: qml/MobilePlayer.qml:69
 #, kde-format
 msgid "KRetro Player"
-msgstr ""
+msgstr "KRetro 模拟器"
 
 #: qml/MobilePlayer.qml:111
 #, kde-format
 msgid "Reset Game Core?"
-msgstr ""
+msgstr "重置游戏核心？"
 
 #: qml/MobilePlayer.qml:112
 #, kde-format
 msgid "This will restart the game. Any unsaved progress will be lost!"
-msgstr ""
+msgstr "这将重新启动游戏。所有未保存的进度都将丢失！"
 
 #: qml/SaveManager.qml:13
 #, kde-format
 msgid "Save States"
-msgstr ""
+msgstr "保存即时存档"
 
 #: qml/SaveManager.qml:16
 #, kde-format
 msgctxt "@action:button"
 msgid "New Save State"
-msgstr ""
+msgstr "新建即时存档"
 
 #: qml/SaveManager.qml:22
 #, kde-format
 msgid "Game saved"
-msgstr ""
+msgstr "游戏状态已保存"
 
 #: qml/SaveManager.qml:38
 #, kde-format
@@ -224,166 +231,168 @@ msgid ""
 "Slot 0 is the default auto save slot. It is restored on game start and saved "
 "on exit."
 msgstr ""
+"即时存档 0 是默认的自动存档槽。它在游戏退出时保存游戏状态，并在游戏重开时加载"
+"恢复。"
 
 #: qml/SaveManager.qml:73
 #, kde-format
 msgid "Slot %1"
-msgstr ""
+msgstr "即时存档 %1"
 
 #: qml/SaveManager.qml:83
 #, kde-format
 msgid "Last modified: %1"
-msgstr ""
+msgstr "最后修改时间：%1"
 
 #: qml/SaveManager.qml:97
 #, kde-format
 msgctxt "@action:button"
 msgid "Load"
-msgstr ""
+msgstr "加载"
 
 #: qml/SaveManager.qml:104
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "保存"
 
 #: qml/SaveManager.qml:111
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
-msgstr ""
+msgstr "删除"
 
 #: qml/Settings.qml:29
 #, kde-format
 msgid "Select ROMs Directory"
-msgstr ""
+msgstr "选择 ROM 目录"
 
 #: qml/Settings.qml:38
 #, kde-format
 msgid "Select Libretro Cores Directory"
-msgstr ""
+msgstr "选择 Libretro 核心目录"
 
 #: qml/Settings.qml:50
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "常规"
 
 #: qml/Settings.qml:55
 #, kde-format
 msgid "ROMs Directory"
-msgstr ""
+msgstr "ROM 目录"
 
 #: qml/Settings.qml:63
 #, kde-format
 msgid "Libretro Cores Directory"
-msgstr ""
+msgstr "Libretro 核心目录"
 
 #: qml/Settings.qml:69
 #, kde-format
 msgid "Override Mobile Controller Visibility"
-msgstr ""
+msgstr "覆盖手机控制器显示状态"
 
 #: qml/Settings.qml:70
 #, kde-format
 msgid "Overrides the default visibility of the touch controller."
-msgstr ""
+msgstr "覆盖触摸控制器的默认显示状态。"
 
 #: qml/Settings.qml:75
 #, kde-format
 msgid "Fullscreen Mode"
-msgstr ""
+msgstr "全屏模式"
 
 #: qml/Settings.qml:76
 #, kde-format
 msgid "Open games in fullscreen mode by default."
-msgstr ""
+msgstr "默认以全屏模式打开游戏。"
 
 #: qml/Settings.qml:83
 #, kde-format
 msgid "Libretro Cores"
-msgstr ""
+msgstr "Libretro 核心"
 
 #: qml/Settings.qml:91
 #, kde-format
 msgid "GBA Core:"
-msgstr ""
+msgstr "GBA 核心："
 
 #: qml/Settings.qml:110
 #, kde-format
 msgid "NES Core:"
-msgstr ""
+msgstr "NES 核心："
 
 #: qml/Settings.qml:129
 #, kde-format
 msgid "SNES Core:"
-msgstr ""
+msgstr "SNES 核心："
 
 #: qml/Settings.qml:148
 #, kde-format
 msgid "Master System Core:"
-msgstr ""
+msgstr "Master System 核心："
 
 #: qml/Settings.qml:167
 #, kde-format
 msgid "Genesis / Mega Drive Core:"
-msgstr ""
+msgstr "Genesis / MD 核心："
 
 #: qml/Settings.qml:189
 #, kde-format
 msgid "Flatpak releases of KRetro manage retro cores automatically."
-msgstr ""
+msgstr "KRetro 的 Flatpak 版本自动管理模拟器核心。"
 
 #: qml/Settings.qml:199 qml/SettingsRetroPad.qml:96
 #, kde-format
 msgid "Settings saved"
-msgstr ""
+msgstr "设置已保存"
 
 #: qml/SettingsRetroCore.qml:48
 #, kde-format
 msgid "Core Variables"
-msgstr ""
+msgstr "核心变量"
 
 #: qml/SettingsRetroCore.qml:53
 #, kde-format
 msgid "Most settings require you to exit and reopen the game to take effect."
-msgstr ""
+msgstr "大多数设置在更改后需要重新打开游戏才能生效。"
 
 #: qml/SettingsRetroCore.qml:65
 #, kde-format
 msgid "Default: %1"
-msgstr ""
+msgstr "默认：%1"
 
 #: qml/SettingsRetroPad.qml:16
 #, kde-format
 msgid "Reset Mappings"
-msgstr ""
+msgstr "重置映射"
 
 #: qml/SettingsRetroPad.qml:19
 #, kde-format
 msgid "Retropad mappings reset"
-msgstr ""
+msgstr "重置 Retropad 映射"
 
 #: qml/SettingsRetroPad.qml:24
 #, kde-format
 msgid "RetroPad Controller Settings"
-msgstr ""
+msgstr "RetroPad 控制器设置"
 
 #: qml/SettingsRetroPad.qml:55
 #, kde-format
 msgid "Controller Port 0"
-msgstr ""
+msgstr "控制器接口 0"
 
 #: qml/SettingsRetroPad.qml:64
 #, kde-format
 msgid "Press a controller button or key to bind…"
-msgstr ""
+msgstr "按下控制器按钮或按键进行绑定…"
 
 #: qml/SettingsRetroPad.qml:65
 #, kde-format
 msgid "Currently unbound"
-msgstr ""
+msgstr "当前未绑定"
 
 #: qml/SettingsRetroPad.qml:65
 #, kde-format
 msgid "Currently bound to: %1"
-msgstr ""
+msgstr "当前绑定到：%1"
