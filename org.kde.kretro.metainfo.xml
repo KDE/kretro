@@ -233,6 +233,12 @@
       <url>https://blog.seshan.xyz/2025/10/05/introducing-kretro-a-libretro-game-emulator-from-kde-alpha-release/</url>
       <description>
         <p>First alpha release!</p>
+        <p xml:lang="ca">Primer llançament alfa!</p>
+        <p xml:lang="he">מהדורת אלפא ראשונית!</p>
+        <p xml:lang="ka">პირველი ალფა ვერსია!</p>
+        <p xml:lang="pt-BR">Primeiro lançamento alfa!</p>
+        <p xml:lang="sl">Prva alfa izdaja!</p>
+        <p xml:lang="uk">Перший тестовий випуск!</p>
       </description>
     </release>
   </releases>
