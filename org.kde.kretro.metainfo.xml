@@ -257,6 +257,7 @@
         <p xml:lang="tr">İlk alfa yayımı!</p>
         <p xml:lang="uk">Перший тестовий випуск!</p>
         <p xml:lang="zh-CN">首个 alpha 版发布！</p>
+        <p xml:lang="zh-TW">第一個 alpha 版本！</p>
       </description>
     </release>
   </releases>
