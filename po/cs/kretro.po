@@ -1,42 +1,43 @@
 # Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the kretro package.
 # SPDX-FileCopyrightText: 2026 Vít Pelčák <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2026 Libor Filípek <filipek.libor@protonmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kretro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-08 00:40+0000\n"
-"PO-Revision-Date: 2026-03-17 08:54+0100\n"
-"Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
-"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2026-04-19 12:01+0200\n"
+"Last-Translator: Libor Filípek <filipek.libor@protonmail.com>\n"
+"Language-Team: \n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Vít Pelčák"
+msgstr "Vít Pelčák,Libor Filípek"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "vit@pelcak.org"
+msgstr "vit@pelcak.org,libor.filipek@gmail.com"
 
 #: main.cpp:28
 #, kde-format
 msgctxt "@title"
 msgid "KRetro"
-msgstr ""
+msgstr "KRetro"
 
 #: main.cpp:32
 #, kde-format
 msgid "Libretro frontend for Plasma"
-msgstr ""
+msgstr "Rozhraní Libretro pro Plasma"
 
 #: main.cpp:36
 #, kde-format
@@ -65,7 +66,7 @@ msgstr "Devin Lin"
 #, kde-format
 msgctxt "@title"
 msgid "KRetro Help"
-msgstr ""
+msgstr "Nápověda KRetro"
 
 #: qml/Help.qml:20
 #, kde-format
@@ -77,7 +78,7 @@ msgstr "Začínáme"
 #, kde-format
 msgctxt "@title"
 msgid "Installing Retro Cores"
-msgstr ""
+msgstr "Instalace retro jader"
 
 #: qml/Help.qml:26
 #, kde-format
@@ -88,12 +89,16 @@ msgid ""
 "'libretro-mgba' for the GBA emulator core. Once installed, you can select "
 "them in the settings."
 msgstr ""
+"KRetro (verze mimo Flatpak) vyžaduje instalaci emulátorů, tzv. 'libretro "
+"jader'.\n"
+"Tyto balíčky byste měli najít ve správci balíčků vaší distribuce, například "
+"'libretro-mgba' pro emulátor GBA. Po instalaci je můžete vybrat v nastavení."
 
 #: qml/Help.qml:29
 #, kde-format
 msgctxt "@title"
 msgid "Installing Retro Cores (Flatpak)"
-msgstr ""
+msgstr "Instalace retro jader (Flatpak)"
 
 #: qml/Help.qml:30
 #, kde-format
@@ -101,18 +106,21 @@ msgid ""
 "The flatpak version of KRetro comes with a curated set of cores already. If "
 "you installed KRetro from the official flatpak, you are all set!"
 msgstr ""
+"Verze KRetro pro Flatpak již obsahuje pečlivě vybranou sadu jader. Pokud "
+"jste si nainstalovali KRetro z oficiálního repozitáře Flatpak, máte vše "
+"připraveno!"
 
 #: qml/Help.qml:35
 #, kde-format
 msgctxt "@title"
 msgid "Installing Games"
-msgstr ""
+msgstr "Instalace her"
 
 #: qml/Help.qml:39
 #, kde-format
 msgctxt "@title"
 msgid "Adding ROMs"
-msgstr ""
+msgstr "Přidávání ROM"
 
 #: qml/Help.qml:40
 #, kde-format
@@ -121,16 +129,19 @@ msgid ""
 "ROMs directory (which by default is ~/Documents/Games). Simply add your ROMs "
 "there and they will appear in the game library!"
 msgstr ""
+"KRetro automaticky rozpozná podporované hry (podle přípony souboru) v "
+"adresáři ROM (který je ve výchozím nastavení ~/Dokumenty/Hry). Stačí tam "
+"přidat své ROM a objeví se v knihovně her!"
 
 #: qml/Main.qml:19 qml/Main.qml:89
 #, kde-format
 msgid "KRetro"
-msgstr ""
+msgstr "KRetro"
 
 #: qml/Main.qml:37
 #, kde-format
 msgid "Open ROMs Directory"
-msgstr ""
+msgstr "Otevřít adresář ROM"
 
 #: qml/Main.qml:46 qml/Settings.qml:17
 #, kde-format
@@ -140,12 +151,12 @@ msgstr "Nastavení"
 #: qml/Main.qml:53
 #, kde-format
 msgid "Controller Settings"
-msgstr ""
+msgstr "Nastavení ovladače"
 
 #: qml/Main.qml:60
 #, kde-format
 msgid "About KRetro"
-msgstr ""
+msgstr "O aplikaci KRetro"
 
 #: qml/Main.qml:65
 #, kde-format
@@ -160,12 +171,12 @@ msgstr "Nápověda"
 #: qml/Main.qml:117
 #, kde-format
 msgid "Game Library"
-msgstr ""
+msgstr "Knihovna her"
 
 #: qml/MobilePlayer.qml:22
 #, kde-format
 msgid "Press Escape to exit fullscreen mode"
-msgstr ""
+msgstr "Stisknutím klávesy Escape opustíte režim celé obrazovky"
 
 #: qml/MobilePlayer.qml:36
 #, kde-format
@@ -175,43 +186,43 @@ msgstr "Celá obrazovka"
 #: qml/MobilePlayer.qml:44
 #, kde-format
 msgid "Reset Core"
-msgstr ""
+msgstr "Obnovit jádro"
 
 #: qml/MobilePlayer.qml:49 qml/SettingsRetroCore.qml:13
 #, kde-format
 msgid "Core Settings"
-msgstr ""
+msgstr "Nastavení jádra"
 
 #: qml/MobilePlayer.qml:56
 #, kde-format
 msgid "Save Slots"
-msgstr ""
+msgstr "Uložit pozice"
 
 #: qml/MobilePlayer.qml:69
 #, kde-format
 msgid "KRetro Player"
-msgstr ""
+msgstr "Hry KRetro"
 
 #: qml/MobilePlayer.qml:111
 #, kde-format
 msgid "Reset Game Core?"
-msgstr ""
+msgstr "Obnovit jádro hry?"
 
 #: qml/MobilePlayer.qml:112
 #, kde-format
 msgid "This will restart the game. Any unsaved progress will be lost!"
-msgstr ""
+msgstr "Tím se hra restartuje. Veškerý neuložený postup bude ztracen!"
 
 #: qml/SaveManager.qml:13
 #, kde-format
 msgid "Save States"
-msgstr ""
+msgstr "Uložit stavy"
 
 #: qml/SaveManager.qml:16
 #, kde-format
 msgctxt "@action:button"
 msgid "New Save State"
-msgstr ""
+msgstr "Uložit nový stav"
 
 #: qml/SaveManager.qml:22
 #, kde-format
@@ -224,6 +235,8 @@ msgid ""
 "Slot 0 is the default auto save slot. It is restored on game start and saved "
 "on exit."
 msgstr ""
+"Slot 0 je výchozí slot pro automatické ukládání. Při spuštění hry se obnoví "
+"a při ukončení se uloží."
 
 #: qml/SaveManager.qml:73
 #, kde-format
@@ -256,12 +269,12 @@ msgstr "Smazat"
 #: qml/Settings.qml:29
 #, kde-format
 msgid "Select ROMs Directory"
-msgstr ""
+msgstr "Vyberte adresář s ROM"
 
 #: qml/Settings.qml:38
 #, kde-format
 msgid "Select Libretro Cores Directory"
-msgstr ""
+msgstr "Vyberte adresář s jádrem Libretro"
 
 #: qml/Settings.qml:50
 #, kde-format
@@ -271,22 +284,22 @@ msgstr "Obecné"
 #: qml/Settings.qml:55
 #, kde-format
 msgid "ROMs Directory"
-msgstr ""
+msgstr "Adresář s ROM"
 
 #: qml/Settings.qml:63
 #, kde-format
 msgid "Libretro Cores Directory"
-msgstr ""
+msgstr "Adresář s jádrem Libretro"
 
 #: qml/Settings.qml:69
 #, kde-format
 msgid "Override Mobile Controller Visibility"
-msgstr ""
+msgstr "Přepsat viditelnost mobilního ovladače"
 
 #: qml/Settings.qml:70
 #, kde-format
 msgid "Overrides the default visibility of the touch controller."
-msgstr ""
+msgstr "Přepíše výchozí viditelnost dotykového ovladače."
 
 #: qml/Settings.qml:75
 #, kde-format
@@ -296,42 +309,42 @@ msgstr "Celoobrazovkový režim"
 #: qml/Settings.qml:76
 #, kde-format
 msgid "Open games in fullscreen mode by default."
-msgstr ""
+msgstr "Hry se ve výchozím nastavení otevírají v režimu celé obrazovky."
 
 #: qml/Settings.qml:83
 #, kde-format
 msgid "Libretro Cores"
-msgstr ""
+msgstr "Jádro Libretro"
 
 #: qml/Settings.qml:91
 #, kde-format
 msgid "GBA Core:"
-msgstr ""
+msgstr "Jádro GBA:"
 
 #: qml/Settings.qml:110
 #, kde-format
 msgid "NES Core:"
-msgstr ""
+msgstr "Jádro NES:"
 
 #: qml/Settings.qml:129
 #, kde-format
 msgid "SNES Core:"
-msgstr ""
+msgstr "Jádro SNES:"
 
 #: qml/Settings.qml:148
 #, kde-format
 msgid "Master System Core:"
-msgstr ""
+msgstr "Jádro Master System:"
 
 #: qml/Settings.qml:167
 #, kde-format
 msgid "Genesis / Mega Drive Core:"
-msgstr ""
+msgstr "Jádro Genesis / Mega Drive:"
 
 #: qml/Settings.qml:189
 #, kde-format
 msgid "Flatpak releases of KRetro manage retro cores automatically."
-msgstr ""
+msgstr "Verze KRetro pro Flatpak spravují retro jádra automaticky."
 
 #: qml/Settings.qml:199 qml/SettingsRetroPad.qml:96
 #, kde-format
@@ -341,12 +354,14 @@ msgstr "Nastavení byla uložena"
 #: qml/SettingsRetroCore.qml:48
 #, kde-format
 msgid "Core Variables"
-msgstr ""
+msgstr "Proměnné jádra"
 
 #: qml/SettingsRetroCore.qml:53
 #, kde-format
 msgid "Most settings require you to exit and reopen the game to take effect."
 msgstr ""
+"U většiny nastavení je nutné hru ukončit a znovu spustit, aby se změny "
+"projevily."
 
 #: qml/SettingsRetroCore.qml:65
 #, kde-format
@@ -356,34 +371,34 @@ msgstr "Výchozí: %1"
 #: qml/SettingsRetroPad.qml:16
 #, kde-format
 msgid "Reset Mappings"
-msgstr ""
+msgstr "Obnovit mapování"
 
 #: qml/SettingsRetroPad.qml:19
 #, kde-format
 msgid "Retropad mappings reset"
-msgstr ""
+msgstr "Obnovení přiřazení tlačítek na Retropadu"
 
 #: qml/SettingsRetroPad.qml:24
 #, kde-format
 msgid "RetroPad Controller Settings"
-msgstr ""
+msgstr "Nastavení ovladače RetroPad"
 
 #: qml/SettingsRetroPad.qml:55
 #, kde-format
 msgid "Controller Port 0"
-msgstr ""
+msgstr "Port 0 ovladače"
 
 #: qml/SettingsRetroPad.qml:64
 #, kde-format
 msgid "Press a controller button or key to bind…"
-msgstr ""
+msgstr "Stiskněte tlačítko na ovladači nebo klávesu pro přiřazení…"
 
 #: qml/SettingsRetroPad.qml:65
 #, kde-format
 msgid "Currently unbound"
-msgstr ""
+msgstr "V současné době není přiřazeno"
 
 #: qml/SettingsRetroPad.qml:65
 #, kde-format
 msgid "Currently bound to: %1"
-msgstr ""
+msgstr "V současné době přiřazeno k: %1"
