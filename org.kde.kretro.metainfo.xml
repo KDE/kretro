@@ -37,6 +37,7 @@
   <summary xml:lang="ar">واجهة محاكاة Libretro لبلازما</summary>
   <summary xml:lang="ca">Frontal de l'emulació Libretro per al Plasma</summary>
   <summary xml:lang="ca-valencia">Frontal de l'emulació Libretro per a Plasma</summary>
+  <summary xml:lang="cs">Emulační rozhraní Libretro pro Plasma</summary>
   <summary xml:lang="de">Libretro-Oberfläche für Plasma</summary>
   <summary xml:lang="es">Interfaz de emulación Libretro para Plasma</summary>
   <summary xml:lang="eu">Plasmarako Libreto emulazioaren aurrealdekoa</summary>
@@ -65,6 +66,7 @@
     <p xml:lang="ar">كي ريترو هو واجهة Libretro مكتوبة بلغة Qt/Kirigami، مصممة لسطح المكتب بلازما، والأجهزة المحمولة، والشاشات الكبيرة.</p>
     <p xml:lang="ca">El KRetro és un frontal del Libretro escrit en Qt/Kirigami, dissenyat per a l'escriptori, el mòbil i la Bigscreen del Plasma.</p>
     <p xml:lang="ca-valencia">KRetro és un frontal de Libretro escrit en Qt/Kirigami, dissenyat per a l'escriptori, el mòbil i la Bigscreen de Plasma.</p>
+    <p xml:lang="cs">KRetro je uživatelské rozhraní pro Libretro napsané v Qt/Kirigami, určené pro Plasma Desktop, Mobile a Bigscreen.</p>
     <p xml:lang="de">KRetro ist eine in Qt/Kirigami geschriebene Libretro-Oberfläche, entworfen für Plasma Desktop, Plasma Mobile und Bigscreen.</p>
     <p xml:lang="es">KRetro es una interfaz de Libretro escrita en Qt/Kirigami, diseñada para el escritorio Plasma, Plasma Mobile y Bigscreen.</p>
     <p xml:lang="eu">KRetro Plasma Mahaigainerako, Mugikorrerako, eta Bigscreen-erako Qt/Kirigamirekin idatzitako Libretoren aurrealdeko bat da.</p>
@@ -87,6 +89,7 @@
     <p xml:lang="ar">يتيح لك لعب ألعاب أجهزة الألعاب القديمة من خلال توفير ROM و Libretro core.</p>
     <p xml:lang="ca">Permet jugar jocs per a consoles retro proporcionant una ROM i un nucli Libretro.</p>
     <p xml:lang="ca-valencia">Permet jugar jocs per a consoles retro proporcionant una ROM i un nucli Libretro.</p>
+    <p xml:lang="cs">Umožňuje hrát hry pro retro konzole díky podpoře ROM a jádra Libretro.</p>
     <p xml:lang="es">Permite jugar con juegos de consolas retro proporcionando una ROM y un core de Libretro.</p>
     <p xml:lang="eu">ROM bat eta Libreto nukleo bat hornituz, kontsola retroetarako jokoetan jokatzeko aukera ematen dizu.</p>
     <p xml:lang="fi">Se mahdollistaa retrokonsolipelien pelaamisen tarjoamallaan ROM- ja Libretro-ytimellä.</p>
@@ -111,6 +114,7 @@
       <caption xml:lang="ar">الجوال - مكتبة الألعاب</caption>
       <caption xml:lang="ca">Mòbil - Biblioteca de jocs</caption>
       <caption xml:lang="ca-valencia">Mòbil - Biblioteca de jocs</caption>
+      <caption xml:lang="cs">Mobilní zařízení – Knihovna her</caption>
       <caption xml:lang="es">Móvil - Biblioteca de juegos</caption>
       <caption xml:lang="eu">Mugikorra - Joko-liburutegia</caption>
       <caption xml:lang="fi">Mobiili – pelikirjasto</caption>
@@ -134,6 +138,7 @@
       <caption xml:lang="ar">سطح المكتب - مكتبة الألعاب</caption>
       <caption xml:lang="ca">Escriptori - Biblioteca de jocs</caption>
       <caption xml:lang="ca-valencia">Escriptori - Biblioteca de jocs</caption>
+      <caption xml:lang="cs">Počítač – Knihovna her</caption>
       <caption xml:lang="es">Escritorio - Biblioteca de juegos</caption>
       <caption xml:lang="eu">Mahaigaina - Joko-liburutegia</caption>
       <caption xml:lang="fi">Työpöytä – pelikirjasto</caption>
@@ -157,6 +162,7 @@
       <caption xml:lang="ar">الجوال - مشغّل الألعاب</caption>
       <caption xml:lang="ca">Mòbil - Jugador</caption>
       <caption xml:lang="ca-valencia">Mòbil - Jugador</caption>
+      <caption xml:lang="cs">Mobilní zařízení – herní konzole</caption>
       <caption xml:lang="es">Móvil - Lanzador del juego</caption>
       <caption xml:lang="eu">Mugikorra - Joko jotzailea</caption>
       <caption xml:lang="fi">Mobiili – pelin pelaaja</caption>
@@ -180,6 +186,7 @@
       <caption xml:lang="ar">سطح المكتب - مشغّل الألعاب</caption>
       <caption xml:lang="ca">Escriptori - Jugador</caption>
       <caption xml:lang="ca-valencia">Escriptori - Jugador</caption>
+      <caption xml:lang="cs">Počítač - herní konzole</caption>
       <caption xml:lang="es">Escritorio - Lanzador del juego</caption>
       <caption xml:lang="eu">Mahaigaina - Joko jotzailea</caption>
       <caption xml:lang="fi">Työpöytä – pelin pelaaja</caption>
@@ -203,6 +210,7 @@
       <caption xml:lang="ar">الجوال - مدير شّقوق الحفظ</caption>
       <caption xml:lang="ca">Mòbil - Gestor d'espais de desament</caption>
       <caption xml:lang="ca-valencia">Mòbil - Gestor d'espais de guardada</caption>
+      <caption xml:lang="cs">Mobilní zařízení – Správce uložených her</caption>
       <caption xml:lang="es">Móvil - Gestor de espacios de guardado</caption>
       <caption xml:lang="eu">Mugikorra - Gordetze-tarte kudeatzailea</caption>
       <caption xml:lang="fi">Mobiili – tallennuslokerohallinta</caption>
@@ -226,6 +234,7 @@
       <caption xml:lang="ar">سطح المكتب - مدير شّقوق الحفظ</caption>
       <caption xml:lang="ca">Escriptori - Gestor d'espais de desament</caption>
       <caption xml:lang="ca-valencia">Escriptori - Gestor d'espais de guardada</caption>
+      <caption xml:lang="cs">Počítač – Správce uložených her</caption>
       <caption xml:lang="es">Escritorio - Gestor de espacios de guardado</caption>
       <caption xml:lang="eu">Mahaigaina - Gordetze-tarte kudeatzailea</caption>
       <caption xml:lang="fi">Työpöytä – tallennuslokerohallinta</caption>
@@ -257,6 +266,7 @@
         <p xml:lang="ar">الإصدار الأول من النسخة التجريبية!</p>
         <p xml:lang="ca">Primer llançament alfa!</p>
         <p xml:lang="ca-valencia">Primer llançament alfa!</p>
+        <p xml:lang="cs">První alfa verze!</p>
         <p xml:lang="es">Primera versión alfa</p>
         <p xml:lang="fr">Première publication de version Alpha !</p>
         <p xml:lang="he">מהדורת אלפא ראשונית!</p>
