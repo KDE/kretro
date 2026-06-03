@@ -30,6 +30,7 @@
   <name xml:lang="sl">KRetro</name>
   <name xml:lang="sv">Kretro</name>
   <name xml:lang="tr">K Retro</name>
+  <name xml:lang="ug">KRetro</name>
   <name xml:lang="uk">KRetro</name>
   <name xml:lang="zh-CN">KRetro 模拟器前端</name>
   <name xml:lang="zh-TW">KRetro</name>
@@ -128,6 +129,7 @@
       <caption xml:lang="sl">Mobile - Knjižnica iger</caption>
       <caption xml:lang="sv">Mobil: Spelbibliotek</caption>
       <caption xml:lang="tr">Taşınabilir — Oyun kitaplığı</caption>
+      <caption xml:lang="ug">كۆچمە - ئويۇن ئامبىرى</caption>
       <caption xml:lang="uk">Мобільний – Бібліотека ігор</caption>
       <caption xml:lang="zh-CN">手机 - 游戏库</caption>
       <caption xml:lang="zh-TW">手機 - 遊戲庫</caption>
@@ -152,6 +154,7 @@
       <caption xml:lang="sl">Namizje - Knjižnica iger</caption>
       <caption xml:lang="sv">Skrivbord: Spelbibliotek</caption>
       <caption xml:lang="tr">Masaüstü — Oyun kitaplığı</caption>
+      <caption xml:lang="ug">ئۈستەلئۈستى - ئويۇن ئامبىرى</caption>
       <caption xml:lang="uk">Робоча станція – Бібліотека ігор</caption>
       <caption xml:lang="zh-CN">桌面 - 游戏库</caption>
       <caption xml:lang="zh-TW">桌面 - 遊戲庫</caption>
@@ -176,6 +179,7 @@
       <caption xml:lang="sl">Mobile - Game Player</caption>
       <caption xml:lang="sv">Mobil: Spelprogram</caption>
       <caption xml:lang="tr">Taşınabilir — Oyuncu</caption>
+      <caption xml:lang="ug">كۆچمە - ئويۇنچى</caption>
       <caption xml:lang="uk">Мобільний – Програвач ігор</caption>
       <caption xml:lang="zh-CN">手机 - 游戏模拟器</caption>
       <caption xml:lang="zh-TW">手機 - 遊玩介面</caption>
@@ -200,6 +204,7 @@
       <caption xml:lang="sl">Namizje - Game Player</caption>
       <caption xml:lang="sv">Skrivbord: Spelprogram</caption>
       <caption xml:lang="tr">Masaüstü — Oyuncu</caption>
+      <caption xml:lang="ug">ئۈستەلئۈستى - ئويۇنچى</caption>
       <caption xml:lang="uk">Робоча станція – Програвач ігор</caption>
       <caption xml:lang="zh-CN">桌面 - 游戏模拟器</caption>
       <caption xml:lang="zh-TW">桌面 - 遊玩介面</caption>
