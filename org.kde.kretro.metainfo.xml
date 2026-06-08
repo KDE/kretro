@@ -23,6 +23,7 @@
   <name xml:lang="he">KRetro</name>
   <name xml:lang="it">KRetro</name>
   <name xml:lang="ka">KRetro</name>
+  <name xml:lang="ko">KRetro</name>
   <name xml:lang="lv">KRetro</name>
   <name xml:lang="nl">KRetro</name>
   <name xml:lang="pt-BR">KRetro</name>
@@ -47,6 +48,7 @@
   <summary xml:lang="he">ממשק הדמיית Libretro לפלזמה</summary>
   <summary xml:lang="it">Interfaccia di emulazione Libretro per Plasma</summary>
   <summary xml:lang="ka">Libretro-ის ემულაციის წინაბოლო Plasma-სთვის</summary>
+  <summary xml:lang="ko">Plasma용 libretro 에뮬레이션 프론트엔드</summary>
   <summary xml:lang="lv">„Libretro“ emulācijas priekšsistēma „Plasma“ darbvirsmai</summary>
   <summary xml:lang="nl">Emulatie-frontend  van Libretro voor Plasma</summary>
   <summary xml:lang="pt-BR">Frontend do emulador Libretro para o Plasma</summary>
