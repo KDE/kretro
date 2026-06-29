@@ -116,7 +116,7 @@
       <caption>Mobile - Games Library</caption>
       <caption xml:lang="ar">الجوال - مكتبة الألعاب</caption>
       <caption xml:lang="ca">Mòbil - Biblioteca de jocs</caption>
-      <caption xml:lang="ca-valencia">Mòbil - Biblioteca de jocs</caption>
+      <caption xml:lang="ca-valencia">Mòbil – Biblioteca de jocs</caption>
       <caption xml:lang="cs">Mobilní zařízení – Knihovna her</caption>
       <caption xml:lang="es">Móvil - Biblioteca de juegos</caption>
       <caption xml:lang="eu">Mugikorra - Joko-liburutegia</caption>
@@ -141,7 +141,7 @@
       <caption>Desktop - Game Library</caption>
       <caption xml:lang="ar">سطح المكتب - مكتبة الألعاب</caption>
       <caption xml:lang="ca">Escriptori - Biblioteca de jocs</caption>
-      <caption xml:lang="ca-valencia">Escriptori - Biblioteca de jocs</caption>
+      <caption xml:lang="ca-valencia">Escriptori – Biblioteca de jocs</caption>
       <caption xml:lang="cs">Počítač – Knihovna her</caption>
       <caption xml:lang="es">Escritorio - Biblioteca de juegos</caption>
       <caption xml:lang="eu">Mahaigaina - Joko-liburutegia</caption>
@@ -166,7 +166,7 @@
       <caption>Mobile - Game Player</caption>
       <caption xml:lang="ar">الجوال - مشغّل الألعاب</caption>
       <caption xml:lang="ca">Mòbil - Jugador</caption>
-      <caption xml:lang="ca-valencia">Mòbil - Jugador</caption>
+      <caption xml:lang="ca-valencia">Mòbil – Jugador</caption>
       <caption xml:lang="cs">Mobilní zařízení – herní konzole</caption>
       <caption xml:lang="es">Móvil - Lanzador del juego</caption>
       <caption xml:lang="eu">Mugikorra - Joko jotzailea</caption>
@@ -191,7 +191,7 @@
       <caption>Desktop - Game Player</caption>
       <caption xml:lang="ar">سطح المكتب - مشغّل الألعاب</caption>
       <caption xml:lang="ca">Escriptori - Jugador</caption>
-      <caption xml:lang="ca-valencia">Escriptori - Jugador</caption>
+      <caption xml:lang="ca-valencia">Escriptori – Jugador</caption>
       <caption xml:lang="cs">Počítač - herní konzole</caption>
       <caption xml:lang="es">Escritorio - Lanzador del juego</caption>
       <caption xml:lang="eu">Mahaigaina - Joko jotzailea</caption>
@@ -216,7 +216,7 @@
       <caption>Mobile - Save Slots Manager</caption>
       <caption xml:lang="ar">الجوال - مدير شّقوق الحفظ</caption>
       <caption xml:lang="ca">Mòbil - Gestor d'espais de desament</caption>
-      <caption xml:lang="ca-valencia">Mòbil - Gestor d'espais de guardada</caption>
+      <caption xml:lang="ca-valencia">Mòbil – Gestor d'espais de guardada</caption>
       <caption xml:lang="cs">Mobilní zařízení – Správce uložených her</caption>
       <caption xml:lang="es">Móvil - Gestor de espacios de guardado</caption>
       <caption xml:lang="eu">Mugikorra - Gordetze-tarte kudeatzailea</caption>
@@ -240,7 +240,7 @@
       <caption>Desktop - Save Slots Manager</caption>
       <caption xml:lang="ar">سطح المكتب - مدير شّقوق الحفظ</caption>
       <caption xml:lang="ca">Escriptori - Gestor d'espais de desament</caption>
-      <caption xml:lang="ca-valencia">Escriptori - Gestor d'espais de guardada</caption>
+      <caption xml:lang="ca-valencia">Escriptori – Gestor d'espais de guardada</caption>
       <caption xml:lang="cs">Počítač – Správce uložených her</caption>
       <caption xml:lang="es">Escritorio - Gestor de espacios de guardado</caption>
       <caption xml:lang="eu">Mahaigaina - Gordetze-tarte kudeatzailea</caption>
