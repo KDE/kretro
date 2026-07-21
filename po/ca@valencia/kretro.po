@@ -43,7 +43,7 @@ msgstr "Frontal de la Libretro per a Plasma"
 #: main.cpp:36
 #, kde-format
 msgid "© 2023–2025 KDE Community"
-msgstr "© 2023–2025 Comunitat KDE"
+msgstr "© 2023–2025 La comunitat KDE"
 
 #: main.cpp:37
 #, kde-format
