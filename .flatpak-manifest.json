@@ -61,11 +61,9 @@
         },
         {
             "name": "mgba-libretro",
-            "buildsystem": "simple",
-            "build-commands": [
-                "make -f Makefile.libretro -j$FLATPAK_BUILDER_N_JOBS",
-                "mkdir -p /app/lib/libretro",
-                "install -Dm755 mgba_libretro.so /app/lib/libretro/mgba_libretro.so"
+            "buildsystem": "cmake",
+            "config-opts": [
+                "-DBUILD_QT=OFF"
             ],
             "sources": [
                 {
