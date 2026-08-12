@@ -112,7 +112,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Installing Games"
-msgstr "ثبّت ألعاباً"
+msgstr "ثبّت ألعابًا"
 
 #: qml/Help.qml:39
 #, kde-format
@@ -127,8 +127,8 @@ msgid ""
 "ROMs directory (which by default is ~/Documents/Games). Simply add your ROMs "
 "there and they will appear in the game library!"
 msgstr ""
-"كي ريترو يكتشف آلياً الألعاب المدعومة (عن طريق امتداد الملف) من دليل الرومات "
-"(والذي هو مبدئياً ~/Documents/Games). ببساطة أضف روماتك هناك وستظهر في مكتبة "
+"كي ريترو يكتشف آليًا الألعاب المدعومة (عن طريق امتداد الملف) من دليل الرومات "
+"(والذي هو مبدئيًا ~/Documents/Games). ببساطة أضف روماتك هناك وستظهر في مكتبة "
 "الألعاب!"
 
 #: qml/Main.qml:19 qml/Main.qml:89
@@ -306,7 +306,7 @@ msgstr "وضع ملء الشاشة"
 #: qml/Settings.qml:76
 #, kde-format
 msgid "Open games in fullscreen mode by default."
-msgstr "افتح الألعاب في وضع ملء الشاشة مبدئياً."
+msgstr "افتح الألعاب في وضع ملء الشاشة مبدئيًا."
 
 #: qml/Settings.qml:83
 #, kde-format
@@ -341,7 +341,7 @@ msgstr "نواة جينيسيس / ميجا درايف:"
 #: qml/Settings.qml:189
 #, kde-format
 msgid "Flatpak releases of KRetro manage retro cores automatically."
-msgstr "إصدارات فلاتباك من كي ريترو تدير نُوى ريترو آلياً."
+msgstr "إصدارات فلاتباك من كي ريترو تدير نُوى ريترو آليًا."
 
 #: qml/Settings.qml:199 qml/SettingsRetroPad.qml:96
 #, kde-format
@@ -391,12 +391,12 @@ msgstr "اضغط على زر متحكّم أو مفتاح لتعيينه…"
 #: qml/SettingsRetroPad.qml:65
 #, kde-format
 msgid "Currently unbound"
-msgstr "غير مُعيّن حالياً"
+msgstr "غير مُعيّن حاليًا"
 
 #: qml/SettingsRetroPad.qml:65
 #, kde-format
 msgid "Currently bound to: %1"
-msgstr "مُعيّن حالياً إلى: %1"
+msgstr "مُعيّن حاليًا إلى: %1"
 
 #~ msgid "kretro"
 #~ msgstr "كي ريترو"
