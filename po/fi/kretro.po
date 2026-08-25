@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the kretro package.
-# SPDX-FileCopyrightText: 2025 Tommi Nieminen <translator@legisign.org>
+# SPDX-FileCopyrightText: 2025, 2026 Tommi Nieminen <translator@legisign.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kretro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-08 00:40+0000\n"
-"PO-Revision-Date: 2025-10-12 20:33+0300\n"
+"PO-Revision-Date: 2026-02-25 16:09+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -39,8 +39,7 @@ msgid "Libretro frontend for Plasma"
 msgstr "Libretro-käyttöliittymä Plasmaan"
 
 #: main.cpp:36
-#, fuzzy, kde-format
-#| msgid "(c) 2023-2025 KDE Community"
+#, kde-format
 msgid "© 2023–2025 KDE Community"
 msgstr "© 2023-2025 KDE-yhteisö"
 
@@ -63,22 +62,19 @@ msgid "Devin Lin"
 msgstr "Devin Lin"
 
 #: qml/Help.qml:13
-#, fuzzy, kde-format
-#| msgid "KRetro Help"
+#, kde-format
 msgctxt "@title"
 msgid "KRetro Help"
 msgstr "KRetron ohje"
 
 #: qml/Help.qml:20
-#, fuzzy, kde-format
-#| msgid "Getting Started"
+#, kde-format
 msgctxt "@title"
 msgid "Getting Started"
 msgstr "Alkuunpääsy"
 
 #: qml/Help.qml:25
-#, fuzzy, kde-format
-#| msgid "Installing Retro Cores"
+#, kde-format
 msgctxt "@title"
 msgid "Installing Retro Cores"
 msgstr "Retroydinten asentaminen"
@@ -98,34 +94,28 @@ msgstr ""
 "olla ”libretro-mgba”. Asennuksen jälkeen ne voi asetuksista valita."
 
 #: qml/Help.qml:29
-#, fuzzy, kde-format
-#| msgid "Installing Retro Cores (Flatpak)"
+#, kde-format
 msgctxt "@title"
 msgid "Installing Retro Cores (Flatpak)"
 msgstr "Retroydinten asentaminen (Flatpak)"
 
 #: qml/Help.qml:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "The flatpak version of KRetro comes with a curated set of cores already! "
-#| "If you installed KRetro from the official flatpak, you are all set!"
+#, kde-format
 msgid ""
 "The flatpak version of KRetro comes with a curated set of cores already. If "
 "you installed KRetro from the official flatpak, you are all set!"
 msgstr ""
-"KRetron Flatpak-version mukana tulee jo valikoitu joukko ytimiä! Jos asensit "
+"KRetron Flatpak-version mukana tulee jo valikoitu joukko ytimiä. Jos asensit "
 "KRetron virallisesta Flatpakistä, kaikki on valmista!"
 
 #: qml/Help.qml:35
-#, fuzzy, kde-format
-#| msgid "Installing Games"
+#, kde-format
 msgctxt "@title"
 msgid "Installing Games"
 msgstr "Pelien asentaminen"
 
 #: qml/Help.qml:39
-#, fuzzy, kde-format
-#| msgid "Adding ROMs"
+#, kde-format
 msgctxt "@title"
 msgid "Adding ROMs"
 msgstr "ROMien lisääminen"
@@ -162,8 +152,7 @@ msgid "Controller Settings"
 msgstr "Ohjainasetukset"
 
 #: qml/Main.qml:60
-#, fuzzy, kde-format
-#| msgid "About kretro"
+#, kde-format
 msgid "About KRetro"
 msgstr "Tietoa KRetrosta"
 
@@ -183,10 +172,9 @@ msgid "Game Library"
 msgstr "Pelikirjasto"
 
 #: qml/MobilePlayer.qml:22
-#, fuzzy, kde-format
-#| msgid "Press Escape to exit fullscreen mode!"
+#, kde-format
 msgid "Press Escape to exit fullscreen mode"
-msgstr "Poistu koko näytöltä painamalla Esc!"
+msgstr "Poistu koko näytöltä painamalla Esc"
 
 #: qml/MobilePlayer.qml:36
 #, kde-format
@@ -235,10 +223,9 @@ msgid "New Save State"
 msgstr "Uusi tallennustila"
 
 #: qml/SaveManager.qml:22
-#, fuzzy, kde-format
-#| msgid "Game saved!"
+#, kde-format
 msgid "Game saved"
-msgstr "Peli tallennettu!"
+msgstr "Peli tallennettu"
 
 #: qml/SaveManager.qml:38
 #, kde-format
@@ -358,10 +345,9 @@ msgid "Flatpak releases of KRetro manage retro cores automatically."
 msgstr "KRetron Flatpak-julkaisut hallinnoivat retroytimiä automaattisesti."
 
 #: qml/Settings.qml:199 qml/SettingsRetroPad.qml:96
-#, fuzzy, kde-format
-#| msgid "Settings saved!"
+#, kde-format
 msgid "Settings saved"
-msgstr "Asetukset tallennettu!"
+msgstr "Asetukset tallennettu"
 
 #: qml/SettingsRetroCore.qml:48
 #, kde-format
@@ -386,10 +372,9 @@ msgid "Reset Mappings"
 msgstr "Palauta kytkennät"
 
 #: qml/SettingsRetroPad.qml:19
-#, fuzzy, kde-format
-#| msgid "Retropad mappings reset!"
+#, kde-format
 msgid "Retropad mappings reset"
-msgstr "Retropad-kytkennät palautettu!"
+msgstr "Retropad-kytkennät palautettu"
 
 #: qml/SettingsRetroPad.qml:24
 #, kde-format
@@ -402,10 +387,9 @@ msgid "Controller Port 0"
 msgstr "Ohjainportti 0"
 
 #: qml/SettingsRetroPad.qml:64
-#, fuzzy, kde-format
-#| msgid "Press a controller button or key to bind..."
+#, kde-format
 msgid "Press a controller button or key to bind…"
-msgstr "Kytke painamalla näppäintä tai ohjaimen painiketta…"
+msgstr "Kytke painamalla näppäintä tai ohjainpainiketta…"
 
 #: qml/SettingsRetroPad.qml:65
 #, kde-format
