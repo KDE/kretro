@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kretro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-08 00:40+0000\n"
-"PO-Revision-Date: 2026-05-31 19:35-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -32,7 +32,7 @@ msgstr "sahranbay@gmail.com, gheyret@gmail.com"
 #, kde-format
 msgctxt "@title"
 msgid "KRetro"
-msgstr "KRetro"
+msgstr ""
 
 #: main.cpp:32
 #, kde-format
@@ -60,7 +60,7 @@ msgstr "ئىجادكار"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Devin Lin"
-msgstr "Devin Lin"
+msgstr ""
 
 #: qml/Help.qml:13
 #, kde-format
@@ -126,7 +126,7 @@ msgstr ""
 #: qml/Main.qml:19 qml/Main.qml:89
 #, kde-format
 msgid "KRetro"
-msgstr "KRetro"
+msgstr ""
 
 #: qml/Main.qml:37
 #, kde-format
