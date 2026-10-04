@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kretro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-08 00:40+0000\n"
-"PO-Revision-Date: 2026-06-06 15:08+0200\n"
+"PO-Revision-Date: 2026-10-03 23:27+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -71,13 +71,13 @@ msgstr "KRetro 도움말"
 #, kde-format
 msgctxt "@title"
 msgid "Getting Started"
-msgstr ""
+msgstr "시작하기"
 
 #: qml/Help.qml:25
 #, kde-format
 msgctxt "@title"
 msgid "Installing Retro Cores"
-msgstr ""
+msgstr "레트로 코어 설치"
 
 #: qml/Help.qml:26
 #, kde-format
@@ -88,12 +88,17 @@ msgid ""
 "'libretro-mgba' for the GBA emulator core. Once installed, you can select "
 "them in the settings."
 msgstr ""
+"KRetro(비 Flatpak)에서는 'libretro 코어'로 불리는 에뮬레이터를 설치해야 합니"
+"다.\n"
+"배포판 패키지 관리자를 통해서 설치할 수 있습니다. 예를 들어서 GBA 에뮬레이터 "
+"코어는 'libretro-mgba' 패키지로 제공됩니다. 한 번 설치하면 설정에서 선택할 "
+"수 있습니다."
 
 #: qml/Help.qml:29
 #, kde-format
 msgctxt "@title"
 msgid "Installing Retro Cores (Flatpak)"
-msgstr ""
+msgstr "레트로 코어 설치(Flatpak)"
 
 #: qml/Help.qml:30
 #, kde-format
@@ -101,18 +106,20 @@ msgid ""
 "The flatpak version of KRetro comes with a curated set of cores already. If "
 "you installed KRetro from the official flatpak, you are all set!"
 msgstr ""
+"KRetro의 Flatpak 버전에는 선택된 레트로 코어가 설치되어 있습니다. KRetro를 공"
+"식 Flatpak에서 설치했다면 사용할 준비가 되었습니다!"
 
 #: qml/Help.qml:35
 #, kde-format
 msgctxt "@title"
 msgid "Installing Games"
-msgstr ""
+msgstr "게임 설치"
 
 #: qml/Help.qml:39
 #, kde-format
 msgctxt "@title"
 msgid "Adding ROMs"
-msgstr ""
+msgstr "롬 추가"
 
 #: qml/Help.qml:40
 #, kde-format
@@ -121,102 +128,105 @@ msgid ""
 "ROMs directory (which by default is ~/Documents/Games). Simply add your ROMs "
 "there and they will appear in the game library!"
 msgstr ""
+"KRetro는 롬 디렉터리(기본값: ~/문서/게임)에서 확장자를 기준으로 지원하는 게임"
+"을 자동으로 식별합니다. 해당 경로에 롬을 추가하면 게임 라이브러리에 표시됩니"
+"다!"
 
 #: qml/Main.qml:19 qml/Main.qml:89
 #, kde-format
 msgid "KRetro"
-msgstr ""
+msgstr "KRetro"
 
 #: qml/Main.qml:37
 #, kde-format
 msgid "Open ROMs Directory"
-msgstr ""
+msgstr "롬 디렉터리 열기"
 
 #: qml/Main.qml:46 qml/Settings.qml:17
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "설정"
 
 #: qml/Main.qml:53
 #, kde-format
 msgid "Controller Settings"
-msgstr ""
+msgstr "컨트롤러 설정"
 
 #: qml/Main.qml:60
 #, kde-format
 msgid "About KRetro"
-msgstr ""
+msgstr "KRetro 정보"
 
 #: qml/Main.qml:65
 #, kde-format
 msgid "Quit"
-msgstr ""
+msgstr "끝내기"
 
 #: qml/Main.qml:93
 #, kde-format
 msgid "Help"
-msgstr ""
+msgstr "도움말"
 
 #: qml/Main.qml:117
 #, kde-format
 msgid "Game Library"
-msgstr ""
+msgstr "게임 라이브러리"
 
 #: qml/MobilePlayer.qml:22
 #, kde-format
 msgid "Press Escape to exit fullscreen mode"
-msgstr ""
+msgstr "전체 화면 모드를 종료하려면 Esc 키를 누르십시오"
 
 #: qml/MobilePlayer.qml:36
 #, kde-format
 msgid "Fullscreen"
-msgstr ""
+msgstr "전체 화면"
 
 #: qml/MobilePlayer.qml:44
 #, kde-format
 msgid "Reset Core"
-msgstr ""
+msgstr "코어 초기화"
 
 #: qml/MobilePlayer.qml:49 qml/SettingsRetroCore.qml:13
 #, kde-format
 msgid "Core Settings"
-msgstr ""
+msgstr "코어 설정"
 
 #: qml/MobilePlayer.qml:56
 #, kde-format
 msgid "Save Slots"
-msgstr ""
+msgstr "저장 슬롯"
 
 #: qml/MobilePlayer.qml:69
 #, kde-format
 msgid "KRetro Player"
-msgstr ""
+msgstr "KRetro 플레이어"
 
 #: qml/MobilePlayer.qml:111
 #, kde-format
 msgid "Reset Game Core?"
-msgstr ""
+msgstr "게임 코어를 초기화하시겠습니까?"
 
 #: qml/MobilePlayer.qml:112
 #, kde-format
 msgid "This will restart the game. Any unsaved progress will be lost!"
-msgstr ""
+msgstr "게임을 다시 시작합니다. 저장하지 않은 진행 상황이 손실됩니다!"
 
 #: qml/SaveManager.qml:13
 #, kde-format
 msgid "Save States"
-msgstr ""
+msgstr "저장 상태"
 
 #: qml/SaveManager.qml:16
 #, kde-format
 msgctxt "@action:button"
 msgid "New Save State"
-msgstr ""
+msgstr "새 저장 상태"
 
 #: qml/SaveManager.qml:22
 #, kde-format
 msgid "Game saved"
-msgstr ""
+msgstr "게임 저장됨"
 
 #: qml/SaveManager.qml:38
 #, kde-format
@@ -224,166 +234,168 @@ msgid ""
 "Slot 0 is the default auto save slot. It is restored on game start and saved "
 "on exit."
 msgstr ""
+"슬롯 0은 기본 자동 저장 슬롯입니다. 게임을 시작할 때 복원되며 끝낼 때 저장됩"
+"니다."
 
 #: qml/SaveManager.qml:73
 #, kde-format
 msgid "Slot %1"
-msgstr ""
+msgstr "슬롯 %1"
 
 #: qml/SaveManager.qml:83
 #, kde-format
 msgid "Last modified: %1"
-msgstr ""
+msgstr "수정한 날짜: %1"
 
 #: qml/SaveManager.qml:97
 #, kde-format
 msgctxt "@action:button"
 msgid "Load"
-msgstr ""
+msgstr "불러오기"
 
 #: qml/SaveManager.qml:104
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "저장"
 
 #: qml/SaveManager.qml:111
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
-msgstr ""
+msgstr "삭제"
 
 #: qml/Settings.qml:29
 #, kde-format
 msgid "Select ROMs Directory"
-msgstr ""
+msgstr "롬 디렉터리 선택"
 
 #: qml/Settings.qml:38
 #, kde-format
 msgid "Select Libretro Cores Directory"
-msgstr ""
+msgstr "Libretro 코어 디렉터리 선택"
 
 #: qml/Settings.qml:50
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "일반"
 
 #: qml/Settings.qml:55
 #, kde-format
 msgid "ROMs Directory"
-msgstr ""
+msgstr "롬 디렉터리"
 
 #: qml/Settings.qml:63
 #, kde-format
 msgid "Libretro Cores Directory"
-msgstr ""
+msgstr "Libretro 코어 디렉터리"
 
 #: qml/Settings.qml:69
 #, kde-format
 msgid "Override Mobile Controller Visibility"
-msgstr ""
+msgstr "모바일 컨트롤러 표시 여부 재정의"
 
 #: qml/Settings.qml:70
 #, kde-format
 msgid "Overrides the default visibility of the touch controller."
-msgstr ""
+msgstr "터치 컨트롤러의 기본 표시 여부를 재정의합니다."
 
 #: qml/Settings.qml:75
 #, kde-format
 msgid "Fullscreen Mode"
-msgstr ""
+msgstr "전체 화면 모드"
 
 #: qml/Settings.qml:76
 #, kde-format
 msgid "Open games in fullscreen mode by default."
-msgstr ""
+msgstr "기본값으로 게임을 전체 화면 모드로 표시합니다."
 
 #: qml/Settings.qml:83
 #, kde-format
 msgid "Libretro Cores"
-msgstr ""
+msgstr "Libretro 코어"
 
 #: qml/Settings.qml:91
 #, kde-format
 msgid "GBA Core:"
-msgstr ""
+msgstr "GBA 코어:"
 
 #: qml/Settings.qml:110
 #, kde-format
 msgid "NES Core:"
-msgstr ""
+msgstr "NES 코어:"
 
 #: qml/Settings.qml:129
 #, kde-format
 msgid "SNES Core:"
-msgstr ""
+msgstr "SNES 코어:"
 
 #: qml/Settings.qml:148
 #, kde-format
 msgid "Master System Core:"
-msgstr ""
+msgstr "Master System 코어:"
 
 #: qml/Settings.qml:167
 #, kde-format
 msgid "Genesis / Mega Drive Core:"
-msgstr ""
+msgstr "Genesis / Mega Drive 코어:"
 
 #: qml/Settings.qml:189
 #, kde-format
 msgid "Flatpak releases of KRetro manage retro cores automatically."
-msgstr ""
+msgstr "KRetro의 Flatpak 릴리스는 레트로 코어를 자동으로 관리합니다."
 
 #: qml/Settings.qml:199 qml/SettingsRetroPad.qml:96
 #, kde-format
 msgid "Settings saved"
-msgstr ""
+msgstr "설정 저장됨"
 
 #: qml/SettingsRetroCore.qml:48
 #, kde-format
 msgid "Core Variables"
-msgstr ""
+msgstr "코어 변수"
 
 #: qml/SettingsRetroCore.qml:53
 #, kde-format
 msgid "Most settings require you to exit and reopen the game to take effect."
-msgstr ""
+msgstr "대부분 설정은 게임을 종료하고 다시 시작해야 적용됩니다."
 
 #: qml/SettingsRetroCore.qml:65
 #, kde-format
 msgid "Default: %1"
-msgstr ""
+msgstr "기본값: %1"
 
 #: qml/SettingsRetroPad.qml:16
 #, kde-format
 msgid "Reset Mappings"
-msgstr ""
+msgstr "매핑 초기화"
 
 #: qml/SettingsRetroPad.qml:19
 #, kde-format
 msgid "Retropad mappings reset"
-msgstr ""
+msgstr "RetroPad 매핑 초기화"
 
 #: qml/SettingsRetroPad.qml:24
 #, kde-format
 msgid "RetroPad Controller Settings"
-msgstr ""
+msgstr "RetroPad 컨트롤러 설정"
 
 #: qml/SettingsRetroPad.qml:55
 #, kde-format
 msgid "Controller Port 0"
-msgstr ""
+msgstr "컨트롤러 포트 0"
 
 #: qml/SettingsRetroPad.qml:64
 #, kde-format
 msgid "Press a controller button or key to bind…"
-msgstr ""
+msgstr "대응할 컨트롤러 버튼이나 키를 누르십시오…"
 
 #: qml/SettingsRetroPad.qml:65
 #, kde-format
 msgid "Currently unbound"
-msgstr ""
+msgstr "현재 대응되지 않음"
 
 #: qml/SettingsRetroPad.qml:65
 #, kde-format
 msgid "Currently bound to: %1"
-msgstr ""
+msgstr "현재 다음과 대응됨: %1"
