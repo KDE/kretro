@@ -77,6 +77,7 @@
     <p xml:lang="he">KRetro הוא ממשק Libretro שנכתב ב־Qt/Kirigami, תוכנן עבור מהדורות שולחן העבודה, הניידים והמסכים הגדולים של פלזמה.</p>
     <p xml:lang="it">KRetro è un'interfaccia Libretro scritta in Qt/Kirigami, progettata per Plasma Desktop, Mobile e Bigscreen.</p>
     <p xml:lang="ka">KRetro წარმოადგენს Libretro-ის წინაბოლოს და დაწერილია Qt/Kirigami-ის გამოყენებით. განკუთვნილია Plasma Desktop, Plasma Mobile და Plasma Bigscreen-სთვის.</p>
+    <p xml:lang="ko">KRetro는 Qt/Kirigami로 작성된 Libretro 프론트엔드입니다. Plasma 데스크톱, 모바일, 큰 화면에서 사용할 수 있습니다.</p>
     <p xml:lang="lv">„KRetro“ ir „Libretro“ priekšsistēma, kas izstrādāta ar „Qt“/„Kirigami“ un paredzēta „Plasma Desktop“, „Mobile“ un „Bigscreen“.</p>
     <p xml:lang="nl">KRetro is een Libretro-frontend geschreven in Qt/Kirigami, ontworpen voor Plasma bureaublad, Mobiel en Bigscreen.</p>
     <p xml:lang="pt-BR">KRetro é um frontend do Libretro escrito em Qt/Kirigami, projetado para o Plasma Desktop, Mobile e Bigscreen.</p>
@@ -99,6 +100,7 @@
     <p xml:lang="he">מאפשר לך לשחק משחקים לקונסולות משחקים מיושנות („רטרו”) על ידי אספקת דמות ROM והליבה של Libretro.</p>
     <p xml:lang="it">Permette di giocare ai giochi per console retro fornendo una ROM e un core Libretro.</p>
     <p xml:lang="ka">ის საშუალებას გაძლევთ, ითამაშოთ რეტრო კონსოლის თამაშები ROM-ის და Libtretro-ის ბირთვის საშუალებით.</p>
+    <p xml:lang="ko">롬 파일과 Libretro 코어를 통해서 고전 게임을 즐길 수 있습니다.</p>
     <p xml:lang="lv">Tā ļauj spēlēt spēles, kas ir veidots retro konsulēm, nodrošinot ROM un „Libretro“ kodolu.</p>
     <p xml:lang="nl">Het biedt u games te spelen voor retroconsoles door een ROM en Libretro-core te leveren.</p>
     <p xml:lang="pt-BR">Ele permite que você jogue jogos de consoles retrô fornecendo uma ROM e um núcleo Libretro.</p>
@@ -124,6 +126,7 @@
       <caption xml:lang="he">נייד - ספריית משחקים</caption>
       <caption xml:lang="it">Mobile - Raccolta giochi</caption>
       <caption xml:lang="ka">მობილური - თამაშების ბიბლიოთეკა</caption>
+      <caption xml:lang="ko">모바일 - 게임 라이브러리</caption>
       <caption xml:lang="nl">Mobiel - Spellenbibliotheek</caption>
       <caption xml:lang="pt-BR">Celular - Biblioteca de jogos</caption>
       <caption xml:lang="sk">Mobil - Knižnica hier</caption>
@@ -149,6 +152,7 @@
       <caption xml:lang="he">שולחן עבודה - ספריית משחקים</caption>
       <caption xml:lang="it">Desktop - Raccolta giochi</caption>
       <caption xml:lang="ka">კომპიუტერი - თამაშების ბიბლიოთეკა</caption>
+      <caption xml:lang="ko">데스크톱 - 게임 라이브러리</caption>
       <caption xml:lang="nl">Bureaublad - Spellenbibilotheek</caption>
       <caption xml:lang="pt-BR">Desktop - Biblioteca de jogos</caption>
       <caption xml:lang="sk">Desktop - Knižnica hier</caption>
@@ -174,6 +178,7 @@
       <caption xml:lang="he">נייד - מריץ משחקים</caption>
       <caption xml:lang="it">Mobile - Lettore di giochi</caption>
       <caption xml:lang="ka">მობილური - თამაშის მოთამაშე</caption>
+      <caption xml:lang="ko">모바일 - 게임 플레이어</caption>
       <caption xml:lang="nl">Mobiel - Speler van games</caption>
       <caption xml:lang="pt-BR">Celular - Jogador</caption>
       <caption xml:lang="sk">Mobil - Herný prehrávač</caption>
@@ -199,6 +204,7 @@
       <caption xml:lang="he">שולחן עבודה - מריץ משחקים</caption>
       <caption xml:lang="it">Desktop - Lettore di giochi</caption>
       <caption xml:lang="ka">კომპიუტერი - თამაშის მოთამაშე</caption>
+      <caption xml:lang="ko">데스크톱 - 게임 플레이어</caption>
       <caption xml:lang="nl">Bureaublad - Speler van games</caption>
       <caption xml:lang="pt-BR">Desktop - Jogador</caption>
       <caption xml:lang="sk">Desktop - Herný prehrávač</caption>
@@ -224,6 +230,7 @@
       <caption xml:lang="he">נייד - מנהל חריצי שמירה</caption>
       <caption xml:lang="it">Mobile - Gestore slot di salvataggio</caption>
       <caption xml:lang="ka">მობილური - სლოტების მმართველის შენახვა</caption>
+      <caption xml:lang="ko">모바일 - 저장 슬롯 관리자</caption>
       <caption xml:lang="nl">Mobiele - Slots van beheerder opslaan</caption>
       <caption xml:lang="pt-BR">Celular - Gerenciador de Slots Salvos</caption>
       <caption xml:lang="sk">Mobil - Správca slotov uloženia</caption>
@@ -248,6 +255,7 @@
       <caption xml:lang="he">שולחן עבודה - מנהל חריצי שמירה</caption>
       <caption xml:lang="it">Desktop - Gestore slot di salvataggio</caption>
       <caption xml:lang="ka">კომპიუტერი - სლოტების მმართველის შენახვა</caption>
+      <caption xml:lang="ko">데스크톱 - 저장 슬롯 관리자</caption>
       <caption xml:lang="nl">Bureaublad - Slots van beheerder opslaan</caption>
       <caption xml:lang="pt-BR">Desktop - Gerenciador de Slots Salvos</caption>
       <caption xml:lang="sk">Desktop - Správca slotov uloženia</caption>
@@ -279,6 +287,7 @@
         <p xml:lang="he">מהדורת אלפא ראשונית!</p>
         <p xml:lang="it">Prima versione alfa!</p>
         <p xml:lang="ka">პირველი ალფა ვერსია!</p>
+        <p xml:lang="ko">첫 알파 릴리스!</p>
         <p xml:lang="nl">Eerste alfa-uitgave!</p>
         <p xml:lang="pt-BR">Primeiro lançamento alfa!</p>
         <p xml:lang="sk">Prvé alfa vydanie!</p>
