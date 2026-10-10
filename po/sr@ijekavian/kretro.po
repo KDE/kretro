@@ -1,0 +1,402 @@
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: kretro\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-01-08 00:40+0000\n"
+"PO-Revision-Date: 2026-10-09 22:30+0200\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr@ijekavian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Environment: kde\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Немања Хиршл"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "nemhirsl@gmail.com"
+
+#: main.cpp:28
+#, kde-format
+msgctxt "@title"
+msgid "KRetro"
+msgstr "KRetro"
+
+#: main.cpp:32
+#, kde-format
+msgid "Libretro frontend for Plasma"
+msgstr "Libretro прочеље за Плазму"
+
+#: main.cpp:36
+#, kde-format
+msgid "© 2023–2025 KDE Community"
+msgstr "© 2023–2025, заједница КДЕ‑а"
+
+#: main.cpp:37
+#, kde-format
+msgctxt "@info:credit"
+msgid "Seshan Ravikumar"
+msgstr "Seshan Ravikumar"
+
+#: main.cpp:38 main.cpp:42
+#, kde-format
+msgctxt "@info:credit"
+msgid "Developer"
+msgstr "Програмер"
+
+#: main.cpp:41
+#, kde-format
+msgctxt "@info:credit"
+msgid "Devin Lin"
+msgstr "Devin Lin"
+
+#: qml/Help.qml:13
+#, kde-format
+msgctxt "@title"
+msgid "KRetro Help"
+msgstr "Помоћ за KRetro"
+
+#: qml/Help.qml:20
+#, kde-format
+msgctxt "@title"
+msgid "Getting Started"
+msgstr "Први кораци"
+
+#: qml/Help.qml:25
+#, kde-format
+msgctxt "@title"
+msgid "Installing Retro Cores"
+msgstr "Инсталирање ретро језгара"
+
+#: qml/Help.qml:26
+#, kde-format
+msgid ""
+"KRetro (non-flatpak) requires you to install emulators, called 'libretro "
+"cores'.\n"
+"You should find these from your distro's package manager, for example, "
+"'libretro-mgba' for the GBA emulator core. Once installed, you can select "
+"them in the settings."
+msgstr ""
+"KRetro ван флатпака захтијева да инсталирате емулаторе који се зову "
+"„libretro језгра“.\n"
+"Треба да их нађете у менаџеру пакета своје дистрибуције, на примјер "
+"„libretro-mgba“ за ГБА емулаторско језгро. Када их инсталирате, можете их "
+"изабрати у поставкама."
+
+#: qml/Help.qml:29
+#, kde-format
+msgctxt "@title"
+msgid "Installing Retro Cores (Flatpak)"
+msgstr "Инсталирање ретро језгара (флатпак)"
+
+#: qml/Help.qml:30
+#, kde-format
+msgid ""
+"The flatpak version of KRetro comes with a curated set of cores already. If "
+"you installed KRetro from the official flatpak, you are all set!"
+msgstr ""
+"флатпак издање KRetro већ долази са одабраним скупом језгара. Ако сте KRetro "
+"инсталирали из званичног флатпак пакета, све је спремно!"
+
+#: qml/Help.qml:35
+#, kde-format
+msgctxt "@title"
+msgid "Installing Games"
+msgstr "Инсталирање игара"
+
+#: qml/Help.qml:39
+#, kde-format
+msgctxt "@title"
+msgid "Adding ROMs"
+msgstr "Додавање РОМ фајлова"
+
+#: qml/Help.qml:40
+#, kde-format
+msgid ""
+"KRetro automatically detects supported games (by file extension) from the "
+"ROMs directory (which by default is ~/Documents/Games). Simply add your ROMs "
+"there and they will appear in the game library!"
+msgstr ""
+"KRetro аутоматски открива подржане игре (по наставку фајла) у фасцикли РОМ "
+"фајлова (подразумијевано ~/Documents/Games). Само додајте своје РОМ фајлове "
+"тамо и појавиће се у библиотеци игара!"
+
+#: qml/Main.qml:19 qml/Main.qml:89
+#, kde-format
+msgid "KRetro"
+msgstr "KRetro"
+
+#: qml/Main.qml:37
+#, kde-format
+msgid "Open ROMs Directory"
+msgstr "Отвори фасциклу РОМ фајлова"
+
+#: qml/Main.qml:46 qml/Settings.qml:17
+#, kde-format
+msgid "Settings"
+msgstr "Поставке"
+
+#: qml/Main.qml:53
+#, kde-format
+msgid "Controller Settings"
+msgstr "Поставке контролора"
+
+#: qml/Main.qml:60
+#, kde-format
+msgid "About KRetro"
+msgstr "О програму KRetro"
+
+#: qml/Main.qml:65
+#, kde-format
+msgid "Quit"
+msgstr "Напусти"
+
+#: qml/Main.qml:93
+#, kde-format
+msgid "Help"
+msgstr "Помоћ"
+
+#: qml/Main.qml:117
+#, kde-format
+msgid "Game Library"
+msgstr "Библиотека игара"
+
+#: qml/MobilePlayer.qml:22
+#, kde-format
+msgid "Press Escape to exit fullscreen mode"
+msgstr "Притисните Esc да напустите режим преко цијелог екрана"
+
+#: qml/MobilePlayer.qml:36
+#, kde-format
+msgid "Fullscreen"
+msgstr "Преко цијелог екрана"
+
+#: qml/MobilePlayer.qml:44
+#, kde-format
+msgid "Reset Core"
+msgstr "Ресетуј језгро"
+
+#: qml/MobilePlayer.qml:49 qml/SettingsRetroCore.qml:13
+#, kde-format
+msgid "Core Settings"
+msgstr "Поставке језгра"
+
+#: qml/MobilePlayer.qml:56
+#, kde-format
+msgid "Save Slots"
+msgstr "Слотови за уписивање"
+
+#: qml/MobilePlayer.qml:69
+#, kde-format
+msgid "KRetro Player"
+msgstr "KRetro плејер"
+
+#: qml/MobilePlayer.qml:111
+#, kde-format
+msgid "Reset Game Core?"
+msgstr "Ресетовати језгро игре?"
+
+#: qml/MobilePlayer.qml:112
+#, kde-format
+msgid "This will restart the game. Any unsaved progress will be lost!"
+msgstr "Ово ће поново покренути игру. Сав несачувани напредак биће изгубљен!"
+
+#: qml/SaveManager.qml:13
+#, kde-format
+msgid "Save States"
+msgstr "Сачувана стања"
+
+#: qml/SaveManager.qml:16
+#, kde-format
+msgctxt "@action:button"
+msgid "New Save State"
+msgstr "Ново сачувано стање"
+
+#: qml/SaveManager.qml:22
+#, kde-format
+msgid "Game saved"
+msgstr "Позиција је сачувана"
+
+#: qml/SaveManager.qml:38
+#, kde-format
+msgid ""
+"Slot 0 is the default auto save slot. It is restored on game start and saved "
+"on exit."
+msgstr ""
+"Слот 0 је подразумијевани слот за аутоматски упис. Учитава се при покретању "
+"игре, а уписује при изласку."
+
+#: qml/SaveManager.qml:73
+#, kde-format
+msgid "Slot %1"
+msgstr "Слот %1"
+
+#: qml/SaveManager.qml:83
+#, kde-format
+msgid "Last modified: %1"
+msgstr "Посљедња измјена: %1"
+
+#: qml/SaveManager.qml:97
+#, kde-format
+msgctxt "@action:button"
+msgid "Load"
+msgstr "Учитај"
+
+#: qml/SaveManager.qml:104
+#, kde-format
+msgctxt "@action:button"
+msgid "Save"
+msgstr "Сачувај"
+
+#: qml/SaveManager.qml:111
+#, kde-format
+msgctxt "@action:button"
+msgid "Delete"
+msgstr "Обриши"
+
+#: qml/Settings.qml:29
+#, kde-format
+msgid "Select ROMs Directory"
+msgstr "Избор фасцикле РОМ фајлова"
+
+#: qml/Settings.qml:38
+#, kde-format
+msgid "Select Libretro Cores Directory"
+msgstr "Избор фасцикле Libretro језгара"
+
+#: qml/Settings.qml:50
+#, kde-format
+msgid "General"
+msgstr "Опште"
+
+#: qml/Settings.qml:55
+#, kde-format
+msgid "ROMs Directory"
+msgstr "Фасцикла РОМ фајлова"
+
+#: qml/Settings.qml:63
+#, kde-format
+msgid "Libretro Cores Directory"
+msgstr "Фасцикла Libretro језгара"
+
+#: qml/Settings.qml:69
+#, kde-format
+msgid "Override Mobile Controller Visibility"
+msgstr "Потисни видљивост мобилног контролора"
+
+#: qml/Settings.qml:70
+#, kde-format
+msgid "Overrides the default visibility of the touch controller."
+msgstr "Потискује подразумијевану видљивост контролора на додир."
+
+#: qml/Settings.qml:75
+#, kde-format
+msgid "Fullscreen Mode"
+msgstr "Режим преко цијелог екрана"
+
+#: qml/Settings.qml:76
+#, kde-format
+msgid "Open games in fullscreen mode by default."
+msgstr "Игре се подразумијевано отварају преко цијелог екрана."
+
+#: qml/Settings.qml:83
+#, kde-format
+msgid "Libretro Cores"
+msgstr "Libretro језгра"
+
+#: qml/Settings.qml:91
+#, kde-format
+msgid "GBA Core:"
+msgstr "ГБА језгро:"
+
+#: qml/Settings.qml:110
+#, kde-format
+msgid "NES Core:"
+msgstr "НЕС језгро:"
+
+#: qml/Settings.qml:129
+#, kde-format
+msgid "SNES Core:"
+msgstr "СНЕС језгро:"
+
+#: qml/Settings.qml:148
+#, kde-format
+msgid "Master System Core:"
+msgstr "Језгро за Master System:"
+
+#: qml/Settings.qml:167
+#, kde-format
+msgid "Genesis / Mega Drive Core:"
+msgstr "Језгро за џенесис / мегадрајв:"
+
+#: qml/Settings.qml:189
+#, kde-format
+msgid "Flatpak releases of KRetro manage retro cores automatically."
+msgstr "флатпак издања KRetro аутоматски управљају ретро језгрима."
+
+#: qml/Settings.qml:199 qml/SettingsRetroPad.qml:96
+#, kde-format
+msgid "Settings saved"
+msgstr "Поставке су сачуване"
+
+#: qml/SettingsRetroCore.qml:48
+#, kde-format
+msgid "Core Variables"
+msgstr "Промјенљиве језгра"
+
+#: qml/SettingsRetroCore.qml:53
+#, kde-format
+msgid "Most settings require you to exit and reopen the game to take effect."
+msgstr ""
+"Већина поставки ступа на снагу тек кад напустите и поново отворите игру."
+
+#: qml/SettingsRetroCore.qml:65
+#, kde-format
+msgid "Default: %1"
+msgstr "Подразумијевано: %1"
+
+#: qml/SettingsRetroPad.qml:16
+#, kde-format
+msgid "Reset Mappings"
+msgstr "Ресетуј мапирања"
+
+#: qml/SettingsRetroPad.qml:19
+#, kde-format
+msgid "Retropad mappings reset"
+msgstr "Мапирања за Retropad су ресетована"
+
+#: qml/SettingsRetroPad.qml:24
+#, kde-format
+msgid "RetroPad Controller Settings"
+msgstr "Поставке RetroPad контролора"
+
+#: qml/SettingsRetroPad.qml:55
+#, kde-format
+msgid "Controller Port 0"
+msgstr "Порт контролора 0"
+
+#: qml/SettingsRetroPad.qml:64
+#, kde-format
+msgid "Press a controller button or key to bind…"
+msgstr "Притисните дугме контролора или тастер за додјелу…"
+
+#: qml/SettingsRetroPad.qml:65
+#, kde-format
+msgid "Currently unbound"
+msgstr "ништа"
+
+#: qml/SettingsRetroPad.qml:65
+#, kde-format
+msgid "Currently bound to: %1"
+msgstr "Тренутно додијељено: %1"
