@@ -27,6 +27,7 @@
   <name xml:lang="lv">KRetro</name>
   <name xml:lang="nl">KRetro</name>
   <name xml:lang="pt-BR">KRetro</name>
+  <name xml:lang="ru">KRetro</name>
   <name xml:lang="sk">KRetro</name>
   <name xml:lang="sl">KRetro</name>
   <name xml:lang="sr">KRetro</name>
@@ -55,6 +56,7 @@
   <summary xml:lang="lv">„Libretro“ emulācijas priekšsistēma „Plasma“ darbvirsmai</summary>
   <summary xml:lang="nl">Emulatie-frontend  van Libretro voor Plasma</summary>
   <summary xml:lang="pt-BR">Frontend do emulador Libretro para o Plasma</summary>
+  <summary xml:lang="ru">Оболочка эмуляции Libretro для Plasma</summary>
   <summary xml:lang="sk">Frontend emulácie Libretro pre Plasmu</summary>
   <summary xml:lang="sl">Emulacija začelja Libretra za Plasmo</summary>
   <summary xml:lang="sr">Libretro прочеље за емулацију у Плазми</summary>
@@ -89,6 +91,7 @@
     <p xml:lang="lv">„KRetro“ ir „Libretro“ priekšsistēma, kas izstrādāta ar „Qt“/„Kirigami“ un paredzēta „Plasma Desktop“, „Mobile“ un „Bigscreen“.</p>
     <p xml:lang="nl">KRetro is een Libretro-frontend geschreven in Qt/Kirigami, ontworpen voor Plasma bureaublad, Mobiel en Bigscreen.</p>
     <p xml:lang="pt-BR">KRetro é um frontend do Libretro escrito em Qt/Kirigami, projetado para o Plasma Desktop, Mobile e Bigscreen.</p>
+    <p xml:lang="ru">KRetro — оболочка Libretro, написанная на Qt/Kirigami и предназначенная для Plasma Desktop, Mobile и Bigscreen.</p>
     <p xml:lang="sk">KRetro je frontend Libretro napísaný v Qt/Kirigami, navrhnutý pre Plasma Desktop, Mobile a Bigscreen.</p>
     <p xml:lang="sl">KRetro je začelje za Libretro, napisan v Qt/Kirigami, zasnovan za namizne računalnike, mobilne naprave in velike zaslone Plasma.</p>
     <p xml:lang="sr">KRetro је Libretro прочеље писано у КуТ‑у и Киригамију, намењено Плазми на површи, мобилним уређајима и великом екрану (Bigscreen).</p>
@@ -116,6 +119,7 @@
     <p xml:lang="lv">Tā ļauj spēlēt spēles, kas ir veidots retro konsulēm, nodrošinot ROM un „Libretro“ kodolu.</p>
     <p xml:lang="nl">Het biedt u games te spelen voor retroconsoles door een ROM en Libretro-core te leveren.</p>
     <p xml:lang="pt-BR">Ele permite que você jogue jogos de consoles retrô fornecendo uma ROM e um núcleo Libretro.</p>
+    <p xml:lang="ru">Позволяет играть в игры для ретроконсолей: достаточно указать образ ROM и ядро Libretro.</p>
     <p xml:lang="sk">Umožňuje vám hrať hry pre retro konzoly pomocou ROMu a jadra Libretro.</p>
     <p xml:lang="sl">Omogoča vam igranje iger za retro konzole z dobavo ROM-a in jedra Libretro.</p>
     <p xml:lang="sr">Омогућава вам да играте игре за ретро конзоле када обезбедите РОМ и Libretro језгро.</p>
@@ -145,6 +149,7 @@
       <caption xml:lang="ko">모바일 - 게임 라이브러리</caption>
       <caption xml:lang="nl">Mobiel - Spellenbibliotheek</caption>
       <caption xml:lang="pt-BR">Celular - Biblioteca de jogos</caption>
+      <caption xml:lang="ru">Мобильная версия — библиотека игр</caption>
       <caption xml:lang="sk">Mobil - Knižnica hier</caption>
       <caption xml:lang="sl">Mobile - Knjižnica iger</caption>
       <caption xml:lang="sr">Мобилно - библиотека игара</caption>
@@ -175,6 +180,7 @@
       <caption xml:lang="ko">데스크톱 - 게임 라이브러리</caption>
       <caption xml:lang="nl">Bureaublad - Spellenbibilotheek</caption>
       <caption xml:lang="pt-BR">Desktop - Biblioteca de jogos</caption>
+      <caption xml:lang="ru">Настольная версия — библиотека игр</caption>
       <caption xml:lang="sk">Desktop - Knižnica hier</caption>
       <caption xml:lang="sl">Namizje - Knjižnica iger</caption>
       <caption xml:lang="sr">Површ - библиотека игара</caption>
@@ -205,6 +211,7 @@
       <caption xml:lang="ko">모바일 - 게임 플레이어</caption>
       <caption xml:lang="nl">Mobiel - Speler van games</caption>
       <caption xml:lang="pt-BR">Celular - Jogador</caption>
+      <caption xml:lang="ru">Мобильная версия — игровой экран</caption>
       <caption xml:lang="sk">Mobil - Herný prehrávač</caption>
       <caption xml:lang="sl">Mobile - Game Player</caption>
       <caption xml:lang="sr">Мобилно - плејер игара</caption>
@@ -235,6 +242,7 @@
       <caption xml:lang="ko">데스크톱 - 게임 플레이어</caption>
       <caption xml:lang="nl">Bureaublad - Speler van games</caption>
       <caption xml:lang="pt-BR">Desktop - Jogador</caption>
+      <caption xml:lang="ru">Настольная версия — игровой экран</caption>
       <caption xml:lang="sk">Desktop - Herný prehrávač</caption>
       <caption xml:lang="sl">Namizje - Game Player</caption>
       <caption xml:lang="sr">Површ - плејер игара</caption>
@@ -265,6 +273,7 @@
       <caption xml:lang="ko">모바일 - 저장 슬롯 관리자</caption>
       <caption xml:lang="nl">Mobiele - Slots van beheerder opslaan</caption>
       <caption xml:lang="pt-BR">Celular - Gerenciador de Slots Salvos</caption>
+      <caption xml:lang="ru">Мобильная версия — управление ячейками сохранений</caption>
       <caption xml:lang="sk">Mobil - Správca slotov uloženia</caption>
       <caption xml:lang="sl">Mobile - Save Slots Manager</caption>
       <caption xml:lang="sr">Мобилно - менаџер слотова за уписивање</caption>
@@ -294,6 +303,7 @@
       <caption xml:lang="ko">데스크톱 - 저장 슬롯 관리자</caption>
       <caption xml:lang="nl">Bureaublad - Slots van beheerder opslaan</caption>
       <caption xml:lang="pt-BR">Desktop - Gerenciador de Slots Salvos</caption>
+      <caption xml:lang="ru">Настольная версия — управление ячейками сохранений</caption>
       <caption xml:lang="sk">Desktop - Správca slotov uloženia</caption>
       <caption xml:lang="sl">Namizje - Save Slots Manager</caption>
       <caption xml:lang="sr">Површ - менаџер слотова за уписивање</caption>
@@ -330,6 +340,7 @@
         <p xml:lang="ko">첫 알파 릴리스!</p>
         <p xml:lang="nl">Eerste alfa-uitgave!</p>
         <p xml:lang="pt-BR">Primeiro lançamento alfa!</p>
+        <p xml:lang="ru">Первый альфа-выпуск.</p>
         <p xml:lang="sk">Prvé alfa vydanie!</p>
         <p xml:lang="sl">Prva alfa izdaja!</p>
         <p xml:lang="sr">Прво алфа издање!</p>
