@@ -25,6 +25,7 @@
   <name xml:lang="ka">KRetro</name>
   <name xml:lang="ko">KRetro</name>
   <name xml:lang="lv">KRetro</name>
+  <name xml:lang="nb">KRetro</name>
   <name xml:lang="nl">KRetro</name>
   <name xml:lang="pt-BR">KRetro</name>
   <name xml:lang="ru">KRetro</name>
@@ -54,6 +55,7 @@
   <summary xml:lang="ka">Libretro-ის ემულაციის წინაბოლო Plasma-სთვის</summary>
   <summary xml:lang="ko">Plasma용 libretro 에뮬레이션 프론트엔드</summary>
   <summary xml:lang="lv">„Libretro“ emulācijas priekšsistēma „Plasma“ darbvirsmai</summary>
+  <summary xml:lang="nb">Libretro-emuleringsgrenseflate for Plasma</summary>
   <summary xml:lang="nl">Emulatie-frontend  van Libretro voor Plasma</summary>
   <summary xml:lang="pt-BR">Frontend do emulador Libretro para o Plasma</summary>
   <summary xml:lang="ru">Оболочка эмуляции Libretro для Plasma</summary>
@@ -147,6 +149,7 @@
       <caption xml:lang="it">Mobile - Raccolta giochi</caption>
       <caption xml:lang="ka">მობილური - თამაშების ბიბლიოთეკა</caption>
       <caption xml:lang="ko">모바일 - 게임 라이브러리</caption>
+      <caption xml:lang="nb">Mobil – spillbibliotek</caption>
       <caption xml:lang="nl">Mobiel - Spellenbibliotheek</caption>
       <caption xml:lang="pt-BR">Celular - Biblioteca de jogos</caption>
       <caption xml:lang="ru">Мобильная версия — библиотека игр</caption>
@@ -178,6 +181,7 @@
       <caption xml:lang="it">Desktop - Raccolta giochi</caption>
       <caption xml:lang="ka">კომპიუტერი - თამაშების ბიბლიოთეკა</caption>
       <caption xml:lang="ko">데스크톱 - 게임 라이브러리</caption>
+      <caption xml:lang="nb">Skrivebord – spillbibliotek</caption>
       <caption xml:lang="nl">Bureaublad - Spellenbibilotheek</caption>
       <caption xml:lang="pt-BR">Desktop - Biblioteca de jogos</caption>
       <caption xml:lang="ru">Настольная версия — библиотека игр</caption>
