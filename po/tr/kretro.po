@@ -1,21 +1,21 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the kretro package.
 #
-# SPDX-FileCopyrightText: 2025, 2026 Emir SARI <emir_sari@îcloud.com>
+# SPDX-FileCopyrightText: 2025-2026 Emir SARI <emir_sari@îcloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kretro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-08 00:40+0000\n"
-"PO-Revision-Date: 2026-01-08 17:02+0300\n"
-"Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
+"PO-Revision-Date: 2026-11-23 18:15+0300\n"
+"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.0\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -130,7 +130,7 @@ msgid ""
 "there and they will appear in the game library!"
 msgstr ""
 "K Retro, ROM’lar dizininden kendiliğinden desteklenen oyunları (genelde "
-"öntanımlı konum ~/Documents/Games dizinidir) algılayabilir. Yalnızca "
+"varsayılan konum ~/Documents/Games dizinidir) algılayabilir. Yalnızca "
 "ROM’larınızı oraya koyun ve oyun kitaplığında görüneceklerdir."
 
 #: qml/Main.qml:19 qml/Main.qml:89
@@ -235,7 +235,7 @@ msgid ""
 "Slot 0 is the default auto save slot. It is restored on game start and saved "
 "on exit."
 msgstr ""
-"Yuva 0, öntanımlı kendiliğinden kayıt yuvasıdır. Oyun başlangıcında geri "
+"Yuva 0, varsayılan kendiliğinden kayıt yuvasıdır. Oyun başlangıcında geri "
 "yüklenir ve çıkışta kaydedilir."
 
 #: qml/SaveManager.qml:73
@@ -299,7 +299,7 @@ msgstr "Taşınabilir kol görünürlüğünü geçersiz kıl"
 #: qml/Settings.qml:70
 #, kde-format
 msgid "Overrides the default visibility of the touch controller."
-msgstr "Dokunmatik kolun öntanımlı görünürlüğünü geçersiz kılar."
+msgstr "Dokunmatik kolun varsayılan görünürlüğünü geçersiz kılar."
 
 #: qml/Settings.qml:75
 #, kde-format
@@ -309,7 +309,7 @@ msgstr "Tam ekran kipi"
 #: qml/Settings.qml:76
 #, kde-format
 msgid "Open games in fullscreen mode by default."
-msgstr "Öntanımlı olarak oyunları tam ekran kipinde açar."
+msgstr "Varsayılan olarak oyunları tam ekran kipinde açar."
 
 #: qml/Settings.qml:83
 #, kde-format
@@ -367,7 +367,7 @@ msgstr ""
 #: qml/SettingsRetroCore.qml:65
 #, kde-format
 msgid "Default: %1"
-msgstr "Öntanımlı: %1"
+msgstr "Varsayılan: %1"
 
 #: qml/SettingsRetroPad.qml:16
 #, kde-format
